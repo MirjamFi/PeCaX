@@ -1,0 +1,320 @@
+body {
+  font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+  font-size: 14px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  width: 5vw;
+  margin-right: 4vw;
+}
+.dropdown .dropbtn {
+  font-size: 1vw;  
+  border: none;
+  outline: none;
+  color: black;
+  /*padding: 14px 16px;*/
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+.topnav{
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #DCDCDC;
+  border-top: 1px solid #DCDCDC;
+  color: grey;
+  text-decoration: none;
+  height: 6vw;
+}
+/* Style the links inside the navigation bar */
+.topnav-right a {
+  float: left;
+  text-align: center;
+  padding: 1vw 1vw;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+/*
+.dropdown-content a:hover {
+  background-color: #ddd;
+}*/
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a:visited{color: black}
+.page-link{color: #000;}
+.page-link:visited {color:#000;}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  font-size: 1vw;
+}
+.topnav-left {
+  float: left;
+  font-size: 1vw;
+  text-align: center;
+  padding: 1vw 1vw;
+}
+.topnav-centered a{
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+h1 {
+  opacity: 1;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.butn {
+  cursor: pointer;
+  background: #e3e3e3;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: -moz-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: -ms-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: -o-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: linear-gradient(to bottom, #f9f9f9, #BDBDBD);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: black;
+  font-size: 14px;
+  padding: 5px 10px 5px 10px;
+  border: solid #e3e3e3 3px;
+  text-decoration: none;
+}
+
+.downloadbutn {
+  cursor: pointer;
+  background: #e3e3e3;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: -moz-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: -ms-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: -o-linear-gradient(top, #f9f9f9, #BDBDBD);
+  background-image: linear-gradient(to bottom, #f9f9f9, #BDBDBD);
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: black;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+  border: solid #e3e3e3 3px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #e3e3e3;
+  background-image: -webkit-linear-gradient(top, #e3e3e3, #e3e3e3);
+  background-image: -moz-linear-gradient(top, #e3e3e3, #e3e3e3);
+  background-image: -ms-linear-gradient(top, #e3e3e3, #e3e3e3);
+  background-image: -o-linear-gradient(top, #e3e3e3, #e3e3e3);
+  background-image: linear-gradient(to bottom, #e3e3e3, #e3e3e3);
+  text-decoration: none;
+}
+
+select {
+  min-width: 180px;
+    margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+   padding: 5px 8px;
+   background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  display: inline-block;
+     border: thin solid #BDBDBD;
+
+}
+
+input {
+    cursor: pointer;
+    background-color: #BDBDBD;
+    color: black;
+    padding: 5px 8px;
+    border-radius:3px;
+}
+
+input:hover{
+    border-color: black;
+    border: 1px solid #999;
+    border-radius: 3px;
+}
+
+.column {
+  width: 50%;
+}
+.row{
+  width: 100%
+}
+.verticalLine {
+  border-left: thin solid #BDBDBD;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+input[type=text], select {
+  width: 287px;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+#cy {
+      width: 61.5%;
+      /*height: 75%;*/
+      position: absolute;
+      top: 14vw;
+      left: 19vw;
+      bottom: 5vw;
+      background-color:none;
+      /*border: solid #BDBDBD;*/
+  }
+
+#searchgene{
+  margin-left: 30px;
+}
+
+#legend {
+    position: absolute;
+    top: 20%;
+    left: 5vw;
+    font-size: 11px;
+    width: 180px;
+    height: 490px;
+}
+#legendNodes {
+    position: absolute;
+    top: 540px;
+    left: 10px;
+    font-size: 11px;
+    width: 180px;
+    height: 200px;
+}
+
+#selectColorAttribute{
+  margin-left: 30px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 5s linear infinite;
+    margin: 0 auto;
+}
+
+#reverse{
+  position: absolute;
+  left: 47%;
+  font-size: 18px;
+  text-align: center;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
+
+.center-div
+{
+     margin: 0 auto;
+     width: 100px; 
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active{
+  color: black;
+  font-weight: bold;
+}
+
+.csc-default{
+  flex: 1;
+}
+
+.entry-content{
+  flex: 1;
+}
+
+.content{
+  flex: 1;
+}
+
+footer 
+{
+  color: white;
+  width: 50%;
+  font-size: 12px;
+}
+
+.containerMerged {
+  position: fixed;
+  bottom: 0px;
+  width: 67%;
+  /*padding: 0em 0em;*/
+  /*margin: 0.5em auto;*/
+  border-top: 1px solid #DCDCDC;
+  color: white;
+}
+
+.footerIndex {
+  position: fixed;
+  bottom: 0px;
+  width: 50%;
+  /*padding: 0em 0em;*/
+  /*margin: 0.5em auto;*/
+  border-top: 1px solid #DCDCDC;
+  color:black;
+  }

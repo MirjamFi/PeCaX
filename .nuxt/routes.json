@@ -1,0 +1,38 @@
+[
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "/Users/mirjam/Documents/ClinVAPReportNetworks/pages/about.vue",
+    "chunkName": "pages/about"
+  },
+  {
+    "name": "contact",
+    "path": "/contact",
+    "component": "/Users/mirjam/Documents/ClinVAPReportNetworks/pages/contact.vue",
+    "chunkName": "pages/contact"
+  },
+  {
+    "name": "datenschutzerklarung",
+    "path": "/datenschutzerklarung",
+    "component": "/Users/mirjam/Documents/ClinVAPReportNetworks/pages/datenschutzerklarung.vue",
+    "chunkName": "pages/datenschutzerklarung"
+  },
+  {
+    "name": "documentation",
+    "path": "/documentation",
+    "component": "/Users/mirjam/Documents/ClinVAPReportNetworks/pages/documentation.vue",
+    "chunkName": "pages/documentation"
+  },
+  {
+    "name": "imprint",
+    "path": "/imprint",
+    "component": "/Users/mirjam/Documents/ClinVAPReportNetworks/pages/imprint.vue",
+    "chunkName": "pages/imprint"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/mirjam/Documents/ClinVAPReportNetworks/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]
