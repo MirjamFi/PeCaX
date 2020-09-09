@@ -12,7 +12,7 @@ a{
 .dropdown {
   float: right;
   width: 5vw;
-  margin-right: 4vw;
+  margin-right: 2vw;
 }
 .dropdown .dropbtn {
   font-size: 1vw;  
@@ -21,7 +21,7 @@ a{
   color: black;
   background-color: inherit;
   font-family: inherit;
-  margin: 0;
+  margin-top: 1vw;
 }
 
 .dropdown-content {
@@ -148,6 +148,15 @@ h1 {
   text-decoration: none;
 }
 
+.loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 5s linear infinite;
+    margin: 0 auto;
+}
 select {
   min-width: 180px;
     margin: 0;      
@@ -312,3 +321,45 @@ footer
   border-top: 1px solid #DCDCDC;
   color:black;
   }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: auto;
+  margin-left: -200px;
+  margin-top: -150px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+  
+  header {
+    position: relative;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .close {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+
+}
+  .activeModal {
+    display: block;
+  }
+
+.pull-right {
+  float: right;  
+}
+
+
