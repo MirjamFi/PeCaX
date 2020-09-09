@@ -128,7 +128,7 @@
 	          @mouseleave="activeDrivers = false"
 	          block variant="primary"
 	         >
-          		<Strong class="text-center" >Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+          		<Strong class="text-center" >Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" data-html2canvas-ignore="true"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
         	</b-button>
         	<p  v-show="activeDrivers">List of cancer driver genes along with the mutations observed in the patient. Confidence column shows the number of the driver gene sources that cataloged the corresponding gene as driver and Reference column gives the list of those sources.</p>
        		<b-collapse id="collapse-4" v-model="visibleDrivers" class="mt-2">
@@ -215,7 +215,7 @@
 	              <table>
 	                <tr>
 	                  <td>
-	                    <select v-model="rowsPerPage" width = 100%>
+	                    <select v-model="rowsPerPage" style="width: 10px">
 	                      <option disabled value="">Rows per Page</option>
 	                      <option>10</option>
 	                      <option>20</option>
@@ -250,7 +250,7 @@
 	          @mouseleave="activePharma = false"
 	          block variant="primary"
 	         >
-	          <Strong>Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+	          <Strong>Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" data-html2canvas-ignore="true"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 	        </b-button>
 	        <p  v-show="activePharma">List of drugs with the evidence of targeting the observed variant of the mutated gene regardless of the cancer type. The information is obtained from CIViC database. CIViC evidence levels are given in the Evidence column.</p>
 	        <b-collapse id="collapse-4" v-model="visiblePharma" class="mt-2">
@@ -263,7 +263,7 @@
 	              <label for="checkbox7">Confidence</label>
 	            <input type="checkbox" id="checkbox8" v-model="hideptp_daReferences">
 	              <label for="checkbox8">References</label>
-	            <button class="downloadbutn float-right " @click="exportToPDF_ptpda()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
+	            <button class="downloadbutn float-right " @click="exportToPDF_ptpda()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon> PDF</button>
 	          </div>
 	          <b-card> 
 	            <table class="table table-hover">
@@ -330,7 +330,7 @@
 	              <table>
 	                <tr>
 	                  <td>
-	                    <select v-model="rowsPerPagePtpda" width = 100%>
+	                    <select v-model="rowsPerPagePtpda" style="width: 10px">
 	                      <option disabled value="">Rows per Page</option>
 	                      <option>10</option>
 	                      <option>20</option>
@@ -379,7 +379,7 @@
 	              v-bind:style="{ color:'white' }"
 	              block variant="primary"
 	              >
-	              <Strong>CIViC Summary of Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCivic"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+	              <Strong>CIViC Summary of Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" data-html2canvas-ignore="true"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCivic"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 	            </b-button>
 	            <p  v-show="activeCivic">Therapies that have evidence of targeting the affected gene. The information is obtained from CIViC database. CIViC evidence levels are given in Evidence column. Results are filtered according to cancer type, if it is provided in metadata.</p>
 	            <b-collapse id="collapse-4" v-model="visibleAffectCivic" class="mt-2">
@@ -396,7 +396,7 @@
 	                  <label for="checkbox7">Evidence</label>
 	                <input type="checkbox" id="checkbox8" v-model="hideptp_iaReferences">
 	                  <label for="checkbox8">References</label>
-	                <button class="downloadbutn float-right " @click="exportToPDF_ptpia()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
+	                <button class="downloadbutn float-right " @click="exportToPDF_ptpia()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon> PDF</button>
 	              </div>
 	              <b-card> 
 	                <table class="table table-hover">
@@ -477,7 +477,7 @@
 	                  <table>
 	                    <tr>
 	                      <td>
-	                        <select v-model="rowsPerPagePtpia" width = 100%>
+	                        <select v-model="rowsPerPagePtpia" style="width: 10px">
 	                          <option disabled value="">Rows per Page</option>
 	                          <option>10</option>
 	                          <option>20</option>
@@ -512,7 +512,7 @@
 	            block variant="primary"
 	            v-bind:style="{ color:'white' }"
 	           >
-	            <Strong>Summary of Cancer Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon class="float-right"icon="arrows-expand" v-if="visibleAffectCancer"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+	            <Strong>Summary of Cancer Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" data-html2canvas-ignore="true"></b-icon> <b-icon class="float-right"icon="arrows-expand" v-if="visibleAffectCancer"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 	          </b-button>
 	          <p  v-show="activeSum">List of cancer drugs targeting the mutated gene. Information is obtained from DrugBank, Therapeutic Target Database, IUPHAR, and Santos et al.</p>
 	          <b-collapse id="collapse-4" v-model="visibleAffectCancer" class="mt-2">
@@ -529,7 +529,7 @@
 	                  <label for="checkbox13">Evidence</label>
 	                <input type="checkbox" id="checkbox14" v-model="hidemskpeReferences">
 	                  <label for="checkbox14">References</label>
-	                <button class="downloadbutn float-right " @click="exportToPDF_mskpe()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
+	                <button class="downloadbutn float-right " @click="exportToPDF_mskpe()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon> PDF</button>
 	              </div>
 	            <b-card> 
 	                <table class="table table-hover">
@@ -610,7 +610,7 @@
 	                  <table>
 	                    <tr>
 	                      <td>
-	                        <select v-model="rowsPerPageMskpe" width = 100%>
+	                        <select v-model="rowsPerPageMskpe" style="width: 10px">
 	                          <option disabled value="">Rows per Page</option>
 	                          <option>10</option>
 	                          <option>20</option>
@@ -649,7 +649,7 @@
 	        <Strong>References</Strong><b-icon class="float-right"icon="arrows-expand" v-if="visibleRef"></b-icon> <b-icon class="float-right"icon="arrows-collapse" v-else></b-icon>
 	      </b-button>
 	      <b-collapse id="collapse-4" v-model="visibleRef" class="mt-2">
-	        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button></p>
+	        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon> PDF</button></p>
 	        <b-card> 
 	          <div data-html2canvas-ignore="true">
 	              <v-text-field
@@ -700,7 +700,7 @@
 	            <label for="checkbox16">dbSNP</label>
 	          <input type="checkbox" id="checkbox17" v-model="hideappendixCosmic">
 	            <label for="checkbox17">COSMIC</label>
-	          <button class="downloadbutn float-right " @click="exportToPDF_appendix()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
+	          <button class="downloadbutn float-right " @click="exportToPDF_appendix()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon> PDF</button>
 	        </div>
 	          <b-card>
 	            <table class="table table-hover">
@@ -760,7 +760,7 @@
 	                  <table>
 	                    <tr>
 	                      <td>
-	                        <select v-model="rowsPerPageAppendix" width = 100%>
+	                        <select v-model="rowsPerPageAppendix" style="width: 10px">
 	                          <option disabled value="">Rows per Page</option>
 	                          <option>10</option>
 	                          <option>20</option>
