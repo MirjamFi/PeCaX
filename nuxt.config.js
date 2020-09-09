@@ -74,17 +74,22 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '~/node_modules/bootstrap-vue/nuxt',
+    '@nuxtjs/proxy'
   ],
 
   /*
   ** Axios module configuration
   */
 axios: {
-  proxy: true
+  proxy: true,
+   retry: { retries: 3 }
 },
 
 proxy: {
-  '/sbml4j/': { target: 'http://localhost:8080/sbml4j/', pathRewrite: {'^/sbml4j/': ''}, changeOrigin: true }
+  '/clinvap': {target: 'http://nginx:80/',pathRewrite:{'^/clinvap/':''}},
+  '/db': {target: 'http://arangodb:8529/',pathRewrite:{'^/db/':'/'}},
+  '/network': { target: 'http://sbml4j:8080/sbml4j/', pathRewrite: {'^/network/': ''}},
+  // '/biographvisart':{target: 'http://loving_burnell:3000/BioGraphVisart/', pathRewrite: {'^/biographvisart': ''}}
 },
 
   /*
