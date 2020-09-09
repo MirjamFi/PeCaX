@@ -105,13 +105,13 @@
 		            	<v-text-field v-model="confidenceall" type="number" label="Confidence"></v-text-field>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;" v-show="jsongenerated"> 
-		            	<button class="downloadbutn float-right " @click="download_json()">Download JSON</button>
+		            	<button class="downloadbutn float-right " @click="download_json()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> JSON</button>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;">
-		          		<button class="downloadbutn float-right " @click="exportToPDF_all()">Download PDF</button><br>
+		          		<button class="downloadbutn float-right " @click="exportToPDF_all()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button><br>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;"> 
-		            	<button class="downloadbutn float-right " @click="download_DriverNetwork()">Download Driver Network</button>
+		            	<button class="downloadbutn float-right " @click="download_DriverNetwork()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> Driver Network</button>
 		          	</td>
 		        </tr>
 	      	</table>
@@ -141,7 +141,7 @@
 		              <label for="checkbox3">Confidence</label>
 		            <input type="checkbox" id="checkbox4" v-model="hidemskdgReferences">
 		              <label for="checkbox4">Reference</label>
-		              <button class="downloadbutn float-right " @click="exportToPDF_mskdg()">Download PDF</button>
+		              <button class="downloadbutn float-right " @click="exportToPDF_mskdg()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
 		        </div>
 	          <b-card>
 	            <table class="table table-hover">
@@ -186,11 +186,14 @@
 	                        <i class="form-icon"></i>
 	                    </label>
 	                  </td>
-	                  <td @click="selectItem(item)" :class="{'first': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 0, 'second': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 1,'third': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 2, 'fourth': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 3, 'fifth': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 4}" class="dropdown">
-	                    {{ item.Gene }}<div class="dropdown-content">
-            <a class="page-link" href="/documentation">Documentation</a>
-            <a class="page-link" href="/contact">Contact</a>
-          </div>
+	                  <td @click="selectItem(item)" :class="{'first': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 0, 'second': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 1,'third': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 2, 'fourth': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 3, 'fifth': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 4}">
+	                    {{ item.Gene }}
+	                   	<div class="dropdown"><b-icon class="float-right dropbtn" icon="globe2"></b-icon>
+	                    <div class="dropdown-content">
+				            <a class="page-link" href="/documentation">Documentation</a>
+				            <a class="page-link" href="/contact">Contact</a>
+				          </div>
+				        </div> 
 	                  </td>
 	                  <td v-show="hidemskdgMutation" @click="selectItem(item)" :class="{'first': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 0, 'second': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 1,'third': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 2, 'fourth': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 3, 'fifth': selected.includes(item.Gene) && selected.indexOf(item.Gene) == 4}" class=text-xs-right>
 	                    {{ item.Mutation }}
@@ -260,7 +263,7 @@
 	              <label for="checkbox7">Confidence</label>
 	            <input type="checkbox" id="checkbox8" v-model="hideptp_daReferences">
 	              <label for="checkbox8">References</label>
-	            <button class="downloadbutn float-right " @click="exportToPDF_ptpda()">Download PDF</button>
+	            <button class="downloadbutn float-right " @click="exportToPDF_ptpda()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
 	          </div>
 	          <b-card> 
 	            <table class="table table-hover">
@@ -393,7 +396,7 @@
 	                  <label for="checkbox7">Evidence</label>
 	                <input type="checkbox" id="checkbox8" v-model="hideptp_iaReferences">
 	                  <label for="checkbox8">References</label>
-	                <button class="downloadbutn float-right " @click="exportToPDF_ptpia()">Download PDF</button>
+	                <button class="downloadbutn float-right " @click="exportToPDF_ptpia()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
 	              </div>
 	              <b-card> 
 	                <table class="table table-hover">
@@ -526,7 +529,7 @@
 	                  <label for="checkbox13">Evidence</label>
 	                <input type="checkbox" id="checkbox14" v-model="hidemskpeReferences">
 	                  <label for="checkbox14">References</label>
-	                <button class="downloadbutn float-right " @click="exportToPDF_mskpe()">Download PDF</button>
+	                <button class="downloadbutn float-right " @click="exportToPDF_mskpe()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
 	              </div>
 	            <b-card> 
 	                <table class="table table-hover">
@@ -646,7 +649,7 @@
 	        <Strong>References</Strong><b-icon class="float-right"icon="arrows-expand" v-if="visibleRef"></b-icon> <b-icon class="float-right"icon="arrows-collapse" v-else></b-icon>
 	      </b-button>
 	      <b-collapse id="collapse-4" v-model="visibleRef" class="mt-2">
-	        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref()">Download PDF</button></p>
+	        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button></p>
 	        <b-card> 
 	          <div data-html2canvas-ignore="true">
 	              <v-text-field
@@ -697,7 +700,7 @@
 	            <label for="checkbox16">dbSNP</label>
 	          <input type="checkbox" id="checkbox17" v-model="hideappendixCosmic">
 	            <label for="checkbox17">COSMIC</label>
-	          <button class="downloadbutn float-right " @click="exportToPDF_appendix()">Download PDF</button>
+	          <button class="downloadbutn float-right " @click="exportToPDF_appendix()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
 	        </div>
 	          <b-card>
 	            <table class="table table-hover">
