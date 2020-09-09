@@ -7,7 +7,7 @@
 	    return {
 	    	link: [,
 	        {
-	        	rel:"alternate", type:"application/html", title:"ClinVAP Report Network", href:"/"
+	        	rel:"alternate", type:"application/html", title:"PeCaX", href:"/"
 	        }
 	      ]
 	    }
@@ -33,7 +33,7 @@
 <div>
 	    <div class="topnav" id ="nav">
         <div class="topnav-centered">
-            <a class="page-link border-0 border-dark" href="/">ClinVAP Report Network</a>
+            <a class="page-link border-0 border-dark" href="/">PeCaX</a>
         </div>
         <div class="dropdown topnav-right" id="navAbout">  
             <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
