@@ -2,7 +2,7 @@
   "name": "pecax",
   "version": "1.0.0",
   "description": "PeCaX",
-  "author": "Irene Rui Chen and Mirjam Figaschewski",
+  "author": "Mirjam Figaschewski",
   "private": true,
   "scripts": {
     "dev": "nuxt",

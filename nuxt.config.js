@@ -37,7 +37,8 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+          // 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+          'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'
       }
     ]
   },
@@ -89,7 +90,7 @@ proxy: {
   '/clinvap': {target: 'http://nginx:80/',pathRewrite:{'^/clinvap/':''}},
   '/db': {target: 'http://arangodb:8529/',pathRewrite:{'^/db/':'/'}},
   '/network': { target: 'http://sbml4j:8080/sbml4j/', pathRewrite: {'^/network/': ''}},
-  // '/biographvisart':{target: 'http://loving_burnell:3000/BioGraphVisart/', pathRewrite: {'^/biographvisart': ''}}
+  '/visualization':{target: 'http://biographvisart:3000/BioGraphVisart/', pathRewrite: {'^/visualization/': ''}}
 },
 
   /*

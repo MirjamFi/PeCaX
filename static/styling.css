@@ -2,7 +2,8 @@ body {
   font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
   font-size: 14px;
   position: relative;
-    padding-bottom: 100px;
+  padding-bottom: 100px;
+  margin-left: 10px;
 }
 
 a{
@@ -11,8 +12,8 @@ a{
 
 .dropdown {
   float: right;
-  width: 5vw;
-  margin-right: 2vw;
+  width: 7vw;
+  margin-right: 1vw;
 }
 .dropdown .dropbtn {
   font-size: 1vw;  
@@ -21,7 +22,7 @@ a{
   color: black;
   background-color: inherit;
   font-family: inherit;
-  margin-top: 1vw;
+  margin-top: 2vw;
 }
 
 .dropdown-content {
@@ -45,7 +46,8 @@ a{
   float: left;
   text-align: center;
   padding: 1vw 1vw;
-}
+/*  margin-top: 2vw;
+*/}
 
 .topnav a:hover {
   text-decoration: underline;
@@ -76,6 +78,8 @@ a:visited{color: black}
 .topnav-right {
   float: right;
   font-size: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vw;
 }
 .topnav-left {
   float: left;

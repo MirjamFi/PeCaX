@@ -1,160 +1,100 @@
 var pecaxdb = {
-	createdb(Database, collection_name, assembly){
-		// creating a new instance of Database using a connection string:
-		var db = new Database('/db/');
-
-		// creating a new database called database_name if it does not exist &
-		// Switching to the new database
-
-		var database_name = 'pecax'
-
-		return db.listDatabases().then((names) => {
-			if (names.indexOf(database_name) > -1){
-				db.useDatabase(database_name)
-				return db.get().then(
-					()=> {
-					// Collections are where you keep your actual data
+	createdb(db, collection_name){
+		return db.get().then(()=> {
+			// Collections are where you keep your actual data
+			var collections = db.listCollections().then(res => {return res});
+			return collections.then(res => {
+				if(res.length == 0){
 					var collection = db.collection(collection_name);
-
-					// Creating a collection if it does not exist
-					return collection.exists().then(res => {
-						if(!res){
-							return collection.create().then(
-							  () => { return saveDoc(collection, assembly)},
-							  err => console.error('Failed to create collection:', err)
-							);
+					collection.create().then(
+					()=> {console.log("Collection created ("+collection_name+")."); return false},
+					err => console.error('Failed to create collection:', err))
+				}
+				else{
+					for(let col of res){
+						if(col.name == collection_name){
+							var collection = db.collection(collection_name);
+							return db.query({
+							  query: "FOR d IN @@c RETURN d._key", 
+							  bindVars: { "@c": collection_name},
+							})
+							.then(function (cursor) {
+							    return cursor._result
+							})
 						}
 						else{
-							return saveDoc(collection, assembly)
-						}
-					});
-						},
-					error=> console.error("Error connecting to database: " + error)
-				);
-			} else {
-				return db.createDatabase(database_name).then(
-					()=> {
-						return db.get().then(
-							()=> {
-							// Collections are where you keep your actual data
 							var collection = db.collection(collection_name);
-
-							return collection.create().then(
-							  () => {return saveDoc(collection, assembly)},
-							  err => console.error('Failed to create collection:', err)
-							);
-						},
-							error=> console.error("Error connecting to database: " + error)
-						);},
-					error=> console.error("Error creating database: " + error)
-				);
-			}
-		})
+							collection.create().then(
+							()=> {console.log("Collection created ("+collection_name+")."); return false},
+							err => console.error('Failed to create collection:', err))
+						}
+					}
+				}
+			});
+		})			
 	},
-	updateEntry(Database, database_name, collection_name, jobid, uuid){
-		console.log("uuid: ", uuid)
-		// creating a new instance of Database using a connection string:
-		var db = new Database('/db/');
-
+	enterdb(database, collection_name, assembly){
+		var db = database.useDatabase('pecax');
+		return db.get().then(
+			()=> {
+			// Collections are where you keep your actual data
+				var collection = db.collection(collection_name);
+				return saveDoc(collection, assembly)
+			},
+			error=> console.error("Error connecting to database: " + error)
+			);
+	},
+	updateEntry(database, collection_name, jobid, uuid){
+		console.log(collection_name, jobid, uuid)
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 
-		db.listDatabases().then((names) => {
-			if (names.indexOf(database_name) > -1){
-				db.useDatabase(database_name);
-			} else {
-				return "No database found."
-			}
-		}).then (() => {
-			db.get().then(
-				()=> {
+		var db = database.useDatabase('pecax');
+		return db.get().then(
+			()=> {
 				// Collections are where you keep your actual data
 				var collection = db.collection(collection_name);
 
 				// Creating a collection if it does not exist
 				collection.exists().then(() => {
 					collection.document(jobid+'.vcf').then(doc => {
-						console.log("doc.uuids: ", doc.uuids)
 						var uuidslist = doc.uuids
 						uuidslist.push(uuid)
-						console.log(uuidslist)
 						collection.update(doc, {uuids:uuidslist});
-						printDoc(collection, doc);
+						// printDoc(collection, doc);
 					})
 				});},
 				error=> console.error("Error connecting to database: " + error)
 			);
-		});
 	},
-	addJson(Database, database_name, collection_name, idkey, json, assembly){
-		// creating a new instance of Database using a connection string:
-		var db = new Database('/db/');
-
+	addJson(database, collection_name, idkey, json, assembly){
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
+		var db = database.useDatabase('pecax');
+		return db.get().then(
+			()=> {
+			// Collections are where you keep your actual data
+			var collection = db.collection(collection_name);
 
-		db.listDatabases().then((names) => {
-			if (names.indexOf(database_name) > -1){
-				db.useDatabase(database_name);
-			} else {
-				return "No database found."
-			}
-		}).then (() => {
-			db.get().then(
-				()=> {
-				// Collections are where you keep your actual data
-				var collection = db.collection(collection_name);
-
-				// Creating a collection if it does not exist
-				collection.exists().then(exists => {
-					console.log(exists)
-					var doc = {
-					  _key: idkey,
-					  assembly: assembly,
-					  json_file: json,
-					  uuids:[]
-					};
-					if(!exists){
-						collection.create().then(
-							collection.save(doc).then(
-							  	meta => {return ["new", doc._key]},
-							  	err => console.error('Failed to save document:', err)
-							)
-						)
-					}
-					else{
-						collection.save(doc).then(
-						  	meta => {return ["new", doc._key]},
-						  	err => console.error('Failed to save document:', err)
-						)
-					}
-					// var doc_old = collection.document(idkey).then(doc => {
-					// 	collection.update(doc, { _key: idkey, assembly: assembly, json_file:json});
-					// 	// printDoc(collection, doc);
-					// })
-
-				});},
-				error=> console.error("Error connecting to database: " + error)
-			);
-		});
+				collection.document(idkey).then(doc => {
+					// printDoc(collection, doc);
+					collection.update(doc, {json_file:json});
+					// printDoc(collection, doc);
+				})
+				
+			},
+			error=> console.error("Error connecting to database: " + error)
+		)
 	},
-	getJsonFromJobID(Database, aqlQuery, database_name, collection_name, jobid){
+	getJsonFromJobID(db, aqlQuery, collection_name, jobid){
+		console.log(collection_name, jobid)
 		jobid = jobid + '.vcf';
-		// creating a new instance of Database using a connection string:
-		var db = new Database('/db/');
-
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 
-		return db.listDatabases().then((names) => {
-			if (names.indexOf(database_name) > -1){
-				db.useDatabase(database_name);
-			} else {
-				return "No database found."
-			}
-		}).then (() => {
-			return db.get().then(
-				()=> {
+		var db = db.useDatabase('pecax');
+		return db.get().then(
+			()=> {
 				// Collections are where you keep your actual data
 				var collection = db.collection(collection_name);
 
@@ -170,7 +110,6 @@ var pecaxdb = {
 				});},
 				error=> console.error("Error connecting to database: " + error)
 			);
-		});	
 	}
 }
 
@@ -185,7 +124,7 @@ function saveDoc(collection, assembly){
 		};
 		// creating a document
 		return collection.save(doc).then(
-		  meta => {return ["new", doc._key]},
+		  meta => { return ["new", doc._key]},
 		  err => console.error('Failed to save document:', err)
 		);
 	});

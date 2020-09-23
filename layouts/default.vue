@@ -1,28 +1,10 @@
-<template>
+<!-- <template>
   <v-app dark>
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-   <!--  <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-    </v-navigation-drawer> -->
   </v-app>
 </template>
 
@@ -37,6 +19,23 @@ export default {
       right: true,
       rightDrawer: false,
     }
+  }
+}
+</script> -->
+
+<template>
+  <div>
+    <Navbar/>
+    <nuxt/>
+  </div>
+</template>
+
+<script>
+import Navbar from '~/components/Navbar'
+
+export default {
+  components: {
+    Navbar
   }
 }
 </script>
