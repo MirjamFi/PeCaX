@@ -47,7 +47,7 @@
 		            	<v-text-field v-model="confidenceall" type="number" label="Confidence"></v-text-field>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;" v-show="jsongenerated"> 
-		            	<button class="downloadbutn float-right " @click="download_json()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon><p class="float-right"> JSON</p></button>
+		            	<button class="downloadbutn float-right " @click="download_json()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon>JSON</button>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;">
 		          		<button class="downloadbutn float-right " @click="exportToPDF_all()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button><br>
