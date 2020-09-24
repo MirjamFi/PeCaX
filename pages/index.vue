@@ -37,9 +37,6 @@
 	  },
 	  methods: {
 	  	loggedIn(){
-	  		if(!localStorage.getItem("username")){
-	  			document.getElementById('new').style.visibility = "hidden"
-	  		}
 		  	// creating a new database called database_name if it does not exist &
 			// Switching to the new database
 			var db = new arangodb.Database('/db/');
@@ -84,6 +81,9 @@
 				}
 			})
 		}
+	},
+	created(){
+		localStorage. clear();
 	}
 }
 
