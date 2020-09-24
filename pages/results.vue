@@ -1004,6 +1004,7 @@
 		    		this.getGraphFromGenes(drivergenes, jobid, username)})
 		    }
 		    else if(uuids){
+		    	this.uuids = uuids
 		    	this.getGraphFromUUID(jobid, uuids, username)
 		    }
 	    },
@@ -1034,7 +1035,7 @@
 						      	'user':username+'/'+jobid.toString()
 						    },
 						    method: 'POST'
-					  	})
+				  		})
 			  		.then(response => { 
 			  			this.uuids.push(response.data.uuid);
 			  			this.updateDbEntry(jobid, response.data.uuid, username)
