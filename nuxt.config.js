@@ -89,7 +89,7 @@ axios: {
 proxy: {
   '/clinvap': {target: 'http://nginx:80/',pathRewrite:{'^/clinvap/':''}},
   '/db': {target: 'http://arangodb:8529/',pathRewrite:{'^/db/':'/'}},
-  '/network': { target: 'http://sbml4j:8080/sbml4j/', pathRewrite: {'^/network/': ''}},
+  '/network': { target: 'http://sbml4j:8080/sbml4j/', pathRewrite: {'^/network/': '/'}},
   '/visualization':{target: 'http://biographvisart:3000/BioGraphVisart/', pathRewrite: {'^/visualization/': ''}}
 },
 
