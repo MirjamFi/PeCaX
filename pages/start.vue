@@ -54,8 +54,8 @@
 			        <input type="file" accept=".json"id="file" ref="jsonfile" style="width: 250px"/>
 			        <button class= 'butn' v-on:click="
 			          showJSON()">Submit .JSON</button><br>
-			         <input type="text" name="vcfID" ref="jobid" placeholder="Job ID" style="width: 250px"/>
-			         <button class= 'butn' v-on:click="
+			         <input v-show="allowJobId" type="text" name="vcfID" ref="jobid" placeholder="Job ID" style="width: 250px"/>
+			         <button v-show="allowJobId" class= 'butn' v-on:click="
 			          showTable=true;
 			          getJsonFromJobID();
 			          ">Submit Job ID</button>
@@ -96,6 +96,7 @@
 	        jobid:"",
 	        filename:"",
 	        username:'',
+	        allowJobId:true,
 	      }
 	    },
 	    methods: {
@@ -141,6 +142,11 @@
 		    	assembly.then(res => {
 		    		var as = res[0]; 
 		    		this.jobid = res[1].split(".")[0];
+		    		var ids = localStorage.getItem("jobids");
+		    		if(ids == "undefined"){
+		    			ids = [];
+		    		}
+					localStorage.setItem("jobids", ids.push(this.jobid))
 		    		this.assembly = this.$refs.assembly.value
 		    		this.vcffile = new File([this.$refs.vcffile.files[0]], this.username+'_'+this.jobid+'.vcf');
 		    		this.filename = this.$refs.vcffile.files[0].name;
@@ -148,6 +154,9 @@
 		    	}) 	
 		    },
 		    analyzeVCF(file, assemblyparam, jobid, username){
+		    	localStorage.setItem("assembly", assemblyparam);
+		    	localStorage.setItem("username", username);
+		    	localStorage.setItem("jobid", jobid);
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
 		    	formData.append("assembly", assemblyparam)
@@ -171,6 +180,11 @@
 	          	var url = '/results?username='+localStorage.getItem("username")+'&jobid='+this.$refs.jobid.value 
 		      	document.location.href = url;
 		    }
+	  	},
+	  	created(){
+	  		if(localStorage.getItem("jobids") == "undefined"){
+	  			this.allowJobId = false;
+	  		}
 	  	}
 	}
 </script>

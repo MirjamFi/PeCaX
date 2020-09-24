@@ -56,7 +56,7 @@
 		            	<button class="downloadbutn float-right " @click="download_DriverNetwork()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> Driver Network</button>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;"> 
-		            	<button class="downloadbutn float-right " @click="show_DriverNetwork()">Show Networks</button>
+		            	<button class="downloadbutn float-right " @click="show_DriverNetwork()" ref="shownetworks" v-show="hasdrivergenes">Show Networks</button>
 		          	</td>
 		        </tr>
 	      	</table>
@@ -759,7 +759,7 @@
         showNetwork:false,
 
         jsongenerated:false,
-
+        hasdrivergenes:true,
         drivergenes:[],
 
         currentSort:'Gene',
@@ -927,35 +927,29 @@
     },
     methods: {
     	startAnalysis(){
-    		var url = document.location.href;
-		    var params = url.split('?')[1].split('&');
-		    var data = {}; 
-		    var tmp;
-		    for (var i = 0, l = params.length; i < l; i++) {
-		         tmp = params[i].split('=');
-		         data[tmp[0]] = tmp[1];
-		    }
-		    if(data["username"]){
-		    	this.username = data["username"]
-		    }
-		    if(data["jobid"] && data["assembly"]){
-			    this.jobid = data["jobid"];
-	    		this.assembly = data["assembly"];
-	    		this.getVcfStatus(this.jobid+'.vcf', data["username"])
+		    if(localStorage.getItem("username") && localStorage.getItem("jobid") && localStorage.getItem("assembly")){
+		    	this.username = localStorage.getItem("username")
+			    this.jobid = localStorage.getItem("jobid");
+	    		this.assembly = localStorage.getItem("assembly");
+	    		this.getVcfStatus(this.jobid+'.vcf', this.username)
 	    	}
-	    	else if(data["json"] && !data["jobid"]){
+	    	else if( localStorage.getItem("username") && localStorage.getItem("json") && !localStorage.getItem("jobid")){
+	    		this.username = localStorage.getItem("username")
 	    		this.showStatus = false;
-	    		this.showJSON(data["username"], JSON.parse(localStorage.getItem("json")))
+	    		this.hasdrivergenes = false;
+	    		this.showJSON(this.username, JSON.parse(localStorage.getItem("json")))
 	    	}
-	    	else if(data["json"] && data["jobid"] && data["uudis"]){
-	    		this.jobid = data["jobid"];
+	    	else if( localStorage.getItem("username") && localStorage.getItem("json") && localStorage.getItem("jobid") && localStorage.getItem("uudis")){
+	    		this.username = localStorage.getItem("username")
+	    		this.jobid = localStorage.getItem("jobid");
 	    		this.showStatus = false;
-	    		this.showJSON(data["username"], Json.parse(localStorage.getItem("json")), localStorage.getItem("jobid"), localStorage.getItem("uudis"))
+	    		this.showJSON(this.username, Json.parse(localStorage.getItem("json")), this.username, localStorage.getItem("uudis"))
 	    	}
-	    	else if(data["jobid"]){
-	    		this.jobid = data["jobid"];
+	    	else if(localStorage.getItem("username") && localStorage.getItem("jobid")){
+	    		this.username = localStorage.getItem("username")
+	    		this.jobid = localStorage.getItem("jobid");
 	    		this.showStatus = false;
-	    		this.getJsonFromJobID(data["jobid"], data["username"])
+	    		this.getJsonFromJobID(this.jobid, this.username)
 	    	}
     	},
     	getVcfStatus(jobid, username){
@@ -1042,7 +1036,7 @@
 						    method: 'POST'
 					  	})
 			  		.then(response => { 
-			  			this.uuids.pudh(response.data.uuid);
+			  			this.uuids.push(response.data.uuid);
 			  			this.updateDbEntry(jobid, response.data.uuid, username)
 						return axios.get('/network/networks/'+response.data.uuid, {
 						    headers:{
@@ -1275,6 +1269,8 @@
 	    	graphml.then(function(response){
 				if(response == undefined){
 					alert("No network found for "+gene)
+					this.$refs.loader1.style.visibility="hidden";
+					this.showNetwork = false;
 					return
 				}
 				else{

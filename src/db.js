@@ -87,7 +87,6 @@ var pecaxdb = {
 		)
 	},
 	getJsonFromJobID(db, aqlQuery, collection_name, jobid){
-		console.log(collection_name, jobid)
 		jobid = jobid + '.vcf';
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database

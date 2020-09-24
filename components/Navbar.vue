@@ -12,7 +12,7 @@
     <div class="topnav-centered">
       <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
     </div>
-    <div class="topnav-right" id="new">
+    <div class="topnav-right" ref="account">
        <a class="page-link border-0 border-dark" href="/profile">My Account</a>
       <!-- <button class="dropdown dropbtn">My Account<b-icon data-html2canvas-ignore="true" icon="list"></b-icon> -->
         <!-- <div class="dropdown-content"> -->

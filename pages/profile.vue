@@ -5,13 +5,13 @@
       <div>
         <table class="float-left">
           <tr>
-            <td style="margin-right: 3px">Username: </td>
+            <td style="padding:0 15px;">Username: </td>
             <td> {{ username }}</td>
           </tr>
           <tr>
-            <td> Job IDs</td>
-            <td v-for="jobid of jobids">
-              <a v-bind:href="'/results?username='+username+'&jobid='+jobid">{{jobid }}</a>
+            <td style="padding:0 15px;"> Job IDs:</td>
+            <td v-for="jobid of jobids" >
+              <a v-on:click="showJob(jobid)"> {{jobid }} </a><!--v-if="jobid!=[]" v-bind:href="'/results?username='+username+'&jobid='+jobid"-->
             </td>
           </tr>
         </table>
@@ -31,11 +31,10 @@ export default {
   },
   methods: {
     getInfo(){
-      
       this.username = localStorage.getItem("username");
       var ids = localStorage.getItem("jobids")
-      if(ids == false || ids == []){
-        this.jobids = "none"
+      if(ids == false || ids == [] || ids == "undefined" || ids == null){
+        this.jobids = []
       }
       else{
         ids = ids.split(",")
@@ -43,6 +42,12 @@ export default {
           this.jobids.push(id.split(".")[0])
         }
       }
+    },
+    showJob(jobid){
+      localStorage.setItem("username", this.username);
+      localStorage.setItem("jobid", jobid)
+      var url = '/results?username='+this.username+'&jobid='+jobid
+      document.location.href = url;
     }
   },
   created(){
