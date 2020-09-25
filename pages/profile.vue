@@ -5,12 +5,12 @@
       <div>
         <table class="float-left">
           <tr>
-            <td style="padding:0 15px;">Username: </td>
+            <td style="padding:0 15px;">User: </td>
             <td> {{ username }}</td>
           </tr>
           <tr>
             <td style="padding:0 15px;"> Job IDs:</td>
-            <td v-for="jobid of jobids" >
+            <td v-for="jobid of jobids" style="padding:0 10px;">
               <a v-on:click="showJob(jobid)"> {{jobid }} </a><!--v-if="jobid!=[]" v-bind:href="'/results?username='+username+'&jobid='+jobid"-->
             </td>
           </tr>
