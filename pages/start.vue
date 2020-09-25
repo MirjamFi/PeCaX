@@ -144,9 +144,9 @@
 		    		this.jobid = res[1].split(".")[0];
 		    		var ids = localStorage.getItem("jobids");
 		    		if(ids == "undefined"){
-		    			ids = [];
+		    			ids = "";
 		    		}
-					localStorage.setItem("jobids", ids.push(this.jobid))
+					localStorage.setItem("jobids", ids+","+this.jobid)
 		    		this.assembly = this.$refs.assembly.value
 		    		this.vcffile = new File([this.$refs.vcffile.files[0]], this.username+'_'+this.jobid+'.vcf');
 		    		this.filename = this.$refs.vcffile.files[0].name;
