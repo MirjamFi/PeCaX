@@ -178,10 +178,13 @@
 	              <div>
 	                Confidence shows the number of driver gene sources that includes the gene. The sources are Vogelstein et al., Rubio-Perez et al., TSGene DB, COSMIC DB, UniProt.
 	              </div>
-	            </template>         	
+	            </template>       	
 	          </b-card>
 	        </b-collapse>
 	    </div>
+	    	    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+					<iframe class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart" allowfullscreen></iframe>
+				</div>  
 	      <br>
 
 	    <div ref = "content_ptpda" id="ptpda_content">
@@ -994,6 +997,7 @@
 	    	if(jobid == null){
 	    		return
 	    	}
+	    	// this.getGraphVis();
 	    	if(!uuids){
 		        var drivergenes = axios.get('clinvap/results/'+username+'_'+jobid.split(".")[0] + ".json"+'/tables/driver-genes')
 		    		.then(res => {return res.data})
@@ -1024,7 +1028,7 @@
 				  });
 				this.showNetwork = false;
 			  	this.$refs.loader1.style.visibility="hidden";		
-				window.open("http://localhost:3000/BioGraphVisart?username="+username+"&jobid="+jobid)
+				// window.open("http://localhost:3000/BioGraphVisart?username="+username+"&jobid="+jobid)
 
 			})
 		},
@@ -1083,7 +1087,7 @@
 						.catch(function (error) {
 						    console.log(error);
 					 	});		
-						window.open("http://localhost:3000/BioGraphVisart/?username="+username+"&uuid="+uuid) 
+						// window.open("http://localhost:3000/BioGraphVisart/?username="+username+"&uuid="+uuid) 
 					})
 			  	.catch(function (error) {
 				    console.log(error);
@@ -1269,7 +1273,7 @@
 	    		.then(response => graphml = response)
 	    	graphml.then(function(response){
 				if(response == undefined){
-					alert("No network found for "+gene)
+					alert("No network found. ")
 					this.$refs.loader1.style.visibility="hidden";
 					this.showNetwork = false;
 					return
