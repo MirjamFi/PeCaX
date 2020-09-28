@@ -962,7 +962,7 @@
 				})
 				.catch(error => {
 				    console.log(error);
-			    	if(error.response.status == 404){
+			    	if(error.response.status == 404 || error.response.status == 502){
 			    		setTimeout(function(scope){scope.getVcfStatus(jobid, username)}, 10000, this);
 			    	}
 			    	else{
@@ -971,13 +971,16 @@
 		 		})
 			status.then(res => {
 				var stop = false
-			  	if(res == "Finished" && this.status != "Finished" && !stop){
+			  	if(res == "Success,Finished"  && this.status != "Finished" && !stop){
 			  		this.displayJSON(jobid.split(".")[0], username);
 			  		this.status = res;
-			  		// this.$refs.loader1.style.visibility="hidden";
 			  		this.showNetwork=true;
-			  		// this.$refs.loader2.style.visibility="visible";
 			  		stop = true
+			  		return
+			  	}
+			  	else if(res == "Failed,Finished" && this.status != "Finished" && !stop){
+			  		this.status = res;
+			  		stop = true;
 			  		return
 			  	}
 			  	else{
@@ -1020,7 +1023,7 @@
 					alert("No network found for "+genes)
 					return
 				}
-				axios.post('http://localhost:3000/BioGraphVisart/vis?username='+username+"&jobid="+jobid, response)
+				axios.post('/visualization/vis?username='+username+"&jobid="+jobid, response)
 				  .then(function (response) {
 				  })
 				  .catch(function (error) {
@@ -1103,8 +1106,9 @@
 	    displayJSON(jobid, username){
 	    	this.showTable=true;
 	    	var jsonReport = axios.get('/clinvap/results/'+username+'_'+jobid+'.json')
-	    		.then(res=>{return res.data})
+	    		.then(res=>{console.log(res.data);return res.data})
 	    	jsonReport.then(res => {
+	    		console.log(res)
 	    		this.showJSON(username, res, jobid);
 	    	 	this.jsonReport = res;
 	    		this.storeJsonInDB(res, jobid, username)})

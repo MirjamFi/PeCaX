@@ -45,7 +45,6 @@ var pecaxdb = {
 			);
 	},
 	updateEntry(database, collection_name, jobid, uuid){
-		console.log(collection_name, jobid, uuid)
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 
