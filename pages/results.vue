@@ -56,7 +56,7 @@
 		            	<button class="downloadbutn float-right " @click="download_DriverNetwork()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> Driver Network</button>
 		          	</td>
 		          	<td style="padding:0 15px 0 15px;"> 
-		            	<button class="downloadbutn float-right " @click="show_DriverNetwork()" ref="shownetworks" v-show="hasdrivergenes">Show Networks</button>
+		            	<button class="downloadbutn float-right " @click="show_DriverNetwork()" ref="shownetworks" v-show="hasdrivergenes">Show Network</button>
 		          	</td>
 		        </tr>
 	      	</table>
@@ -75,7 +75,7 @@
 	         >
           		<Strong class="text-center" style="color: white">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
         	</b-button>
-        	<p  v-show="activeDrivers">List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein et. al, Uniprot, TSGene, IntoGen and COSMIC. </p>
+        	<p  v-show="activeDrivers">List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein et al., Uniprot, TSGene, IntoGen and COSMIC. </p>
        		<b-collapse id="collapse-4" v-model="visibleDrivers" class="mt-2">
 		        <div data-html2canvas-ignore="true">
 		            <input type="checkbox" id="checkbox1" v-model="hidedriver_tableMutation">
@@ -96,7 +96,7 @@
 	            <table class="table table-hover">
 	              <thead>
 	                <tr data-html2canvas-ignore="true">
-	                  <td></td>
+	                  <!-- <td></td> -->
 	                  <td>
 	                    <v-text-field v-model="genes1" type="string" label="Gene"></v-text-field>
 	                  </td>
@@ -120,12 +120,12 @@
 	                  </td>
 	                </tr>
 	                <tr>
-	                  <th data-html2canvas-ignore="true">
+	                  <!-- <th data-html2canvas-ignore="true">
 	                    <label class="form-checkbox">
 	                      <input type="checkbox" v-model="selectAll" @click="select(driver_table)">
 	                      <i class="form-icon"></i>
 	                    </label>
-	                  </th>
+	                  </th> -->
 	                  <th @click="sortMskdg('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                  <th v-show="hidedriver_tableMutation" @click="sortMskdg('Mutation')">Mutation <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                  <th v-show="hidedriver_tableConsequence" @click="sortMskdg('Consequence')">Consequence <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirCons1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
@@ -137,12 +137,12 @@
 	              </thead>
 	              <tbody>
 	                <tr v-for="(item, index) in sortedMskdg" :key="item.gene" v-if="index < startRow + rowsPerPage && index >= startRow">
-	                  <td class="text-xs-center" data-html2canvas-ignore="true">      
+	                  <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                    <label class="form-checkbox">
 	                        <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                        <i class="form-icon"></i>
 	                    </label>
-	                  </td>
+	                  </td> -->
 	                  <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.ene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}">
 	                    {{ item.gene}}
 	                   	<div class="dropdown" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="globe2"></b-icon>
@@ -234,7 +234,7 @@
 	            <table class="table table-hover">
 	              <thead>
 	                <tr data-html2canvas-ignore="true">
-	                  <td></td>
+	                  <!-- <td></td> -->
 	                  <td>
 	                    <v-text-field v-model="genes2" type="string" label="Gene"></v-text-field>
 	                  </td>
@@ -258,12 +258,12 @@
 	                  </td>
 	                </tr>
 	                <tr>
-	                  <th data-html2canvas-ignore="true">
+	                  <!-- <th data-html2canvas-ignore="true">
 	                    <label class="form-checkbox">
 	                      <input type="checkbox" v-model="selectAll" @click="select(direct_pharm_table )">
 	                      <i class="form-icon"></i>
 	                    </label>
-	                  </th>
+	                  </th> -->
 	                  <th @click="sortPtpda('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene2 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                  <th v-show="hidedirect_pharm_tableMutation" @click="sortPtpda('Mutation')">Mutation <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut2 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                  <th v-show="hidedirect_pharm_tableTherapy" @click="sortPtpda('Therapy')">Therapy <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTherapy2 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
@@ -275,12 +275,12 @@
 	              </thead>
 	              <tbody>
 	                <tr v-for="(item, index) in sortedPtpda" :key="item.gene" v-if="index < startRowPtpda + rowsPerPagePtpda && index >= startRowPtpda ">
-	                  <td class="text-xs-center" data-html2canvas-ignore="true">      
+	                  <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                    <label class="form-checkbox">
 	                        <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                        <i class="form-icon"></i>
 	                    </label>
-	                  </td>
+	                  </td> -->
 	                  <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}">
 	                    {{ item.gene}}
 	                  </td>
@@ -380,7 +380,7 @@
 	                <table class="table table-hover">
 	                  <thead>
 	                    <tr data-html2canvas-ignore="true">
-	                      <td></td>
+	                      <!-- <td></td> -->
 	                      <td>
 	                        <v-text-field v-model="genes3" type="string" label="Gene"></v-text-field>
 	                      </td>
@@ -404,12 +404,12 @@
 	                      </td>
 	                    </tr>
 	                    <tr>
-	                      <th data-html2canvas-ignore="true">
+	                     <!--  <th data-html2canvas-ignore="true">
 	                        <label class="form-checkbox">
 	                          <input type="checkbox" v-model="selectAll" @click="select(pharm_table )">
 	                          <i class="form-icon"></i>
 	                        </label>
-	                      </th>
+	                      </th> -->
 	                      <th @click="sortPtpia('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene3 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                      <th v-show="hidepharm_tableMutation" @click="sortPtpia('Mutation')">Mutation <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut3 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                      <th v-show="hidepharm_tableTherapy" @click="sortPtpia('Therapy')">Therapy<b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTherapy3 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
@@ -421,12 +421,12 @@
 	                  </thead>
 	                  <tbody>
 	                    <tr v-for="(item, index) in sortedPtpia" :key="item.gene" v-if="index < startRowPtpia + rowsPerPagePtpia && index >= startRowPtpia ">
-	                      <td class="text-xs-center" data-html2canvas-ignore="true">      
+	                      <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                        <label class="form-checkbox">
 	                            <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                            <i class="form-icon"></i>
 	                        </label>
-	                      </td>
+	                      </td> -->
 	                      <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}">
 	                        {{ item.gene}}
 	                      </td>
@@ -502,7 +502,7 @@
 	                <table class="table table-hover">
 	                  <thead>
 	                    <tr data-html2canvas-ignore="true">
-	                      <td></td>
+	                      <!-- <td></td> -->
 	                      <td>
 	                        <v-text-field v-model="genes4" type="string" label="Gene"></v-text-field>
 	                      </td>
@@ -517,12 +517,12 @@
 	                      </td>
 	                    </tr>
 	                    <tr>
-	                      <th data-html2canvas-ignore="true">
+	                      <!-- <th data-html2canvas-ignore="true">
 	                        <label class="form-checkbox">
 	                          <input type="checkbox" v-model="selectAll" @click="select(mechanistic_drug_table)">
 	                          <i class="form-icon"></i>
 	                        </label>
-	                      </th>
+	                      </th> -->
 	                      <th @click="sortMskpe('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene4 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                      <th v-show="hidemechanistic_drug_tableStatus" @click="sortMskpe('Status')">Status<b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirStatus4 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                      <th v-show="hidemechanistic_drug_tableTherapy" @click="sortMskpe('Therapy')">Therapy<b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTherapy4 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
@@ -531,12 +531,12 @@
 	                  </thead>
 	                  <tbody>
 	                    <tr v-for="(item, index) in sortedMskpe" :key="item.gene" v-if="index < startRowMskpe + rowsPerPageMskpe && index >= startRowMskpe ">
-	                      <td class="text-xs-center" data-html2canvas-ignore="true">      
+	                      <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                        <label class="form-checkbox">
 	                            <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                            <i class="form-icon"></i>
 	                        </label>
-	                      </td>
+	                      </td> -->
 	                      <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}">
 	                        {{ item.gene }}
 	                      </td>
@@ -611,7 +611,7 @@
 	            <table class="table table-hover">
 	              <thead>
 	                <tr data-html2canvas-ignore="true">
-	                  <td></td>
+	                  <!-- <td></td> -->
 	                  <td>
 	                    <v-text-field v-model="genes5" type="string" label="Gene"></v-text-field>
 	                  </td>
@@ -635,12 +635,12 @@
 	                  </td>
 	                </tr>
 	                <tr>
-	                  <th data-html2canvas-ignore="true">
+	                 <!--  <th data-html2canvas-ignore="true">
 	                    <label class="form-checkbox">
 	                      <input type="checkbox" v-model="selectAll" @click="select(direct_pharm_table )">
 	                      <i class="form-icon"></i>
 	                    </label>
-	                  </th>
+	                  </th> -->
 	                  <th @click="sortadEff('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                  <th v-show="hide_adverse_tableMutation" @click="sortadEff('Mutation')">Mutation <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                  <th v-show="hide_adverse_tableTherapy" @click="sortadEff('Therapy')">Therapy <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTherapy5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
@@ -652,12 +652,12 @@
 	              </thead>
 	              <tbody>
 	                <tr v-for="(item, index) in sortedadEff" :key="item.gene" v-if="index < startRowadEff + rowsPerPageadEff && index >= startRowadEff ">
-	                  <td class="text-xs-center" data-html2canvas-ignore="true">      
+	                  <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                    <label class="form-checkbox">
 	                        <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                        <i class="form-icon"></i>
 	                    </label>
-	                  </td>
+	                  </td> -->
 	                  <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} ">
 	                    {{ item.gene}}
 	                  </td>
@@ -785,7 +785,7 @@
 	            <table class="table table-hover">
 	                  <thead>
 	                    <tr data-html2canvas-ignore="true">
-	                      <td></td>
+	                      <!-- <td></td> -->
 	                      <td>
 	                        <v-text-field v-model="genes6" type="string" label="Gene"></v-text-field>
 	                      </td>
@@ -806,12 +806,12 @@
 	                      </td>
 	                    </tr>
 	                    <tr>
-	                      <th data-html2canvas-ignore="true">
+	                      <!-- <th data-html2canvas-ignore="true">
 	                        <label class="form-checkbox">
 	                          <input type="checkbox" v-model="selectAll" @click="select(appendix_variant_table)">
 	                          <i class="form-icon"></i>
 	                        </label>
-	                      </th>
+	                      </th> -->
 	                      <th @click="sortAppendix('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene6 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                      <th v-show="hideappendix_variant_tableMutation" @click="sortAppendix('Mutation')">Mutation <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut6 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
 	                      <th v-show="hideappendix_variant_tableConsequence" @click="sortAppendix('Consequence')">Consequence <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirConsequence6 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
@@ -822,12 +822,12 @@
 	                  </thead>
 	                  <tbody>
 	                    <tr v-for="(item, index) in sortedAppendix" :key="item.gene" v-if="index < startRowAppendix + rowsPerPageAppendix && index >= startRowAppendix ">
-	                      <td class="text-xs-center" data-html2canvas-ignore="true">      
+<!-- 	                      <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                        <label class="form-checkbox">
 	                            <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                            <i class="form-icon"></i>
 	                        </label>
-	                      </td>
+	                      </td> -->
 	                      <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} ">
 	                        {{ item.gene }}
 	                      </td>
@@ -992,7 +992,7 @@
         visibleAffect: true,
         visibleAffectCivic: false,
         visibleAffectCancer: false,
-        visibleEffect: true,
+        visibleEffect: false,
         visibleRef: false,
         visibleAppendix: false,
         activeDrivers: false,
@@ -1190,15 +1190,10 @@
 	    	if(jobid == null){
 	    		return
 	    	}
-	    	// this.getGraphVis();
 	    	if(!uuids){
-		        var drivergenes = axios.get('clinvap/results/'+username+'_'+jobid.split(".")[0] + ".json"+'/tables/driver-genes')
-		    		.then(res => {console.log(res.data);return res.data})
-		    	drivergenes.then(res => { 
-		    		let result = res.map(a => a.gene); 
-		    		drivergenes = result;})
-		    	drivergenes.then(res=>{
-		    		this.getGraphFromGenes(drivergenes, jobid, username)})
+		        var genes = this.driver_table.map(a => a.gene); 
+	    		this.drivergenes = genes;
+	    		this.getGraphFromGenes(genes, jobid, username)
 		    }
 		    else if(uuids){
 		    	this.uuids = uuids
@@ -1263,9 +1258,8 @@
 	    // handleFileUpload(){
 	    //     this.file = this.$refs.file.files[0];
 	    // },
-	    getGraphFromUUID(jobid, uuids, username){
+	    getGraphFromUUID(jobid, uuid, username){
 	    	var jobid = jobid.split(".")[0]
-	    	for(let uuid of uuids){
 				var graphml =  axios.get('/network/networks/'+uuid, {
 				    headers:{
 				      	'user':username+'/'+jobid
@@ -1285,7 +1279,6 @@
 			  	.catch(function (error) {
 				    console.log(error);
 			 	});	
-			}
 	    },
 	    updateDbEntry(jobid, uuid, username){
 	    	if(jobid.endsWith(".vcf")){
@@ -1296,9 +1289,8 @@
 	    displayJSON(jobid, username){
 	    	this.showTable=true;
 	    	var jsonReport = axios.get('/clinvap/results/'+username+'_'+jobid+'.json')
-	    		.then(res=>{console.log(res.data);return res.data})
+	    		.then(res=>{return res.data})
 	    	jsonReport.then(res => {
-	    		console.log(res)
 	    		this.showJSON(username, res, jobid);
 	    	 	this.jsonReport = res;
 	    		this.storeJsonInDB(res, jobid, username)})
@@ -1486,10 +1478,14 @@
 	        }, 1);
 	    },
 	    download_DriverNetwork(){
-	    	var graphml = this.getGraphforGene(this.jobid, this.drivergenes, this.username)
-	    		.then(response => graphml = response)
-	    	graphml.then(function(response){
-				if(response == undefined){
+	    	var graphml = axios.get('/network/networks/'+this.uuids[0], {
+				    headers:{
+				      	'user':this.username+'/'+this.jobid
+				    },
+				    method: 'GET'
+			  	}).then(
+					response => {
+				if(response.data == undefined){
 					alert("No network found. ")
 					this.$refs.loader1.style.visibility="hidden";
 					this.showNetwork = false;
@@ -1497,7 +1493,7 @@
 				}
 				else{
 					var element = document.createElement('a');
-					element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(response));
+					element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(response.data));
 					element.setAttribute('download', "drivergenes.graphml");
 
 					element.style.display = 'none';
@@ -1795,9 +1791,7 @@
 	},
 	computed: {
 	    sortedMskdg:function() {
-	    	console.log(this.currentSort)
 	        var sorted = this.driver_table.sort((a,b) => {
-	        	console.log(a, b)
 	          let modifier = 1;
 	          if(this.currentSortDir === 'desc') modifier = -1;
 	          if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
