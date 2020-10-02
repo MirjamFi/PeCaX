@@ -62,142 +62,148 @@
 	      	</table>
 	      	<!-- <button data-html2canvas-ignore="true" class="butn float-right "@click=function(){getGenes(checkedGenes)}>Network</button> -->
       	</div>
-    	<div ref = "content_driver_table" id="driver_table_content">
-	        <b-button
-	          :class="visibleDrivers ? null : 'collapsed'"
-	          :aria-expanded="visibleDrivers ? 'true' : 'false'"
-	          aria-controls="collapse-4"
-	          @click="visibleDrivers = !visibleDrivers"
-	          v-bind:style="{ background: 'green', color:'white' }" 
-	          @mouseover="activeDrivers = true" 
-	          @mouseleave="activeDrivers = false"
-	          block variant="primary"
-	         >
-          		<Strong class="text-center" style="color: white">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
-        	</b-button>
-        	<p  v-show="activeDrivers">List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein et al., Uniprot, TSGene, IntoGen and COSMIC. </p>
-       		<b-collapse id="collapse-4" v-model="visibleDrivers" class="mt-2">
-		        <div data-html2canvas-ignore="true">
-		            <input type="checkbox" id="checkbox1" v-model="hidedriver_tableMutation">
-		              <label for="checkbox1">Mutation</label>
-		            <input type="checkbox" id="checkbox1" v-model="hidedriver_tableConsequence">
-		              <label for="checkbox2">Consequence</label>
-		            <input type="checkbox" id="checkbox2" v-model="hidedriver_tableDriverType">
-		              <label for="checkbox3">Driver Type</label>
-		            <input type="checkbox" id="checkbox3" v-model="hidedriver_tableTumorType">
-		              <label for="checkbox4">Tumor Type</label>
-		            <input type="checkbox" id="checkbox3" v-model="hidedriver_tableVAF">
-		              <label for="checkbox5">VAF</label>
-		            <input type="checkbox" id="checkbox4" v-model="hidedriver_tableReferences">
-		              <label for="checkbox6">References</label>
-		              <button class="downloadbutn float-right " @click="exportToPDF_driver_table()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
-		        </div>
-	          <b-card>
-	            <table class="table table-hover">
-	              <thead>
-	                <tr data-html2canvas-ignore="true">
-	                  <!-- <td></td> -->
-	                  <td>
-	                    <v-text-field v-model="genes1" type="string" label="Gene"></v-text-field>
-	                  </td>
-	                  <td>
-	                    <v-text-field v-show="hidedriver_tableMutation" v-model="mutations1" type="string" label="Mutation"></v-text-field>
-	                  </td>
-	                  <td>
-	                    <v-text-field v-show="hidedriver_tableConsequence" v-model="consequence1" type="string" label="Consequence"></v-text-field>
-	                  </td>
-	                  <td>
-	                    <v-text-field v-show="hidedriver_tableDriverType" v-model="driverType1" type="string" label="DriverType"></v-text-field>
-	                  </td>
-	                  <td>
-	                    <v-text-field v-show="hidedriver_tableTumorType" v-model="tumorType1" type="string" label="TumorType"></v-text-field>
-	                  </td>
-	                 <td>
-	                    <v-text-field v-show="hidedriver_tableVAF" v-model="vaf1" type="double" label="VAF"></v-text-field>
-	                  </td>
-	                  <td>
-	                    <v-text-field v-show="hidedriver_tableReferences" v-model="reference1" type="string" label="References"></v-text-field>
-	                  </td>
-	                </tr>
-	                <tr>
-	                  <!-- <th data-html2canvas-ignore="true">
-	                    <label class="form-checkbox">
-	                      <input type="checkbox" v-model="selectAll" @click="select(driver_table)">
-	                      <i class="form-icon"></i>
-	                    </label>
-	                  </th> -->
-	                  <th @click="sortMskdg('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                  <th v-show="hidedriver_tableMutation" @click="sortMskdg('Mutation')">Mutation <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                  <th v-show="hidedriver_tableConsequence" @click="sortMskdg('Consequence')">Consequence <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirCons1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                  <th v-show="hidedriver_tableDriverType" @click="sortMskdg('Driver Type')">Driver Type <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirDriverType1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                  <th v-show="hidedriver_tableTumorType" @click="sortMskdg('Tumor Type')">Tumor Type <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTumorType1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                  <th v-show="hidedriver_tableVAF" @click="sortMskdg('VAF')">VAF <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirVAF1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                  <th v-show="hidedriver_tableReferences" @click="sortMskdg('References')">References <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirRef1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
-	                </tr>
-	              </thead>
-	              <tbody>
-	                <tr v-for="(item, index) in sortedMskdg" :key="item.gene" v-if="index < startRow + rowsPerPage && index >= startRow">
-	                  <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
-	                    <label class="form-checkbox">
-	                        <input type="checkbox" :value="item.gene" v-model="checkedGenes">
-	                        <i class="form-icon"></i>
-	                    </label>
-	                  </td> -->
-	                  <td @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.ene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}">
-	                    {{ item.gene}}
-	                   	<div class="dropdown" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="globe2"></b-icon>
-	                    <div class="dropdown-content">
-				            <a class="page-link" href="/documentation">Documentation</a>
-				            <a class="page-link" href="/contact">Contact</a>
-				          </div>
-				        </div> 
-	                  </td>
-	                  <td v-show="hidedriver_tableMutation" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-	                    {{ item.one_letter_repr}}
-	                  </td>
-	                  <td v-show="hidedriver_tableConsequence" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-	                    {{ item.Consequence }}
-	                  </td>	                  
-	                  <td v-show="hidedriver_tableDriverType" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-	                    {{ item.driver_role}}
-	                  </td>
-	                  <td v-show="hidedriver_tableTumorType" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-	                    {{ item.tumor_list}}
-	                  </td>
-	                  <td v-show="hidedriver_tableVAF" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-	                    {{ item.vaf}}
-	                  </td>	                  
-	                  <td v-show="hidedriver_tableReferences" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-	                    {{ item.ref_map}}
-	                  </td>
-	                </tr>
-	              </tbody>
-	            </table>
-	                   
-	            <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
-	              <table>
-	                <tr>
-	                  <td>
-	                    <select v-model="rowsPerPage" style="width: 10px">
-	                      <option disabled value="">Rows per Page</option>
-	                      <option>10</option>
-	                      <option>20</option>
-	                      <option>50</option>
-	                    </select>
-	                  </td>
-	                  <td>{{startRow+1}}-{{rowsPerPage*currentPage}} out of {{sortedMskdg.length}}</td>
-	                  <td><button @click=movePages(-1)><b-icon icon="chevron-left"></b-icon></button></td>
-	                  
-	                  <td><button class="float-right" @click=movePages(1)><b-icon icon="chevron-right"></b-icon></button></td>
-	              </tr>
-	            </table>
-	            </div>     	
-	          </b-card>
-	        </b-collapse>
-	    </div>
-	    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-			<iframe class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart" allowfullscreen></iframe>
-		</div>  
+      	<div class="row">
+	    	<div ref = "content_driver_table" id="driver_table_content" class="column" style="position:relative;">
+		        <b-button
+		          :class="visibleDrivers ? null : 'collapsed'"
+		          :aria-expanded="visibleDrivers ? 'true' : 'false'"
+		          aria-controls="collapse-4"
+		          @click="visibleDrivers = !visibleDrivers"
+		          v-bind:style="{ background: 'green', color:'white' }" 
+		          @mouseover="activeDrivers = true" 
+		          @mouseleave="activeDrivers = false"
+		          block variant="primary"
+		         >
+	          		<Strong class="text-center" style="color: white">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+	        	</b-button>
+	        	<p  v-show="activeDrivers">List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein et al., Uniprot, TSGene, IntoGen and COSMIC. </p>
+	       		<b-collapse id="collapse-4" v-model="visibleDrivers" class="mt-2">
+			        <div data-html2canvas-ignore="true">
+			            <input type="checkbox" id="checkbox1" v-model="hidedriver_tableMutation">
+			              <label for="checkbox1">Mutation</label>
+			            <input type="checkbox" id="checkbox1" v-model="hidedriver_tableConsequence">
+			              <label for="checkbox2">Consequence</label>
+			            <input type="checkbox" id="checkbox2" v-model="hidedriver_tableDriverType">
+			              <label for="checkbox3">Driver Type</label>
+			            <input type="checkbox" id="checkbox3" v-model="hidedriver_tableTumorType">
+			              <label for="checkbox4">Tumor Type</label>
+			            <input type="checkbox" id="checkbox3" v-model="hidedriver_tableVAF">
+			              <label for="checkbox5">VAF</label>
+			            <input type="checkbox" id="checkbox4" v-model="hidedriver_tableReferences">
+			              <label for="checkbox6">References</label>
+			              <button class="downloadbutn float-right " @click="exportToPDF_driver_table()"><b-icon class="float-left" icon="download" style="margin-right: 3px"></b-icon> PDF</button>
+			        </div>
+		          <b-card>
+		            <table class="table table-hover">
+		              <thead>
+		                <tr data-html2canvas-ignore="true">
+		                  <!-- <td></td> -->
+		                  <td>
+		                    <v-text-field v-model="genes1" type="string" label="Gene"></v-text-field>
+		                  </td>
+		                  <td>
+		                    <v-text-field v-show="hidedriver_tableMutation" v-model="mutations1" type="string" label="Mutation"></v-text-field>
+		                  </td>
+		                  <td>
+		                    <v-text-field v-show="hidedriver_tableConsequence" v-model="consequence1" type="string" label="Consequence"></v-text-field>
+		                  </td>
+		                  <td>
+		                    <v-text-field v-show="hidedriver_tableDriverType" v-model="driverType1" type="string" label="DriverType"></v-text-field>
+		                  </td>
+		                  <td>
+		                    <v-text-field v-show="hidedriver_tableTumorType" v-model="tumorType1" type="string" label="TumorType"></v-text-field>
+		                  </td>
+		                 <td>
+		                    <v-text-field v-show="hidedriver_tableVAF" v-model="vaf1" type="double" label="VAF"></v-text-field>
+		                  </td>
+		                  <td>
+		                    <v-text-field v-show="hidedriver_tableReferences" v-model="reference1" type="string" label="References"></v-text-field>
+		                  </td>
+		                </tr>
+		                <tr>
+		                  <!-- <th data-html2canvas-ignore="true">
+		                    <label class="form-checkbox">
+		                      <input type="checkbox" v-model="selectAll" @click="select(driver_table)">
+		                      <i class="form-icon"></i>
+		                    </label>
+		                  </th> -->
+		                  <th @click="sortMskdg('Gene')">Gene <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirGene1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                  <th v-show="hidedriver_tableMutation" @click="sortMskdg('Mutation')">Mutation<b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirMut1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                  <th v-show="hidedriver_tableConsequence" @click="sortMskdg('Consequence')">Consequence <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirCons1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                  <th v-show="hidedriver_tableDriverType" @click="sortMskdg('Driver Type')">Driver Type <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirDriverType1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                  <th v-show="hidedriver_tableTumorType" @click="sortMskdg('Tumor Type')">Tumor Type <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTumorType1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                  <th v-show="hidedriver_tableVAF" @click="sortMskdg('VAF')">VAF <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirVAF1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                  <th v-show="hidedriver_tableReferences" @click="sortMskdg('References')">References <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirRef1 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon></th>
+		                </tr>
+		              </thead>
+		              <tbody>
+		                <tr v-for="(item, index) in sortedMskdg" :key="item.gene" v-if="index < startRow + rowsPerPage && index >= startRow">
+		                  <!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
+		                    <label class="form-checkbox">
+		                        <input type="checkbox" :value="item.gene" v-model="checkedGenes">
+		                        <i class="form-icon"></i>
+		                    </label>
+		                  </td> -->
+		                  <td v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}">
+		                    {{ item.gene}}
+		                   	<div class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="globe2"></b-icon>
+		                    <div class="dropdown-content">
+					            <a class="page-link" href="/documentation">Documentation</a>
+					            <a class="page-link" href="/contact">Contact</a>
+					          </div>
+					        </div> 
+		                  </td>
+		                  <td v-show="hidedriver_tableMutation" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+		                    {{ item.one_letter_repr}}
+		                  </td>
+		                  <td v-show="hidedriver_tableConsequence" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+		                    {{ item.Consequence }}
+		                  </td>	                  
+		                  <td v-show="hidedriver_tableDriverType" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+		                    {{ item.driver_role}}
+		                  </td>
+		                  <td v-show="hidedriver_tableTumorType"  v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class="text-xs-right ">
+		                    <span> {{item.trunc}} 
+		                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
+		                    </span>
+		                    <a v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+		                    <a v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
+		                  </td>
+		                  <td v-show="hidedriver_tableVAF" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+		                    {{ item.vaf}}
+		                  </td>	                  
+		                  <td v-show="hidedriver_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+		                    {{ item.ref_map}}
+		                  </td>
+		                </tr>
+		              </tbody>
+		            </table>
+		                   
+		            <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+		              <table>
+		                <tr>
+		                  <td>
+		                    <select v-model="rowsPerPage" style="width: 10px">
+		                      <option disabled value="">Rows per Page</option>
+		                      <option>10</option>
+		                      <option>20</option>
+		                      <option>50</option>
+		                    </select>
+		                  </td>
+		                  <td>{{startRow+1}}-{{rowsPerPage*currentPage}} out of {{sortedMskdg.length}}</td>
+		                  <td><button @click=movePages(-1)><b-icon icon="chevron-left"></b-icon></button></td>
+		                  
+		                  <td><button class="float-right" @click=movePages(1)><b-icon icon="chevron-right"></b-icon></button></td>
+		              </tr>
+		            </table>
+		            </div>     	
+		          </b-card>
+		        </b-collapse>
+		    </div>
+		    <div v-show="visibleDrivers" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
+				<iframe class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart" allowfullscreen></iframe>
+			</div>  
+		</div>
 	      <br>
 
 	    <div ref = "content_direct_pharm_table" id="direct_pharm_table_content">
@@ -583,7 +589,7 @@
 	          :aria-expanded="visibleEffect ? 'true' : 'false'"
 	          aria-controls="collapse-4"
 	          @click="visibleEffect = !visibleEffect"
-	          v-bind:style="{ background: 'blue-grey', color:'white' }"
+	          v-bind:style="{ background: '#A9C0CB', color:'white' }"
 	          @mouseover="activeEffect = true" 
 	          @mouseleave="activeEffect = false"
 	          block variant="primary"
@@ -822,7 +828,7 @@
 	                  </thead>
 	                  <tbody>
 	                    <tr v-for="(item, index) in sortedAppendix" :key="item.gene" v-if="index < startRowAppendix + rowsPerPageAppendix && index >= startRowAppendix ">
-<!-- 	                      <td class="text-xs-center" data-html2canvas-ignore="true">      
+							<!-- <td class="text-xs-center" data-html2canvas-ignore="true">      
 	                        <label class="form-checkbox">
 	                            <input type="checkbox" :value="item.gene" v-model="checkedGenes">
 	                            <i class="form-icon"></i>
@@ -1108,7 +1114,7 @@
         hideappendix_variant_tabledbSNP:true,
         hideappendix_variant_tableCosmic:true,
 
-        uuids:[] 
+        uuids:[],
       }
     },
     methods: {
@@ -1174,6 +1180,9 @@
 	    showJSON(username, jsonfile=null, jobid=null, uuids = null){
     		this.jsongenerated = true;
     		this.driver_table= jsonfile.driver_table;
+    		for(let item  of this.driver_table){
+    			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
+	    		}
 	        this.direct_pharm_table  = jsonfile.direct_pharm_table ;
 	        this.pharm_table  = jsonfile.pharm_table ;
 	        this.mechanistic_drug_table = jsonfile.mechanistic_drug_table;
@@ -1221,7 +1230,6 @@
 			})
 		},
 		getGraphforGene(jobid, names, username){
-		  	if(names){
 			  	return axios.post('/network/drivergenes', {genes: names}, {
 						    headers:{
 						      	'user':username+'/'+jobid.toString()
@@ -1243,7 +1251,6 @@
 					.catch(error => {
 					    console.log(error.response)
 					});
-			}
 		},
 	    // getGenes(selected){
 	    //     for(let i of selected){
@@ -1785,6 +1792,16 @@
 	          this.currentPageAppendix += amount
 	        }
 	    },
+	    showMore: function(item){
+		    document.getElementById(item.Overflow).className='';
+		    document.getElementById(item.MoreLink).className='hidden';
+		    document.getElementById(item.LessLink).className='';
+		}, 
+		showLess: function(item){
+		    document.getElementById(item.Overflow).className='hidden';
+		    document.getElementById(item.MoreLink).className='';
+		    document.getElementById(item.LessLink).className='hidden';
+		}
 	},
 	created(){
 	   this.startAnalysis();
@@ -1799,7 +1816,28 @@
 	          return 0;
 	        });
 	        var filtered_sorted = []
+	        var i = 0;
 	        for(var item of sorted){
+	        	var shrinkable = item.tumor_list;
+				if (shrinkable.length > 0) {
+			        	var fullText = shrinkable;
+			        	if(fullText.length > 20){
+			            	var trunc = fullText.substring(0, 20);
+			            	var index = trunc.lastIndexOf("|");
+			            	trunc = fullText.substring(0, index+1);
+			            	var remainder = "";
+			            	remainder = fullText.substring(index+1, fullText.length);
+			            	item.trunc = trunc;
+			            	item.remainder = remainder;
+			            	item.MoreLink = "itemMoreLink"+i
+			            	item.LessLink = "itemLessLink" +i
+			            	item.Overflow = "itemOverflow"+i
+			            	i++;
+			        	}
+			        	else{
+			        		item.trunc = fullText;
+			        	}
+				}
 	          if((item.gene.toLowerCase().includes(this.genes1.toLowerCase()) || this.genes1 == '') && 
 	                (item.one_letter_repr.toLowerCase().includes(this.mutations1.toLowerCase()) || this.mutations1 == '') && 
 	                (this.driverType1 == '' || item.driver_role.toLowerCase().includes(this.driverType1.toLowerCase())) && 
