@@ -100,7 +100,7 @@
 	      }
 	    },
 	    methods: {
-		    showJSON(jsonfile=null, jobid=null, uuids = null){
+		    showJSON(jsonfile=null, jobid=null, driveruuid = null){
 		    	// json fiel is uploaded
 	 	    	if(!jsonfile){
 		    		var file = this.$refs.jsonfile.files[0]; // FileList object
@@ -118,22 +118,22 @@
 			        }
 			        reader.readAsText(file);
 		    	}
-		    	// get json and info from database
-		    	else if(jsonfile && jobid && uuids){
-		    		localStorage.setItem("json", jsonfile);
-		    		localStorage.setItem("jobid", jobid);
-		    		localStorage.setItem("uuids", uuids);
-			         var url = '/results?username='+this.username+'&json=true&jobid='+jobid+'&uuids=true' 
-				     document.location.href = url;
-		    	}
-		    	else if(jsonfile){
-		    		localStorage.setItem("json", jsonfile);
-		    		var url = '/results?username='+this.username+'&json=true' 
-				    document.location.href = url;
-		    	}
-		    	else if(jobid == null){
-		    		return
-		    	}
+		    	// // get json and info from database
+		    	// else if(jsonfile && jobid && driveruuid){
+		    	// 	localStorage.setItem("json", jsonfile);
+		    	// 	localStorage.setItem("jobid", jobid);
+		    	// 	localStorage.setItem("driveruuid", driveruuid);
+			    //      var url = '/results?username='+this.username+'&json=true&jobid='+jobid+'&driveruuid=true' 
+				   //   document.location.href = url;
+		    	// }
+		    	// else if(jsonfile){
+		    	// 	localStorage.setItem("json", jsonfile);
+		    	// 	var url = '/results?username='+this.username+'&json=true' 
+				   //  document.location.href = url;
+		    	// }
+		    	// else if(jobid == null){
+		    	// 	return
+		    	// }
 		    },
 		    checkDB(){
 		    	this.username = localStorage.getItem("username")
@@ -177,7 +177,7 @@
 		    },
 		    getJsonFromJobID(){
 		    	localStorage.setItem("jobid", this.$refs.jobid.value);
-	          	var url = '/results?username='+localStorage.getItem("username")+'&jobid='+this.$refs.jobid.value 
+	          	var url = '/results?username='+localStorage.getItem("username")+'&jobid='+this.$refs.jobid.value
 		      	document.location.href = url;
 		    }
 	  	},

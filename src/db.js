@@ -44,7 +44,8 @@ var pecaxdb = {
 			error=> console.error("Error connecting to database: " + error)
 			);
 	},
-	updateEntry(database, collection_name, jobid, uuid){
+	updateEntry(database, collection_name, jobid, driveruuid){
+		console.log(driveruuid)
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 
@@ -57,9 +58,7 @@ var pecaxdb = {
 				// Creating a collection if it does not exist
 				collection.exists().then(() => {
 					collection.document(jobid+'.vcf').then(doc => {
-						var uuidslist = doc.uuids
-						uuidslist.push(uuid)
-						collection.update(doc, {uuids:uuidslist});
+						collection.update(doc, {driveruuid:driveruuid});
 						// printDoc(collection, doc);
 					})
 				});},
@@ -108,6 +107,15 @@ var pecaxdb = {
 				});},
 				error=> console.error("Error connecting to database: " + error)
 			);
+	},
+	deleteDoc(db, jobid, collection_name){
+		db = db.useDatabase('pecax');
+		var collection = db.collection(collection_name);
+		// Removing the document
+		collection.remove(jobid+'.vcf').then(
+		  () => console.log('Document removed'),
+		  err => console.error('Failed to remove document', err)
+		);
 	}
 }
 
@@ -118,7 +126,7 @@ function saveDoc(collection, assembly){
 		  _key: keys.length + '.vcf',
 		  assembly: assembly,
 		  json_file: {},
-		  uuids:[]
+		  driveruuid:""
 		};
 		// creating a document
 		return collection.save(doc).then(
