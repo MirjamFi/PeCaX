@@ -34,20 +34,6 @@
 
 <template>
 <div id="about">
-    <div class="topnav" id ="nav">
-        <div class="topnav-centered">
-            <a class="page-link border-0 border-dark" href="/">PeCaX</a>
-        </div>
-       <div class="dropdown topnav-right" id="navAbout">  
-            <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
-            <div class="dropdown-content">
-              <a href="/about" class="page-link">About </a>
-              <a class="page-link" href="/documentation">Documentation</a>
-              <a class="page-link" href="/contact">Contact</a>
-            </div>
-          </button> 
-        </div>
-    </div>
     <div class="page-content">
       <div class="wrapper">
         <div class="post">
