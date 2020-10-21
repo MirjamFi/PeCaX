@@ -1,8 +1,0 @@
-nextflow.trace/v2
-realtime=740
-%cpu=931
-rchar=2326398
-wchar=67262
-syscr=588
-syscw=60
-read_bytes=5054464
