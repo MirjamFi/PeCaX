@@ -1,0 +1,98 @@
+2020-10-14 09:24:02,522 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 8915c5b88b07 with PID 1 (/app started by root in /)
+2020-10-14 09:24:03,040 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 09:24:58,625 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 64.584 seconds (JVM running for 71.343)
+2020-10-14 09:31:27,902 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on f26ffd9d162c with PID 1 (/app started by root in /)
+2020-10-14 09:31:27,976 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 09:31:53,870 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 28.432 seconds (JVM running for 32.361)
+2020-10-14 09:35:05,869 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 05ee8c34ed8e with PID 1 (/app started by root in /)
+2020-10-14 09:35:05,923 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 09:35:29,075 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 25.899 seconds (JVM running for 30.551)
+2020-10-14 09:37:08,257 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (f8fbf042-9247-46e3-a3fb-d3dbba0a2ac9) does not have the warehouse-Properties set
+2020-10-14 09:37:08,358 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (c1095240-5823-4e30-9ad0-d47fc4e548b9) does not have the warehouse-Properties set
+2020-10-14 09:37:08,835 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (f8fbf042-9247-46e3-a3fb-d3dbba0a2ac9) does not have the warehouse-Properties set
+2020-10-14 09:37:08,867 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (c1095240-5823-4e30-9ad0-d47fc4e548b9) does not have the warehouse-Properties set
+2020-10-14 09:37:09,042 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (f8fbf042-9247-46e3-a3fb-d3dbba0a2ac9) does not have the warehouse-Properties set
+2020-10-14 09:37:09,064 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (c1095240-5823-4e30-9ad0-d47fc4e548b9) does not have the warehouse-Properties set
+2020-10-14 09:37:09,272 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (f8fbf042-9247-46e3-a3fb-d3dbba0a2ac9) does not have the warehouse-Properties set
+2020-10-14 09:37:09,323 org.tts.service.networks.NetworkService  INFO (NetworkService.java:773) - Mapping Drivergene network (c1095240-5823-4e30-9ad0-d47fc4e548b9) does not have the warehouse-Properties set
+2020-10-14 09:44:28,782 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 4805063ea7fa with PID 1 (/app started by root in /)
+2020-10-14 09:44:28,805 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 09:44:49,472 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 23.166 seconds (JVM running for 27.222)
+2020-10-14 09:48:12,913 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 45c5bef00d4f with PID 1 (/app started by root in /)
+2020-10-14 09:48:13,245 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 09:48:58,334 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 49.41 seconds (JVM running for 55.493)
+2020-10-14 14:39:42,891 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on c78d7ec0f945 with PID 1 (/app started by root in /)
+2020-10-14 14:39:43,156 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 14:41:26,137 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 114.453 seconds (JVM running for 126.33)
+2020-10-14 15:20:45,611 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 7e782f783267 with PID 1 (/app started by root in /)
+2020-10-14 15:20:45,703 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 15:21:29,817 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 50.234 seconds (JVM running for 58.607)
+2020-10-14 15:48:41,847 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 2aa9e471d833 with PID 1 (/app started by root in /)
+2020-10-14 15:48:41,952 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 15:49:20,912 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 43.066 seconds (JVM running for 48.317)
+2020-10-14 16:23:28,334 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on bfb05e851a9d with PID 1 (/app started by root in /)
+2020-10-14 16:23:28,416 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 16:23:50,719 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 24.872 seconds (JVM running for 28.743)
+2020-10-14 16:50:15,400 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on b6a7bbb51b84 with PID 1 (/app started by root in /)
+2020-10-14 16:50:15,496 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-14 16:50:56,529 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 45.954 seconds (JVM running for 52.15)
+2020-10-15 07:22:11,115 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 9cbda70433a0 with PID 1 (/app started by root in /)
+2020-10-15 07:22:11,230 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 07:22:48,548 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 41.835 seconds (JVM running for 49.024)
+2020-10-15 07:35:26,603 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 9f43fa60287d with PID 1 (/app started by root in /)
+2020-10-15 07:35:26,916 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 07:36:18,704 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 56.393 seconds (JVM running for 61.942)
+2020-10-15 07:45:22,614 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 38d87559fc26 with PID 1 (/app started by root in /)
+2020-10-15 07:45:22,771 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 07:46:04,852 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 46.639 seconds (JVM running for 52.398)
+2020-10-15 08:40:05,655 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on b71b16964cd5 with PID 1 (/app started by root in /)
+2020-10-15 08:40:05,817 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 08:40:51,294 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 50.515 seconds (JVM running for 56.273)
+2020-10-15 08:51:19,132 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on e6d72bb46739 with PID 1 (/app started by root in /)
+2020-10-15 08:51:19,299 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 08:51:41,090 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 24.866 seconds (JVM running for 29.411)
+2020-10-15 08:56:19,794 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 6ff7e2cabcce with PID 1 (/app started by root in /)
+2020-10-15 08:56:20,044 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 08:57:07,742 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 57.416 seconds (JVM running for 69.158)
+2020-10-15 09:19:43,212 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on d2605b4441b6 with PID 1 (/app started by root in /)
+2020-10-15 09:19:43,365 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 09:20:24,234 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 45.029 seconds (JVM running for 50.975)
+2020-10-15 09:37:47,890 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on a79b638c1566 with PID 1 (/app started by root in /)
+2020-10-15 09:37:47,971 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 09:38:26,184 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 42.222 seconds (JVM running for 48.44)
+2020-10-15 10:09:23,765 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 83f87d1550e9 with PID 1 (/app started by root in /)
+2020-10-15 10:09:23,842 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 10:10:03,377 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 43.585 seconds (JVM running for 50.012)
+2020-10-15 13:11:45,214 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 9cb0972fa42f with PID 1 (/app started by root in /)
+2020-10-15 13:11:45,552 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 13:12:19,809 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 38.648 seconds (JVM running for 46.116)
+2020-10-15 13:45:30,429 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on a721080f6a03 with PID 1 (/app started by root in /)
+2020-10-15 13:45:30,577 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 13:46:11,366 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 44.496 seconds (JVM running for 49.811)
+2020-10-15 13:52:13,554 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 4fc9ea639e95 with PID 1 (/app started by root in /)
+2020-10-15 13:52:13,681 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 13:52:51,916 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 41.991 seconds (JVM running for 48.891)
+2020-10-15 13:59:10,373 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 5d89ea395479 with PID 1 (/app started by root in /)
+2020-10-15 13:59:10,476 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 13:59:46,360 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 40.199 seconds (JVM running for 46.953)
+2020-10-15 14:06:41,335 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on dcf6f2d4dc1f with PID 1 (/app started by root in /)
+2020-10-15 14:06:41,477 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-15 14:07:20,900 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 49.531 seconds (JVM running for 58.797)
+2020-10-19 08:23:37,298 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 66cc858038b9 with PID 1 (/app started by root in /)
+2020-10-19 08:23:37,433 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-19 08:24:18,015 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 44.413 seconds (JVM running for 49.824)
+2020-10-19 09:05:42,068 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on 6448e3872999 with PID 1 (/app started by root in /)
+2020-10-19 09:05:42,200 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-19 09:06:33,062 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 56.429 seconds (JVM running for 64.19)
+2020-10-19 09:16:40,488 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on f0ae59304865 with PID 1 (/app started by root in /)
+2020-10-19 09:16:40,702 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-19 09:17:37,585 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 62.576 seconds (JVM running for 70.309)
+2020-10-19 09:44:44,595 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on ad92dc11d4f4 with PID 1 (/app started by root in /)
+2020-10-19 09:44:44,981 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-19 09:45:43,337 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 63.799 seconds (JVM running for 72.445)
+2020-10-21 14:01:50,731 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on dd411331100a with PID 1 (/app started by root in /)
+2020-10-21 14:01:50,808 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-21 14:02:15,065 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 28.86 seconds (JVM running for 37.083)
+2020-10-21 14:09:27,576 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:55) - Starting Sbml4jApplication on dd411331100a with PID 1 (/app started by root in /)
+2020-10-21 14:09:27,661 org.springframework.boot.SpringApplication  INFO (SpringApplication.java:655) - The following profiles are active: test
+2020-10-21 14:09:57,028 org.springframework.boot.StartupInfoLogger  INFO (StartupInfoLogger.java:61) - Started Sbml4jApplication in 32.318 seconds (JVM running for 37.27)

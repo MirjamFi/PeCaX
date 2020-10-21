@@ -1,0 +1,4067 @@
+{
+    "tag": "SNV",
+    "num_nonsynonymous": 131,
+    "num_oncogene": 6,
+    "num_tsg": 7,
+    "num_onco_tsg": 0,
+    "num_unknown": 3,
+    "driver_table": [
+        {
+            "gene": "BRAF",
+            "one_letter_repr": "V600E",
+            "Consequence": "missense_variant",
+            "vaf": "0.74",
+            "var_type": "snp",
+            "hgnc_id": "1097",
+            "driver_role": "Oncogene",
+            "reference_id": "25759023|23539594|14993899|14681372",
+            "tumor_list": "BLCA|BRCA|CM|COREAD|GBM|HNSCC|LUAD|MM|OV|PRAD|STAD|THCA|UCEC|MEL|colorectal|papillary thyroid|borderline ovarian|NSCLC|CHOL|PAST|Spitzoid tumour|pancreas acinar carcinoma|melanocytic nevus|PROSTATE|gastric|Cancer|Colorectal cancer|Lung cancer|Familial non-Hodgkin lymphoma|Noonan syndrome 7",
+            "db_tumor_repr": "BLCA|BRCA|CM|COREAD|GBM|HNSC|LUAD|MM|OV|PRAD|STAD|THCA|UCEC|melanoma|colorectal|papillary thyroid|borderline ovarian|NSCLC|cholangiocarcinoma|pilocytic astrocytoma|Spitzoid tumour|pancreas acinar carcinoma|melanocytic nevus|prostate|gastric|Cancer|Colorectal cancer|Lung cancer|Familial non-Hodgkin lymphoma|Noonan syndrome 7",
+            "ref_map": "1,2,3,4",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "SF3B1",
+            "one_letter_repr": "P718L",
+            "Consequence": "missense_variant",
+            "vaf": "0.56",
+            "var_type": "snp",
+            "hgnc_id": "10768",
+            "driver_role": "Oncogene",
+            "reference_id": "25759023|23539594|14993899",
+            "tumor_list": "BLCA|BRCA|CLL|CM|COREAD|ESCA|GBM|HC|HNSCC|LUAD|LUSC|MM|PAAD|STAD|myelodysplastic syndrome",
+            "db_tumor_repr": "BLCA|BRCA|CLL|CM|COREAD|ESCA|GBM|HC|HNSC|LUAD|LUSC|MM|PAAD|STAD|myelodysplastic syndrome",
+            "ref_map": "1,2,3",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "DLEC1",
+            "one_letter_repr": "D215N",
+            "Consequence": "missense_variant",
+            "vaf": "0.52",
+            "var_type": "snp",
+            "hgnc_id": "2899",
+            "driver_role": "TSG",
+            "reference_id": "14681372|23066107",
+            "tumor_list": "Renal cancer|Lung cancer|Esophageal cancer|Cancer",
+            "db_tumor_repr": "Renal cancer|Lung cancer|Esophageal cancer|Cancer",
+            "ref_map": "4,5",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "RPS6KA2",
+            "one_letter_repr": "E319K",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "var_type": "snp",
+            "hgnc_id": "10431",
+            "driver_role": "TSG",
+            "reference_id": "14681372|23066107",
+            "tumor_list": "",
+            "db_tumor_repr": "",
+            "ref_map": "4,5",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "MUC4",
+            "one_letter_repr": "P1056H",
+            "Consequence": "missense_variant",
+            "vaf": "0.29",
+            "var_type": "snp",
+            "hgnc_id": "7514",
+            "driver_role": "Oncogene",
+            "reference_id": "14993899",
+            "tumor_list": "HNSCC",
+            "db_tumor_repr": "HNSCC",
+            "ref_map": "1",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "ARHGAP5",
+            "one_letter_repr": "T437I",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "var_type": "snp",
+            "hgnc_id": "675",
+            "driver_role": "Oncogene",
+            "reference_id": "14993899",
+            "tumor_list": "colon cancer|glioma",
+            "db_tumor_repr": "colon cancer|glioma",
+            "ref_map": "1",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "PRC1",
+            "one_letter_repr": "G507E",
+            "Consequence": "missense_variant",
+            "vaf": "0.36",
+            "var_type": "snp",
+            "hgnc_id": "9341",
+            "driver_role": "Oncogene",
+            "reference_id": "14681372",
+            "tumor_list": "",
+            "db_tumor_repr": "",
+            "ref_map": "4",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "MUC16",
+            "one_letter_repr": "M2821I",
+            "Consequence": "missense_variant",
+            "vaf": "0.29",
+            "var_type": "snp",
+            "hgnc_id": "15582",
+            "driver_role": "Oncogene",
+            "reference_id": "14993899",
+            "tumor_list": "HNSCC|MEL",
+            "db_tumor_repr": "HNSCC|melanoma",
+            "ref_map": "1",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "MUC16",
+            "one_letter_repr": "L2819M",
+            "Consequence": "missense_variant",
+            "vaf": "0.09",
+            "var_type": "snp",
+            "hgnc_id": "15582",
+            "driver_role": "Oncogene",
+            "reference_id": "14993899",
+            "tumor_list": "HNSCC|MEL",
+            "db_tumor_repr": "HNSCC|melanoma",
+            "ref_map": "1",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "MUC16",
+            "one_letter_repr": "L1434I",
+            "Consequence": "missense_variant",
+            "vaf": "0.09",
+            "var_type": "snp",
+            "hgnc_id": "15582",
+            "driver_role": "Oncogene",
+            "reference_id": "14993899",
+            "tumor_list": "HNSCC|MEL",
+            "db_tumor_repr": "HNSCC|melanoma",
+            "ref_map": "1",
+            "driver_type": "Oncogene"
+        },
+        {
+            "gene": "FAM46C",
+            "one_letter_repr": "T209N",
+            "Consequence": "missense_variant",
+            "vaf": "0.39",
+            "var_type": "snp",
+            "hgnc_id": "24712",
+            "driver_role": "TSG",
+            "reference_id": "14993899",
+            "tumor_list": "MM",
+            "db_tumor_repr": "MM",
+            "ref_map": "1",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "EPHB4",
+            "one_letter_repr": "P346L",
+            "Consequence": "missense_variant",
+            "vaf": "0.50",
+            "var_type": "snp",
+            "hgnc_id": "3395",
+            "driver_role": "TSG",
+            "reference_id": "23066107",
+            "tumor_list": "",
+            "db_tumor_repr": "",
+            "ref_map": "5",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "ACHE",
+            "one_letter_repr": "T95I",
+            "Consequence": "missense_variant",
+            "vaf": "0.53",
+            "var_type": "snp",
+            "hgnc_id": "108",
+            "driver_role": "TSG",
+            "reference_id": "23066107",
+            "tumor_list": "",
+            "db_tumor_repr": "",
+            "ref_map": "5",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "MADD",
+            "one_letter_repr": "S1620F",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "var_type": "snp",
+            "hgnc_id": "6766",
+            "driver_role": "TSG",
+            "reference_id": "23066107",
+            "tumor_list": "",
+            "db_tumor_repr": "",
+            "ref_map": "5",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "GLI1",
+            "one_letter_repr": "S1094F",
+            "Consequence": "missense_variant",
+            "vaf": "0.69",
+            "var_type": "snp",
+            "hgnc_id": "4317",
+            "driver_role": "TSG",
+            "reference_id": "23066107",
+            "tumor_list": "",
+            "db_tumor_repr": "",
+            "ref_map": "5",
+            "driver_type": "TSG"
+        },
+        {
+            "gene": "TNPO1",
+            "one_letter_repr": "Q38H",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "var_type": "snp",
+            "hgnc_id": "6401",
+            "driver_role": "Unknown",
+            "reference_id": "25759023",
+            "tumor_list": "BLCA|BRCA|CM|LUAD|LUSC|STAD",
+            "db_tumor_repr": "BLCA|BRCA|CM|LUAD|LUSC|STAD",
+            "ref_map": "2",
+            "driver_type": "Unknown"
+        },
+        {
+            "gene": "PCSK5",
+            "one_letter_repr": "C747Y",
+            "Consequence": "missense_variant",
+            "vaf": "0.66",
+            "var_type": "snp",
+            "hgnc_id": "8747",
+            "driver_role": "Unknown",
+            "reference_id": "25759023",
+            "tumor_list": "STAD",
+            "db_tumor_repr": "STAD",
+            "ref_map": "2",
+            "driver_type": "Unknown"
+        },
+        {
+            "gene": "PABPC3",
+            "one_letter_repr": "G234R",
+            "Consequence": "missense_variant",
+            "vaf": "0.40",
+            "var_type": "snp",
+            "hgnc_id": "8556",
+            "driver_role": "Unknown",
+            "reference_id": "25759023",
+            "tumor_list": "HNSCC",
+            "db_tumor_repr": "HNSC",
+            "ref_map": "2",
+            "driver_type": "Unknown"
+        }
+    ],
+    "direct_pharm_table": [
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A-1",
+            "reference_id": "21639808",
+            "ref_map": "19"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "db_tumor_repr": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A-1",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Lung Non-small Cell Carcinoma",
+            "db_tumor_repr": "Lung Non-small Cell Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A-1",
+            "reference_id": "27283860",
+            "ref_map": "34"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung",
+            "db_tumor_repr": "Non-small cell lung",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A-1",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|cobimetinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-1",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-1",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-1",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-1",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-1",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cetuximab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "25666295|20619739",
+            "ref_map": "13,35"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "23569304|26557775|25524477|24508103|20818844",
+            "ref_map": "17,29,36,37,38"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|dabrafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "25399551",
+            "ref_map": "39"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "LUAD|THYROID",
+            "db_tumor_repr": "Lung adenocarcinoma|Thyroid",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "23524406|22608338|ASCO 2013 (abstr 8009)|ESMO 2014 (abstr LBA38_PR)|20818844|23489023|27080216",
+            "ref_map": "8,29,61,69,70,71,72"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "Pan-RAF inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "ESMO 2015 (abstract 300)|AACR 2016 (abstr CT005)|AACR 2017 (abstr  CT002)",
+            "ref_map": "66,67,68"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "20619739|21163703|23325582",
+            "ref_map": "13,85,86"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "ERK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "LUAD",
+            "db_tumor_repr": "Lung adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "ASCO 2017 (abstr 2508)",
+            "ref_map": "63"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "22663011",
+            "ref_map": "33"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cetuximab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "20619739|21163703|23325582",
+            "ref_map": "13,85,86"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Lung Non-small Cell Carcinoma",
+            "db_tumor_repr": "Lung Non-small Cell Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "29320312",
+            "ref_map": "46"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Ovarian Cancer",
+            "db_tumor_repr": "Ovarian Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "29320312",
+            "ref_map": "46"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitor + MEK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "THYROID",
+            "db_tumor_repr": "Thyroid",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "ASCO 2013 (abstr 9029)",
+            "ref_map": "56"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Anaplastic Thyroid Carcinoma",
+            "db_tumor_repr": "Anaplastic Thyroid Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab|trametinib|dabrafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "29431699",
+            "ref_map": "48"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|dabrafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "28891408|25265492|24583796",
+            "ref_map": "9,49,50"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "MEK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "THYROID",
+            "db_tumor_repr": "Thyroid",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "22241789",
+            "ref_map": "64"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "bevacizumab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "19571295",
+            "ref_map": "32"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab|cetuximab (Substitutes)",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "19001320",
+            "ref_map": "6"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "oxaliplatin",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "19603024",
+            "ref_map": "31"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Thyroid carcinoma",
+            "db_tumor_repr": "Thyroid carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "22608338|20818844|23489023",
+            "ref_map": "29,61,71"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Malignant astrocytoma",
+            "db_tumor_repr": "Malignant astrocytoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "22586120",
+            "ref_map": "60"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "selumetinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Pediatric glioma",
+            "db_tumor_repr": "Pediatric glioma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "NCT01089101",
+            "ref_map": "81"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab|dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "ASCO 2014 (abstr 3515)|ASCO 2015 (abstr 103)",
+            "ref_map": "78,79"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "irinotecan",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "19603024",
+            "ref_map": "31"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "22356324",
+            "ref_map": "20"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "26392102|ASCO 2015 (abstr 8006)",
+            "ref_map": "76,77"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "HCL",
+            "db_tumor_repr": "Hairy Cell Leukemia",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "26352686",
+            "ref_map": "25"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Thyroid Gland Papillary Carcinoma",
+            "db_tumor_repr": "Thyroid Gland Papillary Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "27460442",
+            "ref_map": "27"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|irinotecan|cetuximab (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "27729313",
+            "ref_map": "30"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "23020132",
+            "ref_map": "51"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cobimetinib|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "25265494",
+            "ref_map": "22"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Anaplastic Thyroid Carcinoma",
+            "db_tumor_repr": "Anaplastic Thyroid Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B-1",
+            "reference_id": "29072975",
+            "ref_map": "52"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "LUAD",
+            "db_tumor_repr": "Lung adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "B or C-1",
+            "reference_id": "27283860",
+            "ref_map": "34"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Neuroendocrine",
+            "db_tumor_repr": "Neuroendocrine",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "27048246",
+            "ref_map": "24"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "GIST",
+            "db_tumor_repr": "Gastrointestinal stromal",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "23470635|22608338",
+            "ref_map": "61,75"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Ovary",
+            "db_tumor_repr": "Ovary",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "22608338",
+            "ref_map": "61"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "EGFR TK inhibitors",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "LUAD",
+            "db_tumor_repr": "Lung adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "22773810",
+            "ref_map": "53"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "LUAD|HCL|MNM",
+            "db_tumor_repr": "Lung adenocarcinoma|Hairy-Cell leukemia|Myeloma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "22743296|22621641|23612012",
+            "ref_map": "82,83,84"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "irinotecan|vemurafenib|panitumumab (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CHOL",
+            "db_tumor_repr": "Cholangiocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "26687137",
+            "ref_map": "45"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|dabrafenib|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Gastrointestinal Neuroendocrine Tumor",
+            "db_tumor_repr": "Gastrointestinal Neuroendocrine Tumor",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "27048246",
+            "ref_map": "24"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Thyroid Gland Papillary Carcinoma",
+            "db_tumor_repr": "Thyroid Gland Papillary Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "24987354",
+            "ref_map": "21"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "pertuzumab|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Anaplastic Thyroid Carcinoma",
+            "db_tumor_repr": "Anaplastic Thyroid Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "29320312",
+            "ref_map": "46"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Lung Non-small Cell Carcinoma",
+            "db_tumor_repr": "Lung Non-small Cell Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "23524406",
+            "ref_map": "8"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "29320312",
+            "ref_map": "46"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Laryngeal Squamous Cell Carcinoma",
+            "db_tumor_repr": "Laryngeal Squamous Cell Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "29320312",
+            "ref_map": "46"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib dimethyl sulfoxide|dabrafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CHOL",
+            "db_tumor_repr": "Cholangiocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "25435907|28078132",
+            "ref_map": "43,44"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "pictilisib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "25370471",
+            "ref_map": "14"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib dimethyl sulfoxide (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CHOL",
+            "db_tumor_repr": "Cholangiocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "28480077",
+            "ref_map": "42"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Ovarian Cystadenocarcinoma",
+            "db_tumor_repr": "Ovarian Cystadenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "26490654",
+            "ref_map": "41"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "GNG",
+            "db_tumor_repr": "Ganglioglioma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "25524464",
+            "ref_map": "40"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MM",
+            "db_tumor_repr": "Multiple Myeloma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "24997557",
+            "ref_map": "28"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "C-1",
+            "reference_id": "27325282",
+            "ref_map": "26"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22180495",
+            "ref_map": "12"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "capecitabine|bevacizumab|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22180495",
+            "ref_map": "12"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "pi3k inhibitor gdc-0941 bismesylate|plx4720 (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "23845441",
+            "ref_map": "10"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "24576830",
+            "ref_map": "7"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "plx4720|nutlin-3 (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "23812671",
+            "ref_map": "11"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dactolisib|selumetinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "26678033",
+            "ref_map": "15"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitor + CDK2/4 inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22997239",
+            "ref_map": "54"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cobimetinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Cancer",
+            "db_tumor_repr": "Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "23934108",
+            "ref_map": "16"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cetuximab|gefitinib|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22281684",
+            "ref_map": "18"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "gdc-0879|dactolisib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "23549875",
+            "ref_map": "23"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "MEK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Ovary",
+            "db_tumor_repr": "Ovary",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "19018267",
+            "ref_map": "65"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "ERK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "23614898|22997239",
+            "ref_map": "54,62"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Glioma",
+            "db_tumor_repr": "Glioma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22038996|22586120",
+            "ref_map": "59,60"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitor + PI3K pathway inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22389471|21156289",
+            "ref_map": "57,58"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitor + HSP90 inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "22351686",
+            "ref_map": "55"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "plx4720",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Malignant astrocytoma",
+            "db_tumor_repr": "Malignant astrocytoma",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "PMC3638050",
+            "ref_map": "80"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab|sorafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600E",
+            "variant_type": "missense_variant",
+            "match_level": "D-1",
+            "reference_id": "19001320",
+            "ref_map": "6"
+        }
+    ],
+    "pharm_table": [
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600G",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600D",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "db_tumor_repr": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600R",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600R",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "db_tumor_repr": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600D",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "db_tumor_repr": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600M",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600M",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "db_tumor_repr": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600G",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "db_tumor_repr": "Non-small cell lung|Lagerhans cell histiocytosis|Erdheim-Chester histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "A-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|cobimetinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "A-3",
+            "reference_id": "27480103",
+            "ref_map": "108"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|dabrafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "A-3",
+            "reference_id": "25399551",
+            "ref_map": "39"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|cobimetinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "A or B-2",
+            "reference_id": "29592813",
+            "ref_map": "74"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600D",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "23463675",
+            "ref_map": "112"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L505H",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "25515853",
+            "ref_map": "101"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "24508103|25524477",
+            "ref_map": "17,38"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600R",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "23237741",
+            "ref_map": "116"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "22663011",
+            "ref_map": "33"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "25399551",
+            "ref_map": "39"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "28891408|25265494",
+            "ref_map": "22,49"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "B-2",
+            "reference_id": "21343559",
+            "ref_map": "115"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab|dabrafenib|byl719 (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "null",
+            "variant_type": "null",
+            "match_level": "B-3",
+            "reference_id": "ENA 2014 (abstr 11LBA)",
+            "ref_map": "117"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "22663011",
+            "ref_map": "33"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "26392102",
+            "ref_map": "76"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cobimetinib|vemurafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "25265494",
+            "ref_map": "22"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Lung Non-small Cell Carcinoma",
+            "db_tumor_repr": "Lung Non-small Cell Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Langerhans-Cell Histiocytosis",
+            "db_tumor_repr": "Langerhans-Cell Histiocytosis",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CHOL",
+            "db_tumor_repr": "Cholangiocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|cobimetinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "25037139",
+            "ref_map": "110"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cetuximab|encorafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "28363909",
+            "ref_map": "109"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "encorafenib|alpelisib|cetuximab (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "28363909",
+            "ref_map": "109"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|dabrafenib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "28891408|23020132",
+            "ref_map": "49,51"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "25265492",
+            "ref_map": "50"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|irinotecan|cetuximab (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "147167",
+            "ref_map": "111"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitor + EGFR mAb inhibitor +/- PI3K inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "null",
+            "variant_type": "null",
+            "match_level": "B-3",
+            "reference_id": "28363909",
+            "ref_map": "109"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "22608338",
+            "ref_map": "61"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "irinotecan|vemurafenib|cetuximab (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "null",
+            "variant_type": "null",
+            "match_level": "B-3",
+            "reference_id": "27729313",
+            "ref_map": "30"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "mek inhibitor ro4987655",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "24947927",
+            "ref_map": "106"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Not Responsive",
+            "tumor_list": "COREAD",
+            "db_tumor_repr": "Colorectal adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "null",
+            "variant_type": "null",
+            "match_level": "B-3",
+            "reference_id": "26287849",
+            "ref_map": "47"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "panitumumab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "B-3",
+            "reference_id": "23325582",
+            "ref_map": "86"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cetuximab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "MUTATION",
+            "variant_type": "gene_variant,gain_of_function_variant",
+            "match_level": "B-3",
+            "reference_id": "19603024",
+            "ref_map": "31"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "bevacizumab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "MUTATION",
+            "variant_type": "gene_variant,gain_of_function_variant",
+            "match_level": "B-3",
+            "reference_id": "19603024",
+            "ref_map": "31"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "irinotecan",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "MUTATION",
+            "variant_type": "gene_variant,gain_of_function_variant",
+            "match_level": "B-3",
+            "reference_id": "19603024",
+            "ref_map": "31"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "oxaliplatin",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "MUTATION",
+            "variant_type": "gene_variant,gain_of_function_variant",
+            "match_level": "B-3",
+            "reference_id": "19603024",
+            "ref_map": "31"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600K",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "26989536",
+            "ref_map": "114"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "K601R",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "23248257|22805292|23248257",
+            "ref_map": "98,99"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597R",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "23715574",
+            "ref_map": "102"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "BRAF inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597R",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "23715574",
+            "ref_map": "102"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597R",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "23248257|22805292|23248257",
+            "ref_map": "98,99"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "ERK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "HNSCC",
+            "db_tumor_repr": "Head an neck squamous",
+            "hgnc_id": "1097",
+            "variant": "G469A",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "ASCO 2017 (abstr 2508)",
+            "ref_map": "63"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "EGFR TK inhibitors",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "LUAD",
+            "db_tumor_repr": "Lung adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "G469A",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "22773810",
+            "ref_map": "53"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597V",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "22805292",
+            "ref_map": "99"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600E+V600M",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "23031422",
+            "ref_map": "113"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600R",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "23248257|22805292|23248257",
+            "ref_map": "98,99"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "irinotecan|cetuximab (Combination)",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "D594G",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "26989027",
+            "ref_map": "91"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dasatinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "LUAD",
+            "db_tumor_repr": "Lung adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "Y472C",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "22649091",
+            "ref_map": "95"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "mek inhibitor tak-733",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597S",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "22798288",
+            "ref_map": "97"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "ERK inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Billiary tract",
+            "db_tumor_repr": "Billiary tract",
+            "hgnc_id": "1097",
+            "variant": "L485W",
+            "variant_type": "missense_variant",
+            "match_level": "C-2",
+            "reference_id": "ASCO 2017 (abstr 2508)",
+            "ref_map": "63"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "refametinib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "V600",
+            "variant_type": "protein_altering_variant",
+            "match_level": "C-3",
+            "reference_id": "23434733",
+            "ref_map": "107"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib|trametinib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597Q",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "22798288",
+            "ref_map": "97"
+        },
+        {
+            "gene": "SF3B1",
+            "drug_name": "Spliceosome inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Any cancer type",
+            "db_tumor_repr": "Any cancer type",
+            "hgnc_id": "10768",
+            "variant": "K666N",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "ENA 2014 (abstr 456)|ENA 2014 (abstr 575)|25424858",
+            "ref_map": "87,88,89"
+        },
+        {
+            "gene": "SF3B1",
+            "drug_name": "spliceostatin a",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Breast Cancer",
+            "db_tumor_repr": "Breast Cancer",
+            "hgnc_id": "10768",
+            "variant": "K700E",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "25424858",
+            "ref_map": "87"
+        },
+        {
+            "gene": "SF3B1",
+            "drug_name": "Spliceosome inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Any cancer type",
+            "db_tumor_repr": "Any cancer type",
+            "hgnc_id": "10768",
+            "variant": "K700E",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "ENA 2014 (abstr 456)|ENA 2014 (abstr 575)|25424858",
+            "ref_map": "87,88,89"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "sorafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "D594G",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "18794803",
+            "ref_map": "92"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Cancer",
+            "db_tumor_repr": "Cancer",
+            "hgnc_id": "1097",
+            "variant": "D594G",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "28783719",
+            "ref_map": "93"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "sorafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "D594G",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "18794803",
+            "ref_map": "92"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L505H",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "24112705",
+            "ref_map": "100"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "irinotecan|panitumumab (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "G466V",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "28783719",
+            "ref_map": "93"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dasatinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "LUAD",
+            "db_tumor_repr": "Lung adenocarcinoma",
+            "hgnc_id": "1097",
+            "variant": "G466V",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "22649091",
+            "ref_map": "95"
+        },
+        {
+            "gene": "SF3B1",
+            "drug_name": "spliceostatin a",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Breast Cancer",
+            "db_tumor_repr": "Breast Cancer",
+            "hgnc_id": "10768",
+            "variant": "K666N",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "25424858",
+            "ref_map": "87"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|vemurafenib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597S",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "22798288",
+            "ref_map": "97"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "sorafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "G469E",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "18794803",
+            "ref_map": "92"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "u0126",
+            "variant_drug_association": "null",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "G469E",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "18794803",
+            "ref_map": "92"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "sorafenib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "CM",
+            "db_tumor_repr": "Cutaneous melanoma",
+            "hgnc_id": "1097",
+            "variant": "G469E",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "18794803",
+            "ref_map": "92"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "dabrafenib|trametinib (Combination)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Lung Non-small Cell Carcinoma",
+            "db_tumor_repr": "Lung Non-small Cell Carcinoma",
+            "hgnc_id": "1097",
+            "variant": "G596C",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "27577079",
+            "ref_map": "96"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|vemurafenib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "L597R",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "22798288",
+            "ref_map": "97"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|vemurafenib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "K601E",
+            "variant_type": "missense_variant",
+            "match_level": "D-2",
+            "reference_id": "22798288",
+            "ref_map": "97"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "pan-raf inhibitor ly3009120",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Cancer",
+            "db_tumor_repr": "Cancer",
+            "hgnc_id": "1097",
+            "variant": "DEL 485-490",
+            "variant_type": "inframe_deletion",
+            "match_level": "D-3",
+            "reference_id": "26732095",
+            "ref_map": "94"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "cetuximab",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Colorectal Cancer",
+            "db_tumor_repr": "Colorectal Cancer",
+            "hgnc_id": "1097",
+            "variant": "MUTATION",
+            "variant_type": "gene_variant,gain_of_function_variant",
+            "match_level": "D-3",
+            "reference_id": "22586653",
+            "ref_map": "104"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "PAPSS1-BRAF",
+            "variant_type": "gene_fusion,transcript_fusion",
+            "match_level": "D-3",
+            "reference_id": "24345920",
+            "ref_map": "105"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Cancer",
+            "db_tumor_repr": "Cancer",
+            "hgnc_id": "1097",
+            "variant": "MUTATION",
+            "variant_type": "gene_variant,gain_of_function_variant",
+            "match_level": "D-3",
+            "reference_id": "22169769",
+            "ref_map": "103"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "MEL",
+            "db_tumor_repr": "Melanoma",
+            "hgnc_id": "1097",
+            "variant": "PAPSS1-BRAF",
+            "variant_type": "gene_fusion,transcript_fusion",
+            "match_level": "D-3",
+            "reference_id": "24345920",
+            "ref_map": "105"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "Pan-RAF inhibitors",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Any cancer type",
+            "db_tumor_repr": "Any cancer type",
+            "hgnc_id": "1097",
+            "variant": "null",
+            "variant_type": "inframe deletion,inframe deletion",
+            "match_level": "D-3",
+            "reference_id": "26732095",
+            "ref_map": "94"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "vemurafenib",
+            "variant_drug_association": "Resistance",
+            "tumor_list": "Any cancer type",
+            "db_tumor_repr": "Any cancer type",
+            "hgnc_id": "1097",
+            "variant": "null",
+            "variant_type": "inframe deletion,inframe deletion",
+            "match_level": "D-3",
+            "reference_id": "26732095",
+            "ref_map": "94"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "mitogen-activated protein kinase kinase inhibitor|sorafenib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "D594A",
+            "variant_type": "missense_variant",
+            "match_level": "E-2",
+            "reference_id": "20141835",
+            "ref_map": "90"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "mitogen-activated protein kinase kinase inhibitor|sorafenib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "K483M",
+            "variant_type": "missense_variant,loss_of_function_variant",
+            "match_level": "E-2",
+            "reference_id": "20141835",
+            "ref_map": "90"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "trametinib|sorafenib (Substitutes)",
+            "variant_drug_association": "Sensitivity/Response",
+            "tumor_list": "Skin Melanoma",
+            "db_tumor_repr": "Skin Melanoma",
+            "hgnc_id": "1097",
+            "variant": "D594V",
+            "variant_type": "missense_variant",
+            "match_level": "E-2",
+            "reference_id": "20141835",
+            "ref_map": "90"
+        }
+    ],
+    "mechanistic_drug_table": [
+        {
+            "gene": "TNFRSF8",
+            "drug_name": "brentuximab vedotin",
+            "approval_status": "approved|investigational",
+            "reference_id": "12714494|31691823|27910877",
+            "reference_source": "PubMed",
+            "hgnc_id": "11923",
+            "ref_map": "118,119,120"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "regorafenib",
+            "approval_status": "approved",
+            "reference_id": "16381955|22222036|27910877",
+            "reference_source": "PubMed",
+            "hgnc_id": "1097",
+            "ref_map": "120,123,124"
+        },
+        {
+            "gene": "BRAF",
+            "drug_name": "encorafenib",
+            "approval_status": "approved|investigational",
+            "reference_id": "26586345|29356698|25769717",
+            "reference_source": "PubMed",
+            "hgnc_id": "1097",
+            "ref_map": "125,126,127"
+        },
+        {
+            "gene": "EPHB4",
+            "drug_name": "dasatinib",
+            "approval_status": "approved|investigational",
+            "reference_id": "18180381",
+            "reference_source": "PubMed",
+            "hgnc_id": "3395",
+            "ref_map": "121"
+        },
+        {
+            "gene": "EPHB4",
+            "drug_name": "vandetanib",
+            "approval_status": "approved",
+            "reference_id": "27910877",
+            "reference_source": "PubMed",
+            "hgnc_id": "3395",
+            "ref_map": "120"
+        },
+        {
+            "gene": "ACHE",
+            "drug_name": "tyrothricin",
+            "approval_status": "approved",
+            "reference_id": "5257018",
+            "reference_source": "PubMed",
+            "hgnc_id": "108",
+            "ref_map": "122"
+        }
+    ],
+    "adverse_table": [],
+    "appendix_variant_table": [
+        {
+            "gene": "TNFRSF8",
+            "dbSNP": "rs267597959",
+            "COSMIC": "COSM14024",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Pro215Ser"
+        },
+        {
+            "gene": "FAM46C",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.39",
+            "mutation": "p.Thr209Asn"
+        },
+        {
+            "gene": "S100A7A",
+            "dbSNP": "rs267598049",
+            "COSMIC": "COSM36721",
+            "Consequence": "missense_variant",
+            "vaf": "0.38",
+            "mutation": "p.Gly98Trp"
+        },
+        {
+            "gene": "PKLR",
+            "dbSNP": "rs267598065",
+            "COSMIC": "COSM36782",
+            "Consequence": "missense_variant",
+            "vaf": "0.50",
+            "mutation": "p.Gly251Ser"
+        },
+        {
+            "gene": "MAEL",
+            "dbSNP": "rs267598149",
+            "COSMIC": "COSM36684",
+            "Consequence": "missense_variant",
+            "vaf": "0.54",
+            "mutation": "p.Ser431Cys"
+        },
+        {
+            "gene": "ZBTB41",
+            "dbSNP": "rs267598277",
+            "COSMIC": "COSM36692",
+            "Consequence": "missense_variant",
+            "vaf": "0.27",
+            "mutation": "p.Phe164Val"
+        },
+        {
+            "gene": "SYT14",
+            "dbSNP": "rs267598356",
+            "COSMIC": "COSM36786",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Ser437Phe"
+        },
+        {
+            "gene": "OR2T8",
+            "dbSNP": "rs4474294",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Met197Arg"
+        },
+        {
+            "gene": "OR2T3",
+            "dbSNP": "rs1770109",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Ala214Thr"
+        },
+        {
+            "gene": "SLC4A5",
+            "dbSNP": "rs111392973",
+            "COSMIC": "COSM2999241,COSM2999242",
+            "Consequence": "missense_variant",
+            "vaf": "0.70",
+            "mutation": "p.Ser428Phe"
+        },
+        {
+            "gene": "SLC4A5",
+            "dbSNP": "rs267599454",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.70",
+            "mutation": "p.Ser428Thr"
+        },
+        {
+            "gene": "SNRNP200",
+            "dbSNP": "rs267599495",
+            "COSMIC": "COSM36589",
+            "Consequence": "missense_variant",
+            "vaf": "0.75",
+            "mutation": "p.Arg1538Cys"
+        },
+        {
+            "gene": "SEMA4C",
+            "dbSNP": "rs267599501",
+            "COSMIC": "COSM36666",
+            "Consequence": "missense_variant",
+            "vaf": "0.71",
+            "mutation": "p.Arg407Trp"
+        },
+        {
+            "gene": "ANKRD36",
+            "dbSNP": "rs768768868",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.49",
+            "mutation": "p.Ser1120Cys"
+        },
+        {
+            "gene": "KIAA1211L",
+            "dbSNP": "rs866719486",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.66",
+            "mutation": "p.Gly746Glu"
+        },
+        {
+            "gene": "DPP10",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.26",
+            "mutation": "p.Ile93Asn"
+        },
+        {
+            "gene": "XIRP2",
+            "dbSNP": "rs267598980",
+            "COSMIC": "COSM36673",
+            "Consequence": "missense_variant",
+            "vaf": "0.28",
+            "mutation": "p.Gly127Arg"
+        },
+        {
+            "gene": "TTN",
+            "dbSNP": "rs267599054",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.69",
+            "mutation": "p.Pro10904Ser"
+        },
+        {
+            "gene": "TTN",
+            "dbSNP": "rs267599092",
+            "COSMIC": "COSM2708938,COSM2708939,COSM2708940,COSM2708941,COSM2708942",
+            "Consequence": "missense_variant",
+            "vaf": "0.33",
+            "mutation": "p.Ala1347Thr"
+        },
+        {
+            "gene": "SF3B1",
+            "dbSNP": "rs267599150",
+            "COSMIC": "COSM36655",
+            "Consequence": "missense_variant",
+            "vaf": "0.56",
+            "mutation": "p.Pro718Leu"
+        },
+        {
+            "gene": "FZD7",
+            "dbSNP": "rs267599158",
+            "COSMIC": "COSM24315",
+            "Consequence": "missense_variant",
+            "vaf": "0.68",
+            "mutation": "p.Pro285Ser"
+        },
+        {
+            "gene": "ZDBF2",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.33",
+            "mutation": "p.Gly575Arg"
+        },
+        {
+            "gene": "AGFG1",
+            "dbSNP": "rs267599235",
+            "COSMIC": "COSM25632,COSM3364621,COSM3364622",
+            "Consequence": "missense_variant",
+            "vaf": "0.40",
+            "mutation": "p.Gly364Arg"
+        },
+        {
+            "gene": "ARL4C",
+            "dbSNP": "rs61752230",
+            "COSMIC": "COSM21657",
+            "Consequence": "missense_variant",
+            "vaf": "0.66",
+            "mutation": "p.Gly71Ser"
+        },
+        {
+            "gene": "KIF1A",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.39",
+            "mutation": "p.Ser141Ala"
+        },
+        {
+            "gene": "DLEC1",
+            "dbSNP": "rs149190717",
+            "COSMIC": "COSM1566798,COSM36702",
+            "Consequence": "missense_variant",
+            "vaf": "0.52",
+            "mutation": "p.Asp215Asn"
+        },
+        {
+            "gene": "VPRBP",
+            "dbSNP": "rs267599884",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "mutation": "p.Pro309Leu"
+        },
+        {
+            "gene": "TLR9",
+            "dbSNP": "rs267599888",
+            "COSMIC": "COSM36649",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "mutation": "p.Gly514Ser"
+        },
+        {
+            "gene": "PRR23C",
+            "dbSNP": "rs759730911",
+            "COSMIC": "COSM36858",
+            "Consequence": "missense_variant",
+            "vaf": "0.47",
+            "mutation": "p.Glu262Lys"
+        },
+        {
+            "gene": "CLSTN2",
+            "dbSNP": "rs267599628",
+            "COSMIC": "COSM36631",
+            "Consequence": "missense_variant&splice_region_variant",
+            "vaf": "0.28",
+            "mutation": "p.Gln262His"
+        },
+        {
+            "gene": "SAMD7",
+            "dbSNP": "rs191885635",
+            "COSMIC": "COSM36663",
+            "Consequence": "missense_variant",
+            "vaf": "0.56",
+            "mutation": "p.Arg67Trp"
+        },
+        {
+            "gene": "GNB4",
+            "dbSNP": "rs267599699",
+            "COSMIC": "COSM13667",
+            "Consequence": "missense_variant",
+            "vaf": "0.52",
+            "mutation": "p.Pro107Leu"
+        },
+        {
+            "gene": "ETV5",
+            "dbSNP": "rs267599722",
+            "COSMIC": "COSM23333",
+            "Consequence": "missense_variant",
+            "vaf": "0.52",
+            "mutation": "p.Tyr445Cys"
+        },
+        {
+            "gene": "LPP",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.04",
+            "mutation": "p.Ala119Gly"
+        },
+        {
+            "gene": "MUC4",
+            "dbSNP": "rs753583962",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.29",
+            "mutation": "p.Pro1056His"
+        },
+        {
+            "gene": "EXOC1",
+            "dbSNP": "rs267600192",
+            "COSMIC": "COSM36662",
+            "Consequence": "missense_variant",
+            "vaf": "0.44",
+            "mutation": "p.Pro774Ser"
+        },
+        {
+            "gene": "REST",
+            "dbSNP": "rs267600197",
+            "COSMIC": "COSM24349",
+            "Consequence": "missense_variant",
+            "vaf": "0.59",
+            "mutation": "p.Pro752Thr"
+        },
+        {
+            "gene": "SMR3B",
+            "dbSNP": "rs267600235",
+            "COSMIC": "COSM1310225,COSM36745",
+            "Consequence": "missense_variant",
+            "vaf": "0.53",
+            "mutation": "p.Arg58Lys"
+        },
+        {
+            "gene": "ADAM29",
+            "dbSNP": "rs267600094",
+            "COSMIC": "COSM26290",
+            "Consequence": "missense_variant",
+            "vaf": "0.43",
+            "mutation": "p.Gly589Glu"
+        },
+        {
+            "gene": "CARD6",
+            "dbSNP": "rs267600630",
+            "COSMIC": "COSM14006",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Leu638Phe"
+        },
+        {
+            "gene": "TNPO1",
+            "dbSNP": "rs267600680",
+            "COSMIC": "COSM36775,COSM5648790",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Gln38His"
+        },
+        {
+            "gene": "F2RL2",
+            "dbSNP": "rs267600693",
+            "COSMIC": "COSM27249,COSM36780",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Leu141Phe"
+        },
+        {
+            "gene": "VCAN",
+            "dbSNP": "rs267600718",
+            "COSMIC": "COSM36758",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Asp203Asn"
+        },
+        {
+            "gene": "EDIL3",
+            "dbSNP": "rs267600722",
+            "COSMIC": "COSM26295",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Gln187Lys"
+        },
+        {
+            "gene": "PCDHB7",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.29",
+            "mutation": "p.Asp374His"
+        },
+        {
+            "gene": "GRIA1",
+            "dbSNP": "rs267600500",
+            "COSMIC": "COSM36714,COSM4854071,COSM4854072",
+            "Consequence": "missense_variant",
+            "vaf": "0.99",
+            "mutation": "p.Gly828Glu"
+        },
+        {
+            "gene": "ADAM19",
+            "dbSNP": "rs61757467",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Pro900Leu"
+        },
+        {
+            "gene": "MBOAT1",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.35",
+            "mutation": "p.Lys293Asn"
+        },
+        {
+            "gene": "SPDEF",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.37",
+            "mutation": "p.Asp283His"
+        },
+        {
+            "gene": "SPDEF",
+            "dbSNP": "rs200344679",
+            "COSMIC": "COSM36760",
+            "Consequence": "missense_variant",
+            "vaf": "0.41",
+            "mutation": "p.Ser229Leu"
+        },
+        {
+            "gene": "SCUBE3",
+            "dbSNP": "rs267600995",
+            "COSMIC": "COSM36691",
+            "Consequence": "missense_variant",
+            "vaf": "0.66",
+            "mutation": "p.Gly702Glu"
+        },
+        {
+            "gene": "BTBD9",
+            "dbSNP": "rs267601008",
+            "COSMIC": "COSM36793",
+            "Consequence": "missense_variant",
+            "vaf": "0.37",
+            "mutation": "p.Arg46Cys"
+        },
+        {
+            "gene": "GPR111",
+            "dbSNP": "rs267601055",
+            "COSMIC": "COSM36619",
+            "Consequence": "missense_variant",
+            "vaf": "0.63",
+            "mutation": "p.Ile290Leu"
+        },
+        {
+            "gene": "BAI3",
+            "dbSNP": "rs267601102",
+            "COSMIC": "COSM22119",
+            "Consequence": "missense_variant",
+            "vaf": "0.42",
+            "mutation": "p.Asp755Asn"
+        },
+        {
+            "gene": "KATNA1",
+            "dbSNP": "rs267600852",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.40",
+            "mutation": "p.Pro241Leu"
+        },
+        {
+            "gene": "KATNA1",
+            "dbSNP": "rs267600853",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.39",
+            "mutation": "p.Pro241Ser"
+        },
+        {
+            "gene": "RPS6KA2",
+            "dbSNP": "rs267600891",
+            "COSMIC": "COSM21036,COSM3024932,COSM3024933",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "mutation": "p.Glu319Lys"
+        },
+        {
+            "gene": "ANLN",
+            "dbSNP": "rs267601502",
+            "COSMIC": "COSM36632",
+            "Consequence": "missense_variant",
+            "vaf": "0.45",
+            "mutation": "p.Gln649Arg"
+        },
+        {
+            "gene": "ABCA13",
+            "dbSNP": "rs267601533",
+            "COSMIC": "COSM36817",
+            "Consequence": "missense_variant",
+            "vaf": "0.52",
+            "mutation": "p.Gly4948Asp"
+        },
+        {
+            "gene": "EPHB4",
+            "dbSNP": "rs267601191",
+            "COSMIC": "COSM21032",
+            "Consequence": "missense_variant",
+            "vaf": "0.50",
+            "mutation": "p.Pro346Leu"
+        },
+        {
+            "gene": "ACHE",
+            "dbSNP": "rs267601193",
+            "COSMIC": "COSM36706",
+            "Consequence": "missense_variant",
+            "vaf": "0.53",
+            "mutation": "p.Thr95Ile"
+        },
+        {
+            "gene": "BRAF",
+            "dbSNP": "rs113488022",
+            "COSMIC": "COSM18443,COSM476,COSM6137",
+            "Consequence": "missense_variant",
+            "vaf": "0.74",
+            "mutation": "p.Val600Glu"
+        },
+        {
+            "gene": "RP11-1220K2.2",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.16",
+            "mutation": "p.Asp1426Glu"
+        },
+        {
+            "gene": "TRBV23-1",
+            "dbSNP": "",
+            "COSMIC": "COSM36861",
+            "Consequence": "missense_variant",
+            "vaf": "0.73",
+            "mutation": "p.Pro27Leu"
+        },
+        {
+            "gene": "ZNF862",
+            "dbSNP": "rs267601404",
+            "COSMIC": "COSM36833",
+            "Consequence": "missense_variant",
+            "vaf": "0.56",
+            "mutation": "p.Gln583Lys"
+        },
+        {
+            "gene": "NAT2",
+            "dbSNP": "rs267601842",
+            "COSMIC": "COSM36677",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "mutation": "p.Glu264Lys"
+        },
+        {
+            "gene": "SCARA5",
+            "dbSNP": "rs267601883",
+            "COSMIC": "COSM36713",
+            "Consequence": "missense_variant",
+            "vaf": "0.52",
+            "mutation": "p.Glu270Lys"
+        },
+        {
+            "gene": "GPR124",
+            "dbSNP": "rs267601912",
+            "COSMIC": "COSM36641",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "mutation": "p.Glu863Lys"
+        },
+        {
+            "gene": "REXO1L1P",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.06",
+            "mutation": "p.Ser639Phe"
+        },
+        {
+            "gene": "CNBD1",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.74",
+            "mutation": "p.Leu135Arg"
+        },
+        {
+            "gene": "GRHL2",
+            "dbSNP": "rs267601682",
+            "COSMIC": "COSM36601",
+            "Consequence": "missense_variant",
+            "vaf": "0.71",
+            "mutation": "p.Ser356Phe"
+        },
+        {
+            "gene": "ZC3H3",
+            "dbSNP": "rs267601811",
+            "COSMIC": "COSM36642",
+            "Consequence": "missense_variant",
+            "vaf": "0.27",
+            "mutation": "p.Ser879Phe"
+        },
+        {
+            "gene": "ANKRD18A",
+            "dbSNP": "rs267602244",
+            "COSMIC": "COSM36859",
+            "Consequence": "missense_variant",
+            "vaf": "0.45",
+            "mutation": "p.Glu654Lys"
+        },
+        {
+            "gene": "PCSK5",
+            "dbSNP": "rs267602276",
+            "COSMIC": "COSM36640",
+            "Consequence": "missense_variant",
+            "vaf": "0.66",
+            "mutation": "p.Cys747Tyr"
+        },
+        {
+            "gene": "NUTM2G",
+            "dbSNP": "rs267602327",
+            "COSMIC": "COSM36612",
+            "Consequence": "missense_variant",
+            "vaf": "0.59",
+            "mutation": "p.Gly36Asp"
+        },
+        {
+            "gene": "OR1J1",
+            "dbSNP": "rs267602118",
+            "COSMIC": "COSM36710",
+            "Consequence": "missense_variant",
+            "vaf": "0.71",
+            "mutation": "p.Leu157Phe"
+        },
+        {
+            "gene": "GAPVD1",
+            "dbSNP": "rs267602131",
+            "COSMIC": "COSM36617",
+            "Consequence": "missense_variant",
+            "vaf": "0.65",
+            "mutation": "p.Leu35Phe"
+        },
+        {
+            "gene": "ADAMTS13",
+            "dbSNP": "rs121908471",
+            "COSMIC": "COSM36777",
+            "Consequence": "missense_variant",
+            "vaf": "0.61",
+            "mutation": "p.Arg398His"
+        },
+        {
+            "gene": "LHX3",
+            "dbSNP": "",
+            "COSMIC": "COSM36599",
+            "Consequence": "missense_variant",
+            "vaf": "0.56",
+            "mutation": "p.Gly92Glu"
+        },
+        {
+            "gene": "MADD",
+            "dbSNP": "rs267602903",
+            "COSMIC": "COSM26934",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Ser1620Phe"
+        },
+        {
+            "gene": "OR4S2",
+            "dbSNP": "rs267602971",
+            "COSMIC": "COSM36685",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Arg120Cys"
+        },
+        {
+            "gene": "OR4D11",
+            "dbSNP": "rs267603040",
+            "COSMIC": "COSM36624",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Pro58Ala"
+        },
+        {
+            "gene": "SPTBN2",
+            "dbSNP": "rs201985455",
+            "COSMIC": "COSM36751,COSM4199893",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Glu2047Lys"
+        },
+        {
+            "gene": "GRM5",
+            "dbSNP": "rs267603229",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Glu941Lys"
+        },
+        {
+            "gene": "DCP1B",
+            "dbSNP": "rs267603408",
+            "COSMIC": "COSM36575",
+            "Consequence": "missense_variant",
+            "vaf": "0.70",
+            "mutation": "p.Pro98Ser"
+        },
+        {
+            "gene": "CD163",
+            "dbSNP": "rs267603681",
+            "COSMIC": "COSM36725",
+            "Consequence": "missense_variant",
+            "vaf": "0.58",
+            "mutation": "p.Pro310Leu"
+        },
+        {
+            "gene": "GLI1",
+            "dbSNP": "rs267603606",
+            "COSMIC": "COSM24658",
+            "Consequence": "missense_variant",
+            "vaf": "0.69",
+            "mutation": "p.Ser1094Phe"
+        },
+        {
+            "gene": "TBC1D30",
+            "dbSNP": "rs267603627",
+            "COSMIC": "COSM36841",
+            "Consequence": "missense_variant",
+            "vaf": "0.32",
+            "mutation": "p.Gly327Glu"
+        },
+        {
+            "gene": "KCNC2",
+            "dbSNP": "rs267603669",
+            "COSMIC": "COSM36754",
+            "Consequence": "missense_variant",
+            "vaf": "0.65",
+            "mutation": "p.Leu298Ser"
+        },
+        {
+            "gene": "PABPC3",
+            "dbSNP": "rs267603790",
+            "COSMIC": "COSM36646",
+            "Consequence": "missense_variant",
+            "vaf": "0.40",
+            "mutation": "p.Gly234Arg"
+        },
+        {
+            "gene": "CPB2",
+            "dbSNP": "rs267603833",
+            "COSMIC": "COSM36708",
+            "Consequence": "missense_variant",
+            "vaf": "0.55",
+            "mutation": "p.Phe409Ser"
+        },
+        {
+            "gene": "CARKD",
+            "dbSNP": "rs267603758",
+            "COSMIC": "COSM36577",
+            "Consequence": "missense_variant",
+            "vaf": "0.56",
+            "mutation": "p.Pro205Ser"
+        },
+        {
+            "gene": "NOVA1",
+            "dbSNP": "rs267603974",
+            "COSMIC": "COSM1369439,COSM25331",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Ala256Asp"
+        },
+        {
+            "gene": "ARHGAP5",
+            "dbSNP": "rs56259828",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Thr437Ile"
+        },
+        {
+            "gene": "SERPINA6",
+            "dbSNP": "rs267604111",
+            "COSMIC": "COSM1265285,COSM26307,COSM267404",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Arg282Leu"
+        },
+        {
+            "gene": "NUDT14",
+            "dbSNP": "rs267603899",
+            "COSMIC": "COSM36696",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Thr44Pro"
+        },
+        {
+            "gene": "IGHV1-18",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.98",
+            "mutation": "p.Gln20Lys"
+        },
+        {
+            "gene": "TRPM1",
+            "dbSNP": "rs267604151",
+            "COSMIC": "COSM36625",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Glu1261Lys"
+        },
+        {
+            "gene": "PLIN1",
+            "dbSNP": "",
+            "COSMIC": "COSM36595",
+            "Consequence": "missense_variant",
+            "vaf": "0.44",
+            "mutation": "p.Leu191Arg"
+        },
+        {
+            "gene": "PRC1",
+            "dbSNP": "rs267604387",
+            "COSMIC": "COSM36743",
+            "Consequence": "missense_variant",
+            "vaf": "0.36",
+            "mutation": "p.Gly507Glu"
+        },
+        {
+            "gene": "AMDHD2",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.33",
+            "mutation": "p.His587Arg"
+        },
+        {
+            "gene": "NLRC3",
+            "dbSNP": "rs267604538",
+            "COSMIC": "COSM36804",
+            "Consequence": "missense_variant",
+            "vaf": "0.74",
+            "mutation": "p.Gly454Arg"
+        },
+        {
+            "gene": "TTLL6",
+            "dbSNP": "rs267604932",
+            "COSMIC": "COSM36852",
+            "Consequence": "missense_variant",
+            "vaf": "0.31",
+            "mutation": "p.Arg280Lys"
+        },
+        {
+            "gene": "USH1G",
+            "dbSNP": "rs267605044",
+            "COSMIC": "COSM36661",
+            "Consequence": "missense_variant",
+            "vaf": "0.41",
+            "mutation": "p.Leu379Ser"
+        },
+        {
+            "gene": "PSMA8",
+            "dbSNP": "rs267605136",
+            "COSMIC": "COSM36586",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Gly36Glu"
+        },
+        {
+            "gene": "MBD3",
+            "dbSNP": "rs369581342",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.38",
+            "mutation": "p.Asp283Asn"
+        },
+        {
+            "gene": "GTF2F1",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant&splice_region_variant",
+            "vaf": "0.37",
+            "mutation": "p.Gly411Arg"
+        },
+        {
+            "gene": "MUC16",
+            "dbSNP": "rs267605807",
+            "COSMIC": "COSM2701120,COSM36853",
+            "Consequence": "missense_variant",
+            "vaf": "0.29",
+            "mutation": "p.Met2821Ile"
+        },
+        {
+            "gene": "MUC16",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.09",
+            "mutation": "p.Leu2819Met"
+        },
+        {
+            "gene": "MUC16",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.09",
+            "mutation": "p.Leu1434Ile"
+        },
+        {
+            "gene": "OLFM2",
+            "dbSNP": "rs267605828",
+            "COSMIC": "COSM36654",
+            "Consequence": "missense_variant",
+            "vaf": "0.39",
+            "mutation": "p.Arg58Gln"
+        },
+        {
+            "gene": "PKN1",
+            "dbSNP": "rs267605306",
+            "COSMIC": "COSM21035",
+            "Consequence": "missense_variant",
+            "vaf": "0.68",
+            "mutation": "p.Arg191Cys"
+        },
+        {
+            "gene": "CYP4F2",
+            "dbSNP": "rs140630977",
+            "COSMIC": "COSM1129961",
+            "Consequence": "missense_variant",
+            "vaf": "0.63",
+            "mutation": "p.Arg149Gln"
+        },
+        {
+            "gene": "ZNF208",
+            "dbSNP": "rs267605385",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.67",
+            "mutation": "p.His855Tyr"
+        },
+        {
+            "gene": "ARHGAP33",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.35",
+            "mutation": "p.Pro1068Leu"
+        },
+        {
+            "gene": "NOSIP",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.22",
+            "mutation": "p.Pro297Leu"
+        },
+        {
+            "gene": "ZNF880",
+            "dbSNP": "rs267605631",
+            "COSMIC": "COSM1234752",
+            "Consequence": "missense_variant",
+            "vaf": "0.36",
+            "mutation": "p.Pro169Gln"
+        },
+        {
+            "gene": "ZSCAN5A",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.24",
+            "mutation": "p.Ala179Thr"
+        },
+        {
+            "gene": "FLRT3",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.23",
+            "mutation": "p.Ile532Asn"
+        },
+        {
+            "gene": "DLGAP4",
+            "dbSNP": "rs267605913",
+            "COSMIC": "COSM36648",
+            "Consequence": "missense_variant",
+            "vaf": "0.46",
+            "mutation": "p.Ala879Ser"
+        },
+        {
+            "gene": "SPO11",
+            "dbSNP": "rs267606012",
+            "COSMIC": "COSM36690",
+            "Consequence": "missense_variant",
+            "vaf": "0.50",
+            "mutation": "p.Gly88Ser"
+        },
+        {
+            "gene": "TMEM50B",
+            "dbSNP": "rs267606110",
+            "COSMIC": "COSM36665",
+            "Consequence": "missense_variant",
+            "vaf": "0.67",
+            "mutation": "p.Ser113Phe"
+        },
+        {
+            "gene": "CECR2",
+            "dbSNP": "rs267606173",
+            "COSMIC": "COSM36851",
+            "Consequence": "missense_variant",
+            "vaf": "0.48",
+            "mutation": "p.Gly474Arg"
+        },
+        {
+            "gene": "IGLV3-12",
+            "dbSNP": "rs2073451",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.50",
+            "mutation": "p.Ala89Thr"
+        },
+        {
+            "gene": "IGLJ3",
+            "dbSNP": "rs2009433",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.35",
+            "mutation": "p.Pro10Ala"
+        },
+        {
+            "gene": "MEI1",
+            "dbSNP": "rs267606261",
+            "COSMIC": "COSM36800",
+            "Consequence": "missense_variant",
+            "vaf": "0.54",
+            "mutation": "p.Gly507Glu"
+        },
+        {
+            "gene": "NHS",
+            "dbSNP": "rs267606412",
+            "COSMIC": "COSM1118631,COSM36761",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Arg373Gln"
+        },
+        {
+            "gene": "FGD1",
+            "dbSNP": "",
+            "COSMIC": "COSM21850",
+            "Consequence": "missense_variant",
+            "vaf": "0.45",
+            "mutation": "p.Arg636Trp"
+        },
+        {
+            "gene": "PJA1",
+            "dbSNP": "rs267606501",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.His586Tyr"
+        },
+        {
+            "gene": "OGT",
+            "dbSNP": "",
+            "COSMIC": "",
+            "Consequence": "missense_variant",
+            "vaf": "0.58",
+            "mutation": "p.Leu367Ser"
+        },
+        {
+            "gene": "DCAF12L1",
+            "dbSNP": "rs267606338",
+            "COSMIC": "COSM36778",
+            "Consequence": "missense_variant",
+            "vaf": "1.00",
+            "mutation": "p.Ser281Phe"
+        }
+    ],
+    "appendix_reference_table": [
+        {
+            "index": 1,
+            "combined": "Futreal et al., A census of human cancer genes., Nature reviews. Cancer, 4, 3, 177-83, 2004"
+        },
+        {
+            "index": 2,
+            "combined": "Rubio-Perez et al., In silico prescription of anticancer drugs to cohorts of 28 tumor types reveals targeting opportunities., Cancer cell, 27, 3, 382-96, 2015"
+        },
+        {
+            "index": 3,
+            "combined": "Vogelstein et al., Cancer genome landscapes., Science (New York, N.Y.), 339, 6127, 1546-58, 2013"
+        },
+        {
+            "index": 4,
+            "combined": "Apweiler et al., UniProt: the Universal Protein knowledgebase., Nucleic acids research, 32, Database issue, D115-9, 2004"
+        },
+        {
+            "index": 5,
+            "combined": "Zhao et al., TSGene: a web resource for tumor suppressor genes., Nucleic acids research, 41, Database issue, D970-6, 2013"
+        },
+        {
+            "index": 6,
+            "combined": "Di et al., Wild-type BRAF is required for response to panitumumab or cetuximab in metastatic colorectal cancer., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 26, 35, 5705-12, 2008"
+        },
+        {
+            "index": 7,
+            "combined": "Nissan et al., Loss of NF1 in cutaneous melanoma is associated with RAS activation and MEK dependence., Cancer research, 74, 8, 2340-50, 2014"
+        },
+        {
+            "index": 8,
+            "combined": "Rudin et al., Molecular characterization of acquired resistance to the BRAF inhibitor dabrafenib in a patient with BRAF-mutant non-small-cell lung cancer., Journal of thoracic oncology : official publication of the International Association for the Study of Lung Cancer, 8, 5, e41-2, 2013"
+        },
+        {
+            "index": 9,
+            "combined": "Menzies et al., Dabrafenib and trametinib, alone and in combination for BRAF-mutant metastatic melanoma., Clinical cancer research : an official journal of the American Association for Cancer Research, 20, 8, 2035-43, 2014"
+        },
+        {
+            "index": 10,
+            "combined": "Rad et al., A genetic progression model of Braf(V600E)-induced intestinal tumorigenesis reveals targets for therapeutic intervention., Cancer cell, 24, 1, 15-29, 2013"
+        },
+        {
+            "index": 11,
+            "combined": "Ji et al., Vemurafenib synergizes with nutlin-3 to deplete survivin and suppresses melanoma viability and tumor growth., Clinical cancer research : an official journal of the American Association for Cancer Research, 19, 16, 4383-91, 2013"
+        },
+        {
+            "index": 12,
+            "combined": "Yang et al., Antitumor activity of BRAF inhibitor vemurafenib in preclinical models of BRAF-mutant colorectal cancer., Cancer research, 72, 3, 779-89, 2012"
+        },
+        {
+            "index": 13,
+            "combined": "De et al., Effects of KRAS, BRAF, NRAS, and PIK3CA mutations on the efficacy of cetuximab plus chemotherapy in chemotherapy-refractory metastatic colorectal cancer: a retrospective consortium analysis., The Lancet. Oncology, 11, 8, 753-62, 2010"
+        },
+        {
+            "index": 14,
+            "combined": "Sarker et al., First-in-human phase I study of pictilisib (GDC-0941), a potent pan-class I phosphatidylinositol-3-kinase (PI3K) inhibitor, in patients with advanced solid tumors., Clinical cancer research : an official journal of the American Association for Cancer Research, 21, 1, 77-86, 2015"
+        },
+        {
+            "index": 15,
+            "combined": "Penna et al., Primary cross-resistance to BRAFV600E-, MEK1/2- and PI3K/mTOR-specific inhibitors in BRAF-mutant melanoma cells counteracted by dual pathway blockade., Oncotarget, 7, 4, 3947-65, 2016"
+        },
+        {
+            "index": 16,
+            "combined": "Hatzivassiliou et al., Mechanism of MEK inhibition determines efficacy in mutant KRAS- versus BRAF-driven cancers., Nature, 501, 7466, 232-6, 2013"
+        },
+        {
+            "index": 17,
+            "combined": "McArthur et al., Safety and efficacy of vemurafenib in BRAF(V600E) and BRAF(V600K) mutation-positive melanoma (BRIM-3): extended follow-up of a phase 3, randomised, open-label study., The Lancet. Oncology, 15, 3, 323-32, 2014"
+        },
+        {
+            "index": 18,
+            "combined": "Prahallad et al., Unresponsiveness of colon cancer to BRAF(V600E) inhibition through feedback activation of EGFR., Nature, 483, 7387, 100-3, 2012"
+        },
+        {
+            "index": 19,
+            "combined": "Chapman et al., Improved survival with vemurafenib in melanoma with BRAF V600E mutation., The New England journal of medicine, 364, 26, 2507-16, 2011"
+        },
+        {
+            "index": 20,
+            "combined": "Sosman et al., Survival in BRAF V600-mutant advanced melanoma treated with vemurafenib., The New England journal of medicine, 366, 8, 707-14, 2012"
+        },
+        {
+            "index": 21,
+            "combined": "Ali et al., Extended Antitumor Response of a BRAF V600E Papillary Thyroid Carcinoma to Vemurafenib., Case reports in oncology, 7, 2, 343-8, 2014"
+        },
+        {
+            "index": 22,
+            "combined": "Larkin et al., Combined vemurafenib and cobimetinib in BRAF-mutated melanoma., The New England journal of medicine, 371, 20, 1867-76, 2014"
+        },
+        {
+            "index": 23,
+            "combined": "Coffee et al., Concomitant BRAF and PI3K/mTOR blockade is required for effective treatment of BRAF(V600E) colorectal cancer., Clinical cancer research : an official journal of the American Association for Cancer Research, 19, 10, 2688-98, 2013"
+        },
+        {
+            "index": 24,
+            "combined": "Klempner et al., BRAFV600E Mutations in High-Grade Colorectal Neuroendocrine Tumors May Predict Responsiveness to BRAF-MEK Combination Therapy., Cancer discovery, 6, 6, 594-600, 2016"
+        },
+        {
+            "index": 25,
+            "combined": "Tiacci et al., Targeting Mutant BRAF in Relapsed or Refractory Hairy-Cell Leukemia., The New England journal of medicine, 373, 18, 1733-47, 2015"
+        },
+        {
+            "index": 26,
+            "combined": "Pietrantonio et al., MET-Driven Resistance to Dual EGFR and BRAF Blockade May Be Overcome by Switching from EGFR to MET Inhibition in BRAF-Mutated Colorectal Cancer., Cancer discovery, 6, 9, 963-71, 2016"
+        },
+        {
+            "index": 27,
+            "combined": "Brose et al., Vemurafenib in patients with BRAF(V600E)-positive metastatic or unresectable papillary thyroid cancer refractory to radioactive iodine: a non-randomised, multicentre, open-label, phase 2 trial., The Lancet. Oncology, 17, 9, 1272-82, 2016"
+        },
+        {
+            "index": 28,
+            "combined": "Sharman et al., Vemurafenib response in 2 patients with posttransplant refractory BRAF V600E-mutated multiple myeloma., Clinical lymphoma, myeloma & leukemia, 14, 5, e161-3, 2014"
+        },
+        {
+            "index": 29,
+            "combined": "Flaherty et al., Inhibition of mutated, activated BRAF in metastatic melanoma., The New England journal of medicine, 363, 9, 809-19, 2010"
+        },
+        {
+            "index": 30,
+            "combined": "Hong et al., Phase IB Study of Vemurafenib in Combination with Irinotecan and Cetuximab in Patients with Metastatic Colorectal Cancer with BRAFV600E Mutation., Cancer discovery, 6, 12, 1352-1365, 2016"
+        },
+        {
+            "index": 31,
+            "combined": "Souglakos et al., Prognostic and predictive value of common mutations for treatment response and survival in patients with metastatic colorectal cancer., British journal of cancer, 101, 3, 465-72, 2009"
+        },
+        {
+            "index": 32,
+            "combined": "Tol et al., BRAF mutation in metastatic colorectal cancer., The New England journal of medicine, 361, 1, 98-9, 2009"
+        },
+        {
+            "index": 33,
+            "combined": "Flaherty et al., Improved survival with MEK inhibition in BRAF-mutated melanoma., The New England journal of medicine, 367, 2, 107-14, 2012"
+        },
+        {
+            "index": 34,
+            "combined": "Planchard et al., Dabrafenib plus trametinib in patients with previously treated BRAF(V600E)-mutant metastatic non-small cell lung cancer: an open-label, multicentre phase 2 trial., The Lancet. Oncology, 17, 7, 984-993, 2016"
+        },
+        {
+            "index": 35,
+            "combined": "Kaczirek et al., FOLFOX4 Plus Cetuximab for Patients With Previously Untreated Metastatic Colorectal Cancer According to Tumor RAS and BRAF Mutation Status: Updated Analysis of the CECOG/CORE 1.2.002 Study., Clinical colorectal cancer, 14, 2, 91-8, 2015"
+        },
+        {
+            "index": 36,
+            "combined": "Trunzer et al., Pharmacodynamic effects and mechanisms of resistance to vemurafenib in patients with metastatic melanoma., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 31, 14, 1767-74, 2013"
+        },
+        {
+            "index": 37,
+            "combined": "Rutkowski et al., The outcomes of Polish patients with advanced BRAF-positive melanoma treated with vemurafenib in a safety clinical trial., Contemporary oncology (Poznan, Poland), 19, 4, 280-3, 2015"
+        },
+        {
+            "index": 38,
+            "combined": "Ugurel et al., A multicenter DeCOG study on predictors of vemurafenib therapy outcome in melanoma: pretreatment impacts survival., Annals of oncology : official journal of the European Society for Medical Oncology, 26, 3, 573-82, 2015"
+        },
+        {
+            "index": 39,
+            "combined": "Robert et al., Improved overall survival in melanoma with combined dabrafenib and trametinib., The New England journal of medicine, 372, 1, 30-9, 2015"
+        },
+        {
+            "index": 40,
+            "combined": "del et al., Response of recurrent BRAFV600E mutated ganglioglioma to Vemurafenib as single agent., Journal of translational medicine, 12, , 356, 2014"
+        },
+        {
+            "index": 41,
+            "combined": "Combe et al., Sustained response to vemurafenib in a low grade serous ovarian cancer with a BRAF V600E mutation., Investigational new drugs, 33, 6, 1267-70, 2015"
+        },
+        {
+            "index": 42,
+            "combined": "Kocsis et al., Combined dabrafenib and trametinib treatment in a case of chemotherapy-refractory extrahepatic BRAF V600E mutant cholangiocarcinoma: dramatic clinical and radiological response with a confusing synchronic new liver lesion., Journal of gastrointestinal oncology, 8, 2, E32-E38, 2017"
+        },
+        {
+            "index": 43,
+            "combined": "Lavingia et al., Impressive response to dual BRAF and MEK inhibition in patients with BRAF mutant intrahepatic cholangiocarcinoma-2 case reports and a brief review., Journal of gastrointestinal oncology, 7, 6, E98-E102, 2016"
+        },
+        {
+            "index": 44,
+            "combined": "Loaiza-Bonilla et al., Dramatic response to dabrafenib and trametinib combination in a BRAF V600E-mutated cholangiocarcinoma: implementation of a molecular tumour board and next-generation sequencing for personalized medicine., Ecancermedicalscience, 8, , 479, 2014"
+        },
+        {
+            "index": 45,
+            "combined": "Silkin et al., Complete Clinical Response of BRAF-Mutated Cholangiocarcinoma to Vemurafenib, Panitumumab, and Irinotecan., Journal of gastrointestinal cancer, 47, 4, 502-505, 2016"
+        },
+        {
+            "index": 46,
+            "combined": "Hainsworth et al., Targeted Therapy for Advanced Solid Tumors on the Basis of Molecular Profiles: Results From MyPathway, an Open-Label, Phase IIa Multiple Basket Study., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 36, 6, 536-542, 2018"
+        },
+        {
+            "index": 47,
+            "combined": "Hyman et al., Vemurafenib in Multiple Nonmelanoma Cancers with BRAF V600 Mutations., The New England journal of medicine, 373, 8, 726-36, 2015"
+        },
+        {
+            "index": 48,
+            "combined": "Corcoran et al., Combined BRAF, EGFR, and MEK Inhibition in Patients with BRAFV600E-Mutant Colorectal Cancer., Cancer discovery, 8, 4, 428-443, 2018"
+        },
+        {
+            "index": 49,
+            "combined": "Long et al., Adjuvant Dabrafenib plus Trametinib in Stage III BRAF-Mutated Melanoma., The New England journal of medicine, 377, 19, 1813-1823, 2017"
+        },
+        {
+            "index": 50,
+            "combined": "Long et al., Combined BRAF and MEK inhibition versus BRAF inhibition alone in melanoma., The New England journal of medicine, 371, 20, 1877-88, 2014"
+        },
+        {
+            "index": 51,
+            "combined": "Flaherty et al., Combined BRAF and MEK inhibition in melanoma with BRAF V600 mutations., The New England journal of medicine, 367, 18, 1694-703, 2012"
+        },
+        {
+            "index": 52,
+            "combined": "Subbiah et al., Dabrafenib and Trametinib Treatment in Patients With Locally Advanced or Metastatic BRAF V600-Mutant Anaplastic Thyroid Cancer., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 36, 1, 7-13, 2018"
+        },
+        {
+            "index": 53,
+            "combined": "Ohashi et al., Lung cancers with acquired resistance to EGFR inhibitors occasionally harbor BRAF gene mutations but lack mutations in KRAS, NRAS, or MEK1., Proceedings of the National Academy of Sciences of the United States of America, 109, 31, E2127-33, 2012"
+        },
+        {
+            "index": 54,
+            "combined": "Jalili et al., Dual suppression of the cyclin-dependent kinase inhibitors CDKN2C and CDKN1A in human melanoma., Journal of the National Cancer Institute, 104, 21, 1673-9, 2012"
+        },
+        {
+            "index": 55,
+            "combined": "Paraiso et al., The HSP90 inhibitor XL888 overcomes BRAF inhibitor resistance mediated through diverse mechanisms., Clinical cancer research : an official journal of the American Association for Cancer Research, 18, 9, 2502-14, 2012"
+        },
+        {
+            "index": 56,
+            "combined": "ASCO 2013 (abstr 9029)"
+        },
+        {
+            "index": 57,
+            "combined": "Greger et al., Combinations of BRAF, MEK, and PI3K/mTOR inhibitors overcome acquired resistance to the BRAF inhibitor GSK2118436 dabrafenib, mediated by NRAS or MEK mutations., Molecular cancer therapeutics, 11, 4, 909-20, 2012"
+        },
+        {
+            "index": 58,
+            "combined": "Villanueva et al., Acquired resistance to BRAF inhibitors mediated by a RAF kinase switch in melanoma can be overcome by cotargeting MEK and IGF-1R/PI3K., Cancer cell, 18, 6, 683-95, 2010"
+        },
+        {
+            "index": 59,
+            "combined": "Nicolaides et al., Targeted therapy for BRAFV600E malignant astrocytoma., Clinical cancer research : an official journal of the American Association for Cancer Research, 17, 24, 7595-604, 2011"
+        },
+        {
+            "index": 60,
+            "combined": "Huillard et al., Cooperative interactions of BRAFV600E kinase and CDKN2A locus deficiency in pediatric malignant astrocytoma as a basis for rational therapy., Proceedings of the National Academy of Sciences of the United States of America, 109, 22, 8710-5, 2012"
+        },
+        {
+            "index": 61,
+            "combined": "Falchook et al., Dabrafenib in patients with melanoma, untreated brain metastases, and other solid tumours: a phase 1 dose-escalation trial., Lancet (London, England), 379, 9829, 1893-901, 2012"
+        },
+        {
+            "index": 62,
+            "combined": "Morris et al., Discovery of a novel ERK inhibitor with activity in models of acquired resistance to BRAF and MEK inhibitors., Cancer discovery, 3, 7, 742-50, 2013"
+        },
+        {
+            "index": 63,
+            "combined": "ASCO 2017 (abstr 2508)"
+        },
+        {
+            "index": 64,
+            "combined": "Hayes et al., Phase II efficacy and pharmacogenomic study of Selumetinib (AZD6244; ARRY-142886) in iodine-131 refractory papillary thyroid carcinoma with or without follicular elements., Clinical cancer research : an official journal of the American Association for Cancer Research, 18, 7, 2056-65, 2012"
+        },
+        {
+            "index": 65,
+            "combined": "Nakayama et al., KRAS or BRAF mutation status is a useful predictor of sensitivity to MEK inhibition in ovarian cancer., British journal of cancer, 99, 12, 2020-8, 2008"
+        },
+        {
+            "index": 66,
+            "combined": "ESMO 2015 (abstract 300)"
+        },
+        {
+            "index": 67,
+            "combined": "AACR 2016 (abstr CT005)"
+        },
+        {
+            "index": 68,
+            "combined": "AACR 2017 (abstr  CT002)"
+        },
+        {
+            "index": 69,
+            "combined": "ASCO 2013 (abstr 8009)"
+        },
+        {
+            "index": 70,
+            "combined": "ESMO 2014 (abstr LBA38_PR)"
+        },
+        {
+            "index": 71,
+            "combined": "Kim et al., Clinical responses to vemurafenib in patients with metastatic papillary thyroid cancer harboring BRAF(V600E) mutation., Thyroid : official journal of the American Thyroid Association, 23, 10, 1277-83, 2013"
+        },
+        {
+            "index": 72,
+            "combined": "Planchard et al., Dabrafenib in patients with BRAF(V600E)-positive advanced non-small-cell lung cancer: a single-arm, multicentre, open-label, phase 2 trial., The Lancet. Oncology, 17, 5, 642-50, 2016"
+        },
+        {
+            "index": 73,
+            "combined": "Tamborero et al., Cancer Genome Interpreter annotates the biological and clinical relevance of tumor alterations., Genome medicine, 10, 1, 25, 2018"
+        },
+        {
+            "index": 74,
+            "combined": "Tamborero et al., Cancer Genome Interpreter annotates the biological and clinical relevance of tumor alterations., Genome medicine, 10, 1, 25, 2018"
+        },
+        {
+            "index": 75,
+            "combined": "Falchook et al., BRAF mutant gastrointestinal stromal tumor: first report of regression with BRAF inhibitor dabrafenib (GSK2118436) and whole exomic sequencing for analysis of acquired resistance., Oncotarget, 4, 2, 310-5, 2013"
+        },
+        {
+            "index": 76,
+            "combined": "Corcoran et al., Combined BRAF and MEK Inhibition With Dabrafenib and Trametinib in BRAF V600-Mutant Colorectal Cancer., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 33, 34, 4023-31, 2015"
+        },
+        {
+            "index": 77,
+            "combined": "ASCO 2015 (abstr 8006)"
+        },
+        {
+            "index": 78,
+            "combined": "ASCO 2014 (abstr 3515)"
+        },
+        {
+            "index": 79,
+            "combined": "ASCO 2015 (abstr 103)"
+        },
+        {
+            "index": 80,
+            "combined": "PMC3638050"
+        },
+        {
+            "index": 81,
+            "combined": "NCT01089101"
+        },
+        {
+            "index": 82,
+            "combined": "Gautschi et al., A patient with BRAF V600E lung adenocarcinoma responding to vemurafenib., Journal of thoracic oncology : official publication of the International Association for the Study of Lung Cancer, 7, 10, e23-4, 2012"
+        },
+        {
+            "index": 83,
+            "combined": "Dietrich et al., BRAF inhibition in refractory hairy-cell leukemia., The New England journal of medicine, 366, 21, 2038-40, 2012"
+        },
+        {
+            "index": 84,
+            "combined": "Andrulis et al., Targeting the BRAF V600E mutation in multiple myeloma., Cancer discovery, 3, 8, 862-9, 2013"
+        },
+        {
+            "index": 85,
+            "combined": "De et al., KRAS, BRAF, PIK3CA, and PTEN mutations: implications for targeted therapies in metastatic colorectal cancer., The Lancet. Oncology, 12, 6, 594-603, 2011"
+        },
+        {
+            "index": 86,
+            "combined": "Peeters et al., Massively parallel tumor multigene sequencing to evaluate response to panitumumab in a randomized phase III study of metastatic colorectal cancer., Clinical cancer research : an official journal of the American Association for Cancer Research, 19, 7, 1902-12, 2013"
+        },
+        {
+            "index": 87,
+            "combined": "Maguire et al., SF3B1 mutations constitute a novel therapeutic target in breast cancer., The Journal of pathology, 235, 4, 571-80, 2015"
+        },
+        {
+            "index": 88,
+            "combined": "ENA 2014 (abstr 456)"
+        },
+        {
+            "index": 89,
+            "combined": "ENA 2014 (abstr 575)"
+        },
+        {
+            "index": 90,
+            "combined": "Heidorn et al., Kinase-dead BRAF and oncogenic RAS cooperate to drive tumor progression through CRAF., Cell, 140, 2, 209-21, 2010"
+        },
+        {
+            "index": 91,
+            "combined": "Hsu et al., Mutations of KRAS/NRAS/BRAF predict cetuximab resistance in metastatic colorectal cancer patients., Oncotarget, 7, 16, 22257-70, 2016"
+        },
+        {
+            "index": 92,
+            "combined": "Smalley et al., CRAF inhibition induces apoptosis in melanoma cells with non-V600E BRAF mutations., Oncogene, 28, 1, 85-94, 2009"
+        },
+        {
+            "index": 93,
+            "combined": "Yao et al., Tumours with class 3 BRAF mutants are sensitive to the inhibition of activated RAS., Nature, 548, 7666, 234-238, 2017"
+        },
+        {
+            "index": 94,
+            "combined": "Chen et al., Oncogenic BRAF Deletions That Function as Homodimers and Are Sensitive to Inhibition by RAF Dimer Inhibitor LY3009120., Cancer discovery, 6, 3, 300-15, 2016"
+        },
+        {
+            "index": 95,
+            "combined": "Sen et al., Kinase-impaired BRAF mutations in lung cancer confer sensitivity to dasatinib., Science translational medicine, 4, 136, 136ra70, 2012"
+        },
+        {
+            "index": 96,
+            "combined": "27577079"
+        },
+        {
+            "index": 97,
+            "combined": "Dahlman et al., BRAF(L597) mutations in melanoma are associated with sensitivity to MEK inhibitors., Cancer discovery, 2, 9, 791-7, 2012"
+        },
+        {
+            "index": 98,
+            "combined": "Kim et al., Phase II study of the MEK1/MEK2 inhibitor Trametinib in patients with metastatic BRAF-mutant cutaneous melanoma previously treated with or without a BRAF inhibitor., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 31, 4, 482-9, 2013"
+        },
+        {
+            "index": 99,
+            "combined": "Falchook et al., Activity of the oral MEK inhibitor trametinib in patients with advanced melanoma: a phase 1 dose-escalation trial., The Lancet. Oncology, 13, 8, 782-9, 2012"
+        },
+        {
+            "index": 100,
+            "combined": "Wagenaar et al., Resistance to vemurafenib resulting from a novel mutation in the BRAFV600E kinase domain., Pigment cell & melanoma research, 27, 1, 124-33, 2014"
+        },
+        {
+            "index": 101,
+            "combined": "Hoogstraat et al., Detailed imaging and genetic analysis reveal a secondary BRAF(L505H) resistance mutation and extensive intrapatient heterogeneity in metastatic BRAF mutant melanoma patients treated with vemurafenib., Pigment cell & melanoma research, 28, 3, 318-23, 2015"
+        },
+        {
+            "index": 102,
+            "combined": "Bahadoran et al., Major clinical response to a BRAF inhibitor in a patient with a BRAF L597R-mutated melanoma., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 31, 19, e324-6, 2013"
+        },
+        {
+            "index": 103,
+            "combined": "Jing et al., Comprehensive predictive biomarker analysis for MEK inhibitor GSK1120212., Molecular cancer therapeutics, 11, 3, 720-9, 2012"
+        },
+        {
+            "index": 104,
+            "combined": "Bertotti et al., A molecularly annotated platform of patient-derived xenografts (\"xenopatients\") identifies HER2 as an effective therapeutic target in cetuximab-resistant colorectal cancer., Cancer discovery, 1, 6, 508-23, 2011"
+        },
+        {
+            "index": 105,
+            "combined": "Hutchinson et al., BRAF fusions define a distinct molecular subset of melanomas with potential sensitivity to MEK inhibition., Clinical cancer research : an official journal of the American Association for Cancer Research, 19, 24, 6696-702, 2013"
+        },
+        {
+            "index": 106,
+            "combined": "Zimmer et al., Phase I expansion and pharmacodynamic study of the oral MEK inhibitor RO4987655 (CH4987655) in selected patients with advanced cancer with RAS-RAF mutations., Clinical cancer research : an official journal of the American Association for Cancer Research, 20, 16, 4251-61, 2014"
+        },
+        {
+            "index": 107,
+            "combined": "Weekes et al., Multicenter phase I trial of the mitogen-activated protein kinase 1/2 inhibitor BAY 86-9766 in patients with advanced cancer., Clinical cancer research : an official journal of the American Association for Cancer Research, 19, 5, 1232-43, 2013"
+        },
+        {
+            "index": 108,
+            "combined": "Ascierto et al., Cobimetinib combined with vemurafenib in advanced BRAF(V600)-mutant melanoma (coBRIM): updated efficacy results from a randomised, double-blind, phase 3 trial., The Lancet. Oncology, 17, 9, 1248-60, 2016"
+        },
+        {
+            "index": 109,
+            "combined": "van et al., A Phase Ib Dose-Escalation Study of Encorafenib and Cetuximab with or without Alpelisib in Metastatic BRAF-Mutant Colorectal Cancer., Cancer discovery, 7, 6, 610-619, 2017"
+        },
+        {
+            "index": 110,
+            "combined": "Ribas et al., Combination of vemurafenib and cobimetinib in patients with advanced BRAF(V600)-mutated melanoma: a phase 1b study., The Lancet. Oncology, 15, 9, 954-65, 2014"
+        },
+        {
+            "index": 111,
+            "combined": "147167"
+        },
+        {
+            "index": 112,
+            "combined": "Ponti et al., The somatic affairs of BRAF: tailored therapies for advanced malignant melanoma and orphan non-V600E (V600R-M) mutations., Journal of clinical pathology, 66, 5, 441-5, 2013"
+        },
+        {
+            "index": 113,
+            "combined": "Ponti et al., Overwhelming response to Dabrafenib in a patient with double BRAF mutation (V600E; V600M) metastatic malignant melanoma., Journal of hematology & oncology, 5, , 60, 2012"
+        },
+        {
+            "index": 114,
+            "combined": "Sahadudheen et al., Long Term Survival and Continued Complete Response of Vemurafenib in a Metastatic Melanoma Patient with BRAF V600K Mutation., Case reports in oncological medicine, 2016, , 2672671, 2016"
+        },
+        {
+            "index": 115,
+            "combined": "Long et al., Prognostic and clinicopathologic associations of oncogenic BRAF in metastatic melanoma., Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 29, 10, 1239-46, 2011"
+        },
+        {
+            "index": 116,
+            "combined": "Klein et al., BRAF inhibitor activity in V600R metastatic melanoma., European journal of cancer (Oxford, England : 1990), 49, 5, 1073-9, 2013"
+        },
+        {
+            "index": 117,
+            "combined": "ENA 2014 (abstr 11LBA)"
+        },
+        {
+            "index": 118,
+            "combined": "Francisco et al., cAC10-vcMMAE, an anti-CD30-monomethyl auristatin E conjugate with potent and selective antitumor activity., Blood, 102, 4, 1458-65, 2003"
+        },
+        {
+            "index": 119,
+            "combined": "Wang et al., Therapeutic target database 2020: enriched resource for facilitating research and early development of targeted therapeutics., Nucleic acids research, 48, D1, D1031-D1041, 2020"
+        },
+        {
+            "index": 120,
+            "combined": "Santos et al., A comprehensive map of molecular drug targets., Nature reviews. Drug discovery, 16, 1, 19-34, 2017"
+        },
+        {
+            "index": 121,
+            "combined": "Kneidinger et al., The effects of dasatinib on IgE receptor-dependent activation and histamine release in human basophils., Blood, 111, 6, 3097-107, 2008"
+        },
+        {
+            "index": 122,
+            "combined": "Changeux et al., On the association of tyrocidine with acetylcholinesterase., Proceedings of the National Academy of Sciences of the United States of America, 62, 3, 986-93, 1969"
+        },
+        {
+            "index": 123,
+            "combined": "Wishart et al., DrugBank: a comprehensive resource for in silico drug discovery and exploration., Nucleic acids research, 34, Database issue, D668-72, 2006"
+        },
+        {
+            "index": 124,
+            "combined": "Zambon et al., Small molecule inhibitors of BRAF in clinical trials., Bioorganic & medicinal chemistry letters, 22, 2, 789-92, 2012"
+        },
+        {
+            "index": 125,
+            "combined": "Li et al., Encorafenib (LGX818), a potent BRAF inhibitor, induces senescence accompanied by autophagy in BRAFV600E melanoma cells., Cancer letters, 370, 2, 332-44, 2016"
+        },
+        {
+            "index": 126,
+            "combined": "Koelblinger et al., Development of encorafenib for BRAF-mutated advanced melanoma., Current opinion in oncology, 30, 2, 125-133, 2018"
+        },
+        {
+            "index": 127,
+            "combined": "Moschos et al., Targeted therapies in melanoma., Surgical oncology clinics of North America, 24, 2, 347-58, 2015"
+        }
+    ]
+}

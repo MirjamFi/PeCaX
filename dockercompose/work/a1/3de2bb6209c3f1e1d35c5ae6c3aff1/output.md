@@ -1,0 +1,1 @@
+/nextflow_pipeline/nf-core-clinvap/docs/output.md
