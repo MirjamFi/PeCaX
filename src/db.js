@@ -6,7 +6,11 @@ var pecaxdb = {
 			return collections.then(res => {
 				if(res.length == 0){
 					var collection = db.collection(collection_name);
-					collection.create().then(
+					collection.create({
+						keyOptions: { 
+					    type: "autoincrement",
+					    offset: 1,
+					  }}).then(
 					()=> {console.log("Collection created ("+collection_name+")."); return false},
 					err => console.error('Failed to create collection:', err))
 				}
@@ -44,8 +48,7 @@ var pecaxdb = {
 			error=> console.error("Error connecting to database: " + error)
 			);
 	},
-	updateEntry(database, collection_name, jobid, driveruuid){
-		console.log(driveruuid)
+	updateEntry(database, collection_name, jobid, uuidobj){
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 
@@ -57,8 +60,8 @@ var pecaxdb = {
 
 				// Creating a collection if it does not exist
 				collection.exists().then(() => {
-					collection.document(jobid+'.vcf').then(doc => {
-						collection.update(doc, {driveruuid:driveruuid});
+					collection.document(jobid).then(doc => {
+						collection.update(doc, uuidobj);
 						// printDoc(collection, doc);
 					})
 				});},
@@ -85,7 +88,6 @@ var pecaxdb = {
 		)
 	},
 	getJsonFromJobID(db, aqlQuery, collection_name, jobid){
-		jobid = jobid + '.vcf';
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 
@@ -112,7 +114,7 @@ var pecaxdb = {
 		db = db.useDatabase('pecax');
 		var collection = db.collection(collection_name);
 		// Removing the document
-		collection.remove(jobid+'.vcf').then(
+		collection.remove(jobid).then(
 		  () => console.log('Document removed'),
 		  err => console.error('Failed to remove document', err)
 		);
@@ -121,28 +123,31 @@ var pecaxdb = {
 
 function saveDoc(collection, assembly){
 	// save document if it does not exist
-	return collection.list('_key').then(keys => {
+	// return collection.list('_key').then(keys => {
 		var doc = {
-		  _key: keys.length + '.vcf',
+		  // _key: keys.length + '.vcf',
 		  assembly: assembly,
 		  json_file: {},
-		  driveruuid:""
+		  drivergenes:"",
+		  pharmaco:"",
+		  civic:"",
+		  cancer:""
 		};
-		// creating a document
+		// creating a documents
 		return collection.save(doc).then(
-		  meta => { return ["new", doc._key]},
+		  meta => {return ["new", meta._key]},
 		  err => console.error('Failed to save document:', err)
 		);
-	});
+	// });
 }
 
-function printDoc(collection, doc){
-	// fetch and see complete document
-	collection.document(doc._key).then(
-	  doc => console.log('Document:', JSON.stringify(doc, null, 2)),
-	  err => console.error('Failed to fetch document:', err)
-	);
-}
+// function printDoc(collection, doc){
+// 	// fetch and see complete document
+// 	collection.document(doc._id).then(
+// 	  doc => console.log('Document:', JSON.stringify(doc, null, 2)),
+// 	  err => console.error('Failed to fetch document:', err)
+// 	);
+// }
 
 // function selectAction(modal){
 // 	modal.classList.toggle('activeModal');
@@ -150,7 +155,7 @@ function printDoc(collection, doc){
 
 
 
-// // // updare document in place
+// // // update document in place
 // // collection.update(doc._key, {d: 'qux'}).then(
 // //   meta => console.log('Document updated:', meta._rev),
 // //   err => console.error('Failed to update document:', err)
