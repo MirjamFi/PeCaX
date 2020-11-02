@@ -3,4 +3,5 @@ node_modules
 .nuxt
 handover
 work
-*.log
+sbml4j
+neo4j
