@@ -28,19 +28,45 @@
 		  	<div class="column" style="position:relative;">
 		  		<h3 style="font-size:150%;" class="text-center">ClinVAP</h3>
 		  		<p class="text-center">Extract information from simple somatic mutations (SNVs) of a patient given in VCF files and create a structured clinical report by annotating, prioritizing and filtering the genomic variants. The report is designed to provide assistance in making therapeutic decisions by equipping them with the molecular mechanisms initiating carcinogenesis and actionable genes.</p>
-		  		<div id='vcfbutn' style="position:relative; bottom:0px; margin-left:-150px;left:47.5%;width:100%;">
-		  			<form name="Testform" ref="testform" >
-						<label >Choose assembly: 
-							<select name="assembly" size="1" ref="assembly" style="width: 10px">
-								<option value="GRCh37">GRCh37</option>
-								<option value="GRCh38">GRCh38</option>
-							</select>
-							<b-icon data-html2canvas-ignore="true" icon="info-circle" title="Select the assembly according to the human reference genome that was used in mapping of the NGS-pipeline. If you do not know it, it might be noted in the vcf-file. Otherwise the default is GRCh37."></b-icon> 
-						</label>
-					</form>
-		        	<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 250px"/>
-		        	<button class= 'butn' 
-		        		v-on:click="checkDB();">Submit .vcf</button>
+		  		<div id='vcfbutn' style="position:relative; bottom:0px; margin-left:-130px;left:47.5%;width:100%;">
+		  			<table name="Testform" ref="testform" >
+		  				<tr>
+		  					<td>
+		  						Choose assembly:
+		  					</td>
+		  					<td>
+		  						<select name="assembly" size="1" ref="assembly" style="width: 10px">
+									<option value="GRCh37">GRCh37</option>
+									<option value="GRCh38">GRCh38</option>
+								</select>
+								<b-icon data-html2canvas-ignore="true" icon="info-circle" title="Select the assembly according to the human reference genome that was used in mapping of the NGS-pipeline. If you do not know it, it might be noted in the vcf-file. Otherwise the default is GRCh37."></b-icon> 
+		  					</td>
+		  				</tr>
+		  				<tr>
+		  					<td>
+		  						CNV (optional): 
+		  					</td>
+		  					<td>
+		  						<input type="file" accept=".tsv"id="file" ref="cnvfile" style="width: 20px"/>
+		  					</td>
+		  				</tr>
+		  				<tr>
+		  					<td>
+		  						VCF:
+		  					</td>
+		  					<td>
+		  						<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 250px"/>
+		  					</td>
+		  				</tr>
+		  				<tr>
+		  					<td></td>
+		  					<td>
+		  						<button class= 'butn' v-on:click="checkDB();">Submit</button>
+		  					</td>
+		  				</tr>
+					</table>
+		        	
+		        	
 				</div>
 				<p style="font-size: 8px; width:100%;">If you use ClinVAP reports for your analysis, please cite the following article:<br>
 					Sürün, B., Schärfe, C.P., Divine, M.R., Heinrich, J., Toussaint, N.C., Zimmermann, L., Beha, J. and Kohlbacher, O., 2020. ClinVAP: a reporting strategy from variants to therapeutic options. Bioinformatics, 36(7), pp.2316-2317. <a href="https://doi.org/10.1093/bioinformatics/btz924">https://doi.org/10.1093/bioinformatics/btz924</a></p>
@@ -90,6 +116,7 @@
 	    data (){
 	      return {    
 	        vcffile:"",
+	        cnvfile:"",
 	        assembly:"",
 	        status:"",
 	        jobid:"",
@@ -149,17 +176,23 @@
 		    		this.assembly = this.$refs.assembly.value
 		    		this.vcffile = new File([this.$refs.vcffile.files[0]], this.username+'_'+this.jobid+'.vcf');
 		    		this.filename = this.$refs.vcffile.files[0].name;
-		    		this.analyzeVCF(this.vcffile, this.assembly, this.jobid, this.username)
+		    		if(this.$refs.cnvfile.files.length > 0){
+		    			this.cnvfile = this.$refs.cnvfile.files[0]
+		    		}
+		    		else{
+		    			this.cnvfile = new File([""], "")
+		    		}
+		    		this.analyzeVCF(this.vcffile, this.assembly, this.cnvfile, this.jobid, this.username)
 		    	}) 	
 		    },
-		    analyzeVCF(file, assemblyparam, jobid, username){
+		    analyzeVCF(file, assemblyparam, cnvfile, jobid, username){
 		    	localStorage.setItem("assembly", assemblyparam);
 		    	localStorage.setItem("username", username);
 		    	localStorage.setItem("jobid", jobid);
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
 		    	formData.append("assembly", assemblyparam)
-		    	formData.append("cnv", new File([""], ""))
+		    	formData.append("cnv", cnvfile)
 				axios.post('/clinvap/upload-input', formData, {
 				    headers: {
 				      'Content-Type': 'multipart/form-data'

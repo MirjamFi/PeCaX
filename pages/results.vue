@@ -26,7 +26,7 @@
 				<div v-show="showStatus">
 					<!-- <h1>Clinical Variant Annotation Pipeline</h1> -->
 					<p style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Job ID: {{this.jobid}} <br> Status of analyzing {{this.filename}} with ClinVAP: {{this.status}}
-					<p v-show="showNetwork" style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Calculating driver genes network</p> 
+					<p v-show="showNetwork" style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Calculating networks.</p> 
 					</p>
 					<div class="loader" ref="loader1"></div>
 				</div>
@@ -1116,6 +1116,7 @@
 
         vcffile:"",
         assembly:"",
+        cnvfile:new File([""], ""),
         status:"",
         jobid:"",
         filename:"",
@@ -1331,6 +1332,7 @@
 		    	this.username = localStorage.getItem("username")
 			    this.jobid = localStorage.getItem("jobid");
 	    		this.assembly = localStorage.getItem("assembly");
+	    		// this.cnvfile = localStorage.getItem("cnvfile");
 	    		this.getVcfStatus(this.jobid, this.username)
 	    	}
 	    	// json as input
