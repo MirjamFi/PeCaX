@@ -26,14 +26,3 @@ proxy: {
 }
 </pre>
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
-
-## Current status 
-
-### 04.12.2019
-
-The clinVar report can be displayed from index.vue
-In reference part, each reference can be displayed individually from the web browser.
-
-### 27.02.2020
-The user uploads a ClinVAP .json-file and the report is displayed on the index page.
-Click on a gene opens a new tab showing the specific up/downstream network from SBML4j (runnning on abidocker!)

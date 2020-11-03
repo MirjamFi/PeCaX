@@ -159,6 +159,7 @@
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
 		    	formData.append("assembly", assemblyparam)
+		    	formData.append("cnv", new File([""], ""))
 				axios.post('/clinvap/upload-input', formData, {
 				    headers: {
 				      'Content-Type': 'multipart/form-data'
