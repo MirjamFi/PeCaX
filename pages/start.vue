@@ -29,17 +29,27 @@
 		  		<h3 style="font-size:150%;" class="text-center">ClinVAP</h3>
 		  		<p class="text-center">Extract information from simple somatic mutations (SNVs) of a patient given in VCF files and create a structured clinical report by annotating, prioritizing and filtering the genomic variants. The report is designed to provide assistance in making therapeutic decisions by equipping them with the molecular mechanisms initiating carcinogenesis and actionable genes.</p>
 		  		<div id='vcfbutn' style="position:relative; bottom:0px; margin-left:-130px;left:47.5%;width:100%;">
-		  			<table name="Testform" ref="testform" >
+		  			<table>
 		  				<tr>
 		  					<td>
-		  						Choose assembly:
+		  						VCF:
+		  					</td>
+		  					<td>
+		  						<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 250px"/>
+		  					</td>
+		  					<td>
+		  						<button class= 'butn' v-on:click="checkDB();">Submit</button>
+		  					</td>
+		  				</tr>
+		  				<tr>
+		  					<td title="Select the assembly according to the human reference genome that was used in mapping of the NGS-pipeline. If you do not know it, it might be noted in the vcf-file. Otherwise the default is GRCh37.">
+		  						Assembly<b-icon data-html2canvas-ignore="true" icon="info-circle" ></b-icon> :
 		  					</td>
 		  					<td>
 		  						<select name="assembly" size="1" ref="assembly" style="width: 10px">
 									<option value="GRCh37">GRCh37</option>
 									<option value="GRCh38">GRCh38</option>
 								</select>
-								<b-icon data-html2canvas-ignore="true" icon="info-circle" title="Select the assembly according to the human reference genome that was used in mapping of the NGS-pipeline. If you do not know it, it might be noted in the vcf-file. Otherwise the default is GRCh37."></b-icon> 
 		  					</td>
 		  				</tr>
 		  				<tr>
@@ -48,20 +58,6 @@
 		  					</td>
 		  					<td>
 		  						<input type="file" accept=".tsv"id="file" ref="cnvfile" style="width: 20px"/>
-		  					</td>
-		  				</tr>
-		  				<tr>
-		  					<td>
-		  						VCF:
-		  					</td>
-		  					<td>
-		  						<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 250px"/>
-		  					</td>
-		  				</tr>
-		  				<tr>
-		  					<td></td>
-		  					<td>
-		  						<button class= 'butn' v-on:click="checkDB();">Submit</button>
 		  					</td>
 		  				</tr>
 					</table>
