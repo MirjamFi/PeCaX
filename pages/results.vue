@@ -25,7 +25,7 @@
 			<v-flex>
 				<div v-show="showStatus">
 					<!-- <h1>Clinical Variant Annotation Pipeline</h1> -->
-					<p style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Job ID: {{this.jobid}} <br> Status of analyzing {{this.filename}} with ClinVAP: {{this.status}}
+					<p style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Job ID: {{this.jobid}} <br> Status of analysis with ClinVAP: {{this.status}}
 					<p v-show="showNetwork" style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Calculating networks.</p> 
 					</p>
 					<div class="loader" ref="loader1"></div>
@@ -86,7 +86,7 @@
       					</v-tooltip>
       					</div>
 			        	<!-- <p >List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein <em>et al.</em>, Uniprot, TSGene, IntoGen and COSMIC. </p> -->
-			       		<b-collapse id="collapse-4" v-model="visibleDrivers" class="mt-2 column">					             
+			       		<b-collapse id="collapse-4" v-model="visibleDrivers" :class="{column:visibleDrivergenes}">					             
 							<b-card>
 					            <table class="table table-hover">
 					              <thead>
@@ -248,7 +248,7 @@
 				            	</div>     	
 				          	</b-card> 
 				        </b-collapse>
-				        <div v-show="visibleDrivers" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
+				        <div v-show="visibleDrivers && visibleDrivergenes" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
 							<iframe id="drivergenesVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/drivergenes" allowfullscreen></iframe>
 						</div>
 				    </div> 	      
@@ -273,7 +273,7 @@
        					<span>List of drugs with the evidence of targeting the observed variant of the mutated gene, and the documented drug response for the given mutational profile. Evidence level letter represents: A = validated association, B = clinical evidence, C = case study, D = preclinical evidence, E = inferential association. Evidence level number represents the matching type between the observed variant and the database result: 1 = same variant, 2 = different variant, same consequence, 3 = different variant, different consequence, same gene. The information is obtained from CIViC, CGI and DrugBank. </span>
        					</v-tooltip>
        					</div>
-				        <b-collapse id="collapse-4" v-model="visiblePharma" class="mt-2 column">  
+				        <b-collapse id="collapse-4" v-model="visiblePharma" :class="{column:visiblePharmaco}">  
 				          <b-card> 
 				            <table class="table table-hover">
 				              <thead>
@@ -423,7 +423,7 @@
 				            </div>
 				         </b-card>
 				        </b-collapse>
-				        <div v-show="visiblePharma" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
+				        <div v-show="visiblePharma && visiblePharmaco" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
 							<iframe id="pharmacoVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/pharmaco" allowfullscreen></iframe>
 						</div>
 				    	<br><br>
@@ -456,7 +456,7 @@
 					        	</template>
 					            <span >Therapies that have evidence of targeting the affected gene. Evidence level letter represents: A = validated association, B = clinical evidence, C = case study, D = preclinical evidence, E = inferential association. Evidence level number represents the matching type between the observed variant and the database result: 1 = same variant, 2 = different variant, same consequence, 3 = different variant, different consequence, same gene. The information is obtained from CIViC, CGI and DrugBank. </span>
 					            </v-tooltip>
-					            <b-collapse id="collapse-4" v-model="visibleAffectCivic" class="mt-2 column">
+					            <b-collapse id="collapse-4" v-model="visibleAffectCivic" :class="{column:visibleCivic}">
 							      <b-card> 
 					                <table class="table table-hover">
 					                  <thead>
@@ -606,7 +606,7 @@
 					                </div>
 					            	</b-card>
 					          	</b-collapse>
-					          	<div v-show="visibleAffectCivic" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
+					          	<div v-show="visibleAffectCivic && visibleCivic" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
 									<iframe id="civicVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/civic" allowfullscreen></iframe>
 								</div>
 								<br>
@@ -628,7 +628,7 @@
 					          	</template>
 					            <span > List of cancer drugs targeting the mutated gene. Information is obtained from DrugBank, Therapeutic Target Database, IUPHAR, and Santos <em>et al.</em>.</span>
 					        	</v-tooltip>
-					          	<b-collapse id="collapse-4" v-model="visibleAffectCancer" class="mt-2  column" >
+					          	<b-collapse id="collapse-4" v-model="visibleAffectCancer" :class="{column:visibleCancer}" >
 						            <b-card> 
 						                <table class="table table-hover">
 						                  <thead>
@@ -738,7 +738,7 @@
 						                </div>
 						          </b-card>
 					          </b-collapse>
-					          <div v-show="visibleAffectCancer" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
+					          <div v-show="visibleAffectCancer && visibleCancer" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
 								<iframe id="cancerVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/cancer" allowfullscreen></iframe>
 							</div>
 					        </div>
@@ -1202,10 +1202,14 @@
         rowsPerPageAppendix: 10,
 
         visibleDrivers: true,
+        visibleDrivergenes : true,
         visiblePharma: true,
+        visiblePharmaco:true,
         visibleAffect: true,
         visibleAffectCivic: true,
+        visibleCivic:true,
         visibleAffectCancer: true,
+        visibleCancer:true,
         visibleEffect: false,
         visibleRef: false,
         visibleAppendix: false,
@@ -1394,10 +1398,12 @@
 	    	// info from json
     		this.jsongenerated = true;
     		this.driver_table= jsonfile.driver_table;
+    		var drivertypes = {}
     		for(let item  of this.driver_table){
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
     			item.Consequence = item.Consequence.replaceAll("_", " ")
     			item.ref_map = item.ref_map.replaceAll(",", ", ")
+    			drivertypes[item.gene] = item.driver_role
 	    	}
 	        this.direct_pharm_table  = jsonfile.direct_pharm_table ;
 	        for(let item  of this.direct_pharm_table){
@@ -1434,28 +1440,47 @@
 	    	// get uuids
 	    	if(!uuids){
 		        var drivergeneslist = this.driver_table.map(a => a.gene); 
-	    		this.getGraphFromGenes(drivergeneslist, jobid, username, "drivergene", "Drivergene network", "drivergenes")
+	    		this.getGraphFromGenes(drivergeneslist, jobid, username, "drivergene", "Drivergene network", "drivergenes", "Somatic Mutations in Known Driver Genes", drivertypes)
 	    		var pharmacogeneslist = this.direct_pharm_table.map(a => a.gene); 
-	    		this.getGraphFromGenes(pharmacogeneslist, jobid, username, "pharmacogenetic_effect", "Pharmacogeneti network", "pharmaco")
+	    		this.getGraphFromGenes(pharmacogeneslist, jobid, username, "pharmacogenetic_effect", "Pharmacogeneti network", "pharmaco", "Somatic Mutations with Known Pharmacogenetic Effect")
 	    		var pharmgeneslist = this.pharm_table.map(a => a.gene); 
-	    		this.getGraphFromGenes(pharmgeneslist, jobid, username, "targeted_gene", "Mechanistic drug network", "civic")
+	    		this.getGraphFromGenes(pharmgeneslist, jobid, username, "targeted_gene", "Mechanistic drug network", "civic", "Pharmacogenomics Summary of Drugs Targeting Affected Genes")
 	    		var mechanisticgeneslist = this.mechanistic_drug_table.map(a => a.gene); 
-	    		this.getGraphFromGenes(mechanisticgeneslist, jobid, username, "targeted_gene", "Cancer drug network", "cancer")
+	    		this.getGraphFromGenes(mechanisticgeneslist, jobid, username, "targeted_gene", "Cancer drug network", "cancer", "Summary of Cancer Drugs Targeting Affected Genes")
 		    }
 		    // uuids known
 		    else if(uuids){
+		    	this.visibleDrivergenes = false;
 		    	this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username)
+		    	this.visiblePharmaco = false;
 		    	this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username)
+		    	this.visibleCivic = false;
 		    	this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username)
+		    	this.visibleCancer = false;
 		    	this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
 		    }
 	    },
-	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage){
-	    	var graphml = this.getGraphforGene(jobid, genes, username, annotationName, networkName, subpage)
+	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage, tableheader, drivertypes = null){
+	    	var graphml = this.getGraphforGene(jobid, genes, username, annotationName, networkName, subpage, drivertypes)
 	    		.then(response => {return response})
 			graphml.then(response => {
 				if(response == undefined){
-					alert("No network found for "+genes)
+					alert("No network found for "+tableheader)
+
+					if(subpage == "drivergenes"){
+						this.visibleDrivergenes = false;
+					}
+					else if(subpage == "pharmaco"){
+						this.visiblePharmaco = false;
+					}
+					else if(subpage == "civic"){
+						this.visibleCivic = false;
+					}
+					else if(subpage == "cancer"){
+						this.visibleCancer = false;
+						this.showNetwork = false;
+						this.$refs.loader1.style.visibility="hidden";
+					}
 					return
 				}
 				axios.post('/visualization/'+subpage, response)
@@ -1474,9 +1499,9 @@
 
 			})
 		},
-		getGraphforGene(jobid, names, username, annotationName, networkName, subpage){
+		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, drivertypes = null){
 		  	return axios.post('/network/overview', 
-		  		{genes: names, 
+		  		{	genes: names, 
 		  			annotationName: annotationName, 
 		  			networkName: networkName}, {
 					    headers:{
@@ -1489,28 +1514,75 @@
 		  			var uuidobj ={}
 		  			uuidobj[subpage] = response.data.UUID
 		  			this.updateDbEntry(jobid, uuidobj, username)
-					return axios.get('/network/networks/'+response.data.UUID, {
-					    headers:{
-					      	'user':username+'/'+jobid.toString()
-					    },
-					    method: 'GET'
-				  	}).then(res => {
-				  		var table;
-						if(subpage == "drivergenes"){
-						table = this.driver_table
-						}
-						else if(subpage == "pharmaco"){
-							table = this.direct_pharm_table
-						}
-						else if(subpage == "civic"){
-							table = this.pharm_table
-						}
-						else if(subpage == "cancer"){
-							table = this.mechanistic_drug_table
-						}
-				  		this.addGeneLinks(res.data, table)
-				  		return res.data
-					})
+		  			if(drivertypes != null){
+		  				var uuid = response.data.UUID
+			  			return	axios.post("/networks/"+uuid+"/annotation?derive=false", {
+			  				nodeAnnotationName: "DriverType",
+						 	nodeAnnotationType: "string",
+						  	nodeAnnotation:drivertypes
+							  },
+							{headers:{
+			  					'user':username+'/'+jobid.toString()
+			  				},
+			  				method:'POST'}
+			  			).then(response => {
+			  				return axios.get('/network/networks/'+uuid, {
+							    headers:{
+							      	'user':username+'/'+jobid.toString()
+							    },
+							    method: 'GET'
+						  	}).then(res => {
+						  		var table;
+								if(subpage == "drivergenes"){
+								table = this.driver_table
+								}
+								else if(subpage == "pharmaco"){
+									table = this.direct_pharm_table
+								}
+								else if(subpage == "civic"){
+									table = this.pharm_table
+								}
+								else if(subpage == "cancer"){
+									table = this.mechanistic_drug_table
+								}
+						  		this.addGeneLinks(res.data, table)
+						  		return res.data
+							})
+							.catch(error => {
+						    	console.log(error.response)
+							});
+			  			})
+			  			.catch(error => {
+						    console.log(error.response)
+						});
+			  		}
+			  		else{
+						return axios.get('/network/networks/'+response.data.UUID, {
+						    headers:{
+						      	'user':username+'/'+jobid.toString()
+						    },
+						    method: 'GET'
+					  	}).then(res => {
+					  		var table;
+							if(subpage == "drivergenes"){
+							table = this.driver_table
+							}
+							else if(subpage == "pharmaco"){
+								table = this.direct_pharm_table
+							}
+							else if(subpage == "civic"){
+								table = this.pharm_table
+							}
+							else if(subpage == "cancer"){
+								table = this.mechanistic_drug_table
+							}
+					  		this.addGeneLinks(res.data, table)
+					  		return res.data
+						})
+						.catch(error => {
+						    console.log(error.response)
+						});
+					}
 				})
 				.catch(error => {
 				    console.log(error.response)
@@ -1542,15 +1614,19 @@
 				res => {
 					var table;
 					if(subpage == "drivergenes"){
+						this.visibleDrivergenes = true;
 						table = this.driver_table
 					}
 					else if(subpage == "pharmaco"){
+						this.visiblePharmaco = true;
 						table = this.direct_pharm_table
 					}
 					else if(subpage == "civic"){
+						this.visibleCivic = true;
 						table = this.pharm_table
 					}
 					else if(subpage == "cancer"){
+						this.visibleCancer = true;
 						table = this.mechanistic_drug_table
 					}
 					this.addGeneLinks(res.data, table)
