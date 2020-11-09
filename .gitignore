@@ -2,6 +2,8 @@ node_modules
 .DS_Store
 .nuxt
 handover
-work
+dockercompose/work/*
 sbml4j
 neo4j
+nginx
+flask
