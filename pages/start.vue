@@ -186,18 +186,20 @@
 		    		this.filter = this.$refs.diagnosisfilter.value;
 		    		if(this.$refs.cnvfile.files.length > 0){
 		    			this.cnvfile = new File([this.$refs.cnvfile.files[0]], this.username+'_'+this.jobid+'.tsv');
+		    			var cnvfileavailable = true;
 		    		}
 		    		else{
 		    			this.cnvfile = new File([""], "")
+		    			var cnvfileavailable = false;
 		    		}
-		    		this.analyzeVCF(this.vcffile, this.assembly, this.cnvfile, this.jobid, this.username, this.selectedICD10, this.filter)
+		    		this.analyzeVCF(this.vcffile, this.assembly, this.cnvfile, cnvfileavailable, this.jobid, this.username, this.selectedICD10, this.filter)
 		    	}) 	
 		    },
-		    analyzeVCF(file, assemblyparam, cnvfile, jobid, username, selectedICD10, filter){
+		    analyzeVCF(file, assemblyparam, cnvfile, cnvfileavailable, jobid, username, selectedICD10, filter){
 		    	localStorage.setItem("assembly", assemblyparam);
 		    	localStorage.setItem("username", username);
 		    	localStorage.setItem("jobid", jobid);
-		    	localStorage.setItem("cnv", true)
+		    	localStorage.setItem("cnvfileavailable", cnvfileavailable)
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
 		    	formData.append("assembly", assemblyparam)

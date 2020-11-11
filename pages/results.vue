@@ -1467,7 +1467,7 @@
 		    	this.visibleCancer = false;
 		    	this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
 		    }
-		    if(localStorage.getItem("cnv")){
+		    if(localStorage.getItem("cnvfileavailable")){
 		    	this.cnvavailable = true;
 		    }
 	    },
@@ -1601,6 +1601,7 @@
 		},
 		showCNV(){
 			localStorage.setItem("cnvjsonavailable", this.cnvjsonavailable)
+			console.log(localStorage.getItem("cnvfileavailable"), localStorage.getItem("cnvjsonavailable"))
 			var url = '/cnv?username='+this.username+'&jobid=' + encodeURIComponent(this.jobid)
 			window.open(url, '_blank');
 		},

@@ -23,6 +23,11 @@
 	<v-container fluid style="margin: 0px; padding: 0px; width: 100%">
 		<v-layout>
 			<v-flex>
+				<div v-show="showNetwork">
+					<p style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Calculating networks.</p> 
+					</p>
+					<div class="loader" ref="loader1"></div>
+				</div>
 			    <div  data-app v-show="showTable" ref="all" style="width:100%">
 			      	<div style="width:100%">
 				      	<table data-html2canvas-ignore="true" class="float-left">
@@ -1067,6 +1072,7 @@
 
 	    },
 	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage, tableheader, cnv="",drivertypes = null){
+	    	this.this.showNetwork=true;
 	    	var graphml = this.getGraphforGene(jobid, genes, username, annotationName, networkName, subpage, cnv, drivertypes)
 	    		.then(response => {return response})
 			graphml.then(response => {
@@ -1335,7 +1341,7 @@
 	    	pecaxdb.updateEntry(new arangodb.Database('/db/'), username, jobid, uuid)
 	    },
 	    displayJSON(jobid, username){
-	    	if(localStorage.getItem("cnv") && !localStorage.getItem("cnvjsonavailable")){
+	    	if(localStorage.getItem("cnvfileavailable") == "true" && localStorage.getItem("cnvjsonavailable") == "false"){
 		    	var cnvjsonReportjson = axios.get('/clinvap/results/'+username+'_'+jobid+'.cnv.json')
 		    		.then(res=>{return res.data})
 		    	cnvjsonReportjson.then(res => {
@@ -1346,7 +1352,7 @@
 		    		}
 		    	})
 		    }
-		    else if(localStorage.getItem("cnv") && localStorage.getItem("cnvjsonavailable")){
+		    else if(localStorage.getItem("cnvfileavailable") == "true" && localStorage.getItem("cnvjsonavailable") == "true"){
 		    	this.getJsonFromJobID(jobid, username)
 		    }
 	    },
