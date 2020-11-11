@@ -58,6 +58,11 @@
 					          	</div>
 		          			</button>
 			          	</p>
+			          	<button v-show="cnvavailable" class="butn"
+			          	v-on:click="showCNV()"
+			          	>
+			          		CNV
+			          	</button>
 				      	<!-- <button data-html2canvas-ignore="true" class="butn float-right "@click=function(){getGenes(checkedGenes)}>Network</button> -->
 				      	<!-- <div class="dropdown" data-html2canvas-ignore="true" style="margin-right: 1vw;"> -->
 			      			
@@ -1113,16 +1118,17 @@
         },
     data (){
       return {    
-
+      	timer:'',
         vcffile:"",
         assembly:"",
-        cnvfile:new File([""], ""),
         status:"",
         jobid:"",
         filename:"",
         showNetwork:false,
         jsongenerated:false,
         jsonReport:"",
+        cnvavailable:false,
+        cnvjsonavailable:false,
 
         currentSort:'Gene',
         currentSortDir:'asc',
@@ -1336,8 +1342,7 @@
 		    	this.username = localStorage.getItem("username")
 			    this.jobid = localStorage.getItem("jobid");
 	    		this.assembly = localStorage.getItem("assembly");
-	    		// this.cnvfile = localStorage.getItem("cnvfile");
-	    		this.getVcfStatus(this.jobid, this.username)
+	    		this.getVcfStatus(this.jobid, this.username, false)
 	    	}
 	    	// json as input
 	    	else if(data["username"] == localStorage.getItem("username") && localStorage.getItem("json") && !data["jobid"] && data["json"]){
@@ -1368,15 +1373,17 @@
 				})
 				.catch(error => {
 			    	if(error.response.status == 404 || error.response.status == 502){
-			    		setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 10000, this);
+			    		this.timer = setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 10000, this);
 			    	}
 			    	else{
 			    		console.log(error);
+			    		clearTimeout(this.timer)
 			    		return error.response;
 			    	}
 		 		})
 			status.then(res => {
 			  	if(res == "Success,Finished"  && this.status != "Success,Finished" && !stop){
+			  		clearTimeout(this.timer)
 			  		this.displayJSON(jobid, username);
 			  		this.status = res;
 			  		this.showNetwork=true;
@@ -1386,11 +1393,12 @@
 			  	else if(res == "Failed,Finished" && this.status != "Failed,Finished" && !stop){
 			  		this.status = res;
 			  		stop= true
+			  		clearTimeout(this.timer)
 			  		return
 			  	}
 			  	else{
 			  		this.status=res;
-			  		setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 30000,this);
+			  		this.timer = setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 30000,this);
 			  	}})
 			return
 	    },
@@ -1459,9 +1467,12 @@
 		    	this.visibleCancer = false;
 		    	this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
 		    }
+		    if(localStorage.getItem("cnv")){
+		    	this.cnvavailable = true;
+		    }
 	    },
-	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage, tableheader, drivertypes = null){
-	    	var graphml = this.getGraphforGene(jobid, genes, username, annotationName, networkName, subpage, drivertypes)
+	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage, tableheader, cnv="",drivertypes = null){
+	    	var graphml = this.getGraphforGene(jobid, genes, username, annotationName, networkName, subpage, cnv, drivertypes)
 	    		.then(response => {return response})
 			graphml.then(response => {
 				if(response == undefined){
@@ -1499,7 +1510,7 @@
 
 			})
 		},
-		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, drivertypes = null){
+		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, cnv="", drivertypes = null){
 		  	return axios.post('/network/overview', 
 		  		{	genes: names, 
 		  			annotationName: annotationName, 
@@ -1512,7 +1523,7 @@
 		  		.then(response => { 
 		  			localStorage.setItem(subpage,response.data.UUID);
 		  			var uuidobj ={}
-		  			uuidobj[subpage] = response.data.UUID
+		  			uuidobj[subpage+cnv] = response.data.UUID
 		  			this.updateDbEntry(jobid, uuidobj, username)
 		  			if(drivertypes != null){
 		  				var uuid = response.data.UUID
@@ -1588,6 +1599,11 @@
 				    console.log(error.response)
 				});
 		},
+		showCNV(){
+			localStorage.setItem("cnvjsonavailable", this.cnvjsonavailable)
+			var url = '/cnv?username='+this.username+'&jobid=' + encodeURIComponent(this.jobid)
+			window.open(url, '_blank');
+		},
 	    // getGenes(selected){
 	    //     for(let i of selected){
 	    //       if(selected.length==1){
@@ -1604,6 +1620,9 @@
 	    getGraphFromUUID(jobid, uuidobj, username){
 	    	var jobid = jobid
     		var subpage = Object.keys(uuidobj)[0]
+    		if(subpage.includes("_cnv")){
+    			subpage=subpage.replace("_cnv","")
+    		}
     		var uuid = uuidobj[subpage]
 			var graphml =  axios.get('/network/networks/'+uuid, {
 			    headers:{
@@ -1746,13 +1765,16 @@
 		    downloadAnchorNode.remove();
 	    },
 	    getJsonFromJobID(jobid, username){
-
-	    	pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, username, jobid).then(json => {
+	    	pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, username, jobid).then(json => { 
 	    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
+	    		if(json._result[0].json_file_cnv){
+	    			this.cnvavailable = true;
+	    			this.cnvjsonavailable = true;
+	    		}
 	    	});
 	    },
-	    storeJsonInDB(jsonReport, jobid, username){
-	    	pecaxdb.addJson(new arangodb.Database('/db/'), username, jobid, jsonReport, this.assembly);
+	    storeJsonInDB(jsonReport, jobid, username, cnv=""){
+	    	pecaxdb.addJson(new arangodb.Database('/db/'), username, jobid, jsonReport, cnv);
 	    },
 	    exportToPDF_all() {
 	        this.visibleDrivers = true;

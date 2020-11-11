@@ -62,13 +62,12 @@ var pecaxdb = {
 				collection.exists().then(() => {
 					collection.document(jobid).then(doc => {
 						collection.update(doc, uuidobj);
-						// printDoc(collection, doc);
 					})
 				});},
 				error=> console.error("Error connecting to database: " + error)
 			);
 	},
-	addJson(database, collection_name, idkey, json, assembly){
+	addJson(database, collection_name, idkey, json, cnv){
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 		var db = database.useDatabase('pecax');
@@ -79,7 +78,12 @@ var pecaxdb = {
 
 				collection.document(idkey).then(doc => {
 					// printDoc(collection, doc);
-					collection.update(doc, {json_file:json});
+					if(cnv == ""){
+						collection.update(doc, {json_file:json});
+					}
+					else if(cnv != ""){
+						collection.update(doc, {json_file_cnv:json});
+					}
 					// printDoc(collection, doc);
 				})
 				
@@ -90,7 +94,6 @@ var pecaxdb = {
 	getJsonFromJobID(db, aqlQuery, collection_name, jobid){
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
-
 		var db = db.useDatabase('pecax');
 		return db.get().then(
 			()=> {
@@ -131,7 +134,12 @@ function saveDoc(collection, assembly){
 		  drivergenes:"",
 		  pharmaco:"",
 		  civic:"",
-		  cancer:""
+		  cancer:"",
+		  json_file_cnv:{},
+		  drivergenes_cnv:"",
+		  pharmaco_cnv:"",
+		  civic_cnv:"",
+		  cancer_cnv:""
 		};
 		// creating a documents
 		return collection.save(doc).then(
@@ -141,17 +149,17 @@ function saveDoc(collection, assembly){
 	// });
 }
 
-// function printDoc(collection, doc){
-// 	// fetch and see complete document
-// 	collection.document(doc._id).then(
-// 	  doc => console.log('Document:', JSON.stringify(doc, null, 2)),
-// 	  err => console.error('Failed to fetch document:', err)
-// 	);
-// }
+function printDoc(collection, doc){
+	// fetch and see complete document
+	collection.document(doc._id).then(
+	  doc => console.log('Document:', JSON.stringify(doc, null, 2)),
+	  err => console.error('Failed to fetch document:', err)
+	);
+}
 
-// function selectAction(modal){
-// 	modal.classList.toggle('activeModal');
-// }
+function selectAction(modal){
+	modal.classList.toggle('activeModal');
+}
 
 
 
