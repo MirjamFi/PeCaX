@@ -176,7 +176,7 @@ export default {
   display: block;
   margin: 0;
   padding: 0;
-  width: 150px;
+  width: 290px;
   overflow: hidden;
   position: absolute;
   top: 20px;

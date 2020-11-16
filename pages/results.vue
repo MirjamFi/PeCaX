@@ -196,14 +196,14 @@
 					                    {{ item.gene}}
 					                   	<div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 						                    <div class="dropdown-content">
-									            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
+									            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
 									            <!-- <a class="page-link" :href="item.omim">OMIM</a>
 									            <a class="page-link" :href="item.entrez">Entrez</a> -->
-									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-									            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
 								        </div> 
 					                  </td>
@@ -370,14 +370,14 @@
 					                    {{ item.gene}}
 					                   	<div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 						                    <div class="dropdown-content">
-									            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
+									            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
 									            <!-- <a class="page-link" :href="item.omim">OMIM</a>
 									            <a class="page-link" :href="item.entrez">Entrez</a> -->
-									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-									            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
 								        </div> 
 					                  </td>
@@ -550,14 +550,14 @@
 				                    {{ item.gene}}
 				                    <div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 						                    <div class="dropdown-content">
-									            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
+									            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
 									            <!-- <a class="page-link" :href="item.omim">OMIM</a>
 									            <a class="page-link" :href="item.entrez">Entrez</a> -->
-									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-									            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
 								        </div> 
 				                  </td>
@@ -621,7 +621,7 @@
 							          block variant="primary"
 							          id="direct_pharm_butn_cnv"
 							         >
-							          <Strong style="color: white">CNV: Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+							          <Strong style="color: white">CNV: Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 						        	</b-button>
 					        
 					        	</template>
@@ -714,12 +714,12 @@
 				                    {{ item.gene}}
 				                    <div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 						                    <div class="dropdown-content">
-									            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
-									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-									            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+									            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
+									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
 								        </div> 
 				                  </td>
@@ -895,14 +895,14 @@
 					                        {{ item.gene}}
 					                        <div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 						                    <div class="dropdown-content">
-									            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
+									            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
 									            <!-- <a class="page-link" :href="item.omim">OMIM</a>
 									            <a class="page-link" :href="item.entrez">Entrez</a> -->
-									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-									            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
 								        </div> 
 					                      </td>
@@ -1036,14 +1036,14 @@
 						                        {{ item.gene }}
 						                        <div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 								                    <div class="dropdown-content">
-											            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-											            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-											            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
+											            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+											            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+											            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
 											            <!-- <a class="page-link" :href="item.omim">OMIM</a>
 											            <a class="page-link" :href="item.entrez">Entrez</a> -->
-											            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-											            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-											            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+											            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+											            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+											            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 										          	</div>
 										        </div> 
 						                      </td>
@@ -1198,12 +1198,12 @@
 					                        {{ item.gene}}
 					                        <div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 						                    <div class="dropdown-content">
-									            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
-									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-									            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+									            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+									            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+									            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
+									            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
 								        </div> 
 					                      </td>
@@ -1325,12 +1325,12 @@
 						                        {{ item.gene }}
 						                        <div v-if="item.network" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
 								                    <div class="dropdown-content">
-											            <a v-if = "item.eccode" class="page-link" :href="item.eccode">IntEnz</a>
-											            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl">Ensembl</a>
-											            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc">HGNC</a>
-											            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson">MDAnderson</a>
-											            <a v-if = "item.kegg"class="page-link" :href="item.kegg">KEGG</a>
-											            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot">UniProt</a>
+											            <a v-if = "item.eccode" class="page-link" :href="item.eccode" target="_blank">IntEnz</a>
+											            <a v-if = "item.ensembl"class="page-link" :href="item.ensembl" target="_blank">Ensembl</a>
+											            <a v-if = "item.hgnc" class="page-link" :href="item.hgnc" target="_blank">HGNC</a>
+											            <a v-if = "item.mdanderson"class="page-link" :href="item.mdanderson" target="_blank">MDAnderson</a>
+											            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
+											            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 										          	</div>
 										        </div> 
 						                      </td>
@@ -1888,6 +1888,7 @@
         jsonReport:"",
         cnvjsonavailable:false,
         cnvjsonReport:"",
+        drivertypes_cnv : {},
 
         currentSort:'Gene',
         currentSortDir:'asc',
@@ -2034,25 +2035,25 @@
 
         visibleDrivers: true,
         visibleDrivers_cnv: true,
-        visibleDrivergenes : true,
-        visibleDrivergenes_cnv: true,
+        visibleDrivergenes : false,
+        visibleDrivergenes_cnv: false,
         visiblePharma: true,
         visiblePharma_cnv: true,
-        visiblePharmaco_cnv:true,
-        visiblePharmaco:true,
+        visiblePharmaco_cnv:false,
+        visiblePharmaco:false,
         visibleAffect: true,
         visibleAffectCivic: true,
-        visibleCivic:true,
+        visibleCivic:false,
         visibleAffectCancer: true,
-        visibleCancer:true,
+        visibleCancer:false,
         visibleAffect_cnv: true,
         visibleAffectCivic_cnv: true,
-        visibleCivic_cnv:true,
+        visibleCivic_cnv:false,
         visibleAffectCancer_cnv: true,
+        visibleCancer_cnv:false,
         visibleEffect: false,
         visibleRef: false,
         visibleAppendix: false,
-        visibleCancer_cnv:true,
         visibleRef_cnv: false,
         visibleAppendix_cnv: false,
 
@@ -2245,11 +2246,19 @@
 		         data[tmp[0]] = tmp[1];
 		    }
 		    // new analysis
-		    if(data["username"] == localStorage.getItem("username") && data["jobid"] == localStorage.getItem("jobid") && data["assembly"] && data["assembly"] == localStorage.getItem("assembly")){
+		    if(data["username"] == localStorage.getItem("username") && data["jobid"] == localStorage.getItem("jobid") && data["assembly"] && data["assembly"] == localStorage.getItem("assembly")){	
 		    	this.username = localStorage.getItem("username")
-			    this.jobid = localStorage.getItem("jobid");
-	    		this.assembly = localStorage.getItem("assembly");
-	    		this.getVcfStatus(this.jobid, this.username, false)
+				this.jobid = localStorage.getItem("jobid");
+				pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, this.username, this.jobid).then(json => { 
+					if(Object.keys(json._result[0].json_file).length > 0){
+						this.showStatus = false;
+			    		this.getJsonFromJobID(this.jobid, this.username)
+			    	}
+			    	else{
+			    		this.assembly = localStorage.getItem("assembly");
+			    		this.getVcfStatus(this.jobid, this.username, false)
+			    	}
+			    })
 	    	}
 	    	// json as input
 	    	else if(data["username"] == localStorage.getItem("username") && localStorage.getItem("json") && !data["jobid"] && data["json"]){
@@ -2305,6 +2314,7 @@
 			  	}
 			  	else{
 			  		this.status=res;
+			  		clearTimeout(this.timer)
 			  		this.timer = setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 30000,this);
 			  	}})
 			return
@@ -2352,40 +2362,107 @@
 	    	if(jobid == null){
 	    		return
 	    	}
+	    	if(localStorage.getItem("cnvfileavailable") == "true" && !this.cnvjsonavailable){
+		    	var cnvjsonReportjson = axios.get('/clinvap/results/'+username+'_'+jobid+'.cnv.json')
+		    		.then(res=>{return res.data})
+		    	cnvjsonReportjson.then(res => {
+			    	if(res){
+		    			this.cnvjsonReport = res;
+		    			this.cnvjsonavailable = true;
+		    			this.storeJsonInDB(res, jobid, username, 'cnv')
+		    			this.showJSON_cnv(username, res, jobid)
+		    		}
+		    	})
+		    }
 	    	// get uuids
 	    	if(!uuids){
 		        var drivergeneslist = this.driver_table.map(a => a.gene); 
-	    		this.getGraphFromGenes(drivergeneslist, jobid, username, "drivergene", "Drivergene network", "drivergenes", "Somatic Mutations in Known Driver Genes","", drivertypes)
-	    		var pharmacogeneslist = this.direct_pharm_table.map(a => a.gene); 
-	    		setTimeout(this.getGraphFromGenes(pharmacogeneslist, jobid, username, "pharmacogenetic_effect", "Pharmacogeneti network", "pharmaco", "Somatic Mutations with Known Pharmacogenetic Effect"), 5000);
-	    		var pharmgeneslist = this.pharm_table.map(a => a.gene); 
-	    		setTimeout(this.getGraphFromGenes(pharmgeneslist, jobid, username, "targeted_gene", "Mechanistic drug network", "civic", "Pharmacogenomics Summary of Drugs Targeting Affected Genes"), 5000);
-	    		var mechanisticgeneslist = this.mechanistic_drug_table.map(a => a.gene); 
-	    		setTimeout(this.getGraphFromGenes(mechanisticgeneslist, jobid, username, "targeted_gene", "Cancer drug network", "cancer", "Summary of Cancer Drugs Targeting Affected Genes"), 5000);
+	    		var res_driver = this.getGraphFromGenes(drivergeneslist, jobid, username, "drivergene", "Drivergene network", "drivergenes", "Somatic Mutations in Known Driver Genes","", drivertypes)
+	    		res_driver.then(res => {
+	    			var pharmacogeneslist = this.direct_pharm_table.map(a => a.gene); 
+		    		var res_pharmaco = this.getGraphFromGenes(pharmacogeneslist, jobid, username, "pharmacogenetic_effect", "Pharmacogenetic network", "pharmaco", "Somatic Mutations with Known Pharmacogenetic Effect")
+		    		res_pharmaco.then(res => {
+		    			var pharmgeneslist = this.pharm_table.map(a => a.gene); 
+			    		var res_civic = this.getGraphFromGenes(pharmgeneslist, jobid, username, "targeted_gene", "Mechanistic drug network", "civic", "Pharmacogenomics Summary of Drugs Targeting Affected Genes")
+			    		res_civic.then(res => {
+			    			var mechanisticgeneslist = this.mechanistic_drug_table.map(a => a.gene); 
+			    			var res_cancer = this.getGraphFromGenes(mechanisticgeneslist, jobid, username, "targeted_gene", "Cancer drug network", "cancer", "Summary of Cancer Drugs Targeting Affected Genes")
+			    			res_cancer.then(res => {
+			    				if(localStorage.getItem("cnvfileavailable") == "true" && this.cnvjsonavailable){
+							    	var drivergeneslist_cnv = this.driver_table_cnv.map(a => a.gene); 
+							        var res_driver_cnv = this.getGraphFromGenes(drivergeneslist_cnv, jobid, username, "drivergene", "CNV Drivergene network", "drivergenes", "CNV: Somatic Mutations in Known Driver Genes", "_cnv", this.drivertypes_cnv);
+							        res_driver_cnv .then(res => {
+							        	var pharmacogeneslist_cnv = this.direct_pharm_table_cnv.map(a => a.gene); 
+						    			var res_pharmaco_cnv  = this.getGraphFromGenes(pharmacogeneslist_cnv, jobid, username, "pharmacogenetic_effect", "CNV Pharmacogenetic network", "pharmaco", "CNV: Somatic Mutations with Known Pharmacogenetic Effect", "_cnv")
+						    			res_pharmaco_cnv .then(res => {
+						    				var pharmgeneslist_cnv = this.pharm_table_cnv.map(a => a.gene); 
+								    		var res_civic_cnv  = this.getGraphFromGenes(pharmgeneslist_cnv, jobid, username, "targeted_gene", "CNV Mechanistic drug network", "civic", "CNV: Pharmacogenomics Summary of Drugs Targeting Affected Genes", "_cnv")
+								    		res_civic_cnv.then(res => {
+								    			var mechanisticgeneslist_cnv = this.mechanistic_drug_table_cnv.map(a => a.gene); 
+								    			var res_cancer_cnv  = this.getGraphFromGenes(mechanisticgeneslist_cnv, jobid, username, "targeted_gene", "CNV Cancer drug network", "cancer", "CNV: Summary of Cancer Drugs Targeting Affected Genes", "_cnv")
+								    			res_cancer_cnv.then(res => {
+								    				this.showNetwork = false;
+													this.$refs.loader1.style.visibility="hidden";
+								    			})
+								    		})
+						    			})		    		
+							        })	    	
+							    }
+							    else{
+							    	this.showNetwork = false;
+									this.$refs.loader1.style.visibility="hidden";
+							    }
+			    			})
+			    		})
+			    		
+		    		})
+		    		
+	    		})
+	    		
 		    }
 		    // uuids known
 		    else if(uuids){
 		    	this.visibleDrivergenes = false;
-		    	this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username)
 		    	this.visiblePharmaco = false;
-		    	this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username)
 		    	this.visibleCivic = false;
-		    	this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username)
 		    	this.visibleCancer = false;
-		    	this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
+		    	var res_driver = this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username)
+		    	res_driver.then(res => {
+		    		var res_pharmaco = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username)
+		    		res_pharmaco.then(res=>{
+		    			var res_civic = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username)
+		    			res_civic.then(res => {
+		    				var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
+		    				res_cancer.then(res => {
+			    				if(this.cnvjsonavailable){
+							    	this.visibleDrivergenes_cnv = false;
+							    	this.visiblePharmaco_cnv = false;
+							    	this.visibleCivic_cnv = false;
+							    	this.visibleCancer_cnv = false;
+							    	var res_driver_cnv = this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username, "_cnv")
+							    	res_driver_cnv.then(res => {
+							    		var res_pharmaco_cnv = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username, "_cnv")
+							    		res_pharmaco_cnv.then(res => {
+							    			var res_civic_cnv = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
+							    			res_civic_cnv.then(res => {
+							    				var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
+							    			})
+							    		})
+							    	})
+						    	}
+		    				})
+		    			})
+		    		})
+		    	})
 		    }
-		    // if(localStorage.getItem("cnvfileavailable")){
-		    // 	this.cnvavailable = true;
-		    // }
 	    },
 	    showJSON_cnv(username, jsonfile, jobid=null, uuids = null){
 	    	// info from json
     		this.driver_table_cnv= jsonfile.driver_table;
-    		var drivertypes_cnv = {}
     		for(let item  of this.driver_table_cnv){
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
     			item.ref_map = item.ref_map.replaceAll(",", ", ")
-    			drivertypes_cnv[item.gene] = item.driver_role
+    			this.drivertypes_cnv[item.gene] = item.driver_role
 	    	}
 	    	this.direct_pharm_table_cnv = jsonfile.direct_pharm_table;
 	        for(let item  of this.direct_pharm_table_cnv){
@@ -2409,108 +2486,76 @@
 	    	if(jobid == null){
 	    		return
 	    	}
-	    	//get uuids
-	    	if(!uuids){
-		        var drivergeneslist_cnv = this.driver_table_cnv.map(a => a.gene); 
-		        setTimeout(this.getGraphFromGenes(drivergeneslist_cnv, jobid, username, "drivergene", "Drivergene network", "drivergenes", "CNV: Somatic Mutations in Known Driver Genes", "_cnv", drivertypes_cnv), 20000);
-	    		var pharmacogeneslist_cnv = this.direct_pharm_table_cnv.map(a => a.gene); 
-	    		setTimeout(this.getGraphFromGenes(pharmacogeneslist_cnv, jobid, username, "pharmacogenetic_effect", "Pharmacogenetic network", "pharmaco", "CNV: Somatic Mutations with Known Pharmacogenetic Effect", "_cnv"), 20000);
-	    		var pharmgeneslist_cnv = this.pharm_table_cnv.map(a => a.gene); 
-	    		setTimeout(this.getGraphFromGenes(pharmgeneslist_cnv, jobid, username, "targeted_gene", "Mechanistic drug network", "civic", "CNV: Pharmacogenomics Summary of Drugs Targeting Affected Genes", "_cnv"), 20000);
-	    		var mechanisticgeneslist_cnv = this.mechanistic_drug_table_cnv.map(a => a.gene); 
-	    		setTimeout(this.getGraphFromGenes(mechanisticgeneslist_cnv, jobid, username, "targeted_gene", "Cancer drug network", "cancer", "CNV: Summary of Cancer Drugs Targeting Affected Genes", "_cnv"), 20000);
-		    }
-		    // uuids known
-		    else if(uuids){
-		    	console.log(uuids)
-		    	this.visibleDrivergenes_cnv = false;
-		    	this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username, "_cnv")
-		    	this.visiblePharmaco_cnv = false;
-		    	this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username, "_cnv")
-		    	this.visibleCivic_cnv = false;
-		    	this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
-		    	this.visibleCancer_cnv = false;
-		    	this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
-		    }
 	    },
 	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage, tableheader, cnv="",drivertypes = null){
-	    	console.log(genes)
-	    	console.log(subpage)
-
 	    	var graphml = this.getGraphforGene(jobid, genes, username, annotationName, networkName, subpage, cnv, drivertypes)
 	    		.then(response => {return response})
-			graphml.then(response => {
+			return graphml.then(response => {
 				if(response == undefined){
-					alert("No network found for "+tableheader+"; "+subpage	)
+					return "error"
+				}
+				else{
 					if(subpage == "drivergenes"){
 						if(cnv != ""){
-							this.visibleDrivergenes_cnv = false;
+							this.visibleDrivergenes_cnv = true;
 						}
 						else{
-							this.visibleDrivergenes = false;
+							this.visibleDrivergenes = true;
 
 						}
 					}
 					else if(subpage == "pharmaco"){	
 						if(cnv != ""){
-							this.visiblePharmaco_cnv = false;
+							this.visiblePharmaco_cnv = true;
 						}
 						else{
-							this.visiblePharmaco = false;
+							this.visiblePharmaco = true;
 						}
 					}
 					else if(subpage == "civic"){
 						if(cnv != ""){
-							this.visibleCivic_cnv = false;
+							this.visibleCivic_cnv = true;
 						}
 						else{
-							this.visibleCivic = false;
+							this.visibleCivic = true;
 						}
 					}
 					else if(subpage == "cancer"){
 						if(cnv != ""){
-							this.visibleCancer_cnv = false;
+							this.visibleCancer_cnv = true;
 						}
 						else{
-							this.visibleCancer = false;
+							this.visibleCancer = true;
 						}
-						this.showNetwork = false;
-						this.$refs.loader1.style.visibility="hidden";
 					}
-					return
-				}
-				axios.post('/visualization/'+subpage+cnv, response)
-				  .then(response => {
-				  	this.showNetwork = false;
-					if(!this.showNetwork){
-					  	this.$refs.loader1.style.visibility="hidden";	
-					  }
-
-					var iframe = document.getElementById(subpage+'Vis'+cnv);
-					iframe.src = iframe.src
+					axios.post('/visualization/'+subpage+cnv, response)
+				  	.then(response => {
+						var iframe = document.getElementById(subpage+'Vis'+cnv);
+						iframe.src = iframe.src
 				  	
-				  })
-				  .catch(function (error) {
-				    console.log(error);
-				  });
-
+				  	})
+				  	.catch(function (error) {
+				    	console.log(error);
+				  	});
+				}
+				return "Success"
 			})
 		},
 		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, cnv="", drivertypes = null){
 		  	return axios.post('/network/overview', 
+
 		  		{	genes: names, 
 		  			annotationName: annotationName, 
-		  			networkName: networkName}, {
+		  			networkName: networkName}, 
+		  			{
 					    headers:{
 					      	'user':username+'/'+jobid.toString()
 					    },
-					    method: 'POST'
+					    method: 'POST',
 			  		})
 		  		.then(response => { 
-		  			// localStorage.setItem(subpage+cnv,response.data.UUID);
 		  			var uuidobj ={}
 		  			uuidobj[subpage+cnv] = response.data.UUID
-		  			console.log(uuidobj)
 		  			this.updateDbEntry(jobid, uuidobj, username)
 		  			if(drivertypes != null){
 		  				var uuid = response.data.UUID
@@ -2623,16 +2668,13 @@
 					}
 				})
 				.catch(error => {
-				    console.log(error.response)
+				    console.log(subpage+cnv, error.response)
 				});
 		},
 	    getGraphFromUUID(jobid, uuidobj, username, cnv =""){
-	    	console.log(uuidobj)
 	    	var jobid = jobid
     		var subpage = Object.keys(uuidobj)[0]
-    		console.log(subpage)
     		var uuid = uuidobj[subpage]
-    		console.log(uuid)
     		if(uuid != ""){
 				var graphml =  axios.get('/network/networks/'+uuid, {
 				    headers:{
@@ -2686,7 +2728,6 @@
 							this.$refs.loader1.style.visibility="hidden";
 						}
 						this.addGeneLinks(res.data, table)
-						console.log(res.data)
 						axios.post('/visualization/'+subpage+cnv, res.data)
 						  .then(function () {
 						  	var iframe = document.getElementById(subpage+'Vis'+cnv);
@@ -2695,11 +2736,14 @@
 						  .catch(function (error) {
 						    console.log(error);
 						  });	
+						  return "Success"
 						  
 					})
 			  	.catch(function (error) {
 				    console.log(error);
-			 	});		 
+				    return "error"
+			 	});	
+			 	return graphml	 
 			 }   	
 	    },
 	    addGeneLinks(data, table){
@@ -2792,19 +2836,8 @@
 	    	jsonReport.then(res => {
 	    		this.showJSON(username, res, jobid);
 	    	 	this.jsonReport = res;
-	    		this.storeJsonInDB(res, jobid, username)})
-	    	if(localStorage.getItem("cnvfileavailable") == "true" && !this.cnvjsonavailable){
-		    	var cnvjsonReportjson = axios.get('/clinvap/results/'+username+'_'+jobid+'.cnv.json')
-		    		.then(res=>{return res.data})
-		    	cnvjsonReportjson.then(res => {
-			    	if(res){
-		    			this.cnvjsonReport = res;
-		    			this.cnvjsonavailable = true;
-		    			this.storeJsonInDB(res, jobid, username, 'cnv')
-		    			this.showJSON_cnv(username, res, jobid)
-		    		}
-		    	})
-		    }
+	    		this.storeJsonInDB(res, jobid, username);
+		    })
 	    },
 	    download_json(){
 	    	var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.jsonReport));
@@ -2814,7 +2847,7 @@
 		    document.body.appendChild(downloadAnchorNode); // required for firefox
 		    downloadAnchorNode.click();
 		    downloadAnchorNode.remove();
-		    if(localStorage.getItem("cnvfileavailable") == "true" && this.cnvjsonavailable){
+		    if(this.cnvjsonavailable){
 			    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.cnvjsonReport));
 			    var downloadAnchorNode = document.createElement('a');
 			    downloadAnchorNode.setAttribute("href",     dataStr);
@@ -2826,12 +2859,11 @@
 	    },
 	    getJsonFromJobID(jobid, username){
 	    	pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, username, jobid).then(json => { 
-	    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
-	    		console.log(Object.keys(json._result[0].json_file_cnv).length)
 	    		if(Object.keys(json._result[0].json_file_cnv).length){
 	    			this.cnvjsonavailable = true;
 	    			this.showJSON_cnv(username, json._result[0].json_file_cnv, json._result[0]._key, [json._result[0].drivergenes_cnv, json._result[0].pharmaco_cnv, json._result[0].civic_cnv, json._result[0].cancer_cnv])
 	    		}
+	    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
 	    	});
 	    },
 	    storeJsonInDB(jsonReport, jobid, username, cnv=""){
