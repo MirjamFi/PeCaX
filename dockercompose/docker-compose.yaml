@@ -84,6 +84,7 @@ services:
         command: ["/bin/sh", "-c", "cd /plugins && wget https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/4.1.0.2/apoc-4.1.0.2-all.jar"]
     sbml4jdatabase:
         image: neo4j
+        container_name: sbml4jdb
         volumes:
             - sbml4jVolumeCompose:/var/lib/neo4j/data
             - ./neo4j/plugins:/plugins
@@ -102,12 +103,13 @@ services:
         restart: unless-stopped
         command: ["neo4j"]
     sbml4j:
-        image: thortiede/sbml4j:0.0.34
+        image: thortiede/sbml4j:0.1
+        container_name: sbml4j
         volumes:
         - ./sbml4j/logs:/logs
         environment:
               - SPRING_PROFILES_ACTIVE=test
-              - SPRING_DATA_NEO4j_URI=bolt://sbml4jdatabase:7687
+              - SPRING_DATA_NEO4j_URI=bolt://sbml4jdb:7687
               - SERVER_SERVLET_CONTEXTPATH=/sbml4j
               - SERVER_PORT=8080
               - OVERVIEWNETWORK_DEFAULT_BASE_NETWORK_U_U_I_D=83621fb1-48a0-4812-adb8-efbf362917d6
