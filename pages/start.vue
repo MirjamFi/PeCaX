@@ -21,6 +21,21 @@
 <template>
   <v-layout justify-center align-center width=90%>
     <v-flex xs12 sm8 md12>
+    	<div class="topnav" id ="nav">
+		    <div class="topnav-centered">
+		      <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+		    </div>
+		    <div class="dropdown topnav-left" id="navAbout">  
+		      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
+		        <div class="dropdown-content">
+		          <a class="page-link" href="/profile">My Jobs</a>
+		          <a class="page-link" href="/about" >About </a>
+		          <a class="page-link" href="/documentation">Documentation</a>
+		          <a class="page-link" href="/contact">Contact</a>
+		        </div>
+		      </button> 
+		    </div>
+		</div>
 	 	<div style="border-bottom: thin solid #BDBDBD; margin-bottom: 20px; padding-bottom: 10px; font-size: 16px; font-weight: 500">
 	 		Personalized Cancer and Network Explorer (PeCax) is a tool for identifying patient specific cancer mechanisms by providing a complete mutational profile from variants to networks. It employs ClinVAP to perform clinical variant annotation which focuses on processing, filtering and prioritization of the variants to find the disrupted genes that are involved in carcinogenesis and to identify actionable variants from the mutational landscape of a patient. In addition it creates networks showing the connections between the driver genes and the genes in their neighbourhood and automatically performs pathway enrichment analysis using pathway resources (SBML4j). Its interactive visualisation (BioGraphVisart) supports easy network exploration and patient similarity (node overlap) and a merged network graph of two patient-specific networks can be calculated.
 	 	</div>

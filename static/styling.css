@@ -88,11 +88,20 @@ a{
 
 /* Right-aligned section inside the top navigation */
 .topnav-right {
+  float: right;
+
+  margin-top: -1vw;
+  padding-right: 3vw
+  /*margin-right: 3vw;*/
+}
+
+.topnav-left {
   /*float: right;*/
   top: -1vw;
   padding-right: 10vw
   /*margin-right: 3vw;*/
 }
+
 .topnav-centered a{
   float: none;
   position: absolute;

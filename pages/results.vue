@@ -23,6 +23,32 @@
 	<v-container fluid style="margin: 0px; padding: 0px; width: 100%">
 		<v-layout>
 			<v-flex>
+				<div class="topnav" id ="nav">
+				    <div class="topnav-centered">
+				      <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+				    </div>
+				    <div class="dropdown topnav-left" id="navAbout">  
+				      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
+				        <div class="dropdown-content">
+				          <a class="page-link" href="/profile">My Jobs</a>
+				          <a class="page-link" href="/about" >About </a>
+				          <a class="page-link" href="/documentation">Documentation</a>
+				          <a class="page-link" href="/contact">Contact</a>
+				        </div>
+				      </button> 
+				    </div>
+				    <div class="topnav-right">
+				      <p class="dropdown">
+				        <button class="dropbtn"><b-icon icon="download"></b-icon>
+				              <div class="dropdown-content">
+				            <a class="page-link pdfdownload"  @click="exportToPDF_all()">PDF</a>
+				            <!-- <a class="page-link" @click="download_DriverNetwork()" >Driver Network</a> -->
+				            <a class="page-link jsondownload" @click="download_json()">JSON</a>
+				          </div>
+				        </button>
+				      </p>			      
+					</div>
+				</div>
 				<div v-show="showStatus">
 					<!-- <h1>Clinical Variant Annotation Pipeline</h1> -->
 					<p style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Job ID: {{this.jobid}} <br> Status of analysis with ClinVAP: {{this.status}}
@@ -31,8 +57,8 @@
 					<div class="loader" ref="loader1"></div>
 				</div>
 			    <div  data-app v-show="showTable" ref="all" style="width:100%">
-			      	<div style="width:100%">
-				      	<table data-html2canvas-ignore="true" class="float-left">
+			      	<!-- <div style="width:100%"> -->
+				      	<!-- <table data-html2canvas-ignore="true" class="float-left">
 				        	<tr>
 					          	<td style="padding:20px 15px 0 15px;"><b-icon icon="funnel"></b-icon></td>
 					          	<td style="padding:0 15px 0 15px;">
@@ -48,8 +74,8 @@
 					            	<v-text-field v-model="diseaseall" type="string" label="Disease" style="border-style: none;"clearable></v-text-field>
 					          	</td>
 					        </tr>
-				      	</table>
-				      	<p class="dropdown" width="5vw" style="float:right; margin-right: 2vw">
+				      	</table> -->
+				      	<!-- <p class="dropdown" width="5vw" style="float:right; margin-right: 2vw; width: 4vw; height: 4vw;">
 			          		<button class="dropbtn"><b-icon icon="download"></b-icon>
 			                    <div class="dropdown-content">
 						           	<a class="page-link" @click="exportToPDF_all()" >PDF</a>
@@ -57,7 +83,7 @@
 						           	<a class="page-link" @click="download_json()">JSON</a>
 					          	</div>
 		          			</button>
-			          	</p>
+			          	</p> -->
 			          	<!-- <button v-show="cnvavailable" class="butn"
 			          	v-on:click="showCNV()"
 			          	>
@@ -67,7 +93,7 @@
 				      	<!-- <div class="dropdown" data-html2canvas-ignore="true" style="margin-right: 1vw;"> -->
 			      			
 					    <!-- </div>  -->
-			      	</div>
+			      	<!--</div>-->
 			    	<div ref = "content_driver_table" id="driver_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 			    		<div id="tooltipdriver" style="width:100%">
 			    		<v-tooltip bottom attach="#tooltipdriver">
@@ -2842,7 +2868,7 @@
 	    download_json(){
 	    	var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.jsonReport));
 		    var downloadAnchorNode = document.createElement('a');
-		    downloadAnchorNode.setAttribute("href",     dataStr);
+		    downloadAnchorNode.setAttribute("href", dataStr);
 		    downloadAnchorNode.setAttribute("download", this.jobid + ".json");
 		    document.body.appendChild(downloadAnchorNode); // required for firefox
 		    downloadAnchorNode.click();
@@ -2863,6 +2889,7 @@
 	    			this.cnvjsonavailable = true;
 	    			this.showJSON_cnv(username, json._result[0].json_file_cnv, json._result[0]._key, [json._result[0].drivergenes_cnv, json._result[0].pharmaco_cnv, json._result[0].civic_cnv, json._result[0].cancer_cnv])
 	    		}
+	    		this.jsonReport = json._result[0].json_file
 	    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
 	    	});
 	    },
@@ -2880,7 +2907,7 @@
 	        this.visibleAppendix = true;
 	        var self = this;
 	        setTimeout(function(){
-	          self.$refs['refTable'].hideDefaultFooter=true;
+	          // self.$refs['refTable'].hideDefaultFooter=true;
 	          window.scrollTo(0,0);
 	          html2pdf().set({
 	            margin: 0.25,
@@ -3951,5 +3978,8 @@
 	        return filtered_sorted;
 	    },
     },
+    updated() {
+
+    }
   }
 </script>

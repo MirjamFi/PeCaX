@@ -1,6 +1,21 @@
 <template>
   	<v-layout justify-center align-center width=90%>
     	<v-flex xs12 sm8 md12>
+    		<div class="topnav" id ="nav">
+			    <div class="topnav-centered">
+			      <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+			    </div>
+			    <div class="dropdown topnav-left" id="navAbout">  
+			      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
+			        <div class="dropdown-content">
+			          <a class="page-link" href="/profile">My Jobs</a>
+			          <a class="page-link" href="/about" >About </a>
+			          <a class="page-link" href="/documentation">Documentation</a>
+			          <a class="page-link" href="/contact">Contact</a>
+			        </div>
+			      </button> 
+			    </div>
+			</div>
     		<div class="row">
 	    		<div class="column">
 	 				<img src="/landingpage_image.png" style="margin: auto;">
@@ -89,7 +104,7 @@
 		}
 	},
 	created(){
-		localStorage. clear();
+		localStorage.clear();
 	}
 }
 
