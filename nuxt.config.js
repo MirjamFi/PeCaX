@@ -82,7 +82,7 @@ export default {
   */
 axios: {
   proxy: true,
-   retry: { retries: 3 }
+   retry: { retries: 3 },
 },
 
 proxy: {
