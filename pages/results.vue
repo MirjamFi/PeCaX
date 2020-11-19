@@ -2354,7 +2354,9 @@
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
     			item.Consequence = item.Consequence.replaceAll("_", " ")
     			item.ref_map = item.ref_map.replaceAll(",", ", ")
-    			drivertypes[item.gene] = item.driver_role
+    			if(!drivertypes.hasOwnProperty(item.gene)){
+    				drivertypes[item.gene] = item.driver_role
+    			}
 	    	}
 	        this.direct_pharm_table  = jsonfile.direct_pharm_table ;
 	        for(let item  of this.direct_pharm_table){
@@ -2488,7 +2490,9 @@
     		for(let item  of this.driver_table_cnv){
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
     			item.ref_map = item.ref_map.replaceAll(",", ", ")
-    			this.drivertypes_cnv[item.gene] = item.driver_role
+    			if(!this.drivertypes_cnv.hasOwnProperty(item.gene)){
+    				this.drivertypes_cnv[item.gene] = item.driver_role
+    			}
 	    	}
 	    	this.direct_pharm_table_cnv = jsonfile.direct_pharm_table;
 	        for(let item  of this.direct_pharm_table_cnv){
@@ -2568,16 +2572,18 @@
 			})
 		},
 		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, cnv="", drivertypes = null){
+			
+			var genelist = Array.from(new Set(names))
 		  	return axios.post('/network/overview', 
 
-		  		{	genes: names, 
+		  		{	genes: genelist, 
 		  			annotationName: annotationName, 
 		  			networkName: networkName}, 
 		  			{
 					    headers:{
 					      	'user':username+'/'+jobid.toString()
 					    },
-					    method: 'POST',
+					    method: 'POST'
 			  		})
 		  		.then(response => { 
 		  			var uuidobj ={}
@@ -2835,7 +2841,12 @@
 							else if(childnode.getAttribute("key") == "v_kegg_genes" && drivergene){
 								for(item of table){
 									if(item.gene == gene){
-										item.kegg = childnode.textContent
+										if(childnode.textContent.includes("+")){
+											item.kegg = childnode.textContent.split("+")[0]
+										}
+										else{
+											item.kegg = childnode.textContent
+										}
 									}
 								}
 							}
