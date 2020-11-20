@@ -27,10 +27,10 @@ To tun the pipeline, please follow the steps given below.
   
     docker-compose down
   
-  ### If you want to store the network database:
+### Storing the network database::
   
     docker-compose up db_backup 
     
-## In Browser of your choice open localhost:3030
+### In Browser of your choice open localhost:3030
 
 ### We recommend using full screen to enjoy the full experience.
