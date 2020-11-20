@@ -1,28 +1,36 @@
-# ClinVAP report and networks
+# PeCaX
+Personalized Cancer and Network Explorer (PeCax) is a tool for identifying patient specific cancer mechanisms by providing a complete mutational profile from variants to networks. It employs ClinVAP to perform clinical variant annotation which focuses on processing, filtering and prioritization of the variants to find the disrupted genes that are involved in carcinogenesis and to identify actionable variants from the mutational landscape of a patient. In addition it creates networks showing the connections between the driver genes and the genes in their neighbourhood and automatically performs pathway enrichment analysis using pathway resources (SBML4j). Its interactive visualisation (BioGraphVisart) supports easy network exploration and patient similarity (node overlap) and a merged network graph of two patient-specific networks can be calculated.
 
-## Build Setup
+Please refer this document for implementation of the application. Documentation of the pipeline is available at [Wiki page](https://github.com/MirjamFi/PeCaX/wiki).
+## Usage with Docker
+Requirements: Docker Engine release 1.13.0+, Compose release 1.10.0+.
 
-``` bash
-# install nuxtjs
-$ npm install nuxt
-# install dependencies
-$ npm install
+Please make sure that you have 34 GB of physical empty space on your Docker Disk Image, and ports 3030, 3000, 8529, 7474, 7687, 8080 are not being used by another application.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+To tun the pipeline, please follow the steps given below.
 
-# build for production and launch server
-$ npm run build
-$ npm start
+	git clone https://github.com/MirjamFi/PeCaX.git
 
-# generate static project
-$ npm run generate
-```
-If you have a local instance of SBML4J running, change the proxy target in nuxt.config.js to your url:
+    docker-compose up db_setup
+  
+    docker-compose up apoc_install
+  
+    docker-compose up pecax
 
-<pre>
-proxy: {
-  '/sbml4j/': { target: '<b>http://abidocker:48080/sbml4j/</b>', pathRewrite: {'^/sbml4j/': ''}, changeOrigin: true }
-}
-</pre>
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+## Next time:
+
+    docker-compose up pecax
+  
+## Exit:
+
+    Ctrl+c
+  
+    docker-compose down
+  
+  ### If you want to store the network database:
+  
+    docker-compose up db_backup 
+    
+## In Browser of your choice open localhost:3030
+
+### We recommend using full screen to enjoy the full experience.
