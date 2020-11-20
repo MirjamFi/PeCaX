@@ -1,4 +1,8 @@
 node_modules
 .DS_Store
 .nuxt
-dockercompose
+flask
+sbml4j
+handover
+neo4j
+nginx
