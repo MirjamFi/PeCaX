@@ -42,8 +42,8 @@
 				        <button class="dropbtn"><b-icon icon="download"></b-icon>
 				              <div class="dropdown-content">
 				            <a class="page-link pdfdownload"  @click="exportToPDF_all()">PDF</a>
-				            <!-- <a class="page-link" @click="download_DriverNetwork()" >Driver Network</a> -->
 				            <a class="page-link jsondownload" @click="download_json()">JSON</a>
+				            <a class="page-link" @click="download_Networks()" >Networks</a>
 				          </div>
 				        </button>
 				      </p>			      
@@ -57,66 +57,28 @@
 					<div class="loader" ref="loader1"></div>
 				</div>
 			    <div  data-app v-show="showTable" ref="all" style="width:100%">
-			      	<!-- <div style="width:100%"> -->
-				      	<!-- <table data-html2canvas-ignore="true" class="float-left">
-				        	<tr>
-					          	<td style="padding:20px 15px 0 15px;"><b-icon icon="funnel"></b-icon></td>
-					          	<td style="padding:0 15px 0 15px;">
-					            	<v-text-field v-model="genesall" type="string" label="Gene" style="border-style: none;"clearable></v-text-field>
-					         	</td>
-					         	<td style="padding:0 15px 0 15px;">
-					            	<v-text-field v-model="mutationall" type="string" label="Mutation" style="border-style: none;"clearable></v-text-field>
-					          	</td>
-					          	<td style="padding:0 15px 0 15px;">
-					            	<v-text-field v-model="therapyall" type="string" label="Therapy" style="border-style: none;"clearable></v-text-field>
-					          	</td>
-					          	<td style="padding:0 15px 0 15px;">
-					            	<v-text-field v-model="diseaseall" type="string" label="Disease" style="border-style: none;"clearable></v-text-field>
-					          	</td>
-					        </tr>
-				      	</table> -->
-				      	<!-- <p class="dropdown" width="5vw" style="float:right; margin-right: 2vw; width: 4vw; height: 4vw;">
-			          		<button class="dropbtn"><b-icon icon="download"></b-icon>
-			                    <div class="dropdown-content">
-						           	<a class="page-link" @click="exportToPDF_all()" >PDF</a>
-						           	<a class="page-link" @click="download_DriverNetwork()" >Driver Network</a>
-						           	<a class="page-link" @click="download_json()">JSON</a>
-					          	</div>
-		          			</button>
-			          	</p> -->
-			          	<!-- <button v-show="cnvavailable" class="butn"
-			          	v-on:click="showCNV()"
-			          	>
-			          		CNV
-			          	</button> -->
-				      	<!-- <button data-html2canvas-ignore="true" class="butn float-right "@click=function(){getGenes(checkedGenes)}>Network</button> -->
-				      	<!-- <div class="dropdown" data-html2canvas-ignore="true" style="margin-right: 1vw;"> -->
-			      			
-					    <!-- </div>  -->
-			      	<!--</div>-->
 			    	<div ref = "content_driver_table" id="driver_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 			    		<div id="tooltipdriver" style="width:100%">
-			    		<v-tooltip bottom attach="#tooltipdriver">
-       					<template v-slot:activator="{ on, attrs }">
+			    			<v-tooltip bottom attach="#tooltipdriver">
+       							<template v-slot:activator="{ on, attrs }">
        						
-						        <b-button
-						          :class="visibleDrivers ? null : 'collapsed'"
-						          :aria-expanded="visibleDrivers ? 'true' : 'false'"
-						          aria-controls="collapse-4"
-						          @click="visibleDrivers = !visibleDrivers"
-						          v-bind:style="{ background: 'green', color:'white' }" 
-						          block variant="primary"
-						          
-						         >
-					          		<Strong class="text-center" style="color: white">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
-					        	</b-button>
+						        	<b-button
+							          :class="visibleDrivers ? null : 'collapsed'"
+							          :aria-expanded="visibleDrivers ? 'true' : 'false'"
+							          aria-controls="collapse-4"
+							          @click="visibleDrivers = !visibleDrivers"
+							          v-bind:style="{ background: 'green', color:'white' }" 
+							          block variant="primary"
+							          
+							         >
+					          			<Strong class="text-center" style="color: white">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+					        		</b-button>
 					        	
-					        	 </template>
+					        	</template>
 		       					<span>List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein <em>et al.</em>, Uniprot, TSGene, IntoGen and COSMIC. </span>
 		       				
-      					</v-tooltip>
+      						</v-tooltip>
       					</div>
-			        	<!-- <p >List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein <em>et al.</em>, Uniprot, TSGene, IntoGen and COSMIC. </p> -->
 			       		<b-collapse id="collapse-4" v-model="visibleDrivers" :class="{column:visibleDrivergenes}">					             
 							<b-card>
 					            <table class="table table-hover">
@@ -459,24 +421,24 @@
 					</div>	      
 				    <div ref = "content_direct_pharm_table" id="direct_pharm_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 				    	<div id="tooltipdirectpharm" style="width:100%">
-				    	<v-tooltip bottom attach="#tooltipdirectpharm">
-       					<template v-slot:activator="{ on, attrs }">
-       						
-				        <b-button
-				          :class="visiblePharma ? null : 'collapsed'"
-				          :aria-expanded="visiblePharma ? 'true' : 'false'"
-				          aria-controls="collapse-4"
-				          @click="visiblePharma = !visiblePharma"
-				          v-bind:style="{ background: 'orange', color:'white' }"
-				          block variant="primary"
-				          id="direct_pharm_butn"
-				         >
-				          <Strong style="color: white">Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
-				        </b-button>
-				        
-				        </template>
-       					<span>List of drugs with the evidence of targeting the observed variant of the mutated gene, and the documented drug response for the given mutational profile. Evidence level letter represents: A = validated association, B = clinical evidence, C = case study, D = preclinical evidence, E = inferential association. Evidence level number represents the matching type between the observed variant and the database result: 1 = same variant, 2 = different variant, same consequence, 3 = different variant, different consequence, same gene. The information is obtained from CIViC, CGI and DrugBank. </span>
-       					</v-tooltip>
+					    	<v-tooltip bottom attach="#tooltipdirectpharm">
+		       					<template v-slot:activator="{ on, attrs }">
+		       						
+							        <b-button
+							          :class="visiblePharma ? null : 'collapsed'"
+							          :aria-expanded="visiblePharma ? 'true' : 'false'"
+							          aria-controls="collapse-4"
+							          @click="visiblePharma = !visiblePharma"
+							          v-bind:style="{ background: 'orange', color:'white' }"
+							          block variant="primary"
+							          id="direct_pharm_butn"
+							         >
+							          <Strong style="color: white">Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+							        </b-button>
+						        
+						        </template>
+       							<span>List of drugs with the evidence of targeting the observed variant of the mutated gene, and the documented drug response for the given mutational profile. Evidence level letter represents: A = validated association, B = clinical evidence, C = case study, D = preclinical evidence, E = inferential association. Evidence level number represents the matching type between the observed variant and the database result: 1 = same variant, 2 = different variant, same consequence, 3 = different variant, different consequence, same gene. The information is obtained from CIViC, CGI and DrugBank. </span>
+       						</v-tooltip>
        					</div>
 				        <b-collapse id="collapse-4" v-model="visiblePharma" :class="{column:visiblePharmaco}">  
 				          <b-card> 
@@ -2916,9 +2878,12 @@
 	        this.visibleAffect = true;
 	        this.visibleRef = true;
 	        this.visibleAppendix = true;
+	        this.visibleDrivergenes = false;
+	        this.visiblePharmaco = false;
+	        this.visibleCivic = false;
+	        this.visibleCancer = false;
 	        var self = this;
 	        setTimeout(function(){
-	          // self.$refs['refTable'].hideDefaultFooter=true;
 	          window.scrollTo(0,0);
 	          html2pdf().set({
 	            margin: 0.25,
@@ -2939,8 +2904,55 @@
 	              pdf.addPage();
 	          }).from(self.$refs.content_appendix_variant_table).toContainer().toCanvas().toPdf().save();
 	        },1);
+	        setTimeout(function(){
+	        	self.visibleDrivergenes = true;
+	        	self.visiblePharmaco = true;
+	        	self.visibleCivic = true;
+	        	self.visibleCancer = true;
+	        },15000)
+	        if(self.cnvjsonavailable){
+	        	self.visibleDrivers_cnv = true;
+		        self.visiblePharma_cnv = true;
+		        self.visibleAffectCivic_cnv = true;
+		        self.visibleAffectCancer_cnv = true;
+		        self.visibleAffect_cnv = true;
+		        self.visibleRef_cnv = true;
+		        self.visibleAppendix_cnv = true;
+		        self.visibleDrivergenes_cnv = false;
+		        self.visiblePharmaco_cnv = false;
+		        self.visibleCivic_cnv = false;
+		        self.visibleCancer_cnv = false;
+		        setTimeout(function(){
+		          // self.$refs['refTable'].hideDefaultFooter=true;
+		          window.scrollTo(0,0);
+		          html2pdf().set({
+		            margin: 0.25,
+		            filename: 'ClinVAPReport_CNV.pdf',
+		            image: { type: 'jpeg', quality: 0.98 },
+		            html2canvas: {},
+		            pagebreak: {mode: ['legacy']},
+		            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
+		           }).from(self.$refs.content_driver_table_cnv).toPdf().get('pdf').then(function (pdf) {
+		            pdf.addPage();
+		          }).from(self.$refs.content_direct_pharm_table_cnv).toContainer().toCanvas().toPdf().get('pdf').then(function (pdf) {
+		              pdf.addPage();
+		          }).from(self.$refs.content_smptag_cnv).toContainer().toCanvas().toPdf().get('pdf').then(function (pdf) {
+		              pdf.addPage();
+		          }).from(self.$refs.content_ref_cnv).toContainer().toCanvas().toPdf().get('pdf').then(function (pdf) {
+		              pdf.addPage();
+		          }).from(self.$refs.content_appendix_variant_table_cnv).toContainer().toCanvas().toPdf().save();
+		        },1);
+		        setTimeout(function(){
+		          self.visibleDrivergenes_cnv = true;
+		          self.visiblePharmaco_cnv = true;
+		          self.visibleCivic_cnv = true;	
+		          self.visibleCancer_cnv = true;
+	          	},15000)
+	        }  
+
 	    },
 	    exportToPDF_driver_table() {
+	    	this.visibleDrivergenes = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -2953,23 +2965,30 @@
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           });
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visibleDrivergenes = true;
+	        },5000)
 	    },
 	    exportToPDF_driver_table_cnv() {
+	    	this.visibleDrivergenes_cnv = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
 	          html2pdf(self.$refs.content_driver_table_cnv, {
 	            margin: 0.5,
-	            filename: 'driver_table.pdf',
+	            filename: 'driver_table_cnv.pdf',
 	            image: { type: 'jpeg', quality: 0.98 },
 	            html2canvas: {},
 	            pagebreak: { mode: ['legacy'] },
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           });
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visibleDrivergenes_cnv = true;
+	        },5000)
 	    },
 	    exportToPDF_direct_pharm_table() {
-	        this.visibleDrivers = false;
+	        this.visiblePharmaco =false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -2982,25 +3001,30 @@
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           })
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visiblePharmaco = true;
+	        },5000)
 	    }, 
 	    exportToPDF_direct_pharm_table_cnv() {
-	        this.visibleDrivers_cnv = false;
+	        this.visiblePharmaco_cnv =false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
 	          html2pdf(self.$refs.content_direct_pharm_table_cnv, {
 	            margin: 0.5,
-	            filename: 'direct_pharm_table.pdf',
+	            filename: 'direct_pharm_table_cnv.pdf',
 	            image: { type: 'jpeg', quality: 0.98 },
 	            html2canvas: { },
 	            pagebreak: { mode: ['legacy'] },
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           })
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visiblePharmaco_cnv = true;
+	        },5000)
 	    },
 	    exportToPDF_pharm_table() {
-	        this.visibleDrivers = false;
-	        this.visiblePharma = false;
+	        this.visibleCivic = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3013,11 +3037,12 @@
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           })
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visibleCivic = true;
+	        },5000)
 	    },
 	    exportToPDF_mechanistic_drug_table() {
-	        this.visibleDrivers = false;
-	        this.visiblePharma = false;
-	        this.visibleAffectCivic = false;
+	        this.visibleCancer = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3030,45 +3055,47 @@
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           })
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visibleCancer = true;
+	        },5000)
 	    },
 	    exportToPDF_pharm_table_cnv() {
-	        this.visibleDrivers_cnv = false;
-	        this.visiblePharma_cnv = false;
+	        this.visibleCivic_cnv = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
 	          html2pdf(self.$refs.content_pharm_table_cnv, {
 	            margin: 0.45,
-	            filename: 'pharm_table.pdf',
+	            filename: 'pharm_table_cnv.pdf',
 	            image: { type: 'jpeg', quality: 0.98 },
 	            html2canvas: { },
 	            pagebreak: { mode:['legacy']},
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           })
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visibleCivic_cnv = true;
+	        },5000)
 	    },
 	    exportToPDF_mechanistic_drug_table_cnv() {
-	        this.visibleDrivers_cnv = false;
-	        this.visiblePharma_cnv = false;
-	        this.visibleAffectCivic_cnv = false;
+	        this.visibleCancer_cnv = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
 	          html2pdf(self.$refs.content_mechanistic_drug_table_cnv, {
 	            margin: 0.2,
-	            filename: 'mechanistic_drug_table.pdf',
+	            filename: 'mechanistic_drug_table_cnv.pdf',
 	            image: { type: 'jpeg', quality: 0.98 },
 	            html2canvas: { },
 	            pagebreak: { mode: ['legacy'] },
 	            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape'}
 	           })
 	        }, 1);
+	        setTimeout(function(){
+	        	self.visibleCancer_cnv = true;
+	        },5000)
 	    },
 	    exportToPDF_adverse_table() {
-	        this.visibleDrivers = false;
-	        this.visiblePharma = false;
-	        this.visibleAffectCivic = false;
-	        this.visibleAffectCancer = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3083,11 +3110,6 @@
 	        }, 1);
 	    },
 	    exportToPDF_ref() {
-	        this.visibleDrivers = false;
-	        this.visiblePharma = false;
-	        this.visibleAffectCivic = false;
-	        this.visibleAffectCancer = false;
-	        this.visibleEffect = false;
 	        var self = this;
 	        setTimeout(function(){
 	          self.$refs['refTable'].dense = true;
@@ -3104,12 +3126,6 @@
 	        }, 1);
 	    },
 	    exportToPDF_appendix_variant_table() {
-	        this.visibleDrivers = false;
-	        this.visiblePharma = false;
-	        this.visibleAffectCivic = false;
-	        this.visibleAffectCancer = false;
-	        this.visibleRef = false;
-	        this.visibleEffect = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3124,11 +3140,6 @@
 	        }, 1);
 	    },
 	    exportToPDF_ref_cnv() {
-	        this.visibleDrivers_cnv = false;
-	        this.visiblePharma_cnv = false;
-	        this.visibleAffectCivic_cnv = false;
-	        this.visibleAffectCancer_cnv = false;
-	        this.visibleEffect_cnv = false;
 	        var self = this;
 	        setTimeout(function(){
 	          self.$refs['refTable'].dense = true;
@@ -3136,7 +3147,7 @@
 	          window.scrollTo(0,0);
 	          html2pdf(self.$refs.content_ref_cnv, {
 	            margin: 0.1,
-	            filename: 'references.pdf',
+	            filename: 'references_cnv.pdf',
 	            image: { type: 'jpeg', quality: 0.98 },
 	            html2canvas: { },
 	            pagebreak: { mode: ['avoid-all'] },
@@ -3145,18 +3156,12 @@
 	        }, 1);
 	    },
 	    exportToPDF_appendix_variant_table_cnv() {
-	        this.visibleDrivers_cnv = false;
-	        this.visiblePharma_cnv = false;
-	        this.visibleAffectCivic_cnv = false;
-	        this.visibleAffectCancer_cnv = false;
-	        this.visibleRef_cnv = false;
-	        this.visibleEffect_cnv = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
 	          html2pdf(self.$refs.content_appendix_variant_table_cnv, {
 	            margin: 0.5,
-	            filename: 'appendix_variant_table.pdf',
+	            filename: 'appendix_variant_table_cnv.pdf',
 	            image: { type: 'jpeg', quality: 0.98 },
 	            html2canvas: { },
 	            pagebreak: { mode: ['legacy'] },
@@ -3164,38 +3169,44 @@
 	           })
 	        }, 1);
 	    },
-	  //   download_Networks(){
-	  //   	var networknames = ["drivergenes", "pharmaco", "civic", "cancer"]
-	  //   	if(localStorage.getItem("cnvjsonavailable") == "true"){
-	  //   		networknames = ["drivergenes", "pharmaco", "civic", "cancer"]
-	  //   	}
-	  //   	for(let name of networknames){
-		 //    	var graphml = axios.get('/network/networks/'+localStorage.getItem(name), {
-			// 	    headers:{
-			// 	      	'user':this.username+'/'+this.jobid
-			// 	    },
-			// 	    method: 'GET'
-			//   	}).then(
-			// 		response => {
-			// 	if(response.data == undefined){
-			// 		alert("No network found. ")
-			// 		this.$refs.loader1.style.visibility="hidden";
-			// 		this.showNetwork = false;
-			// 		return
-			// 	}
-			// 	else{
-			// 		var element = document.createElement('a');
-			// 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(response.data));
-			// 		element.setAttribute('download', name+".graphml");
+	    download_Networks(){
+	    	var uuids = {}
+	    	uuids = pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, this.username, this.jobid).then(json => { 
+	    		let uuidsobj = {"drivergenes":json._result[0].drivergenes, "pharmacogenetic":json._result[0].pharmaco, "pharmacogenomics":json._result[0].civic, "cancer":json._result[0].cancer}
+	    		if(Object.keys(json._result[0].json_file_cnv).length){
+	    			uuidsobj["drivergenes_cnv"]=json._result[0].drivergenes_cnv
+	    			uuidsobj["pharmacogenetic_cnv"]=json._result[0].pharmaco_cnv
+	    			uuidsobj["pharmacogenomics_cnv"]=json._result[0].civic_cnv
+	    			uuidsobj["cancer_cnv"]=json._result[0].cancer_cnv
+	    		}
+	    		return uuidsobj
+	    	});
+	    	uuids.then(uuids => {
+	    		for(const [key, value] of Object.entries(uuids)){
+			    	var graphml = axios.get('/network/networks/'+value, {
+					    headers:{
+					      	'user':this.username+'/'+this.jobid
+					    },
+					    method: 'GET'
+				  	}).then(
+						response => {
+					// else{
+						var element = document.createElement('a');
+						element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(response.data));
+						element.setAttribute('download', key+".graphml");
 
-			// 		element.style.display = 'none';
-			// 		document.body.appendChild(element);
+						element.style.display = 'none';
+						document.body.appendChild(element);
 
-			// 		element.click();
+						element.click();
 
-			// 		document.body.removeChild(element);}})
-			// }
-	  //   },
+						document.body.removeChild(element);
+					// }
+				})
+				}
+	    	})
+	    	
+	    },
 	    selectItem (item) {
 	        if(this.selected.includes(item.gene)){
 	          this.selected.splice(this.selected.indexOf(item.gene),1)
