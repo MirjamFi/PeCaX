@@ -7,7 +7,7 @@ Requirements: [Docker](https://www.docker.com/get-started) Engine release 1.13.0
 
 Please make sure that you have 34 GB of physical empty space on your Docker Disk Image, and ports 3030, 3000, 8529, 7474, 7687, 8080 are not being used by another application.
 
-To tun the pipeline, please follow the steps given below.
+To run the pipeline, please follow the steps given below.
 
 	git clone https://github.com/MirjamFi/PeCaX.git
 	
