@@ -134,7 +134,7 @@ After completing variant and clinical annotation, the ClinVAP Report is shown in
 
     The results of the annotation and analysis with ClinVAP are represented in interactive tables (see table below). If information from external sources is available for a gene in the table, the related web links are listed next to the gene name in a dropdown menu with the icon <b-icon icon="link"></b-icon>. Next to each table, the related gene network is displayed, if applicable. Each table can be downloaded aas a .pdf-file.
     These contain information about:<br>
-    <dl>
+    <dl  style="width: 50%; margin-left:25%">
       <dt><b>Somatic Mutations in Known Driver Genes</b></dt>
         <dd>List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein et. al, Uniprot, TSGene, IntoGen and COSMIC.
         </dd><br><br>
