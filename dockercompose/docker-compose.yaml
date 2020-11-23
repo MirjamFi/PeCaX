@@ -103,7 +103,7 @@ services:
         restart: unless-stopped
         command: ["neo4j"]
     sbml4j:
-        image: thortiede/sbml4j:0.1
+        image: thortiede/sbml4j:latest
         container_name: sbml4j
         volumes:
         - ./sbml4j/logs:/logs
