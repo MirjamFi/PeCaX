@@ -36,23 +36,24 @@ To tun the pipeline, please follow the steps given below.
 
 PeCaX uses several volumes to store data and work files. They are briefly described here:
 
-	sbml4j_network_db: used to store the knowledge graph and created networks.
-	The local folders: ./neo4j/logs, ./neo4j/conf, ./neo4j/plugins are mapped into the sbml4jdb container
-	The local folder ./sbml4j/logs is mapped into the sbml4j container
-	The local folder ./database_backups is mapped into the temporary containers "db_setup" and "db_backup" to facilitate database creation form a tar.gz and database backup to the tar.gz respectively
+- sbml4j_network_db: used to store the knowledge graph and created networks.
+- The local folders: ./neo4j/logs, ./neo4j/conf, ./neo4j/plugins are mapped into the sbml4jdb container
+- The local folder ./sbml4j/logs is mapped into the sbml4j container
+- The local folder ./database_backups is mapped into the temporary containers "db_setup" and "db_backup" to facilitate database creation form a tar.gz and database backup to the tar.gz respectively
 
 ## Create a network database backup
-	The networks are stored in a docker volume and are thus persisted between individual PeCaX sessions.
-	If you however delete or prune your docker volumes, the created network volume will be deleted and you will have to rerun
-	> docker-compose up db_setup
 
-	For your previous networks to be available after a prune or delete of the volumes you have to save a backup of the network database.
-	You can do this with
-  > docker-compose up db_backup
+The networks are stored in a docker volume and are thus persisted between individual PeCaX sessions.
+If you however delete or prune your docker volumes, the created network volume will be deleted and you will have to rerun
+	docker-compose up db_setup
 
-	Be advised that this will overwrite the initial *clean* database that shipped with PeCaX.
-	If you want to keep both, you will have to rename the default database backup before creating the backup, for example with:
-	> cd database_backups && cp sbml4j_pecax_0.0.32.tar.gz sbml4j_pecax_0.0.32_initial.tar.gz
+For your previous networks to be available after a prune or delete of the volumes you have to save a backup of the network database.
+You can do this with
+	docker-compose up db_backup
 
-	To revert back to the initial database, simply rename the file back to its original name with;
-	> cd database_backups && cp sbml4j_pecax_0.0.32_initial.tar.gz sbml4j_pecax_0.0.32.tar.gz
+Be advised that this will overwrite the initial *clean* database that shipped with PeCaX.
+If you want to keep both, you will have to rename the default database backup before creating the backup, for example with:
+	cd database_backups && cp sbml4j_pecax_0.0.32.tar.gz sbml4j_pecax_0.0.32_initial.tar.gz
+
+To revert back to the initial database, simply rename the file back to its original name with;
+	cd database_backups && cp sbml4j_pecax_0.0.32_initial.tar.gz sbml4j_pecax_0.0.32.tar.gz
