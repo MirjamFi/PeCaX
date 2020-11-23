@@ -11,7 +11,7 @@ To tun the pipeline, please follow the steps given below.
 
 	git clone https://github.com/MirjamFi/PeCaX.git
 	
-	cd PeCaX
+	cd PeCaX-master
 
     docker-compose up db_setup
   
