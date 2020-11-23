@@ -59,10 +59,7 @@
   <a href="#ClinVAPReport" class="tab"style="color:black; font-weight: 600; font-size: 18px;">ClinVAP Report</a><br>
   <a href="#SBML4j" class="tab"style="color:black; font-weight: 600; font-size: 18px;">SBML4j</a><br>
   <a href="#BioGraphVisart" class="tab"style="color:black; font-weight: 600; font-size: 18px;">BioGraphVisart</a><br>
-  <a href="#Input" class="tab"style="color:black; font-weight: 600; font-size: 18px;">Download Output</a><br>
-  
-
-
+  <a href="#DownloadResults" class="tab"style="color:black; font-weight: 600; font-size: 18px;">Download Results</a><br>
 </p>
  
   <p style="width: 50%; margin-left:25%; font-size:30px;margin-top:40px" id="GeneralDoc">General</p>
@@ -215,6 +212,11 @@ Find out more about SBML4j on <a href="http://github.com/kohlbacherlab/sbml4j">G
   BioGraphVisart can also be used as standalone application via <a href="https://localhost:3000">https://localhost:3000</a>.<br><br>
   For more details have a look at the <a href="/BioGraphVisart/Documentation">BioGraphVisart Documentation</a>.</p>
 
+<hr style="width: 50%; margin-left:25%;">
+  <p style="width: 50%; margin-left:25%; font-size:20px;" id="DownloadResults">Download Results</p>
+  <p style="width: 50%; margin-left:25%">
+    The ClinVAP report displayed in the tables can be downloaded in the formats JSON (can be used as input again) and PDF. Each table can be downloaded individually in the format PDF.<br><br>
+    Each single network displayed can be downloaded in the formats PDF, PNG and SVG from the BioGraphVisart interface. Additionally, the generated networks can be downloaded all together in the fromat GraphML. A .graphml-file can be used as input for BioGraphVisart as standalone application (localhost:3000). 
   </article>
 
 
