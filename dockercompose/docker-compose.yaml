@@ -69,8 +69,7 @@ services:
         volumes:
             - sbml4j_network_db:/db
             - ./database_backups:/database_backups
-            - ./handover:/handover
-        command: ["/bin/sh", "-c", "cd /db && tar xfz /database_backups/sbml4j_pecax_0.0.32.tar.gz --strip 1 && cd /handover && echo finished > db_backup"]
+        command: ["/bin/sh", "-c", "cd /db && tar xfz /database_backups/sbml4j_pecax_0.0.32.tar.gz --strip 1"] 
     db_backup:
         image: alpine
         volumes:
