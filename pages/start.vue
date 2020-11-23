@@ -72,7 +72,7 @@
 		  						CNV (optional)
 		  					</td>
 		  					<td>
-		  						<input type="file" accept=".tsv"id="file" ref="cnvfile" style="width: 20px"/>
+		  						<input type="file" accept=".tsv"id="file" ref="cnvfile" style="width: 250px"/>
 		  					</td>
 		  				</tr>
 		  				<tr>
@@ -245,7 +245,7 @@
 	  	created(){
 	  		var icd10codeslist = icd10codestxt.split("\n")
 	  		for(let code of icd10codeslist){
-	  			let splitcode = code.split(/(?<=^\S+)\s/)
+	  			let splitcode = code.split(/(?:^\S+)\s/)
 	  			this.icd10codes[code] = splitcode[0]
 	  		}
 	  		if(localStorage.getItem("jobids") == "undefined" || localStorage.getItem("jobids").length == 0){
