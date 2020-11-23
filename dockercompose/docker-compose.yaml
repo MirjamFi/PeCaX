@@ -21,7 +21,7 @@ services:
             - "8529:8529"
         volumes:
             - arangodb_data_container:/var/lib/arangodb3
-            - arangodb_apps_data_container:/var/lib/arangodb3-apps 
+            - arangodb_apps_data_container:/var/lib/arangodb3-apps
     biographvisart:
         image: mirjamfi/biographvisart
         container_name: biographvisart
@@ -67,14 +67,14 @@ services:
     db_setup:
         image: alpine
         volumes:
-            - sbml4jVolumeCompose:/db
+            - sbml4jNetworkDB:/db
             - ./database_backups:/database_backups
             - ./handover:/handover
         command: ["/bin/sh", "-c", "cd /db && tar xfz /database_backups/sbml4j_pecax_0.0.32.tar.gz --strip 1 && cd /handover && echo finished > db_backup"]
     db_backup:
         image: alpine
         volumes:
-            - sbml4jVolumeCompose:/db
+            - sbml4jNetworkDB:/db
             - ./database_backups:/database_backups
         command: ["/bin/sh", "-c", "cd /database_backups && tar cfz sbml4j_pecax_0.0.32.tar.gz /db"]
     apoc_install:
@@ -86,7 +86,7 @@ services:
         image: neo4j
         container_name: sbml4jdb
         volumes:
-            - sbml4jVolumeCompose:/var/lib/neo4j/data
+            - sbml4jNetworkDB:/var/lib/neo4j/data
             - ./neo4j/plugins:/plugins
             - ./neo4j/logs:/logs
             - ./neo4j/conf:/var/lib/neo4j/conf
@@ -139,6 +139,6 @@ volumes:
     clinvap_uploads:
     clinvap_downloads:
     clinvap_conf:
-    sbml4jVolumeCompose:
+    sbml4jNetworkDB:
     arangodb_data_container:
     arangodb_apps_data_container:
