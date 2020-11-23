@@ -217,6 +217,7 @@ Find out more about SBML4j on <a href="http://github.com/kohlbacherlab/sbml4j">G
   <p style="width: 50%; margin-left:25%">
     The ClinVAP report displayed in the tables can be downloaded in the formats JSON (can be used as input again) and PDF. Each table can be downloaded individually in the format PDF.<br><br>
     Each single network displayed can be downloaded in the formats PDF, PNG and SVG from the BioGraphVisart interface. Additionally, the generated networks can be downloaded all together in the fromat GraphML. A .graphml-file can be used as input for BioGraphVisart as standalone application (localhost:3000). 
+  </p>
   </article>
 
 
