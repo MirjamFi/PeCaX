@@ -166,31 +166,31 @@ Sürün, B., Schärfe, C.P., Divine, M.R., Heinrich, J., Toussaint, N.C., Zimmer
   </p>
       <hr style="width: 50%; margin-left:25%;">
   <p style="width: 50%; margin-left:25%; font-size:20px;" id="SBML4j">SBML4j</p>
-  SBML4j is a service for persisting Biological models and pathways in SBML format in a graph database.
-The models will be integrated into one unified knowledge graph from which network mappings are created.
-There are four types of netowrk mappings available depending on the given models,
-regulatory, signalling, protein-protein - interaction and metabolic mappings.
-Those mappings can then be explored, annotated and searched in.
-A user can run graph algorithms on the mappings and retrieve the created subgraphs in the graphML format.
-SBML4j is written in Java as a Spring Boot Application and the data is stored in a neo4j graph database instance.<br><br>
+  <p style="width: 50%; margin-left:25%">
+    SBML4j is a service for persisting Biological models and pathways in SBML format in a graph database.
+    The models will be integrated into one unified knowledge graph from which network mappings are created.
+    There are four types of netowrk mappings available depending on the given models, regulatory, signalling, protein-protein - interaction and metabolic mappings.
+    Those mappings can then be explored, annotated and searched in.
+    A user can run graph algorithms on the mappings and retrieve the created subgraphs in the graphML format.
+    SBML4j is written in Java as a Spring Boot Application and the data is stored in a neo4j graph database instance.<br><br>
 
-A REST interface is provided to interact with the pathways as well as with the network mappings.
-Communication with the REST API is JSON based and networks are provided in the graphML format.
-The full documentation of the API can be found at <a href="https://app.swaggerhub.com/apis-docs/tiede/sbml4j/1.1.4">SwaggerHub</a>.
-A client can annotate a mapping with arbitrary data on nodes and relationships.
-SBML4j also offers methods to filter a network by type of node or relationship and individual entities.
-For one or multiple named nodes (i.e. genes) a network context can be calculated which is stored as a separate network.
-This enables a user to get a represantion of the network surroundings of a gene of interest or get the up- and/or downstream genes in the given models across standard pathway boundaries.
-With multiple supplied nodes the same query will calculate a minimal network containing all the given genes, provided they have a known network context.<br><br>
+    A REST interface is provided to interact with the pathways as well as with the network mappings.
+    Communication with the REST API is JSON based and networks are provided in the graphML format.
+    The full documentation of the API can be found at <a href="https://app.swaggerhub.com/apis-docs/tiede/sbml4j/1.1.4">SwaggerHub</a>.
+    A client can annotate a mapping with arbitrary data on nodes and relationships.
+    SBML4j also offers methods to filter a network by type of node or relationship and individual entities.
+    For one or multiple named nodes (i.e. genes) a network context can be calculated which is stored as a separate network.
+    This enables a user to get a represantion of the network surroundings of a gene of interest or get the up- and/or downstream genes in the given models across standard pathway boundaries.
+    With multiple supplied nodes the same query will calculate a minimal network containing all the given genes, provided they have a known network context.<br><br>
 
 
-The SBML4j database used in PeCaX is built from 40 cancer-related pathways from the KEGG pathway database.
-The pathways are integrated with each other and a models-spanning network mapping is created which is used as the basis for the presented networks.
-The networks are enriched with drug-target information from <a href="https://go.drugbank.com/">Drugbank</a>.
-This drug-target information is initially assembled using MyDrug (developed at the University of Tübingen, to be published) and added to the SBML4j mappings.
-Get in touch with us if you want to know more about MyDrug.<br><br>
+    The SBML4j database used in PeCaX is built from 40 cancer-related pathways from the KEGG pathway database.
+    The pathways are integrated with each other and a models-spanning network mapping is created which is used as the basis for the presented networks.
+    The networks are enriched with drug-target information from <a href="https://go.drugbank.com/">Drugbank</a>.
+    This drug-target information is initially assembled using MyDrug (developed at the University of Tübingen, to be published) and added to the SBML4j mappings.
+    Get in touch with us if you want to know more about MyDrug.<br><br>
 
-Find out more about SBML4j on <a href="http://github.com/kohlbacherlab/sbml4j">GitHub</a> or get started with the pre-built docker image (docker pull thortiede/sbml4j:latest).
+    Find out more about SBML4j on <a href="http://github.com/kohlbacherlab/sbml4j">GitHub</a> or get started with the pre-built docker image (docker pull thortiede/sbml4j:latest).
   </p>
     <hr style="width: 50%; margin-left:25%;">
   <p style="width: 50%; margin-left:25%; font-size:20px;" id="BioGraphVisart">BioGraphVisart</p>
