@@ -67,14 +67,14 @@ services:
     db_setup:
         image: alpine
         volumes:
-            - sbml4jNetworkDB:/db
+            - sbml4j_network_db:/db
             - ./database_backups:/database_backups
             - ./handover:/handover
         command: ["/bin/sh", "-c", "cd /db && tar xfz /database_backups/sbml4j_pecax_0.0.32.tar.gz --strip 1 && cd /handover && echo finished > db_backup"]
     db_backup:
         image: alpine
         volumes:
-            - sbml4jNetworkDB:/db
+            - sbml4j_network_db:/db
             - ./database_backups:/database_backups
         command: ["/bin/sh", "-c", "cd /database_backups && tar cfz sbml4j_pecax_0.0.32.tar.gz /db"]
     apoc_install:
@@ -86,7 +86,7 @@ services:
         image: neo4j
         container_name: sbml4jdb
         volumes:
-            - sbml4jNetworkDB:/var/lib/neo4j/data
+            - sbml4j_network_db:/var/lib/neo4j/data
             - ./neo4j/plugins:/plugins
             - ./neo4j/logs:/logs
             - ./neo4j/conf:/var/lib/neo4j/conf
@@ -139,6 +139,6 @@ volumes:
     clinvap_uploads:
     clinvap_downloads:
     clinvap_conf:
-    sbml4jNetworkDB:
+    sbml4j_network_db:
     arangodb_data_container:
     arangodb_apps_data_container:
