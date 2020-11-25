@@ -69,7 +69,7 @@ services:
         volumes:
             - sbml4j_network_db:/db
             - ./database_backups:/database_backups
-        command: ["/bin/sh", "-c", "cd /db && tar xfz /database_backups/sbml4j_pecax_0.0.32.tar.gz --strip 1"] 
+        command: ["/bin/sh", "-c", "cd /db && tar xfz /database_backups/sbml4j_pecax_0.0.32.tar.gz --strip 1"]
     db_backup:
         image: alpine
         volumes:
@@ -133,7 +133,7 @@ services:
             - "sbml4jdatabase"
         ports:
             - "8080:8080"
-        restart: unless-stopped
+        restart: on-failure
 volumes:
     clinvap_uploads:
     clinvap_downloads:
