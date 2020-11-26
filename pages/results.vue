@@ -2533,8 +2533,7 @@
 				return "Success"
 			})
 		},
-		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, cnv="", drivertypes = null){
-			
+		getGraphforGene(jobid, names, username, annotationName, networkName, subpage, cnv="", drivertypes = null){		
 			var genelist = Array.from(new Set(names))
 		  	return axios.post('/network/overview', 
 
@@ -2602,8 +2601,8 @@
 										table = this.mechanistic_drug_table
 									}
 								}
-						  		this.addGeneLinks(res.data, table)
-						  		return res.data
+						  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
+						  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha")
 							})
 							.catch(error => {
 						    	console.log(error.response)
@@ -2653,8 +2652,8 @@
 										table = this.mechanistic_drug_table
 									}
 								}
-					  		this.addGeneLinks(res.data, table)
-					  		return res.data
+					  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
+					  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha")
 						})
 						.catch(error => {
 						    console.log(error.response)
@@ -2677,6 +2676,7 @@
 				    method: 'GET'
 			  	}).then(
 					res => {
+						console.log("res.data", res.data)
 						var table;
 						if(subpage == "drivergenes"){
 							if(cnv != ""){
@@ -2721,8 +2721,8 @@
 							this.showNetwork = true;
 							this.$refs.loader1.style.visibility="hidden";
 						}
-						this.addGeneLinks(res.data, table)
-						axios.post('/visualization/'+subpage+cnv, res.data)
+						this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
+						axios.post('/visualization/'+subpage+cnv, res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"))
 						  .then(function () {
 						  	var iframe = document.getElementById(subpage+'Vis'+cnv);
 							iframe.src = iframe.src;
