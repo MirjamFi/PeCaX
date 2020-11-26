@@ -894,7 +894,7 @@
 								          	</div>
 								        </div> 
 					                      </td>
-					                      <td v-show="hidepharm_tableMutation" @click="selectItem(item)" ::class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                      <td v-show="hidepharm_tableMutation" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.variant}}
 					                      </td>
 					                      <td v-show="hidepharm_tableTherapy" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
@@ -2676,7 +2676,6 @@
 				    method: 'GET'
 			  	}).then(
 					res => {
-						console.log("res.data", res.data)
 						var table;
 						if(subpage == "drivergenes"){
 							if(cnv != ""){
