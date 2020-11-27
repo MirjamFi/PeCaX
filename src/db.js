@@ -121,6 +121,48 @@ var pecaxdb = {
 		  () => console.log('Document removed'),
 		  err => console.error('Failed to remove document', err)
 		);
+	},
+	addNote(db, collection_name, idkey, notes, subpage, cnv){
+		db = db.useDatabase('pecax');
+		return db.get().then(
+			()=> {
+			// Collections are where you keep your actual data
+			var collection = db.collection(collection_name);
+
+				collection.document(idkey).then(doc => {
+					if(cnv == ""){
+						if(subpage == "drivergenes"){
+							collection.update(doc, {drivergenes_notes:notes});
+						}
+						else if(subpage == "pharmaco"){
+							collection.update(doc, {pharmaco_notes:notes});
+						}
+						else if(subpage == "civic"){
+							collection.update(doc, {civic_notes:notes});
+						}
+						else if(subpage == "cancer"){
+							collection.update(doc, {cancer_notes:notes});
+						}
+					}
+					else if(cnv != ""){
+						if(subpage == "drivergenes"){
+							collection.update(doc, {drivergenes_notes_cnv:notes});
+						}
+						else if(subpage == "pharmaco"){
+							collection.update(doc, {pharmaco_notes_cnv:notes});
+						}
+						else if(subpage == "civic"){
+							collection.update(doc, {civic_notes_cnv:notes});
+						}
+						else if(subpage == "cancer"){
+							collection.update(doc, {cancer_notes_cnv:notes});
+						}
+					}
+				})
+				
+			},
+			error=> console.error("Error connecting to database: " + error)
+		)
 	}
 }
 
@@ -135,11 +177,19 @@ function saveDoc(collection, assembly){
 		  pharmaco:"",
 		  civic:"",
 		  cancer:"",
+		  drivergenes_notes:"",
+		  pharmaco_notes:"",
+		  civic_notes:"",
+		  cancer_notes:"",
 		  json_file_cnv:{},
 		  drivergenes_cnv:"",
 		  pharmaco_cnv:"",
 		  civic_cnv:"",
-		  cancer_cnv:""
+		  cancer_cnv:"",
+		  drivergenes_notes_cnv:"",
+		  pharmaco_notes_cnv:"",
+		  civic_notes_cnv:"",
+		  cancer_notes_cnv:""
 		};
 		// creating a documents
 		return collection.save(doc).then(

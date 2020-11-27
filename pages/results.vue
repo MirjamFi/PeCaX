@@ -222,23 +222,28 @@
 					            </table>
 				                   
 				            	<div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
-				              <table>
-				                <tr>
-				                  <td style="width: 5px">
-				                    <select v-model="rowsPerPage">
-				                      <option disabled value="">Rows per Page</option>
-				                      <option>10</option>
-				                      <option>20</option>
-				                      <option>50</option>
-				                    </select>
-				                  </td>
-				                  <td>{{startRow+1}}-{{rowsPerPage*currentPage}} out of {{sortedMskdg.length}}</td>
-				                  <td><button @click=movePages(-1)><b-icon icon="chevron-left"></b-icon></button></td>
-				                  
-				                  <td><button class="float-right" @click=movePages(1)><b-icon icon="chevron-right"></b-icon></button></td>
-				              </tr>
-				            	</table>
-				            	</div>     	
+					              <table>
+					                <tr>
+					                  <td>
+					                    <select v-model="rowsPerPage" style="width: 10px">
+					                      <option disabled value="">Rows per Page</option>
+					                      <option>10</option>
+					                      <option>20</option>
+					                      <option>50</option>
+					                    </select>
+					                  </td>
+					                  <td>{{startRow+1}}-{{rowsPerPage*currentPage}} out of {{sortedMskdg.length}}</td>
+					                  <td><button @click=movePages(-1)><b-icon icon="chevron-left"></b-icon></button></td>
+					                  
+					                  <td><button class="float-right" @click=movePages(1)><b-icon icon="chevron-right"></b-icon></button></td>
+					              </tr>
+					            	</table>
+				            	</div> 
+				            	<div id="notepadDrivers">
+									<textarea style="width: 70%"ref="driverNotes" placeholder="Notes">{{drivergenes_notes}}</textarea>
+									<button class= 'butn' v-on:click="storeNotes('drivergenes');">Save</button>
+									<p v-show="savedDrivergenesNotes"style="width: 50px" class="float-right">saved</p>
+				            	</div>    	
 				          	</b-card> 
 				        </b-collapse>
 				        <div v-if="visibleDrivers && visibleDrivergenes" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -398,8 +403,8 @@
 				            	<div id="page-navigation_cnv" class="text-center" data-html2canvas-ignore="true">
 				              <table>
 				                <tr>
-				                  <td style="width: 5px">
-				                    <select v-model="rowsPerPage_cnv">
+				                  <td>
+				                    <select v-model="rowsPerPage_cnv" style="width: 10px">
 				                      <option disabled value="">Rows per Page</option>
 				                      <option>10</option>
 				                      <option>20</option>
@@ -412,7 +417,12 @@
 				                  <td><button class="float-right" @click=movePages_cnv(1)><b-icon icon="chevron-right"></b-icon></button></td>
 				              </tr>
 				            	</table>
-				            	</div>     	
+				            	</div>  
+				            	<div id="notepadDriversCNV">
+									<textarea style="width: 80%"ref="driverNotes_cnv" placeholder="Notes">{{drivergenes_notes_cnv}}</textarea>
+									<button class= 'butn' v-on:click="storeNotes('drivergenes', 'cnv');">Save</button>
+									<p v-show="savedDrivergenesNotes_cnv"style="width: 50px" class="float-right">saved</p>
+				            	</div>    	
 				          	</b-card> 
 				        </b-collapse>
 				        <div v-if="visibleDrivers_cnv && visibleDrivergenes_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -570,7 +580,7 @@
 				                </tr>
 				              </tbody>
 				            </table>
-				            <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+				            <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 				              <table>
 				                <tr>
 				                  <td>
@@ -588,6 +598,11 @@
 				                </tr>
 				              </table>
 				            </div>
+				            <div id="notepadPharmaco">
+									<textarea style="width: 80%"ref="pharmacoNotes" placeholder="Notes">{{pharmaco_notes}}</textarea>
+									<button class= 'butn' v-on:click="storeNotes('pharmaco');">Save</button>
+									<p v-show="savedPharmacoNotes"style="width: 50px" class="float-right">saved</p>
+				            	</div> 
 				         </b-card>
 				        </b-collapse>
 				        <div v-if="visiblePharma && visiblePharmaco" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -732,7 +747,7 @@
 				                </tr>
 				              </tbody>
 				            </table>
-				            <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+				            <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 				              <table>
 				                <tr>
 				                  <td>
@@ -750,6 +765,11 @@
 				                </tr>
 				              </table>
 				            </div>
+				            <div id="notepadPharmaco_cnv">
+								<textarea style="width: 80%"ref="pharmacoNotes_cnv" placeholder="Notes">{{pharmaco_notes_cnv}}</textarea>
+								<button class= 'butn' v-on:click="storeNotes('pharmaco', 'cnv');">Save</button>
+								<p v-show="savedPharmacoNotes_cnv"style="width: 50px" class="float-right">saved</p>
+			            	</div> 
 				         </b-card>
 				        </b-collapse>
 				        <div v-if="visiblePharma_cnv && visiblePharmaco_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -915,7 +935,7 @@
 					                    </tr>
 					                  </tbody>
 					                </table>
-					                <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+					                <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 					                  <table>
 					                    <tr>
 					                      <td>
@@ -933,6 +953,11 @@
 					                    </tr>
 					                  </table>
 					                </div>
+					                <div id="notepadCivic">
+									<textarea ref="civicNotes" style="width: 80%" placeholder="Notes">{{civic_notes}}</textarea>
+									<button class= 'butn' v-on:click="storeNotes('civic');">Save</button>
+									<p v-show="savedCivicNotes"style="width: 50px" class="float-right">saved</p>
+				            	</div> 
 					            	</b-card>
 					          	</b-collapse>
 					          	<div v-if="visibleAffectCivic && visibleCivic" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -1047,7 +1072,7 @@
 						                    </tr>
 						                  </tbody>
 						                </table>
-						                <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+						                <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 						                  <table>
 						                    <tr>
 						                      <td>
@@ -1065,6 +1090,11 @@
 						                    </tr>
 						                  </table>
 						                </div>
+						            	<div id="notepadCancer">
+											<textarea style="width: 80%"ref="cancerNotes" placeholder="Notes">{{cancer_notes}}</textarea>
+											<button class= 'butn' v-on:click="storeNotes('cancer');">Save</button>
+											<p v-show="savedCancerNotes"style="width: 50px" class="float-right">saved</p>
+				            			</div> 
 						          </b-card>
 					          </b-collapse>
 					          <div v-if="visibleAffectCancer && visibleCancer" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -1216,7 +1246,7 @@
 					                    </tr>
 					                  </tbody>
 					                </table>
-					                <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+					                <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 					                  <table>
 					                    <tr>
 					                      <td>
@@ -1234,6 +1264,11 @@
 					                    </tr>
 					                  </table>
 					                </div>
+					                <div id="notepadCivic_cnv">
+											<textarea style="width: 80%"ref="civicNotes_cnv" placeholder="Notes">{{civic_notes_cnv}}</textarea>
+											<button class= 'butn' v-on:click="storeNotes('civic', 'cnv');">Save</button>
+											<p v-show="savedCivicNotes_cnv"style="width: 50px" class="float-right">saved</p>
+				            			</div> 
 					            	</b-card>
 					          	</b-collapse>
 					          	<div v-if="visibleAffectCivic_cnv && visibleCivic_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -1334,7 +1369,7 @@
 						                    </tr>
 						                  </tbody>
 						                </table>
-						                <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+						                <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 						                  <table>
 						                    <tr>
 						                      <td>
@@ -1352,6 +1387,11 @@
 						                    </tr>
 						                  </table>
 						                </div>
+						                <div id="notepadCancer_cnv">
+											<textarea style="width: 80%"ref="cancerNotes_cnv" placeholder="Notes">{{cancer_notes_cnv}}</textarea>
+											<button class= 'butn' v-on:click="storeNotes('cancer','cnv');">Save</button>
+											<p v-show="savedCancerNotes_cnv"style="width: 50px" class="float-right">saved</p>
+				            			</div> 
 						          </b-card>
 					          </b-collapse>
 					          <div v-if="visibleAffectCancer_cnv && visibleCancer_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
@@ -1493,7 +1533,7 @@
 				                </tr>
 				              </tbody>
 				            </table>
-				            <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+				            <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 				              <table>
 				                <tr>
 				                  <td>
@@ -1724,7 +1764,7 @@
 				                    </tr>
 				                  </tbody>
 				                </table>
-				                <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+				                <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 				                  <table>
 				                    <tr>
 				                      <td>
@@ -1815,7 +1855,7 @@
 				                    </tr>
 				                  </tbody>
 				                </table>
-				                <div id="page-navigation" class="float-right" data-html2canvas-ignore="true">
+				                <div id="page-navigation" class="text-center" data-html2canvas-ignore="true">
 				                  <table>
 				                    <tr>
 				                      <td>
@@ -2221,6 +2261,23 @@
 
         hideappendix_variant_tableType_cnv:true,
         hideappendix_variant_tableCopy_cnv:true,
+
+        drivergenes_notes:"Notes",
+        savedDrivergenesNotes:false,
+        pharmaco_notes:"Notes",
+        savedPharmacoNotes:false,
+        civic_notes:"Notes",
+        savedCivicNotes:false,
+        cancer_notes:"Notes",
+        savedCancerNotes:false,
+        drivergenes_notes_cnv:"Notes",
+        savedDrivergenesNotes_cnv:false,
+        pharmaco_notes_cnv:"Notes",
+        savedPharmacoNotes_cnv:false,
+        civic_notes_cnv:"Notes",
+        savedCivicNotes_cnv:false,
+        cancer_notes_cnv:"Notes",
+        savedCancerNotes_cnv:false,
       }
     },
     methods: {
@@ -2860,13 +2917,81 @@
 	    		if(Object.keys(json._result[0].json_file_cnv).length){
 	    			this.cnvjsonavailable = true;
 	    			this.showJSON_cnv(username, json._result[0].json_file_cnv, json._result[0]._key, [json._result[0].drivergenes_cnv, json._result[0].pharmaco_cnv, json._result[0].civic_cnv, json._result[0].cancer_cnv])
+	    			this.drivergenes_notes_cnv = json._result[0].drivergenes_notes_cnv
+		    		this.pharmaco_notes_cnv = json._result[0].pharmaco_notes_cnv
+		    		this.civic_notes_cnv = json._result[0].civic_notes_cnv
+		    		this.cancer_notes_cnv = json._result[0].cancer_notes_cnv
 	    		}
 	    		this.jsonReport = json._result[0].json_file
 	    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
+	    			this.drivergenes_notes = json._result[0].drivergenes_notes
+	    			this.pharmaco_notes = json._result[0].pharmaco_notes
+	    			this.civic_notes = json._result[0].civic_notes
+	    			this.cancer_notes = json._result[0].cancer_notes
 	    	});
 	    },
 	    storeJsonInDB(jsonReport, jobid, username, cnv=""){
 	    	pecaxdb.addJson(new arangodb.Database('/db/'), username, jobid, jsonReport, cnv);
+	    },
+	    storeNotes(subpage, cnv=""){
+	    	var self = this
+	    	if(subpage+cnv == "drivergenes"){
+	    		var notes = this.$refs.driverNotes.value
+	    		this.savedDrivergenesNotes = true
+	    		setTimeout(function(){
+	    			self.savedDrivergenesNotes = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "drivergenescnv"){
+	    		var notes = this.$refs.driverNotes_cnv.value
+	    		this.savedDrivergenesNotes_cnv = true
+	    		setTimeout(function(){
+	    			self.savedDrivergenesNotes_cnv = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "pharmaco"){
+	    		var notes = this.$refs.pharmacoNotes.value
+	    		this.savedPharmacoNotes = true
+	    		setTimeout(function(){
+	    			self.savedPharmacoNotes = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "pharmacocnv"){
+	    		var notes = this.$refs.pharmacoNotes_cnv.value
+	    		this.savedPharmacoNotes_cnv = true
+	    		setTimeout(function(){
+	    			self.savedPharmacoNotes_cnv = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "civic"){
+	    		var notes = this.$refs.civicNotes.value
+	    		this.savedCivicNotes = true
+	    		setTimeout(function(){
+	    			self.savedCivicNotes = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "civiccnv"){
+	    		var notes = this.$refs.civicNotes_cnv.value
+	    		this.savedCivicNotes_cnv = true
+	    		setTimeout(function(){
+	    			self.savedCivicNotes_cnv = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "cancer"){
+	    		var notes = this.$refs.cancerNotes.value
+	    		this.savedCancerNotes = true
+	    		setTimeout(function(){
+	    			self.savedCancerNotes = false
+	    		}, 10000)
+	    	}
+	    	else if(subpage+cnv == "cancercnv"){
+	    		var notes = this.$refs.cancerNotes_cnv.value
+	    		this.savedCancerNotes_cnv = true
+	    		setTimeout(function(){
+	    			self.savedCancerNotes_cnv = false
+	    		}, 10000)
+	    	}
+	    	pecaxdb.addNote(new arangodb.Database('/db/'), this.username, this.jobid, notes, subpage, cnv);
 	    },
 	    exportToPDF_all() {
 	        this.visibleDrivers = true;
