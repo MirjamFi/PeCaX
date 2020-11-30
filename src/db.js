@@ -177,6 +177,8 @@ function saveDoc(collection, assembly){
 		  pharmaco:"",
 		  civic:"",
 		  cancer:"",
+		  icd10:"",
+		  diagnosisfilter:"",
 		  drivergenes_notes:"",
 		  pharmaco_notes:"",
 		  civic_notes:"",

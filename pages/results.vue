@@ -57,6 +57,15 @@
 					<div class="loader" ref="loader1"></div>
 				</div>
 			    <div  data-app v-show="showTable" ref="all" style="width:100%">
+			    	<div v-if="icd10!=''"ref="diagnosisinfo" style="margin-right: 10px">
+			    			<p style="font-size:16px">
+			    				<b>Diagnosis: </b>
+			    				{{icd10}}<br>
+			    				<b>Filter</b>
+			    				{{diagnosisfilter}}
+			    				
+			    			</p>
+			    	</div>
 			    	<div ref = "content_driver_table" id="driver_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 			    		<div id="tooltipdriver" style="width:100%">
 			    			<v-tooltip bottom attach="#tooltipdriver">
@@ -1917,6 +1926,8 @@
         cnvjsonavailable:false,
         cnvjsonReport:"",
         drivertypes_cnv : {},
+        icd10:"",
+        diagnosisfilter:"",
 
         currentSort:'Gene',
         currentSortDir:'asc',
@@ -2302,6 +2313,8 @@
 			    	else{
 			    		this.assembly = localStorage.getItem("assembly");
 			    		this.getVcfStatus(this.jobid, this.username, false)
+			    		this.icd10 = localStorage.getItem("diagnosis")
+			    		this.diagnosisfilter = localStorage.getItem("filter")
 			    	}
 			    })
 	    	}
@@ -2416,7 +2429,7 @@
 			    	if(res){
 		    			this.cnvjsonReport = res;
 		    			this.cnvjsonavailable = true;
-		    			this.storeJsonInDB(res, jobid, username, 'cnv')
+		    			this.storeJsonInDB(res, jobid, username, "", "",'cnv')
 		    			this.showJSON_cnv(username, res, jobid)
 		    		}
 		    	})
@@ -2891,7 +2904,7 @@
 	    	jsonReport.then(res => {
 	    		this.showJSON(username, res, jobid);
 	    	 	this.jsonReport = res;
-	    		this.storeJsonInDB(res, jobid, username);
+	    		this.storeJsonInDB(res, jobid, username, this.icd10, this.diagnosisfilter);
 		    })
 	    },
 	    download_json(){
@@ -2928,10 +2941,12 @@
 	    			this.pharmaco_notes = json._result[0].pharmaco_notes
 	    			this.civic_notes = json._result[0].civic_notes
 	    			this.cancer_notes = json._result[0].cancer_notes
+	    			this.icd10 = json._result[0].icd10
+	    			this.diagnosisfilter = json._result[0].diagnosisfilter
 	    	});
 	    },
-	    storeJsonInDB(jsonReport, jobid, username, cnv=""){
-	    	pecaxdb.addJson(new arangodb.Database('/db/'), username, jobid, jsonReport, cnv);
+	    storeJsonInDB(jsonReport, jobid, username, icd10="", diagnosisfilter ="",cnv=""){
+	    	pecaxdb.addJson(new arangodb.Database('/db/'), username, jobid, jsonReport, icd10, diagnosisfilter, cnv);
 	    },
 	    storeNotes(subpage, cnv=""){
 	    	var self = this

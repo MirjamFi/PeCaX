@@ -215,6 +215,8 @@
 		    	localStorage.setItem("username", username);
 		    	localStorage.setItem("jobid", jobid);
 		    	localStorage.setItem("cnvfileavailable", cnvfileavailable)
+		    	localStorage.setItem("diagnosis", selectedICD10)
+		    	localStorage.setItem("filter", filter)
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
 		    	formData.append("assembly", assemblyparam)
@@ -245,8 +247,8 @@
 	  	created(){
 	  		var icd10codeslist = icd10codestxt.split("\n")
 	  		for(let code of icd10codeslist){
-	  			let splitcode = code.split(/(?:^\S+)\s/)
-	  			this.icd10codes[code] = splitcode[0]
+	  			let codeID = code.split(" ")[0]
+	  			this.icd10codes[code] = codeID
 	  		}
 	  		if(localStorage.getItem("jobids") == "undefined" || localStorage.getItem("jobids").length == 0){
 	  			this.allowJobId = false;
