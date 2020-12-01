@@ -68,7 +68,6 @@ var pecaxdb = {
 			);
 	},
 	addJson(database, collection_name, idkey, json, icd10, diagnosisfilter, cnv){
-		console.log(cnv)
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 		var db = database.useDatabase('pecax');
