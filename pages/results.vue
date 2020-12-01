@@ -49,12 +49,12 @@
 				      </p>			      
 					</div>
 				</div>
-				<div v-show="showStatus">
+				<div >
 					<!-- <h1>Clinical Variant Annotation Pipeline</h1> -->
-					<p style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Job ID: {{this.jobid}} <br> Status of analysis with ClinVAP: {{this.status}}
+					<p v-show="showStatus" style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Job ID: {{this.jobid}} <br> Status of analysis with ClinVAP: {{this.status}}
 					<p v-show="showNetwork" style="border:3px; border-style:solid; border-color:#BDBDBD; padding: 1em;" class="text-center" >Calculating networks.</p> 
 					</p>
-					<div class="loader" ref="loader1"></div>
+					<div v-show="showNetwork || showStatus"class="loader" ref="loader1"></div>
 				</div>
 			    <div  data-app v-show="showTable" ref="all" style="width:100%">
 			    	<div v-if="icd10!=''"ref="diagnosisinfo" style="margin-right: 10px">
@@ -66,7 +66,7 @@
 			    				
 			    			</p>
 			    	</div>
-			    	<div ref = "content_driver_table" id="driver_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
+			    	<div v-if="!cnvjson"ref = "content_driver_table" id="driver_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 			    		<div id="tooltipdriver" style="width:100%">
 			    			<v-tooltip bottom attach="#tooltipdriver">
        							<template v-slot:activator="{ on, attrs }">
@@ -438,7 +438,7 @@
 							<iframe id="drivergenesVis_cnv" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/drivergenes_cnv" allowfullscreen></iframe>
 						</div>
 					</div>	      
-				    <div ref = "content_direct_pharm_table" id="direct_pharm_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
+				    <div v-if="!cnvjson"ref = "content_direct_pharm_table" id="direct_pharm_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 				    	<div id="tooltipdirectpharm" style="width:100%">
 					    	<v-tooltip bottom attach="#tooltipdirectpharm">
 		       					<template v-slot:activator="{ on, attrs }">
@@ -786,7 +786,7 @@
 						</div>
 				    	<br><br>
 				    </div> 
-				    <div ref="content_smptag" style="margin-left: 10px; width : 100%;">
+				    <div v-if="!cnvjson"ref="content_smptag" style="margin-left: 10px; width : 100%;">
 				        <b-button
 				          :class="visibleAffect ? null : 'collapsed'"
 				          :aria-expanded="visibleAffect ? 'true' : 'false'"
@@ -1409,7 +1409,7 @@
 					        </div>
 				        </b-collapse>
 				    </div>
-				    <div ref = "content_adverse_table" id="adverse_table_content" class="row" style="margin-left: 10px; margin-bottom: 1.5vw">
+				    <div v-if="!cnvjson"ref = "content_adverse_table" id="adverse_table_content" class="row" style="margin-left: 10px; margin-bottom: 1.5vw">
 				    	<v-tooltip bottom attach="#adverse_table_content">
        					<template v-slot:activator="{ on, attrs }">
 				        <b-button
@@ -1563,7 +1563,7 @@
 				         </b-card>
 				        </b-collapse>
 				    </div>
-				    <div ref="content_ref" id="ref_content" class="row" style="margin-left: 10px; margin-bottom: 1.5vw">
+				    <div v-if="!cnvjson"ref="content_ref" id="ref_content" class="row" style="margin-left: 10px; margin-bottom: 1.5vw">
 				      <b-button
 				        :class="visibleRef ? null : 'collapsed'"
 				        :aria-expanded="visibleRef ? 'true' : 'false'"
@@ -1653,7 +1653,7 @@
 				        </b-card>
 				      </b-collapse>
 				    </div>
-				    <div ref="content_appendix_variant_table" id="appendix_variant_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
+				    <div v-if="!cnvjson"ref="content_appendix_variant_table" id="appendix_variant_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
 				    	<v-tooltip bottom attach="#appendix_variant_table_content">
        					<template v-slot:activator="{ on, attrs }">
 				      <b-button
@@ -1928,6 +1928,7 @@
         drivertypes_cnv : {},
         icd10:"",
         diagnosisfilter:"",
+        cnvjson:false,
 
         currentSort:'Gene',
         currentSortDir:'asc',
@@ -2308,6 +2309,7 @@
 				pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, this.username, this.jobid).then(json => { 
 					if(Object.keys(json._result[0].json_file).length > 0){
 						this.showStatus = false;
+						this.showNetwork = false;
 			    		this.getJsonFromJobID(this.jobid, this.username)
 			    	}
 			    	else{
@@ -2320,9 +2322,32 @@
 	    	}
 	    	// json as input
 	    	else if(data["username"] == localStorage.getItem("username") && localStorage.getItem("json") && !data["jobid"] && data["json"]){
-	    		this.username = localStorage.getItem("username")
 	    		this.showStatus = false;
-	    		this.showJSON(this.username, JSON.parse(localStorage.getItem("json")))
+	    		this.username = localStorage.getItem("username")
+	    		var newjob = pecaxdb.enterdb(new arangodb.Database('/db/'), this.username, "")
+		    		.then(res => {return res});
+		    	newjob.then(res => {
+		    		var as = res[0]; 
+		    		this.jobid = res[1];
+		    		var ids = localStorage.getItem("jobids");
+		    		if(ids == "undefined"){
+		    			ids = "";
+		    		}
+					localStorage.setItem("jobids", ids+","+this.jobid)
+					this.cnvjson =(localStorage.getItem("cnvjson") == 'true'); 
+					if(this.cnvjson){
+						this.storeJsonInDB(JSON.parse(localStorage.getItem("json")), this.jobid, this.username, "", "",'cnv')
+						this.showJSON_cnv(this.username, JSON.parse(localStorage.getItem("json")), this.jobid)
+					}
+					else{
+						this.storeJsonInDB(JSON.parse(localStorage.getItem("json")), this.jobid, this.username);
+					
+		    			this.showJSON(this.username, JSON.parse(localStorage.getItem("json")), this.jobid)
+		    		}
+	    			this.showNetwork=true;
+	    			this.$refs.loader1.style.visibility="visible";
+		    	}) 	
+	    		
 	    	}
 	    	// uuid known
 	    	else if(data["username"] ==  localStorage.getItem("username") && data["json"] &&  localStorage.getItem("json") && data["jobid"] ==localStorage.getItem("jobid") && (localStorage.getItem("drivergenes") || localStorage.getItem("pharmaco") || localStorage.getItem("civic") || localStorage.getItem("cancer"))){
@@ -2337,6 +2362,8 @@
 	    		this.username = localStorage.getItem("username")
 	    		this.jobid = localStorage.getItem("jobid");
 	    		this.showStatus = false;
+				this.showNetwork=false;
+
 	    		this.getJsonFromJobID(this.jobid, this.username)
 	    	}
     	},
@@ -2448,27 +2475,7 @@
 			    			var mechanisticgeneslist = this.mechanistic_drug_table.map(a => a.gene); 
 			    			var res_cancer = this.getGraphFromGenes(mechanisticgeneslist, jobid, username, "targeted_gene", "Cancer drug network", "cancer", "Summary of Cancer Drugs Targeting Affected Genes")
 			    			res_cancer.then(res => {
-			    				if(localStorage.getItem("cnvfileavailable") == "true" && this.cnvjsonavailable){
-							    	var drivergeneslist_cnv = this.driver_table_cnv.map(a => a.gene); 
-							        var res_driver_cnv = this.getGraphFromGenes(drivergeneslist_cnv, jobid, username, "drivergene", "CNV Drivergene network", "drivergenes", "CNV: Somatic Mutations in Known Driver Genes", "_cnv", this.drivertypes_cnv);
-							        res_driver_cnv .then(res => {
-							        	var pharmacogeneslist_cnv = this.direct_pharm_table_cnv.map(a => a.gene); 
-						    			var res_pharmaco_cnv  = this.getGraphFromGenes(pharmacogeneslist_cnv, jobid, username, "pharmacogenetic_effect", "CNV Pharmacogenetic network", "pharmaco", "CNV: Somatic Mutations with Known Pharmacogenetic Effect", "_cnv")
-						    			res_pharmaco_cnv .then(res => {
-						    				var pharmgeneslist_cnv = this.pharm_table_cnv.map(a => a.gene); 
-								    		var res_civic_cnv  = this.getGraphFromGenes(pharmgeneslist_cnv, jobid, username, "targeted_gene", "CNV Mechanistic drug network", "civic", "CNV: Pharmacogenomics Summary of Drugs Targeting Affected Genes", "_cnv")
-								    		res_civic_cnv.then(res => {
-								    			var mechanisticgeneslist_cnv = this.mechanistic_drug_table_cnv.map(a => a.gene); 
-								    			var res_cancer_cnv  = this.getGraphFromGenes(mechanisticgeneslist_cnv, jobid, username, "targeted_gene", "CNV Cancer drug network", "cancer", "CNV: Summary of Cancer Drugs Targeting Affected Genes", "_cnv")
-								    			res_cancer_cnv.then(res => {
-								    				this.showNetwork = false;
-													this.$refs.loader1.style.visibility="hidden";
-								    			})
-								    		})
-						    			})		    		
-							        })	    	
-							    }
-							    else{
+							    if(localStorage.getItem("cnvfileavailable") != "true" || !this.cnvjsonavailable){
 							    	this.showNetwork = false;
 									this.$refs.loader1.style.visibility="hidden";
 							    }
@@ -2478,7 +2485,6 @@
 		    		})
 		    		
 	    		})
-	    		
 		    }
 		    // uuids known
 		    else if(uuids){
@@ -2494,22 +2500,6 @@
 		    			res_civic.then(res => {
 		    				var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
 		    				res_cancer.then(res => {
-			    				if(this.cnvjsonavailable){
-							    	this.visibleDrivergenes_cnv = false;
-							    	this.visiblePharmaco_cnv = false;
-							    	this.visibleCivic_cnv = false;
-							    	this.visibleCancer_cnv = false;
-							    	var res_driver_cnv = this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username, "_cnv")
-							    	res_driver_cnv.then(res => {
-							    		var res_pharmaco_cnv = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username, "_cnv")
-							    		res_pharmaco_cnv.then(res => {
-							    			var res_civic_cnv = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
-							    			res_civic_cnv.then(res => {
-							    				var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
-							    			})
-							    		})
-							    	})
-						    	}
 		    				})
 		    			})
 		    		})
@@ -2517,6 +2507,8 @@
 		    }
 	    },
 	    showJSON_cnv(username, jsonfile, jobid=null, uuids = null){
+	    	this.showTable = true;
+	    	this.cnvjsonavailable = true
 	    	// info from json
     		this.driver_table_cnv= jsonfile.driver_table;
     		for(let item  of this.driver_table_cnv){
@@ -2545,8 +2537,42 @@
 	    	}
 	    	this.appendix_reference_table_cnv = jsonfile.appendix_reference_table;
 	        this.appendix_variant_table_cnv = jsonfile.appendix_variant_table;
-	    	if(jobid == null){
-	    		return
+
+	        if(!uuids){
+		    	var drivergeneslist_cnv = this.driver_table_cnv.map(a => a.gene); 
+		        var res_driver_cnv = this.getGraphFromGenes(drivergeneslist_cnv, jobid, username, "drivergene", "CNV Drivergene network", "drivergenes", "CNV: Somatic Mutations in Known Driver Genes", "_cnv", this.drivertypes_cnv);
+		        res_driver_cnv .then(res => {
+		        	var pharmacogeneslist_cnv = this.direct_pharm_table_cnv.map(a => a.gene); 
+	    			var res_pharmaco_cnv  = this.getGraphFromGenes(pharmacogeneslist_cnv, jobid, username, "pharmacogenetic_effect", "CNV Pharmacogenetic network", "pharmaco", "CNV: Somatic Mutations with Known Pharmacogenetic Effect", "_cnv")
+	    			res_pharmaco_cnv .then(res => {
+	    				var pharmgeneslist_cnv = this.pharm_table_cnv.map(a => a.gene); 
+			    		var res_civic_cnv  = this.getGraphFromGenes(pharmgeneslist_cnv, jobid, username, "targeted_gene", "CNV Mechanistic drug network", "civic", "CNV: Pharmacogenomics Summary of Drugs Targeting Affected Genes", "_cnv")
+			    		res_civic_cnv.then(res => {
+			    			var mechanisticgeneslist_cnv = this.mechanistic_drug_table_cnv.map(a => a.gene); 
+			    			var res_cancer_cnv  = this.getGraphFromGenes(mechanisticgeneslist_cnv, jobid, username, "targeted_gene", "CNV Cancer drug network", "cancer", "CNV: Summary of Cancer Drugs Targeting Affected Genes", "_cnv")
+			    			res_cancer_cnv.then(res => {
+			    				this.showNetwork = false;
+								this.$refs.loader1.style.visibility="hidden";
+			    			})
+			    		})
+	    			})		    		
+		        })	    	
+		    }
+		    if(uuids){
+		    	this.visibleDrivergenes_cnv = false;
+		    	this.visiblePharmaco_cnv = false;
+		    	this.visibleCivic_cnv = false;
+		    	this.visibleCancer_cnv = false;
+		    	var res_driver_cnv = this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username, "_cnv")
+		    	res_driver_cnv.then(res => {
+		    		var res_pharmaco_cnv = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username, "_cnv")
+		    		res_pharmaco_cnv.then(res => {
+		    			var res_civic_cnv = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
+		    			res_civic_cnv.then(res => {
+		    				var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
+		    			})
+		    		})
+		    	})
 	    	}
 	    },
 	    getGraphFromGenes(genes, jobid, username, annotationName, networkName, subpage, tableheader, cnv="",drivertypes = null){
@@ -2787,8 +2813,6 @@
 								this.visibleCancer = true;
 								table = this.mechanistic_drug_table
 							}
-							this.showNetwork = true;
-							this.$refs.loader1.style.visibility="hidden";
 						}
 						this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
 						axios.post('/visualization/'+subpage+cnv, res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"))
@@ -2927,7 +2951,10 @@
 	    },
 	    getJsonFromJobID(jobid, username){
 	    	pecaxdb.getJsonFromJobID(new arangodb.Database('/db/'), arangodb.aqlQuery, username, jobid).then(json => { 
-	    		if(Object.keys(json._result[0].json_file_cnv).length){
+	    		if(Object.keys(json._result[0].json_file_cnv).length > 0){
+	    			if(Object.keys(json._result[0].json_file).length == 0){
+		    			this.cnvjson = true;
+		    		}
 	    			this.cnvjsonavailable = true;
 	    			this.showJSON_cnv(username, json._result[0].json_file_cnv, json._result[0]._key, [json._result[0].drivergenes_cnv, json._result[0].pharmaco_cnv, json._result[0].civic_cnv, json._result[0].cancer_cnv])
 	    			this.drivergenes_notes_cnv = json._result[0].drivergenes_notes_cnv
@@ -2935,14 +2962,16 @@
 		    		this.civic_notes_cnv = json._result[0].civic_notes_cnv
 		    		this.cancer_notes_cnv = json._result[0].cancer_notes_cnv
 	    		}
-	    		this.jsonReport = json._result[0].json_file
-	    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
+	    		if(Object.keys(json._result[0].json_file).length>0){
+		    		this.jsonReport = json._result[0].json_file
+		    		this.showJSON(username, json._result[0].json_file, json._result[0]._key, [json._result[0].drivergenes, json._result[0].pharmaco, json._result[0].civic, json._result[0].cancer])
 	    			this.drivergenes_notes = json._result[0].drivergenes_notes
 	    			this.pharmaco_notes = json._result[0].pharmaco_notes
 	    			this.civic_notes = json._result[0].civic_notes
 	    			this.cancer_notes = json._result[0].cancer_notes
 	    			this.icd10 = json._result[0].icd10
 	    			this.diagnosisfilter = json._result[0].diagnosisfilter
+	    		}
 	    	});
 	    },
 	    storeJsonInDB(jsonReport, jobid, username, icd10="", diagnosisfilter ="",cnv=""){
