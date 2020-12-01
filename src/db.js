@@ -67,7 +67,8 @@ var pecaxdb = {
 				error=> console.error("Error connecting to database: " + error)
 			);
 	},
-	addJson(database, collection_name, idkey, json, cnv){
+	addJson(database, collection_name, idkey, json, icd10, diagnosisfilter, cnv){
+		console.log(cnv)
 		// creating a new database called database_name if it does not exist &
 		// Switching to the new database
 		var db = database.useDatabase('pecax');
@@ -79,7 +80,7 @@ var pecaxdb = {
 				collection.document(idkey).then(doc => {
 					// printDoc(collection, doc);
 					if(cnv == ""){
-						collection.update(doc, {json_file:json});
+						collection.update(doc, {json_file:json, icd10: icd10, diagnosisfilter:diagnosisfilter});
 					}
 					else if(cnv != ""){
 						collection.update(doc, {json_file_cnv:json});
