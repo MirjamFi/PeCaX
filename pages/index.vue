@@ -58,49 +58,51 @@
 	  },
 	  methods: {
 	  	loggedIn(){
-		  	// creating a new database called database_name if it does not exist &
-			// Switching to the new database
-			var db = new arangodb.Database('/db/');
-			db.listDatabases().then((names) => {
-				if (names.indexOf('pecax') > -1){
-					db.useDatabase('pecax');
-					db.get().then(
-					()=> {console.log("Using database " + 'pecax')
-							var registered = pecaxdb.createdb(db, this.$refs.username.value)
-					    	.then((res)=> {return res;});
-						    registered.then(res => {	
-						  			localStorage.setItem("username", this.$refs.username.value);
-					    			localStorage.setItem("jobids", res)
-									var url = '/start?user='+this.$refs.username.value
-									setTimeout(function(scope){
-						    			document.location.href = url;}, 1000, this);
-						    })
-						},
-						error=> console.error("Error connecting to database: " + error)
-					);
-				} else {
-					db.createDatabase('pecax').then(
-						()=> {console.log("Database created successfully: "+ 'pecax')
-							db.useDatabase('pecax');
-							db.get().then(
-							()=> {console.log("Using database " + 'pecax')
+	  		if(this.$refs.username.value != ""){
+			  	// creating a new database called database_name if it does not exist &
+				// Switching to the new database
+				var db = new arangodb.Database('/db/');
+				db.listDatabases().then((names) => {
+					if (names.indexOf('pecax') > -1){
+						db.useDatabase('pecax');
+						db.get().then(
+						()=> {console.log("Using database " + 'pecax')
 								var registered = pecaxdb.createdb(db, this.$refs.username.value)
-					    		.then((res)=> {return res;});
-						    	registered.then(res => {
-						  			localStorage.setItem("username", this.$refs.username.value);
-					    			localStorage.setItem("jobids", res)
-									var url = '/start?user='+this.$refs.username.value
-									setTimeout(function(scope){
-						    			document.location.href = url;}, 1000, this);
-					    		})
+						    	.then((res)=> {return res;});
+							    registered.then(res => {	
+							  			localStorage.setItem("username", this.$refs.username.value);
+						    			localStorage.setItem("jobids", res)
+										var url = '/start?user='+this.$refs.username.value
+										setTimeout(function(scope){
+							    			document.location.href = url;}, 1000, this);
+							    })
 							},
 							error=> console.error("Error connecting to database: " + error)
 						);
-						},
-						error=> console.error("Error creating database: " + error)
-					);
-				}
-			})
+					} else {
+						db.createDatabase('pecax').then(
+							()=> {console.log("Database created successfully: "+ 'pecax')
+								db.useDatabase('pecax');
+								db.get().then(
+								()=> {console.log("Using database " + 'pecax')
+									var registered = pecaxdb.createdb(db, this.$refs.username.value)
+						    		.then((res)=> {return res;});
+							    	registered.then(res => {
+							  			localStorage.setItem("username", this.$refs.username.value);
+						    			localStorage.setItem("jobids", res)
+										var url = '/start?user='+this.$refs.username.value
+										setTimeout(function(scope){
+							    			document.location.href = url;}, 1000, this);
+						    		})
+								},
+								error=> console.error("Error connecting to database: " + error)
+							);
+							},
+							error=> console.error("Error creating database: " + error)
+						);
+					}
+				})
+			}
 		}
 	},
 	created(){
