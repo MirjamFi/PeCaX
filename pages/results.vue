@@ -28,7 +28,7 @@
 				      <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
 				    </div>
 				    <div class="dropdown topnav-left" id="navAbout">  
-				      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
+				      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
 				        <div class="dropdown-content">
 				          <a class="page-link" href="/profile">My Jobs</a>
 				          <a class="page-link" href="/about" >About </a>
@@ -38,8 +38,11 @@
 				      </button> 
 				    </div>
 				    <div class="topnav-right">
+				    	<button style="margin-top: 2vw; margin-right: 10px">
+				    		<a href="/"><b-icon icon="file-earmark-plus" class="h3" variant="dark"></b-icon></a>
+						</button>
 				      <p class="dropdown">
-				        <button class="dropbtn"><b-icon icon="download"></b-icon>
+				        <button class="dropbtn"><b-icon icon="download" class="h3"></b-icon>
 				              <div class="dropdown-content">
 				            <a class="page-link pdfdownload"  @click="exportToPDF_all()">PDF</a>
 				            <a class="page-link jsondownload" @click="download_json()">JSON</a>
@@ -217,8 +220,8 @@
 					                    <span> {{item.trunc}} 
 					                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
 					                    </span>
-					                    <a v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
-					                    <a v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
+					                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+					                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                  </td>
 					                  <td v-show="hidedriver_tableVAF" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.vaf}}
@@ -399,8 +402,8 @@
 					                    <span> {{item.trunc}} 
 					                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
 					                    </span>
-					                    <a v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
-					                    <a v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
+					                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+					                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                  </td>	                  
 					                  <td v-show="hidedriver_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.ref_map}}
@@ -2697,8 +2700,8 @@
 										table = this.mechanistic_drug_table
 									}
 								}
-						  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
-						  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha")
+						  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"), table)
+						  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss")
 							})
 							.catch(error => {
 						    	console.log(error.response)
@@ -2748,8 +2751,8 @@
 										table = this.mechanistic_drug_table
 									}
 								}
-					  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
-					  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha")
+					  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"), table)
+					  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss")
 						})
 						.catch(error => {
 						    console.log(error.response)
@@ -2814,8 +2817,8 @@
 								table = this.mechanistic_drug_table
 							}
 						}
-						this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"), table)
-						axios.post('/visualization/'+subpage+cnv, res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha"))
+						this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"), table)
+						axios.post('/visualization/'+subpage+cnv, res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"))
 						  .then(function () {
 						  	var iframe = document.getElementById(subpage+'Vis'+cnv);
 							iframe.src = iframe.src;
