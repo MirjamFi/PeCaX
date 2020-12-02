@@ -1,8 +1,28 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <h2 class="title">My Account</h2>
-      <div>
+  <v-layout justify-center align-center width=90%>
+      <v-flex xs12 sm8 md12>
+  <div class="topnav" id ="nav">
+          <div class="topnav-centered">
+            <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+          </div>
+          <div class="dropdown topnav-left" id="navAbout">  
+            <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
+              <div class="dropdown-content">
+                <a class="page-link" href="/about" >About </a>
+                <a class="page-link" href="/documentation">Documentation</a>
+                <a class="page-link" href="/contact">Contact</a>
+              </div>
+            </button> 
+          </div>
+          <div class="topnav-right">
+              <button style="margin-top: 2vw;">
+                <a href="/"><b-icon icon="file-earmark-plus" class="h3" variant="dark"></b-icon></a>
+            </button>
+          </div>
+      </div>
+    <div >
+      <h2 class="title">My Jobs</h2>
+      <div style="margin-left: 10%">
         <table class="float-left">
           <tr>
             <td style="padding:0 15px;">User: </td>
@@ -10,14 +30,21 @@
           </tr>
           <tr>
             <td style="padding:0 15px;"> Job IDs:</td>
-            <td v-for="jobid of jobids" style="padding:0 10px;">
-              <a v-on:click="showJob(jobid)" style="color: blue"> {{jobid }} </a><!--v-if="jobid!=[]" v-bind:href="'/results?username='+username+'&jobid='+jobid"-->
+            <td >
+              <table>
+                <tr  v-for="chunk in chunks">
+                  <td style="padding:0 10px;" v-for="jobid in chunk">
+                    <a v-on:click="showJob(jobid)" style="color: blue"> {{jobid }} </a>
+                  </td>
+                </tr>
+              </table>
+              
             </td>
           </tr>
         </table>
       </div>
       <br>
-      <div style="float: right;">
+      <div style="margin-left:30%">
         <input v-show="allowdeleteJobId" type="text" name="deleteId" ref="deleteId" placeholder="Job ID" style="width: 250px"/>
         <button v-show="allowdeleteJobId" class= 'butn' v-on:click="
           deleteJobID();">
@@ -25,7 +52,8 @@
         </button>
       </div>
     </div>
-  </section>
+</v-flex>
+</v-layout>
 </template>
 
 <script>
@@ -37,7 +65,8 @@
       return {
         username:'',
         jobids:[],
-        allowdeleteJobId:true
+        allowdeleteJobId:true,
+        chunks :[]
       }
     },
     methods: {
@@ -53,6 +82,24 @@
             this.jobids.push(id)
           }
         }
+        this.chunks=this.chunk(this.jobids)
+        console.log(this.chunks)
+
+      },
+      chunk(ids, chunk1 = 5,) {
+        let i
+        const l = Math.ceil(ids.length / 10)
+        const items = ids.slice()
+        const result = []
+        for (i = 1; i <= l; i++) {
+          const chunk1 = items.splice(0, 10)
+          result.push(chunk1)
+          // if (items.length > 0) {
+          //    const chunk2 = items.splice(0, 5)
+          //    result.push(chunk2)
+          // }
+        }
+        return result
       },
       showJob(jobid){
         localStorage.setItem("username", this.username);
@@ -101,7 +148,6 @@
     },
     created(){
       this.getInfo();
-    }
-    
+    },
   }
 </script>
