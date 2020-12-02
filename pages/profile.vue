@@ -44,7 +44,7 @@
         </table>
       </div>
       <br>
-      <div style="margin-left:30%">
+      <div style="margin-left:50%">
         <input v-show="allowdeleteJobId" type="text" name="deleteId" ref="deleteId" placeholder="Job ID" style="width: 250px"/>
         <button v-show="allowdeleteJobId" class= 'butn' v-on:click="
           deleteJobID();">
