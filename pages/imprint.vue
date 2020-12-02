@@ -32,19 +32,24 @@
 <template>
 <div>
     <div class="topnav" id ="nav">
-        <div class="topnav-centered">
-            <a class="page-link border-0 border-dark" href="/">PeCax</a>
-        </div>
-        <div class="dropdown topnav-right" id="navAbout">  
-          	<button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
-          	<div class="dropdown-content">
-	          	<a href="/about" class="page-link">About </a>
-	            <a class="page-link" href="/documentation">Documentation</a>
-	            <a class="page-link" href="/contact">Contact</a>
-	          </div>
-          </button> 
-      	</div>
-    </div>
+          <div class="topnav-centered">
+            <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+          </div>
+          <div class="dropdown topnav-left" id="navAbout">  
+            <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
+              <div class="dropdown-content">
+                <a class="page-link" href="/about" >About </a>
+                <a class="page-link" href="/documentation">Documentation</a>
+                <a class="page-link" href="/contact">Contact</a>
+              </div>
+            </button> 
+          </div>
+          <div class="topnav-right">
+              <button style="margin-top: 2vw;">
+                <a href="/"><b-icon icon="file-earmark-plus" class="h3" variant="dark"></b-icon></a>
+            </button>
+          </div>
+      </div>
  <header class="site-header">
     <h1 class="site-title">Imprint</h1>
   </header>

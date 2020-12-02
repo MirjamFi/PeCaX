@@ -31,20 +31,25 @@
 
 <template>
 <div>
-	    <div class="topnav" id ="nav">
-        <div class="topnav-centered">
-            <a class="page-link border-0 border-dark" href="/">PeCaX</a>
-        </div>
-        <div class="dropdown topnav-right" id="navAbout">  
-            <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list"></b-icon>
-            <div class="dropdown-content">
-              <a href="/about" class="page-link">About </a>
-              <a class="page-link" href="/documentation">Documentation</a>
-              <a class="page-link" href="/contact">Contact</a>
-            </div>
-          </button> 
-        </div>
-    </div>
+	        <div class="topnav" id ="nav">
+          <div class="topnav-centered">
+            <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+          </div>
+          <div class="dropdown topnav-left" id="navAbout">  
+            <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
+              <div class="dropdown-content">
+                <a class="page-link" href="/about" >About </a>
+                <a class="page-link" href="/documentation">Documentation</a>
+                <a class="page-link" href="/contact">Contact</a>
+              </div>
+            </button> 
+          </div>
+          <div class="topnav-right">
+              <button style="margin-top: 2vw;">
+                <a href="/"><b-icon icon="file-earmark-plus" class="h3" variant="dark"></b-icon></a>
+            </button>
+          </div>
+      </div>
 <div class="entry-content" itemprop="articleBody">
 <p>Sehr geehrte Webseitenbesucher,</p>
 <p>Vielen Dank für Ihren Besuch unserer Webseiten! Wir schätzen Ihr Interesse am BALL Projekt. Mittels dieser Datenschutzerklärung möchten wir Sie im Folgenden über die Datenverarbeitung Ihrer personenbezogenen Daten (im Folgenden „Daten“) informieren, die aus dem Besuch oder der Nutzung von Funktionen unserer Webseiten resultieren. Wir bitten Sie, diese Datenschutzerklärung sorgfältig durchzulesen, bevor Sie unsere Webseiten weiter besuchen oder die auf den Webseiten enthaltenen Funktionen nutzen. Mit dem Besuch unserer Webseiten stimmen Sie den im Folgenden beschriebenen Verarbeitungen und Nutzungen Ihrer Daten zu. Unsere Datenschutzerklärung ist nur für unsere Webseiten gültig und nicht für die Webseiten Dritter.</p>
