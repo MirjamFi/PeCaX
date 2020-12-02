@@ -13,7 +13,8 @@ import { BootstrapVue,
 	BIconDownload,
 	BIconEyeFill,
 	BIconEyeSlash,
-	BIconFunnel } from 'bootstrap-vue'
+	BIconFunnel,
+	BIconFileEarmarkPlus } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
 Vue.component('BIcon', BIcon)
@@ -30,3 +31,4 @@ Vue.component('BIconDownload', BIconDownload)
 Vue.component('BIconEyeFill', BIconEyeFill)
 Vue.component('BIconEyeSlash', BIconEyeSlash)
 Vue.component('BIconFunnel', BIconFunnel)
+Vue.component('BIconFileEarmarkPlus', BIconFileEarmarkPlus)
