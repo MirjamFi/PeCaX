@@ -30,10 +30,10 @@
 				    <div class="dropdown topnav-left" id="navAbout">  
 				      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
 				        <div class="dropdown-content">
-				          <a class="page-link" href="/profile">My Jobs</a>
-				          <a class="page-link" href="/about" >About </a>
-				          <a class="page-link" href="/documentation">Documentation</a>
-				          <a class="page-link" href="/contact">Contact</a>
+				          <a class="page-link" href="/profile"><font face="verdana">My Jobs</font></a>
+				          <a class="page-link" href="/about" ><font face="verdana">About</font></a>
+			          	  <a class="page-link" href="/documentation"><font face="verdana">Documentation</font></a>
+			          	  <a class="page-link" href="/contact"><font face="verdana">Contact</font></a>
 				        </div>
 				      </button> 
 				    </div>

@@ -58,7 +58,7 @@
         <div class="post">
 
 	  <header class="post-header">
-	    <h1 class="post-title">><font face="verdana">About</font></h1>
+	    <h1 class="post-title"><font face="verdana">About</font></h1>
 	  </header>
 	<div class="entry-content">
 	  <article class="post-content">

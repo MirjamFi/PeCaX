@@ -19,22 +19,19 @@
   }
 </style>
 <template>
-  <v-layout justify-center align-center width=90%>
-    <v-flex xs12 sm8 md12>
+	<div>
     	<div class="topnav" id ="nav">
 		    <div class="topnav-centered">
 		      <a class="page-link active border-0 border-dark" href="/"><font face="verdana">PeCaX</font></a>
 		    </div>
 		    <div class="dropdown topnav-left" id="navAbout">  
 		      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
-		        <div class="dropdown-content">
 				        <div class="dropdown-content">
 				          <a class="page-link" href="/profile"><font face="verdana">My Jobs</font></a>
 				          <a class="page-link" href="/about" ><font face="verdana">About</font></a>
 			          	  <a class="page-link" href="/documentation"><font face="verdana">Documentation</font></a>
 			          	  <a class="page-link" href="/contact"><font face="verdana">Contact</font></a>
 			          	</div>
-		        </div>
 		      </button> 
 		    </div>
 		</div>
@@ -149,8 +146,7 @@
 	          <p style="color:grey;"><b>Disclaimer</b> The report created by ClinVAP is intended as a hypothesis generating framework and thus for research use only, and not for diagnostic or clinical purposes. Information provided in the report does not replace a physician's medical judgment and usage is entirely at your own risk. The providers of this resource shall in no event be liable for any direct, indirect, incidental, consequential, or exemplary damages.</p>
 	      </div> 
 		</footer>
-  </v-flex>
-  </v-layout>
+	</div>
 </template>
 
 

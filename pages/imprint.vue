@@ -51,7 +51,7 @@
           </div>
       </div>
  <header class="site-header">
-    <h1 class="site-title">><font face="verdana">Imprint</font></h1>
+    <h1 class="site-title"><font face="verdana">Imprint</font></h1>
   </header>
 <div id="c216" class="csc-default">
 	<h4>Allgemeine Informationen gem. § 5 TMG, § 55 RStVG</h4>

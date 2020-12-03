@@ -24,7 +24,7 @@
       </div>
     <div >
       <header class="site-header">
-      <h1 class="title">><font face="verdana">My Jobs</font></h1>
+      <h1 class="title"><font face="verdana">My Jobs</font></h1>
     </header>
       <div style="margin-left: 10%">
         <table class="float-left">
