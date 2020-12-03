@@ -104,13 +104,11 @@
 		  					</td>
 		  				</tr>
 					</table>
-					<p style="font-size: 8px; width:70%; float: left;">
+				</div>
+				</v-card>
+				<p style="font-size: 8px; width:100%; float: left;">
 					If you use ClinVAP reports for your analysis, please cite the following article:<br>
 					Sürün, B., Schärfe, C.P., Divine, M.R., Heinrich, J., Toussaint, N.C., Zimmermann, L., Beha, J. and Kohlbacher, O., 2020. ClinVAP: a reporting strategy from variants to therapeutic options. Bioinformatics, 36(7), pp.2316-2317. <a href="https://doi.org/10.1093/bioinformatics/btz924">https://doi.org/10.1093/bioinformatics/btz924</a></p>
-				</div>
-				
-				
-				</v-card>
 			</div>
 			<div class="column">
 			  	<v-card text class="rounded-card"  style="background-color:#DCE3FF; color:#000000" >
@@ -135,7 +133,7 @@
 								</td>
 								<td></td>
 								<td>
-									<v-card-actions><v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="allowJobId();">Submit Job ID</v-btn></v-card-actions>
+									<v-card-actions><v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="getJsonFromJobID();">Submit Job ID</v-btn></v-card-actions>
 								</td>
 							</tr>
 						</table>   

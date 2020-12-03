@@ -30,7 +30,7 @@
 	    					<v-card-text color="black">
 	    						Give a username to attach your jobs to it and revisit them later.</v-card-text>
  							<input name="username" ref="username" placeholder="Username" style="width: 250px; color:#000000; font-size: 18px; background-color: #EDF1FF"/>
- 				 			<v-card-actions style="float: right;">
+ 				 			<v-card-actions>
  				  				<v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="loggedIn();">Start</v-btn>
 <!-- 			         <button class= 'butn' v-on:click="
 			          loggedIn();
