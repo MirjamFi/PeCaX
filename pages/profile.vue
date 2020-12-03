@@ -3,15 +3,17 @@
       <v-flex xs12 sm8 md12>
   <div class="topnav" id ="nav">
           <div class="topnav-centered">
-            <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+            <a class="page-link active border-0 border-dark" href="/"><font face="verdana">PeCaX</font></a>
           </div>
           <div class="dropdown topnav-left" id="navAbout">  
             <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
               <div class="dropdown-content">
-                <a class="page-link" href="/about" >About </a>
-                <a class="page-link" href="/documentation">Documentation</a>
-                <a class="page-link" href="/contact">Contact</a>
+                <div class="dropdown-content">
+                  <a class="page-link" href="/about" ><font face="verdana">About</font></a>
+                    <a class="page-link" href="/documentation"><font face="verdana">Documentation</font></a>
+                    <a class="page-link" href="/contact"><font face="verdana">Contact</font></a>
               </div>
+            </div>
             </button> 
           </div>
           <div class="topnav-right">
@@ -21,7 +23,9 @@
           </div>
       </div>
     <div >
-      <h2 class="title">My Jobs</h2>
+      <header class="site-header">
+      <h1 class="title">><font face="verdana">My Jobs</font></h1>
+    </header>
       <div style="margin-left: 10%">
         <table class="float-left">
           <tr>

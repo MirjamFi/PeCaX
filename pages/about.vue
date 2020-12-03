@@ -36,14 +36,14 @@
 <div id="about">
 	    <div class="topnav" id ="nav">
           <div class="topnav-centered">
-            <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+            <a class="page-link active border-0 border-dark" href="/"><font face="verdana">PeCaX</font></a>
           </div>
           <div class="dropdown topnav-left" id="navAbout">  
             <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
               <div class="dropdown-content">
-                <a class="page-link" href="/about" >About </a>
-                <a class="page-link" href="/documentation">Documentation</a>
-                <a class="page-link" href="/contact">Contact</a>
+                  <a class="page-link" href="/about" ><font face="verdana">About</font></a>
+                    <a class="page-link" href="/documentation"><font face="verdana">Documentation</font></a>
+                    <a class="page-link" href="/contact"><font face="verdana">Contact</font></a>
               </div>
             </button> 
           </div>
@@ -58,7 +58,7 @@
         <div class="post">
 
 	  <header class="post-header">
-	    <h1 class="post-title">About</h1>
+	    <h1 class="post-title">><font face="verdana">About</font></h1>
 	  </header>
 	<div class="entry-content">
 	  <article class="post-content">

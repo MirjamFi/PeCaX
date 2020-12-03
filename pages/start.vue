@@ -23,37 +23,40 @@
     <v-flex xs12 sm8 md12>
     	<div class="topnav" id ="nav">
 		    <div class="topnav-centered">
-		      <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+		      <a class="page-link active border-0 border-dark" href="/"><font face="verdana">PeCaX</font></a>
 		    </div>
 		    <div class="dropdown topnav-left" id="navAbout">  
 		      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
 		        <div class="dropdown-content">
-		          <a class="page-link" href="/profile">My Jobs</a>
-		          <a class="page-link" href="/about" >About </a>
-		          <a class="page-link" href="/documentation">Documentation</a>
-		          <a class="page-link" href="/contact">Contact</a>
+				        <div class="dropdown-content">
+				          <a class="page-link" href="/profile"><font face="verdana">My Jobs</font></a>
+				          <a class="page-link" href="/about" ><font face="verdana">About</font></a>
+			          	  <a class="page-link" href="/documentation"><font face="verdana">Documentation</font></a>
+			          	  <a class="page-link" href="/contact"><font face="verdana">Contact</font></a>
+			          	</div>
 		        </div>
 		      </button> 
 		    </div>
 		</div>
-	 	<div style="border-bottom: thin solid #BDBDBD; margin-bottom: 20px; padding-bottom: 10px; font-size: 16px; font-weight: 500">
+	 	<!-- <div style="border-bottom: thin solid #BDBDBD; margin-bottom: 20px; padding-bottom: 10px; font-size: 16px; font-weight: 500">
 	 		Personalized Cancer and Network Explorer (PeCax) is a tool for identifying patient specific cancer mechanisms by providing a complete mutational profile from variants to networks. It employs ClinVAP to perform clinical variant annotation which focuses on processing, filtering and prioritization of the variants to find the disrupted genes that are involved in carcinogenesis and to identify actionable variants from the mutational landscape of a patient. In addition it creates networks showing the connections between the driver genes and the genes in their neighbourhood and automatically performs pathway enrichment analysis using pathway resources (SBML4j). Its interactive visualisation (BioGraphVisart) supports easy network exploration and patient similarity (node overlap) and a merged network graph of two patient-specific networks can be calculated.
-	 	</div>
+	 	</div> -->
 	  	<div class="row">
-		  	<div class="column" style="position:relative;">
-		  		<h3 style="font-size:150%;" class="text-center">ClinVAP</h3>
-		  		<p class="text-center">Extract information from simple somatic mutations (SNVs) of a patient given in VCF files and create a structured clinical report by annotating, prioritizing and filtering the genomic variants. The report is designed to provide assistance in making therapeutic decisions by equipping them with the molecular mechanisms initiating carcinogenesis and actionable genes.</p>
-		  		<div id='vcfbutn' style="position:relative; bottom:0px; width:100%;">
-		  			<table>
+		  	<div class="column" >
+		  		<v-card text class="rounded-card"  style="background-color:#DCE3FF; color:#000000" >
+		  		<v-card-title><font face="verdana">ClinVAP</font></v-card-title>
+		  		<v-card-text class="text-center">Extract information from simple somatic mutations (SNVs) of a patient given in VCF files and create a structured clinical report by annotating, prioritizing and filtering the genomic variants. The report is designed to provide assistance in making therapeutic decisions by equipping them with the molecular mechanisms initiating carcinogenesis and actionable genes.</v-card-text>
+		  		<div class="text-center" id='vcfbutn'>
+		  			<table style="display: inline-block;margin: 0 auto;">
 		  				<tr>
 		  					<td>
 		  						VCF
 		  					</td>
 		  					<td>
-		  						<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 250px"/>
+		  						<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 300px; background-color: #EDF1FF"/>
 		  					</td>
 		  					<td>
-		  						<button class= 'butn' v-on:click="checkDB();">Submit</button>
+		  						<v-card-actions style="float: right;"><v-btn flat style="color:#000000; float: right;" color="#DCE3FF"v-on:click="checkDB();">Submit</v-btn></v-card-actions>
 		  					</td>
 		  				</tr>
 		  				<tr>
@@ -61,7 +64,7 @@
 		  						Assembly <b-icon data-html2canvas-ignore="true" icon="info-circle" ></b-icon> 
 		  					</td>
 		  					<td>
-		  						<select name="assembly" size="1" ref="assembly" style="width: 10px">
+		  						<select name="assembly" size="1" ref="assembly" style="width: 10px; background-color: #EDF1FF">
 									<option value="GRCh37">GRCh37</option>
 									<option value="GRCh38">GRCh38</option>
 								</select>
@@ -72,26 +75,28 @@
 		  						CNV (optional)
 		  					</td>
 		  					<td>
-		  						<input type="file" accept=".tsv"id="file" ref="cnvfile" style="width: 250px"/>
+		  						<input type="file" accept=".tsv"id="file" ref="cnvfile" style="width: 300px;background-color: #EDF1FF"/>
 		  					</td>
 		  				</tr>
 		  				<tr>
 		  					<td>
 		  						Diagnosis - ICD10 (optional)
 		  					</td>
+		  					<td>
 		  					<autocomplete-dropdown
 							  id="autocomplete-dropdown"
 							  :options="icd10codes"
 							  v-model="selectedICD10"
 							  placeholder="ICD10 code"
 							></autocomplete-dropdown>
+							</td>
 		  				</tr>
 		  				<tr>
 		  					<td >
 		  						Diagnosis based filtering option
 		  					</td>
 		  					<td>
-		  						<select name="diagnosisfilter" size="1" ref="diagnosisfilter" style="width: 10px">
+		  						<select name="diagnosisfilter" size="1" ref="diagnosisfilter" style="width: 10px;background-color: #EDF1FF">
 									<option value="sort">sort</option>
 									<option value="filter">filter</option>
 									<option value="prioritize,filter,sort">prioritize, filter, sort</option>
@@ -99,33 +104,48 @@
 		  					</td>
 		  				</tr>
 					</table>
-		        	
-		        	
-				</div>
-				<p style="font-size: 8px; width:100%;">If you use ClinVAP reports for your analysis, please cite the following article:<br>
+					<p style="font-size: 8px; width:70%; float: left;">
+					If you use ClinVAP reports for your analysis, please cite the following article:<br>
 					Sürün, B., Schärfe, C.P., Divine, M.R., Heinrich, J., Toussaint, N.C., Zimmermann, L., Beha, J. and Kohlbacher, O., 2020. ClinVAP: a reporting strategy from variants to therapeutic options. Bioinformatics, 36(7), pp.2316-2317. <a href="https://doi.org/10.1093/bioinformatics/btz924">https://doi.org/10.1093/bioinformatics/btz924</a></p>
+				</div>
+				
+				
+				</v-card>
 			</div>
 			<div class="column">
-			  	<div class="verticalLine">
-			  		<h3 style="font-size:150%;" class="text-center">Personalized Cancer and Network Exploration</h3>
-				  	<p class="text-center">Display report generated by ClinVAP as interactive table, generate the interaction network of driver genes containing targeting drugs with SBML4j and explore it interactively with BioGraphVisart.</p>
+			  	<v-card text class="rounded-card"  style="background-color:#DCE3FF; color:#000000" >
+			  		<v-card-title><font face="verdana">Personalized Cancer and Network Exploration</font></v-card-title>
+				  	<v-card-text class="text-center">Display report generated by ClinVAP as interactive table, generate the interaction network of driver genes containing targeting drugs with SBML4j and explore it interactively with BioGraphVisart.</v-card-text>
 					<div class="text-center" id="jsonbtn">
-				        <input type="file" accept=".json"id="file" ref="jsonfile" style="width: 250px"/>
-				        <input type="checkbox" id="checkbox" v-model="cnvjson">
-				         <label for="checkbox">CNV</label>
-				        <button class= 'butn' v-on:click="
-				          showJSON()">Submit .JSON</button><br>
-				         <input v-show="allowJobId" type="text" name="vcfID" ref="jobid" placeholder="Job ID" style="width: 250px"/>
-				         <button v-show="allowJobId" class= 'butn' v-on:click="
-				          getJsonFromJobID();
-				          ">Submit Job ID</button>
+						<table style="display: inline-block;margin: 0 auto;">
+							<tr>
+								<td>
+				        			<input type="file" accept=".json"id="file" ref="jsonfile" style="width: 250px; background-color: #EDF1FF"/>
+								</td>
+								<td>
+									<p><input type="checkbox" id="checkbox" v-model="cnvjson" color="#EDF1FF" style="color:#EDF1FF"><label for="checkbox">CNV</label></p>
+								</td>
+								<td>
+									<v-card-actions><v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="showJSON();">Submit .JSON</v-btn></v-card-actions>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input v-show="allowJobId" type="text" name="vcfID" ref="jobid" placeholder="Job ID" style="width: 250px;background-color: #EDF1FF"/>
+								</td>
+								<td></td>
+								<td>
+									<v-card-actions><v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="allowJobId();">Submit Job ID</v-btn></v-card-actions>
+								</td>
+							</tr>
+						</table>   
 				    </div>
-				</div>
+				</v-card>
 			</div>
 		</div>
   		<br><br><br>
 	  	<footer>
-	      <div class="footerIndex">
+	      <div class="footerIndex" style="width: 70%">
 	          <a class="page-link border-0 border-dark" href="/imprint/">Imprint</a>
 	          <a class="page-link border-0 border-dark" href="/datenschutzerklarung/" aria-current="page">Datenschutzerklärung</a>   
 	          <p style="color:grey;"><b>Disclaimer</b> The report created by ClinVAP is intended as a hypothesis generating framework and thus for research use only, and not for diagnostic or clinical purposes. Information provided in the report does not replace a physician's medical judgment and usage is entirely at your own risk. The providers of this resource shall in no event be liable for any direct, indirect, incidental, consequential, or exemplary damages.</p>

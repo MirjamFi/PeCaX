@@ -10,6 +10,7 @@
       @keydown.up="up"
       @keydown.esc="setOpen(false)"
       @blur="setOpen(false)"
+      style="background-color: #EDF1FF; width: 300px" 
     ></input>
 
     <a class="toggle" @mousedown.prevent @click="setOpen(!open)">
@@ -176,7 +177,7 @@ export default {
   display: block;
   margin: 0;
   padding: 0;
-  width: 290px;
+  width: 300px;
   overflow: hidden;
   position: absolute;
   top: 20px;

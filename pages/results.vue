@@ -25,7 +25,7 @@
 			<v-flex>
 				<div class="topnav" id ="nav">
 				    <div class="topnav-centered">
-				      <a class="page-link active border-0 border-dark" href="/">PeCaX</a>
+				      <a class="page-link active border-0 border-dark" href="/"><font face="verdana">PeCaX</font></a>
 				    </div>
 				    <div class="dropdown topnav-left" id="navAbout">  
 				      <button class="dropbtn"><b-icon data-html2canvas-ignore="true" icon="list" class="h3"></b-icon>
@@ -79,11 +79,11 @@
 							          :aria-expanded="visibleDrivers ? 'true' : 'false'"
 							          aria-controls="collapse-4"
 							          @click="visibleDrivers = !visibleDrivers"
-							          v-bind:style="{ background: 'green', color:'white' }" 
+							          v-bind:style="{ background: '#B6FF9A', color:'#3B3B3B'}" 
 							          block variant="primary"
 							          
 							         >
-					          			<Strong class="text-center" style="color: white">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+					          			<Strong class="text-center" style="color: #3B3B3B">Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 					        		</b-button>
 					        	
 					        	</template>
@@ -272,11 +272,11 @@
 							          :aria-expanded="visibleDrivers_cnv ? 'true' : 'false'"
 							          aria-controls="collapse-4"
 							          @click="visibleDrivers_cnv = !visibleDrivers_cnv"
-							          v-bind:style="{ background: 'green', color:'white' }" 
+							          v-bind:style="{ background: '#B6FF9A', color:'#3B3B3B'}" 
 							          block variant="primary"
 							          
 							         >
-						          		<Strong class="text-center" style="color: white">CNV: Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+						          		<Strong class="text-center" style="color: #3B3B3B">CNV: Somatic Mutations in Known Driver Genes </Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right" icon="arrows-expand" v-if="visibleDrivers_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 						        	</b-button>					        	
 						       	</template>
 			       				<span>List of cancer driver genes along with the mutations observed in the patient. Consequence column provides the predicted effects of the variants on the protein sequence. Tumor type column gives the list of cohorts in which the gene is identified as driver. VAF (variant allele frequency) column shows the proportion of the variant allele to the coverage of that loci. Reference column represents the driver gene sources that catalogued the corresponding gene as driver. Driver gene information is obtained from Vogelstein <em>et al.</em>, Uniprot, TSGene, IntoGen and COSMIC. </span>		
@@ -451,11 +451,11 @@
 							          :aria-expanded="visiblePharma ? 'true' : 'false'"
 							          aria-controls="collapse-4"
 							          @click="visiblePharma = !visiblePharma"
-							          v-bind:style="{ background: 'orange', color:'white' }"
+							          v-bind:style="{ background: '#FFD57A', color:'#3B3B3B'}"
 							          block variant="primary"
 							          id="direct_pharm_butn"
 							         >
-							          <Strong style="color: white">Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+							          <Strong style="color: #3B3B3B">Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 							        </b-button>
 						        
 						        </template>
@@ -632,11 +632,11 @@
 							          :aria-expanded="visiblePharma_cnv ? 'true' : 'false'"
 							          aria-controls="collapse-4"
 							          @click="visiblePharma_cnv = !visiblePharma_cnv"
-							          v-bind:style="{ background: 'orange', color:'white' }"
+							          v-bind:style="{ background: '#FFD57A', color:'#3B3B3B' }"
 							          block variant="primary"
 							          id="direct_pharm_butn_cnv"
 							         >
-							          <Strong style="color: white">CNV: Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+							          <Strong style="color: #3B3B3B">CNV: Somatic Mutations with Known Pharmacogenetic Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visiblePharma_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 						        	</b-button>
 					        
 					        	</template>
@@ -795,10 +795,10 @@
 				          :aria-expanded="visibleAffect ? 'true' : 'false'"
 				          aria-controls="collapse-4"
 				          @click="visibleAffect = !visibleAffect"
-				          class="text-center" v-bind:style="{ background: 'blue', color:'white' }"
+				          class="text-center" v-bind:style="{ background: '#7ACFFF', color:'#3B3B3B' }"
 				          block variant="primary"
 				          >
-				        <Strong style="color: white">Somatic Mutations in Pharmaceutical Target Affected Genes</Strong><b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffect"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+				        <Strong style="color: #3B3B3B">Somatic Mutations in Pharmaceutical Target Affected Genes</Strong><b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffect"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 				        </b-button>
 				        <b-collapse id="collapse-4" v-model="visibleAffect" class="mt-2">
 					        <div ref = "content_pharm_table" id="pharm_table_content" class="row" style="margin-top: 0.5vw; margin-left: 1px; margin-bottom: 0.5vw">
@@ -809,10 +809,10 @@
 					              :aria-expanded="visibleAffectCivic ? 'true' : 'false'"
 					              aria-controls="collapse-4"
 					              @click="visibleAffectCivic = !visibleAffectCivic"
-					              v-bind:style="{ color:'white' }"
+					              v-bind:style="{ background: '#A6E7FF', color:'#3B3B3B' }"
 					              block variant="primary"
 					              >
-					              <Strong style="color: white">Pharmacogenomics Summary of Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCivic"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+					              <Strong style="color: #3B3B3B">Pharmacogenomics Summary of Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCivic"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 					            </b-button>
 					        	</template>
 					            <span >Therapies that have evidence of targeting the affected gene. Evidence level letter represents: A = validated association, B = clinical evidence, C = case study, D = preclinical evidence, E = inferential association. Evidence level number represents the matching type between the observed variant and the database result: 1 = same variant, 2 = different variant, same consequence, 3 = different variant, different consequence, same gene. The information is obtained from CIViC, CGI and DrugBank. </span>
@@ -987,9 +987,9 @@
 						            aria-controls="collapse-4"
 						            @click="visibleAffectCancer = !visibleAffectCancer"
 						            block variant="primary"
-						            v-bind:style="{ color:'white' }"
+						            v-bind:style="{ background: '#A6E7FF', color:'#3B3B3B'}"
 						            >
-					            	<Strong style="color: white">Summary of Cancer Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCancer"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+					            	<Strong style="color: #3B3B3B">Summary of Cancer Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCancer"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 					          	</b-button>
 					          	</template>
 					            <span > List of cancer drugs targeting the mutated gene. Information is obtained from DrugBank, Therapeutic Target Database, IUPHAR, and Santos <em>et al.</em>.</span>
@@ -1121,10 +1121,10 @@
 				          :aria-expanded="visibleAffect_cnv ? 'true' : 'false'"
 				          aria-controls="collapse-4"
 				          @click="visibleAffect_cnv = !visibleAffect_cnv"
-				          class="text-center" v-bind:style="{ background: 'blue', color:'white' }"
+				          class="text-center" v-bind:style="{ background: '#7ACFFF', color:'#3B3B3B'}"
 				          block variant="primary"
 				          >
-				        <Strong style="color: white">CNV: Somatic Mutations in Pharmaceutical Target Affected Genes</Strong><b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffect_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+				        <Strong style="color: #3B3B3B">CNV: Somatic Mutations in Pharmaceutical Target Affected Genes</Strong><b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffect_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 				        </b-button>
 				        <b-collapse id="collapse-4" v-model="visibleAffect_cnv" class="mt-2">
 					        <div v-if="cnvjsonavailable" ref = "content_pharm_table_cnv" id="pharm_table_content_cnv" class="row" style="margin-top: 0.5vw; margin-left: 1px; margin-bottom: 0.5vw">
@@ -1135,10 +1135,10 @@
 					              :aria-expanded="visibleAffectCivic_cnv ? 'true' : 'false'"
 					              aria-controls="collapse-4"
 					              @click="visibleAffectCivic_cnv = !visibleAffectCivic_cnv"
-					              v-bind:style="{ color:'white' }"
+					              v-bind:style="{ background: '#A6E7FF', color:'#3B3B3B' }"
 					              block variant="primary"
 					              >
-					              <Strong style="color: white">CNV: Pharmacogenomics Summary of Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCivic_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+					              <Strong style="color: #3B3B3B">CNV: Pharmacogenomics Summary of Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCivic_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 					            </b-button>
 					        	</template>
 					            <span >Therapies that have evidence of targeting the affected gene. Evidence level letter represents: A = validated association, B = clinical evidence, C = case study, D = preclinical evidence, E = inferential association. Evidence level number represents the matching type between the observed variant and the database result: 1 = same variant, 2 = different variant, same consequence, 3 = different variant, different consequence, same gene. The information is obtained from CIViC, CGI and DrugBank. </span>
@@ -1298,9 +1298,9 @@
 						            aria-controls="collapse-4"
 						            @click="visibleAffectCancer_cnv = !visibleAffectCancer_cnv"
 						            block variant="primary"
-						            v-bind:style="{ color:'white' }"
+						            v-bind:style="{background: '#A6E7FF', color:'#3B3B3B' }"
 						            >
-					            	<Strong style="color: white">CNV: Summary of Cancer Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCancer_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+					            	<Strong style="color: #3B3B3B">CNV: Summary of Cancer Drugs Targeting Affected Genes</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleAffectCancer_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 					          	</b-button>
 					          	</template>
 					            <span > List of cancer drugs targeting the mutated gene. Information is obtained from DrugBank, Therapeutic Target Database, IUPHAR, and Santos <em>et al.</em>.</span>
@@ -1420,10 +1420,10 @@
 				          :aria-expanded="visibleEffect ? 'true' : 'false'"
 				          aria-controls="collapse-4"
 				          @click="visibleEffect = !visibleEffect"
-				          v-bind:style="{ background: '#A9C0CB', color:'white' }"
+				          v-bind:style="{ background: '#C8FFEE', color:'#3B3B3B' }"
 				          block variant="primary"
 				          >
-				          <Strong style="color: white">Adverse Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleEff"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+				          <Strong style="color: #3B3B3B">Adverse Effect</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon> <b-icon data-html2canvas-ignore="true" class="float-right"icon="arrows-expand" v-if="visibleEff"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 				        </b-button>
 				        </template>
 					            <span >List of drugs with known adverse effects.</span>
@@ -1574,9 +1574,9 @@
 				        @click="visibleRef = !visibleRef"
 				        class="text-center" 
 				        block variant="primary"
-				        v-bind:style="{ background: 'grey', color:'white' }"
+				        v-bind:style="{ background: '#CFCFCF', color:'#3B3B3B' }"
 				       >
-				        <Strong style="color: white">References</Strong><b-icon class="float-right"icon="arrows-expand" v-if="visibleRef"></b-icon> <b-icon class="float-right"icon="arrows-collapse" v-else></b-icon>
+				        <Strong style="color: #3B3B3B">References</Strong><b-icon class="float-right"icon="arrows-expand" v-if="visibleRef"></b-icon> <b-icon class="float-right"icon="arrows-collapse" v-else></b-icon>
 				      </b-button>
 				      <b-collapse id="collapse-4" v-model="visibleRef" class="mt-2">
 				        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon></button></p>
@@ -1619,9 +1619,9 @@
 				        @click="visibleRef_cnv = !visibleRef_cnv"
 				        class="text-center" 
 				        block variant="primary"
-				        v-bind:style="{ background: 'grey', color:'white' }"
+				        v-bind:style="{ background: '#CFCFCF', color:'#3B3B3B'  }"
 				       >
-				        <Strong style="color: white">CNV: References</Strong><b-icon class="float-right"icon="arrows-expand" v-if="visibleRef_cnv"></b-icon> <b-icon class="float-right"icon="arrows-collapse" v-else></b-icon>
+				        <Strong style="color: #3B3B3B">CNV: References</Strong><b-icon class="float-right"icon="arrows-expand" v-if="visibleRef_cnv"></b-icon> <b-icon class="float-right"icon="arrows-collapse" v-else></b-icon>
 				      </b-button>
 				      <b-collapse id="collapse-4" v-model="visibleRef_cnv" class="mt-2">
 				        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref_cnv()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon></button></p>
@@ -1665,10 +1665,10 @@
 				        aria-controls="collapse-4"
 				        @click="visibleAppendix = !visibleAppendix"
 				        class="text-center" 
-				        v-bind:style="{ background: 'grey', color:'white' }" 
+				        v-bind:style="{ background: '#CFCFCF', color:'#3B3B3B'  }" 
 				        block variant="primary"
 				        >
-				        <Strong style="color: white">Appendix</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon><b-icon class="float-right"icon="arrows-expand" v-if="visibleAppendix"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+				        <Strong style="color: #3B3B3B">Appendix</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon><b-icon class="float-right"icon="arrows-expand" v-if="visibleAppendix"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 				      </b-button>
 				      </template>
 					            <span >All the somatic variants of the patient with their dbSNP and COSMIC IDs.</span>
@@ -1806,10 +1806,10 @@
 				        aria-controls="collapse-4"
 				        @click="visibleAppendix_cnv = !visibleAppendix_cnv"
 				        class="text-center" 
-				        v-bind:style="{ background: 'grey', color:'white' }" 
+				        v-bind:style="{ background: '#CFCFCF', color:'#3B3B3B'  }" 
 				        block variant="primary"
 				        >
-				        <Strong style="color: white">CNV: Appendix</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon><b-icon class="float-right"icon="arrows-expand" v-if="visibleAppendix_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
+				        <Strong style="color: #3B3B3B">CNV: Appendix</Strong><b-icon data-html2canvas-ignore="true" icon="info-circle" style="margin-left: 10px" v-bind="attrs" v-on="on"></b-icon><b-icon class="float-right"icon="arrows-expand" v-if="visibleAppendix_cnv"></b-icon> <b-icon class="float-right" icon="arrows-collapse" v-else></b-icon>
 				      </b-button>
 				      </template>
 					  <span >All the somatic variants of the patient with their dbSNP and COSMIC IDs.</span>
