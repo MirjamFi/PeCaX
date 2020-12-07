@@ -1,4 +1,3 @@
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 import fs from 'fs'
 import path from 'path'
@@ -95,26 +94,6 @@ proxy: {
   /*
   ** Build configuration
   */
-  build: {
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-      }
-    },
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx ) {
-
-        config.node = {
-          fs: 'empty',
-          child_process: 'empty',
-        }
-
-      }
-
-
-    }
+  
  // },
 }
