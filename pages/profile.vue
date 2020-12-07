@@ -1,6 +1,5 @@
 <template>
-  <v-layout justify-center align-center width=90%>
-      <v-flex xs12 sm8 md12>
+  <div>
   <div class="topnav" id ="nav">
           <div class="topnav-centered">
             <a class="page-link active border-0 border-dark" href="/"><font face="verdana">PeCaX</font></a>
@@ -23,7 +22,7 @@
           </div>
       </div>
     <div >
-      <header class="site-header">
+    <header class="site-header">
       <h1 class="title"><font face="verdana">My Jobs</font></h1>
     </header>
       <div style="margin-left: 10%">
@@ -56,8 +55,7 @@
         </button>
       </div>
     </div>
-</v-flex>
-</v-layout>
+  </div>
 </template>
 
 <script>
@@ -77,6 +75,7 @@
       getInfo(){
         this.username = localStorage.getItem("username");
         var ids = localStorage.getItem("jobids")
+        console.log(this.username, ids)
         if(ids == false || ids == [] || ids == "undefined" || ids == null){
           this.jobids = []
         }

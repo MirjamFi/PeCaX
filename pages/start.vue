@@ -52,9 +52,6 @@
 		  					<td>
 		  						<input type="file" accept=".vcf"id="vcffile" ref="vcffile" style="width: 300px; background-color: #EDF1FF"/>
 		  					</td>
-		  					<td>
-		  						<v-card-actions style="float: right;"><v-btn flat style="color:#000000; float: right;" color="#DCE3FF"v-on:click="checkDB();">Submit</v-btn></v-card-actions>
-		  					</td>
 		  				</tr>
 		  				<tr>
 		  					<td title="Select the assembly according to the human reference genome that was used in mapping of the NGS-pipeline. If you do not know it, it might be noted in the vcf-file. Otherwise the default is GRCh37.">
@@ -99,11 +96,14 @@
 									<option value="prioritize,filter,sort">prioritize, filter, sort</option>
 								</select>
 		  					</td>
+		  					<td>
+		  						<v-card-actions style="float: right;"><v-btn text style="color:#000000; float: right;" color="#DCE3FF"v-on:click="checkDB();">Submit</v-btn></v-card-actions>
+		  					</td>
 		  				</tr>
 					</table>
 				</div>
 				</v-card>
-				<p style="font-size: 8px; width:100%; float: left;">
+				<p style="font-size: 10px; width:100%; float: left;">
 					If you use ClinVAP reports for your analysis, please cite the following article:<br>
 					Sürün, B., Schärfe, C.P., Divine, M.R., Heinrich, J., Toussaint, N.C., Zimmermann, L., Beha, J. and Kohlbacher, O., 2020. ClinVAP: a reporting strategy from variants to therapeutic options. Bioinformatics, 36(7), pp.2316-2317. <a href="https://doi.org/10.1093/bioinformatics/btz924">https://doi.org/10.1093/bioinformatics/btz924</a></p>
 			</div>
@@ -121,7 +121,7 @@
 									<p><input type="checkbox" id="checkbox" v-model="cnvjson" color="#EDF1FF" style="color:#EDF1FF"><label for="checkbox">CNV</label></p>
 								</td>
 								<td>
-									<v-card-actions><v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="showJSON();">Submit .JSON</v-btn></v-card-actions>
+									<v-card-actions><v-btn text style="color:#000000" color="#DCE3FF"v-on:click="showJSON();">Submit .JSON</v-btn></v-card-actions>
 								</td>
 							</tr>
 							<tr>
@@ -130,7 +130,7 @@
 								</td>
 								<td></td>
 								<td>
-									<v-card-actions><v-btn flat style="color:#000000" color="#DCE3FF"v-on:click="getJsonFromJobID();">Submit Job ID</v-btn></v-card-actions>
+									<v-card-actions><v-btn v-show="allowJobId" text style="color:#000000" color="#DCE3FF"v-on:click="getJsonFromJobID();">Submit Job ID</v-btn></v-card-actions>
 								</td>
 							</tr>
 						</table>   
