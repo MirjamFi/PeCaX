@@ -156,7 +156,7 @@
   import pecaxdb from '../src/db';
   import arangodb from 'arangojs';
   import AutocompleteDropdown from '@/components/AutocompleteDropdown'
-  import icd10codestxt from 'raw-loader!../static/icd10cm_codes_2020.txt'
+  import icd10codestxt from 'raw-loader!../static/icd10_codes_cancer.txt'
 
   	export default {
 	    head: {
@@ -232,7 +232,8 @@
 		    	localStorage.setItem("username", username);
 		    	localStorage.setItem("jobid", jobid);
 		    	localStorage.setItem("cnvfileavailable", cnvfileavailable)
-		    	localStorage.setItem("diagnosis", selectedICD10)
+		    	let code = Object.keys(this.icd10codes).find(key => this.icd10codes[key] === selectedICD10);
+		    	localStorage.setItem("diagnosis", code)
 		    	localStorage.setItem("filter", filter)
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
@@ -262,10 +263,22 @@
 		    }
 	  	},
 	  	created(){
-	  		var icd10codeslist = icd10codestxt.split("\n")
-	  		for(let code of icd10codeslist){
-	  			let codeID = code.split(" ")[0]
-	  			this.icd10codes[code] = codeID
+	  		var lines = icd10codestxt.split("\n")
+	  		var result = [];	 
+			var headers=lines[0].split("\t");
+			for(var i=1;i<lines.length;i++){
+				var obj = {};
+				var currentline=lines[i].split("\t");
+				 
+				for(var j=0;j<headers.length;j++){
+					obj[headers[j]] = currentline[j];
+				}
+				 
+				result.push(obj);
+				 
+			}
+			for(let entry of result){
+	  			this.icd10codes[entry.concat] = entry.ICD_lower
 	  		}
 	  		if(localStorage.getItem("jobids") == "undefined" || localStorage.getItem("jobids").length == 0){
 	  			this.allowJobId = false;
