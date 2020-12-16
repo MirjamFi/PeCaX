@@ -580,8 +580,12 @@
 				                  <td v-show="hidedirect_pharm_tableEffect" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.variant_drug_association }}
 				                  </td>
-				                  <td v-show="hidedirect_pharm_tableDisease" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-				                    {{ item.tumor_list}}
+				                  <td v-show="hidedirect_pharm_tableDisease" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+				                    <span> {{item.trunc}} 
+					                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
+					                    </span>
+					                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+					                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 				                  </td>
 				                  <td v-show="hidedirect_pharm_tableEvidence" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.match_level}}
@@ -747,8 +751,12 @@
 				                  <td v-show="hidedirect_pharm_tableEffect_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.variant_drug_association }}
 				                  </td>
-				                  <td v-show="hidedirect_pharm_tableDisease_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-				                    {{ item.tumor_list}}
+				                  <td v-show="hidedirect_pharm_tableDisease_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+				                    <span> {{item.trunc}} 
+					                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
+					                    </span>
+					                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+					                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 				                  </td>
 				                  <td v-show="hidedirect_pharm_tableEvidence_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.match_level}}
@@ -935,8 +943,12 @@
 					                      <td v-show="hidepharm_tableEffect" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.variant_drug_association }}
 					                      </td>
-					                      <td v-show="hidepharm_tableDisease" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-					                        {{ item.tumor_list }}
+					                      <td v-show="hidepharm_tableDisease" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                        <span> {{item.trunc}} 
+					                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
+						                    </span>
+						                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+						                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                      </td>
 					                      <td v-show="hidepharm_tableEvidence" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.match_leve}}
@@ -1246,8 +1258,12 @@
 					                      <td v-show="hidepharm_tableEffect_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.variant_drug_association }}
 					                      </td>
-					                      <td v-show="hidepharm_tableDisease_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-					                        {{ item.tumor_list }}
+					                      <td v-show="hidepharm_tableDisease_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                        <span> {{item.trunc}} 
+					                    	<span class="hidden" v-bind:id="item.Overflow">{{item.remainder}}</span>
+						                    </span>
+						                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
+						                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                      </td>
 					                      <td v-show="hidepharm_tableEvidence_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.match_leve}}
@@ -2700,8 +2716,8 @@
 										table = this.mechanistic_drug_table
 									}
 								}
-						  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"), table)
-						  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss")
+						  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime;/g,"'").replace(/&beta;/g,"beta").replace(/&alpha;/g,"alpha").replace(/&szlig;/g, "ss").replace(/&rsquo;/g, '\'').replace(/&ndash;/g, "-"), table)
+						  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime;/g,"'").replace(/&beta;/g,"beta").replace(/&alpha;/g,"alpha").replace(/&szlig;/g, "ss").replace(/&rsquo;/g, '\'').replace(/&ndash;/g, "-")
 							})
 							.catch(error => {
 						    	console.log(error.response)
@@ -2751,8 +2767,8 @@
 										table = this.mechanistic_drug_table
 									}
 								}
-					  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"), table)
-					  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss")
+					  		this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime;/g,"'").replace(/&beta;/g,"beta").replace(/&alpha;/g,"alpha").replace(/&szlig;/g, "ss").replace(/&rsquo;/g, '\'').replace(/&ndash;/g, "-"), table)
+					  		return res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime;/g,"'").replace(/&beta;/g,"beta").replace(/&alpha;/g,"alpha").replace(/&szlig;/g, "ss").replace(/&rsquo;/g, '\'').replace(/&ndash;/g, "-")
 						})
 						.catch(error => {
 						    console.log(error.response)
@@ -2817,8 +2833,8 @@
 								table = this.mechanistic_drug_table
 							}
 						}
-						this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"), table)
-						axios.post('/visualization/'+subpage+cnv, res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime/g,"'").replace(/&beta/g,"beta").replace(/&alpha/g,"alpha").replace(/&szlig;/g, "ss"))
+						this.addGeneLinks(res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime;/g,"'").replace(/&beta;/g,"beta").replace(/&alpha;/g,"alpha").replace(/&szlig;/g, "ss").replace(/&rsquo;/g, '\'').replace(/&ndash;/g, "-"), table)
+						axios.post('/visualization/'+subpage+cnv, res.data.replace(/&ge;/g, 'greater than or equal to').replace(/&le;/g, 'less than or equal to').replace(/&prime;/g,"'").replace(/&beta;/g,"beta").replace(/&alpha;/g,"alpha").replace(/&szlig;/g, "ss").replace(/&rsquo;/g, '\'').replace(/&ndash;/g, "-"))
 						  .then(function () {
 						  	var iframe = document.getElementById(subpage+'Vis'+cnv);
 							iframe.src = iframe.src;
@@ -3893,9 +3909,9 @@
 			            	remainder = fullText.substring(index+1, fullText.length);
 			            	item.trunc = trunc;
 			            	item.remainder = remainder;
-			            	item.MoreLink = "itemMoreLink"+i
-			            	item.LessLink = "itemLessLink" +i
-			            	item.Overflow = "itemOverflow"+i
+			            	item.MoreLink = "itemMoreLink_driver"+i
+			            	item.LessLink = "itemLessLink_driver" +i
+			            	item.Overflow = "itemOverflow_driver"+i
 			            	i++;
 			        	}
 			        	else{
@@ -3937,9 +3953,9 @@
 			            	remainder = fullText.substring(index+1, fullText.length);
 			            	item.trunc = trunc;
 			            	item.remainder = remainder;
-			            	item.MoreLink = "itemMoreLink"+i
-			            	item.LessLink = "itemLessLink" +i
-			            	item.Overflow = "itemOverflow"+i
+			            	item.MoreLink = "itemMoreLink_driver_cnv"+i
+			            	item.LessLink = "itemLessLink_driver_cnv" +i
+			            	item.Overflow = "itemOverflow_driver_cnv"+i
 			            	i++;
 			        	}
 			        	else{
@@ -3965,7 +3981,28 @@
 	          return 0;
 	        });
 	        var filtered_sorted = [];
+	        var i = 0;
 	        for(var item of sorted){
+	        	var shrinkable = item.tumor_list;
+				if (shrinkable.length > 0) {
+			        	var fullText = shrinkable;
+			        	if(fullText.length > 20){
+			            	var trunc = fullText.substring(0, 20);
+			            	var index = trunc.lastIndexOf("|");
+			            	trunc = fullText.substring(0, index+1);
+			            	var remainder = "";
+			            	remainder = fullText.substring(index+1, fullText.length);
+			            	item.trunc = trunc;
+			            	item.remainder = remainder;
+			            	item.MoreLink = "itemMoreLink_pharma"+i
+			            	item.LessLink = "itemLessLink_pharma" +i
+			            	item.Overflow = "itemOverflow_pharma"+i
+			            	i++;
+			        	}
+			        	else{
+			        		item.trunc = fullText;
+			        	}
+				}
 	          if((item.gene.toLowerCase().includes(this.genes2.toLowerCase()) || this.genes2 == null || this.genes2 == undefined) && 
 	                (item.variant.toLowerCase().includes(this.mutation2.toLowerCase()) || this.mutation2== null | this.mutation2== undefined) && 
 	                (this.therapy2 == null || this.therapy2 == undefined|| item.drug_name.toLowerCase().includes(this.therapy2.toLowerCase())) && 
@@ -3991,7 +4028,28 @@
 	          return 0;
 	        });
 	        var filtered_sorted = [];
+	        var i = 0;
 	        for(var item of sorted){
+	        	var shrinkable = item.tumor_list;
+				if (shrinkable.length > 0) {
+			        	var fullText = shrinkable;
+			        	if(fullText.length > 20){
+			            	var trunc = fullText.substring(0, 20);
+			            	var index = trunc.lastIndexOf("|");
+			            	trunc = fullText.substring(0, index+1);
+			            	var remainder = "";
+			            	remainder = fullText.substring(index+1, fullText.length);
+			            	item.trunc = trunc;
+			            	item.remainder = remainder;
+			            	item.MoreLink = "itemMoreLink_pharma_cnv"+i
+			            	item.LessLink = "itemLessLink_pharma_cnv" +i
+			            	item.Overflow = "itemOverflow_pharma_cnv"+i
+			            	i++;
+			        	}
+			        	else{
+			        		item.trunc = fullText;
+			        	}
+				}
 	          if((item.gene.toLowerCase().includes(this.genes2_cnv.toLowerCase()) || this.genes2_cnv == null || this.genes2_cnv == undefined) && 
 	                (item.variant.toLowerCase().includes(this.mutation2_cnv.toLowerCase()) || this.mutation2_cnv== null | this.mutation2_cnv== undefined) && 
 	                (this.therapy2_cnv == null || this.therapy2_cnv == undefined|| item.drug_name.toLowerCase().includes(this.therapy2_cnv.toLowerCase())) && 
@@ -4018,7 +4076,26 @@
 	          return 0;
 	        });
 	        var filtered_sorted = [];
+	        var i = 0;
 	        for(var item of sorted){
+	        	var shrinkable = item.tumor_list;
+	        	var fullText = shrinkable;
+			        	if(fullText.length > 20){
+			            	var trunc = fullText.substring(0, 20);
+			            	var index = trunc.lastIndexOf("|");
+			            	trunc = fullText.substring(0, index+1);
+			            	var remainder = "";
+			            	remainder = fullText.substring(index+1, fullText.length);
+			            	item.trunc = trunc;
+			            	item.remainder = remainder;
+			            	item.MoreLink = "itemMoreLink_pharmaco"+i
+			            	item.LessLink = "itemLessLink_pharmaco" +i
+			            	item.Overflow = "itemOverflow_pharmaco"+i
+			            	i++;
+			        	}
+			        	else{
+			        		item.trunc = fullText;
+			        	}
 	          if((item.gene.toLowerCase().includes(this.genes3.toLowerCase()) || this.genes3 == null || this.genes3 == undefined) && 
 	                    (item.variant.toLowerCase().includes(this.mutations3.toLowerCase()) || this.mutations3 == null || this.mutations3 ==undefined) &&
 	                    (this.therapy3 == null || this.therapy3 ==undefined|| item.drug_name.toLowerCase().includes(this.therapy3.toLowerCase())) && 
@@ -4064,7 +4141,26 @@
 	          return 0;
 	        });
 	        var filtered_sorted = [];
+	        var i = 0;
 	        for(var item of sorted){
+	        	var shrinkable = item.tumor_list;
+	        	var fullText = shrinkable;
+			        	if(fullText.length > 20){
+			            	var trunc = fullText.substring(0, 20);
+			            	var index = trunc.lastIndexOf("|");
+			            	trunc = fullText.substring(0, index+1);
+			            	var remainder = "";
+			            	remainder = fullText.substring(index+1, fullText.length);
+			            	item.trunc = trunc;
+			            	item.remainder = remainder;
+			            	item.MoreLink = "itemMoreLink_pharmaco_cnv"+i
+			            	item.LessLink = "itemLessLink_pharmaco_cnv" +i
+			            	item.Overflow = "itemOverflow_pharmaco_cnv"+i
+			            	i++;
+			        	}
+			        	else{
+			        		item.trunc = fullText;
+			        	}
 	          if((item.gene.toLowerCase().includes(this.genes3_cnv.toLowerCase()) || this.genes3_cnv == null || this.genes3_cnv == undefined) && 
 	                    (item.variant.toLowerCase().includes(this.mutations3_cnv.toLowerCase()) || this.mutations3_cnv == null || this.mutations3_cnv ==undefined) &&
 	                    (this.therapy3_cnv == null || this.therapy3_cnv ==undefined|| item.drug_name.toLowerCase().includes(this.therapy3_cnv.toLowerCase())) && 
