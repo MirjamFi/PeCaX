@@ -75,7 +75,6 @@
       getInfo(){
         this.username = localStorage.getItem("username");
         var ids = localStorage.getItem("jobids")
-        console.log(this.username, ids)
         if(ids == false || ids == [] || ids == "undefined" || ids == null){
           this.jobids = []
         }
@@ -86,7 +85,6 @@
           }
         }
         this.chunks=this.chunk(this.jobids)
-        console.log(this.chunks)
 
       },
       chunk(ids, chunk1 = 5,) {

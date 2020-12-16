@@ -278,7 +278,7 @@
 				 
 			}
 			for(let entry of result){
-	  			this.icd10codes[entry.concat] = entry.ICD_lower
+	  			this.icd10codes[entry.concat] = entry.code
 	  		}
 	  		if(localStorage.getItem("jobids") == "undefined" || localStorage.getItem("jobids").length == 0){
 	  			this.allowJobId = false;

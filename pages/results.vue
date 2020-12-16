@@ -64,7 +64,7 @@
 			    			<p style="font-size:16px">
 			    				<b>Diagnosis: </b>
 			    				{{icd10}}<br>
-			    				<b>Filter</b>
+			    				<b>Filter:</b>
 			    				{{diagnosisfilter}}
 			    				
 			    			</p>
