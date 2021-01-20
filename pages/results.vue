@@ -1588,19 +1588,19 @@
 				      <b-collapse id="collapse-4" v-model="visibleRef" class="mt-2">
 				        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon></button></p>
 				        <b-card> 
-				          <div data-html2canvas-ignore="true">
-				              <v-text-field
-				              v-model="search5"
-				              append-icon="mdi-magnify"
-				              label="Search"
-				              single-line
-				              hide-details
-				              ></v-text-field>
-				            </div>
+				          <table data-html2canvas-ignore="true">
+				          	<tr>
+				          		<td>
+				          			<v-text-field v-model="refid" type="string" label="ID"clearable style="margin-right: 10px;"></v-text-field>
+				          		</td>
+				          		<td>
+				          			<v-text-field v-model="search5" type="string" label="Author, Title, ..."clearable ></v-text-field>
+				          		</td>
+				          	</tr>
+				            </table>
 				            <v-data-table
-				              :search="search5"
 				            :headers="refHeaders"
-				            :items="appendix_reference_table"
+				            :items="sortedRef"
 				            item-key="rowid"
 				            multi-sort
 				            :items-per-page="-1"
@@ -1633,19 +1633,19 @@
 				      <b-collapse id="collapse-4" v-model="visibleRef_cnv" class="mt-2">
 				        <p data-html2canvas-ignore="true">The publications of the IDs given in the tables above. <button class="downloadbutn float-right " @click="exportToPDF_ref_cnv()"><b-icon class="float-left" icon="download" style="margin-right: 3px" data-html2canvas-ignore="true"></b-icon></button></p>
 				        <b-card> 
-				          <div data-html2canvas-ignore="true">
-				              <v-text-field
-				              v-model="search5_cnv"
-				              append-icon="mdi-magnify"
-				              label="Search"
-				              single-line
-				              hide-details
-				              ></v-text-field>
-				            </div>
+				          <table data-html2canvas-ignore="true">
+				          	<tr>
+				          		<td>
+				          			<v-text-field v-model="refid_cnv" type="string" label="ID"clearable style="margin-right: 10px;"></v-text-field>
+				          		</td>
+				          		<td>
+				          			<v-text-field v-model="search5_cnv" type="string" label="Author, Title, ..."clearable ></v-text-field>
+				          		</td>
+				          	</tr>
+				            </table>
 				            <v-data-table
-				              :search="search5_cnv"
 				            :headers="refHeaders"
-				            :items="appendix_reference_table_cnv"
+				            :items="sortedRef_cnv"
 				            item-key="rowid"
 				            multi-sort
 				            :items-per-page="-1"
@@ -2121,7 +2121,7 @@
         appendix_reference_table_cnv: [],
         appendix_variant_table_cnv: [],
         refHeaders: [
-            {text: 'Id',
+            {text: 'ID',
              align:'left',
              sortable: false,
              value: 'rowid'},
@@ -2202,6 +2202,7 @@
         evidence5:'',
 
         search5: '',
+        refid:'',
       
         genes6:'',
         mutations6:'',
@@ -2211,6 +2212,7 @@
         cosmic6:'',
 
         search5_cnv: '',
+        refid_cnv:'',
       
         genes6_cnv:'',
         type6_cnv:'',
@@ -4269,6 +4271,28 @@
 	            filtered_sorted.push(item)
 	          }
 	        }
+	        return filtered_sorted;
+	    },
+	    sortedRef:function(){
+	        var filtered_sorted = [];
+	        for(var item of this.appendix_reference_table){
+	          if((this.search5 == null || this.search5 == undefined || this.search5 == '' || item.combined.toLowerCase().includes(this.search5.toLowerCase()))&&
+	          		(this.refid == null || this.refid == undefined || this.refid == '' || item.index == this.refid)
+	          	){
+	            	filtered_sorted.push(item)
+				}
+	          }
+	        return filtered_sorted;
+	    },
+	    sortedRef_cnv:function(){
+	        var filtered_sorted = [];
+	        for(var item of this.appendix_reference_table_cnv){
+	          if((this.search5_cnv == null || this.search5_cnv == undefined || this.search5_cnv == '' || item.combined.toLowerCase().includes(this.search5_cnv.toLowerCase()))&&
+	          		(this.refid_cnv == null || this.refid_cnv == undefined || this.refid_cnv == '' || item.index == this.refid_cnv)
+	          	){
+	            	filtered_sorted.push(item)
+				}
+	          }
 	        return filtered_sorted;
 	    },
 	   	sortedAppendix:function() {
