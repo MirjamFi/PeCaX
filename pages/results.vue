@@ -226,7 +226,7 @@
 					                  <td v-show="hidedriver_tableVAF" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.vaf}}
 					                  </td>	                  
-					                  <td v-html="item.ref_map"v-show="hidedriver_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                  <td v-html="item.ref_map_url"v-show="hidedriver_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                  </td>
 					                </tr>
 					              </tbody>
@@ -404,7 +404,7 @@
 					                    <a style="color: blue" v-if="item.remainder" v-bind:id="item.MoreLink" v-on:click="showMore(item)">More</a>
 					                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                  </td>	                  
-					                  <td v-html="item.ref_map"v-show="hidedriver_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                  <td v-html="item.ref_map_url"v-show="hidedriver_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                  </td>
 					                </tr>
 					              </tbody>
@@ -588,7 +588,7 @@
 				                  <td v-show="hidedirect_pharm_tableEvidence" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.match_level}}
 				                  </td>
-				                  <td v-html="item.ref_map"v-show="hidedirect_pharm_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+				                  <td v-html="item.ref_map_url"v-show="hidedirect_pharm_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                  </td>
 				                </tr>
 				              </tbody>
@@ -758,7 +758,7 @@
 				                  <td v-show="hidedirect_pharm_tableEvidence_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.match_level}}
 				                  </td>
-				                  <td v-html="item.ref_map"v-show="hidedirect_pharm_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+				                  <td v-html="item.ref_map_url"v-show="hidedirect_pharm_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                  </td>
 				                </tr>
 				              </tbody>
@@ -947,9 +947,9 @@
 						                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                      </td>
 					                      <td v-show="hidepharm_tableEvidence" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-					                        {{ item.match_leve}}
+					                        {{ item.match_level}}
 					                      </td>
-					                      <td v-html="item.ref_map"v-show="hidepharm_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                      <td v-html="item.ref_map_url"v-show="hidepharm_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                      </td>
 					                    </tr>
 					                  </tbody>
@@ -1085,7 +1085,7 @@
 						                      <td v-show="hidemechanistic_drug_tableTherapy" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
 						                        {{ item.drug_name}}
 						                      </td>
-						                      <td v-html="item.ref_map"v-show="hidemechanistic_drug_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
+						                      <td v-html="item.ref_map_url"v-show="hidemechanistic_drug_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
 						                      </td>
 						                    </tr>
 						                  </tbody>
@@ -1260,9 +1260,9 @@
 						                    <a style="color: blue" v-if="item.remainder" class="hidden" v-bind:id="item.LessLink" v-on:click="showLess(item)">Less</a>
 					                      </td>
 					                      <td v-show="hidepharm_tableEvidence_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
-					                        {{ item.match_leve}}
+					                        {{ item.match_level}}
 					                      </td>
-					                      <td v-html="item.ref_map"v-show="hidepharm_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
+					                      <td v-html="item.ref_map_url"v-show="hidepharm_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                      </td>
 					                    </tr>
 					                  </tbody>
@@ -1384,7 +1384,7 @@
 						                      <td v-show="hidemechanistic_drug_tableTherapy_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
 						                        {{ item.drug_name}}
 						                      </td>
-						                      <td v-html="item.ref_map"v-show="hidemechanistic_drug_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
+						                      <td v-html="item.ref_map_url"v-show="hidemechanistic_drug_tableReferences_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
 						                      </td>
 						                    </tr>
 						                  </tbody>
@@ -1547,7 +1547,7 @@
 				                  <td v-show="hide_adverse_tableEvidence" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
 				                    {{ item.match_level}}
 				                  </td>
-				                  <td v-html="item.ref_map"v-show="hide_adverse_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
+				                  <td v-html="item.ref_map_url"v-show="hide_adverse_tableReferences" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4} " class=text-xs-right>
 				                  </td>
 				                </tr>
 				              </tbody>
@@ -2423,27 +2423,27 @@
     			if(!drivertypes.hasOwnProperty(item.gene)){
     				drivertypes[item.gene] = item.driver_role
     			}
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	        this.direct_pharm_table  = jsonfile.direct_pharm_table ;
 	        for(let item  of this.direct_pharm_table){
 	        	item.drug_name = item.drug_name.replaceAll("|", " | ")
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	        this.pharm_table  = jsonfile.pharm_table ;
 	        for(let item  of this.pharm_table){
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	        this.mechanistic_drug_table = jsonfile.mechanistic_drug_table;
 	        for(let item  of this.mechanistic_drug_table){
     			item.approval_status  = item.approval_status .replaceAll("|", " | ")
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	        this.adEff = jsonfile.adverse_table;
 	        for(let item  of this.adEff){
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	        this.appendix_reference_table = jsonfile.appendix_reference_table;
 	        for(let item  of this.appendix_reference_table){
@@ -2550,24 +2550,24 @@
     			if(!this.drivertypes_cnv.hasOwnProperty(item.gene)){
     				this.drivertypes_cnv[item.gene] = item.driver_role
     			}
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	    	this.direct_pharm_table_cnv = jsonfile.direct_pharm_table;
 	        for(let item  of this.direct_pharm_table_cnv){
 	        	item.drug_name = item.drug_name.replaceAll("|", " | ")
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 
 	        this.pharm_table_cnv  = jsonfile.pharm_table ;
 	        for(let item  of this.pharm_table_cnv){
     			item.tumor_list = item.tumor_list.replaceAll("|", " | ")
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	        this.mechanistic_drug_table_cnv = jsonfile.mechanistic_drug_table;
 	        for(let item  of this.mechanistic_drug_table_cnv){
     			item.approval_status  = item.approval_status .replaceAll("|", " | ")
-    			item.ref_map =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
+    			item.ref_map_url =this.createUrls(item.reference_id, jsonfile.appendix_reference_table)
 	    	}
 	    	this.appendix_reference_table_cnv = jsonfile.appendix_reference_table;
 	    	for(let item  of this.appendix_reference_table_cnv){
