@@ -28,7 +28,7 @@
       <div style="margin-left: 10%">
         <table class="float-left">
           <tr>
-            <td style="padding:0 15px;">User: </td>
+            <td style="padding:0 15px;">Project: </td>
             <td> {{ username }}</td>
           </tr>
           <tr>

@@ -31,8 +31,8 @@
 		    			<div class="text-center"style="margin-bottom: 20px; margin-top: 10%; padding-bottom: 10px; font-size: 20px; font-weight: 500; width: 60%; margin-left: 25%; ">
 		    				<v-card text class="rounded-card"  style="background-color:#DCE3FF; color:#000000" >
 		    					<v-card-text color="black">
-		    						Give a username to attach your jobs to it and revisit them later.</v-card-text>
-	 							<input name="username" ref="username" placeholder="Username" style="width: 250px; color:#000000; font-size: 18px; background-color: #EDF1FF"/>
+		    						Give a project name to attach your jobs to it and revisit them later.</v-card-text>
+	 							<input name="username" ref="username" placeholder="Project name" style="width: 250px; color:#000000; font-size: 18px; background-color: #EDF1FF"/>
 	 				 			<v-card-actions>
 	 				  				<v-btn text style="color:#000000" color="#DCE3FF"v-on:click="loggedIn();">Start</v-btn>
 				      			</v-card-actions>
