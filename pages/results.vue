@@ -2452,7 +2452,7 @@
 	        	if(item.reference_id.startsWith("NCT")){
 		        	item.url =  "<a href='https://clinicaltrials.gov/ct2/show/"+item.reference_id+"' target='_blank'>clinicaltrials</a>"
 		    	}
-		    	else{
+		    	else if(!isNaN(item.reference_id)){
 		    		item.url =  "<a href='https://pubmed.ncbi.nlm.nih.gov/"+item.reference_id+"' target='_blank'>PubMed</a>"
 		    	}
 		    }
@@ -4054,17 +4054,17 @@
 			        		item.trunc = fullText;
 			        	}
 				}
-	          if((item.gene.toLowerCase().includes(this.genes2.toLowerCase()) || this.genes2 == null || this.genes2 == undefined) && 
-	                (item.variant.toLowerCase().includes(this.mutation2.toLowerCase()) || this.mutation2== null | this.mutation2== undefined) && 
+	          if(( this.genes2 == null || this.genes2 == undefined || this.genes2 == '' || item.gene.toLowerCase().includes(this.genes2.toLowerCase())) && 
+	                (this.mutation2== null | this.mutation2== undefined || item.variant.toLowerCase().includes(this.mutation2.toLowerCase())) && 
 	                (this.therapy2 == null || this.therapy2 == undefined|| item.drug_name.toLowerCase().includes(this.therapy2.toLowerCase())) && 
 	                (this.effect2 == null || this.effect2 == undefined || item.variant_drug_association.toLowerCase().includes(this.effect2.toLowerCase())) && 
 	                (this.disease2 == null || this.disease2 == undefined || item.tumor_list.toLowerCase().includes(this.disease2.toLowerCase())) &&
 	                (this.evidence2 == null || this.evidence2 ==undefined|| item.match_level.toLowerCase().includes(this.evidence2.toLowerCase())) &&  
 	                (this.reference2 == null || this.reference2 ==undefined|| item.ref_map.includes(this.reference2))&&
-	                (item.gene.toLowerCase().includes(this.genesall.toLowerCase()) || this.genesall == null || this.genesall == undefined)&&
+	                (this.genesall == null || this.genesall == undefined || item.gene.toLowerCase().includes(this.genesall.toLowerCase()))&&
 	                (this.therapyall == null || this.therapyall ==undefined|| item.drug_name.toLowerCase().includes(this.therapyall.toLowerCase()))&&
-	                (item.variant.toLowerCase().includes(this.mutationall.toLowerCase()) || this.mutationall == null || this.mutationall == undefined)&&
-	                (item.tumor_list.toLowerCase().includes(this.diseaseall.toLowerCase()) || this.diseaseall == null || this.diseaseall == undefined)){
+	                (this.mutationall == null || this.mutationall == undefined || item.variant.toLowerCase().includes(this.mutationall.toLowerCase()))&&
+	                (this.diseaseall == null || this.diseaseall == undefined || item.tumor_list.toLowerCase().includes(this.diseaseall.toLowerCase()))){
 	            filtered_sorted.push(item)
 	          }
 	        }
@@ -4101,14 +4101,14 @@
 			        		item.trunc = fullText;
 			        	}
 				}
-	          if((item.gene.toLowerCase().includes(this.genes2_cnv.toLowerCase()) || this.genes2_cnv == null || this.genes2_cnv == undefined) && 
+	          if((this.genes2_cnv == null || this.genes2_cnv == undefined || item.gene.toLowerCase().includes(this.genes2_cnv.toLowerCase())) && 
 	                (item.variant.toLowerCase().includes(this.mutation2_cnv.toLowerCase()) || this.mutation2_cnv== null | this.mutation2_cnv== undefined) && 
 	                (this.therapy2_cnv == null || this.therapy2_cnv == undefined|| item.drug_name.toLowerCase().includes(this.therapy2_cnv.toLowerCase())) && 
 	                (this.effect2_cnv == null || this.effect2_cnv == undefined || item.variant_drug_association.toLowerCase().includes(this.effect2_cnv.toLowerCase())) && 
 	                (this.disease2_cnv == null || this.disease2_cnv == undefined || item.tumor_list.toLowerCase().includes(this.disease2_cnv.toLowerCase())) &&
 	                (this.evidence2_cnv == null || this.evidence2_cnv ==undefined|| item.match_level.toLowerCase().includes(this.evidence2_cnv.toLowerCase())) &&  
 	                (this.reference2_cnv == null || this.reference2_cnv ==undefined|| item.ref_map.includes(this.reference2_cnv))&&
-	                (item.gene.toLowerCase().includes(this.genesall.toLowerCase()) || this.genesall == null || this.genesall == undefined) //&&
+	                (this.genesall == null || this.genesall == undefined || item.gene.toLowerCase().includes(this.genesall.toLowerCase())) //&&
 	                // (this.therapyall == null || this.therapyall ==undefined|| item.drug_name.toLowerCase().includes(this.therapyall.toLowerCase())) &&
 	                // (item.variant.toLowerCase().includes(this.mutationall.toLowerCase()) || this.mutationall == null || this.mutationall == undefined)&&
 	                // (item.tumor_list.toLowerCase().includes(this.diseaseall.toLowerCase()) || this.diseaseall == null || this.diseaseall == undefined)
@@ -4147,8 +4147,8 @@
 			        	else{
 			        		item.trunc = fullText;
 			        	}
-	          if((item.gene.toLowerCase().includes(this.genes3.toLowerCase()) || this.genes3 == null || this.genes3 == undefined) && 
-	                    (item.variant.toLowerCase().includes(this.mutations3.toLowerCase()) || this.mutations3 == null || this.mutations3 ==undefined) &&
+	          if((this.genes3 == null || this.genes3 == undefined || item.gene.toLowerCase().includes(this.genes3.toLowerCase())) && 
+	                    (this.mutations3 == null || this.mutations3 ==undefined || item.variant.toLowerCase().includes(this.mutations3.toLowerCase())) &&
 	                    (this.therapy3 == null || this.therapy3 ==undefined|| item.drug_name.toLowerCase().includes(this.therapy3.toLowerCase())) && 
 	                    (this.effect3 == null || this.effect3 ==undefined|| item.variant_drug_association.toLowerCase().includes(this.effect3.toLowerCase())) && 
 	                    (this.disease3 == null ||this.disease3 ==undefined|| item.tumor_list.toLowerCase().includes(this.disease3.toLowerCase())) && 
@@ -4212,13 +4212,13 @@
 			        	else{
 			        		item.trunc = fullText;
 			        	}
-	          if((item.gene.toLowerCase().includes(this.genes3_cnv.toLowerCase()) || this.genes3_cnv == null || this.genes3_cnv == undefined) && 
-	                    (item.variant.toLowerCase().includes(this.mutations3_cnv.toLowerCase()) || this.mutations3_cnv == null || this.mutations3_cnv ==undefined) &&
+	          if((this.genes3_cnv == null || this.genes3_cnv == undefined || item.gene.toLowerCase().includes(this.genes3_cnv.toLowerCase())) && 
+	                    (this.mutations3_cnv == null || this.mutations3_cnv ==undefined || item.variant.toLowerCase().includes(this.mutations3_cnv.toLowerCase())) &&
 	                    (this.therapy3_cnv == null || this.therapy3_cnv ==undefined|| item.drug_name.toLowerCase().includes(this.therapy3_cnv.toLowerCase())) && 
 	                    (this.effect3_cnv == null || this.effect3_cnv ==undefined|| item.variant_drug_association.toLowerCase().includes(this.effect3_cnv.toLowerCase())) &&(this.disease3_cnv == null ||this.disease3_cnv ==undefined|| item.tumor_list.toLowerCase().includes(this.disease3_cnv.toLowerCase())) && 
 	                    (this.evidence3_cnv == '' ||this.evidence3_cnv == null || this.evidence3_cnv ==undefined|| item.match_level.toLowerCase() == this.evidence3_cnv.toLowerCase()) && 
 	                    (this.reference3_cnv == null || this.reference3_cnv ==undefined|| item.ref_map.includes(this.reference3_cnv))&&
-	                    (item.gene.toLowerCase().includes(this.genesall.toLowerCase()) || this.genesall == null || this.genesall == undefined) //&&
+	                    (this.genesall == null || this.genesall == undefined || item.gene.toLowerCase().includes(this.genesall.toLowerCase())) //&&
 	                    // (this.therapyall == null || this.therapyall ==undefined|| item.drug_name.toLowerCase().includes(this.therapyall.toLowerCase()))&&
 	                    // (this.diseaseall == null || this.diseaseall ==undefined|| item.tumor_list.toLowerCase().includes(this.diseaseall.toLowerCase()))&& (this.mutationall == null ||this.mutationall ==undefined||  item.variant.toLowerCase().includes(this.mutationall.toLowerCase()))
 	                    ){
@@ -4258,16 +4258,16 @@
 	        });
 	        var filtered_sorted = [];
 	        for(var item of sorted){
-	          if((item.gene.toLowerCase().includes(this.genes5.toLowerCase()) || this.genes5 == null || this.genes5 ==undefined) && 
-	                (item.variant.toLowerCase().includes(this.mutations5.toLowerCase()) || this.mutations5 == null || this.mutations5==undefined) && 
+	          if((this.genes5 == null || this.genes5 ==undefined || item.gene.toLowerCase().includes(this.genes5.toLowerCase())) && 
+	                (this.mutations5 == null || this.mutations5==undefined || item.variant.toLowerCase().includes(this.mutations5.toLowerCase())) && 
 	                (this.therapy5 == null ||this.therapy5 == undefined|| item.drug_name.toLowerCase().includes(this.therapy5.toLowerCase())) && 
 	                (this.effect5 == null ||this.effect5 == undefined|| item.variant_drug_association == this.effect5) && 
 	                (this.variantType5 == null || this.variantType5 == undefined|| item.variant_type == this.variantType5) && 
 	                (this.evidence5 == null ||this.evidence5 == undefined|| item.match_level == this.evidence5) && 
 	                (this.reference5 == null || this.reference5 == undefined|| item.ref_map.includes(this.reference5))&&
-	                (item.gene.toLowerCase().includes(this.genesall.toLowerCase()) || this.genesall == null || this.genesall == undefined)&&
+	                (this.genesall == null || this.genesall == undefined || item.gene.toLowerCase().includes(this.genesall.toLowerCase()))&&
 	                (this.therapyall == null || this.therapyall == undefined|| item.Therapy.toLowerCase().includes(this.therapyall.toLowerCase()))&&
-	                (item.variant.toLowerCase().includes(this.mutationall.toLowerCase()) || this.mutationall == null|| this.mutationall == undefined)){
+	                (this.mutationall == null|| this.mutationall == undefined || item.variant.toLowerCase().includes(this.mutationall.toLowerCase()))){
 	            filtered_sorted.push(item)
 	          }
 	        }
@@ -4305,13 +4305,13 @@
 	        });
 	        var filtered_sorted = [];
 	        for(var item of sorted){
-	          if( (item.gene.toLowerCase().includes(this.genes6.toLowerCase()) || this.genes6 == null| this.genes6 == undefined) && 
-	                      (item.mutation.toLowerCase().includes(this.mutations6.toLowerCase()) || this.mutations6 == null|| this.mutations6 == undefined) && 
-	                      (item.Consequence.toLowerCase().includes(this.consequence6.toLowerCase()) || this.consequence6 == null || this.consequence6 == undefined) && 
-	                      (item.vaf.toLowerCase().includes(this.vaf6.toLowerCase()) || this.vaf6 == null || this.vaf6 == undefined) && 
+	          if( (this.genes6 == null| this.genes6 == undefined || item.gene.toLowerCase().includes(this.genes6.toLowerCase())) && 
+	                      (this.mutations6 == null|| this.mutations6 == undefined || item.mutation.toLowerCase().includes(this.mutations6.toLowerCase())) && 
+	                      (this.consequence6 == null || this.consequence6 == undefined || item.Consequence.toLowerCase().includes(this.consequence6.toLowerCase())) && 
+	                      (this.vaf6 == null || this.vaf6 == undefined || item.vaf.toLowerCase().includes(this.vaf6.toLowerCase())) && 
 	                      (this.dbSNP6 == null ||this.dbSNP6 == undefined|| item.dbSNP.includes(this.dbSNP6)) && 
 	                      (this.cosmic6 == null ||this.cosmic6 == undefined|| item.COSMIC.toLowerCase().includes(this.cosmic6.toLowerCase()))&&
-	                      (item.gene.toLowerCase().includes(this.genesall.toLowerCase()) || this.genesall == null|| this.genesall == undefined)&& 
+	                      (this.genesall == null|| this.genesall == undefined || item.gene.toLowerCase().includes(this.genesall.toLowerCase()))&& 
 	                      (this.mutationall == null ||this.mutationall == undefined|| item.mutation.toLowerCase().includes(this.mutationall.toLowerCase()))){
 	            item.dbSNP=JSON.stringify(item.dbSNP).replace(/[\[\]']+/g,'').replace(/^"|"$/g, '')
 	            item.COSMIC = JSON.stringify(item.COSMIC).replace(/[\[\]']+/g,'').replace(/"/g, '').replace(/,/g,', ')
@@ -4330,10 +4330,10 @@
 	        });
 	        var filtered_sorted = [];
 	        for(var item of sorted){
-	          if( (item.gene.toLowerCase().includes(this.genes6_cnv.toLowerCase()) || this.genes6_cnv == null| this.genes6_cnv == undefined) && 
-	                      (item.type.toLowerCase().includes(this.type6_cnv.toLowerCase()) || this.type6_cnv == null|| this.type6_cnv == undefined) && 
-	                      (item.copy_number == this.copy6_cnv || this.copy6_cnv == null || this.copy6_cnv == undefined || this.copy6_cnv == '') && 
-	                      (item.gene.toLowerCase().includes(this.genesall.toLowerCase()) || this.genesall == null|| this.genesall == undefined)){
+	          if( (this.genes6_cnv == null| this.genes6_cnv == undefined || item.gene.toLowerCase().includes(this.genes6_cnv.toLowerCase())) && 
+	                (this.type6_cnv == null|| this.type6_cnv == undefined || item.type.toLowerCase().includes(this.type6_cnv.toLowerCase())) && 
+	                 (this.copy6_cnv == null || this.copy6_cnv == undefined || this.copy6_cnv == '' || item.copy_number == this.copy6_cnv) && 
+	                 (this.genesall == null|| this.genesall == undefined || item.gene.toLowerCase().includes(this.genesall.toLowerCase()))){
 	            filtered_sorted.push(item)
 	          }
 	        }
