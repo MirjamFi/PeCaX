@@ -234,7 +234,9 @@
 		    	localStorage.setItem("cnvfileavailable", cnvfileavailable)
 		    	let code = Object.keys(this.icd10codes).find(key => this.icd10codes[key] === selectedICD10);
 		    	localStorage.setItem("diagnosis", code)
-		    	localStorage.setItem("filter", filter)
+		    	if(selectedICD10 != ''){
+		    		localStorage.setItem("filter", filter)
+		    	}
 		    	var formData = new FormData();
 		    	formData.append("vcf", file);
 		    	formData.append("assembly", assemblyparam)
