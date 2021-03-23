@@ -4,6 +4,5 @@ node_modules
 handover
 dockercompose/work/*
 sbml4j
-neo4j
 nginx
 flask
