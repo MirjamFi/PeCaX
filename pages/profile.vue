@@ -136,6 +136,7 @@
                       }).then(res => {
                         pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
                         localStorage.setItem("jobids", this.jobids)
+                        this.jobids = []
                         this.getInfo()
                       })
                     })
