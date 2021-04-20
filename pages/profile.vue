@@ -113,36 +113,39 @@
         var index = this.jobids.indexOf(jobid);
         if(index!==(-1)){
           this.jobids.splice(index, 1);
+          localStorage.setItem("jobids", this.jobids)
+          this.jobids = []
+          this.getInfo()
           // get list of networks
-          axios.get('/network/networks', {
-            headers:{
-                    'user':this.username+'/'+jobid.toString()
-                },
-                method:'GET'
-          }).then(res => {
-                //delete networks
-                for (const [key, value] of Object.entries(res.data)){
-                    axios.delete('/network/networks/'+value.uuid, {
-                      headers:{
-                          'user':this.username+'/'+jobid.toString()
-                      },
-                      method: 'DELETE'
-                    }).then(()=>{
-                      axios.get('/network/networks', {
-                        headers:{
-                                'user':this.username+'/'+jobid.toString()
-                            },
-                            method:'GET'
-                      }).then(res => {
-                        pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
-                        localStorage.setItem("jobids", this.jobids)
-                        this.jobids = []
-                        this.getInfo()
-                      })
-                    })
-                }
+          // axios.get('/network/networks', {
+          //   headers:{
+          //           'user':this.username+'/'+jobid.toString()
+          //       },
+          //       method:'GET'
+          // }).then(res => {
+          //       //delete networks
+          //       for (const [key, value] of Object.entries(res.data)){
+          //           axios.delete('/network/networks/'+value.uuid, {
+          //             headers:{
+          //                 'user':this.username+'/'+jobid.toString()
+          //             },
+          //             method: 'DELETE'
+          //           }).then(()=>{
+          //             axios.get('/network/networks', {
+          //               headers:{
+          //                       'user':this.username+'/'+jobid.toString()
+          //                   },
+          //                   method:'GET'
+          //             }).then(res => {
+          //               pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
+          //               localStorage.setItem("jobids", this.jobids)
+          //               this.jobids = []
+          //               this.getInfo()
+          //             })
+          //           })
+          //       }
                 
-          })
+          // })
         }
         
         
