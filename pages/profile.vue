@@ -112,6 +112,7 @@
         var jobid = this.$refs.deleteId.value
         var index = this.jobids.indexOf(jobid);
         if(index!==(-1)){
+          pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
           this.jobids.splice(index, 1);
           localStorage.setItem("jobids", this.jobids)
           this.jobids = []
