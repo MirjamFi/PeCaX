@@ -252,7 +252,7 @@
 				            	</div> 
 				            	<div id="notepadDrivers">
 									<textarea style="width: 70%"ref="driverNotes" placeholder="Notes">{{drivergenes_notes}}</textarea>
-									<button class= 'butn' v-on:click="storeNotes('drivergenes');">Save</button>
+									<button class= 'butn' v-on:click="storeNotes('drivergenes');" v-show="visibleSave">Save</button>
 									<p v-show="savedDrivergenesNotes"style="width: 50px" class="float-right">saved</p>
 				            	</div>    	
 				          	</b-card> 
@@ -430,7 +430,7 @@
 				            	</div>  
 				            	<div id="notepadDriversCNV">
 									<textarea style="width: 80%"ref="driverNotes_cnv" placeholder="Notes">{{drivergenes_notes_cnv}}</textarea>
-									<button class= 'butn' v-on:click="storeNotes('drivergenes', 'cnv');">Save</button>
+									<button class= 'butn' v-on:click="storeNotes('drivergenes', 'cnv');"v-show="visibleSave">Save</button>
 									<p v-show="savedDrivergenesNotes_cnv"style="width: 50px" class="float-right">saved</p>
 				            	</div>    	
 				          	</b-card> 
@@ -613,7 +613,7 @@
 				            </div>
 				            <div id="notepadPharmaco">
 									<textarea style="width: 80%"ref="pharmacoNotes" placeholder="Notes">{{pharmaco_notes}}</textarea>
-									<button class= 'butn' v-on:click="storeNotes('pharmaco');">Save</button>
+									<button class= 'butn' v-on:click="storeNotes('pharmaco');"v-show="visibleSave">Save</button>
 									<p v-show="savedPharmacoNotes"style="width: 50px" class="float-right">saved</p>
 				            	</div> 
 				         </b-card>
@@ -783,7 +783,7 @@
 				            </div>
 				            <div id="notepadPharmaco_cnv">
 								<textarea style="width: 80%"ref="pharmacoNotes_cnv" placeholder="Notes">{{pharmaco_notes_cnv}}</textarea>
-								<button class= 'butn' v-on:click="storeNotes('pharmaco', 'cnv');">Save</button>
+								<button class= 'butn' v-on:click="storeNotes('pharmaco', 'cnv');"v-show="visibleSave">Save</button>
 								<p v-show="savedPharmacoNotes_cnv"style="width: 50px" class="float-right">saved</p>
 			            	</div> 
 				         </b-card>
@@ -974,7 +974,7 @@
 					                </div>
 					                <div id="notepadCivic">
 									<textarea ref="civicNotes" style="width: 80%" placeholder="Notes">{{civic_notes}}</textarea>
-									<button class= 'butn' v-on:click="storeNotes('civic');">Save</button>
+									<button class= 'butn' v-on:click="storeNotes('civic');"v-show="visibleSave">Save</button>
 									<p v-show="savedCivicNotes"style="width: 50px" class="float-right">saved</p>
 				            	</div> 
 					            	</b-card>
@@ -1110,7 +1110,7 @@
 						                </div>
 						            	<div id="notepadCancer">
 											<textarea style="width: 80%"ref="cancerNotes" placeholder="Notes">{{cancer_notes}}</textarea>
-											<button class= 'butn' v-on:click="storeNotes('cancer');">Save</button>
+											<button class= 'butn' v-on:click="storeNotes('cancer');" v-show="visibleSave">Save</button>
 											<p v-show="savedCancerNotes"style="width: 50px" class="float-right">saved</p>
 				            			</div> 
 						          </b-card>
@@ -1287,7 +1287,7 @@
 					                </div>
 					                <div id="notepadCivic_cnv">
 											<textarea style="width: 80%"ref="civicNotes_cnv" placeholder="Notes">{{civic_notes_cnv}}</textarea>
-											<button class= 'butn' v-on:click="storeNotes('civic', 'cnv');">Save</button>
+											<button class= 'butn' v-on:click="storeNotes('civic', 'cnv');"v-show="visibleSave">Save</button>
 											<p v-show="savedCivicNotes_cnv"style="width: 50px" class="float-right">saved</p>
 				            			</div> 
 					            	</b-card>
@@ -1409,7 +1409,7 @@
 						                </div>
 						                <div id="notepadCancer_cnv">
 											<textarea style="width: 80%"ref="cancerNotes_cnv" placeholder="Notes">{{cancer_notes_cnv}}</textarea>
-											<button class= 'butn' v-on:click="storeNotes('cancer','cnv');">Save</button>
+											<button class= 'butn' v-on:click="storeNotes('cancer','cnv');"v-show="visibleSave">Save</button>
 											<p v-show="savedCancerNotes_cnv"style="width: 50px" class="float-right">saved</p>
 				            			</div> 
 						          </b-card>
@@ -2300,6 +2300,7 @@
         savedCivicNotes_cnv:false,
         cancer_notes_cnv:"Notes",
         savedCancerNotes_cnv:false,
+        visibleSave: true
       }
     },
     methods: {
@@ -2410,7 +2411,7 @@
 			  	else{
 			  		this.status=res;
 			  		clearTimeout(this.timer)
-			  		this.timer = setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 30000,this);
+			  		this.timer = setTimeout(function(scope){scope.getVcfStatus(jobid, username, stop)}, 10000,this);
 			  	}})
 			return
 	    },
@@ -3120,6 +3121,7 @@
 	        this.visiblePharmaco = false;
 	        this.visibleCivic = false;
 	        this.visibleCancer = false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3185,12 +3187,14 @@
 		          self.visiblePharmaco_cnv = true;
 		          self.visibleCivic_cnv = true;	
 		          self.visibleCancer_cnv = true;
+		          self.visibleSave = true;
 	          	},15000)
 	        }  
 
 	    },
 	    exportToPDF_driver_table() {
 	    	this.visibleDrivergenes = false;
+	    	this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3205,10 +3209,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visibleDrivergenes = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_driver_table_cnv() {
 	    	this.visibleDrivergenes_cnv = false;
+	    	this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3223,10 +3229,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visibleDrivergenes_cnv = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_direct_pharm_table() {
 	        this.visiblePharmaco =false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3241,10 +3249,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visiblePharmaco = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    }, 
 	    exportToPDF_direct_pharm_table_cnv() {
 	        this.visiblePharmaco_cnv =false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3259,10 +3269,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visiblePharmaco_cnv = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_pharm_table() {
 	        this.visibleCivic = false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3277,10 +3289,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visibleCivic = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_mechanistic_drug_table() {
 	        this.visibleCancer = false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3295,10 +3309,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visibleCancer = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_pharm_table_cnv() {
 	        this.visibleCivic_cnv = false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3313,10 +3329,12 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visibleCivic_cnv = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_mechanistic_drug_table_cnv() {
 	        this.visibleCancer_cnv = false;
+	        this.visibleSave = false;
 	        var self = this;
 	        setTimeout(function(){
 	          window.scrollTo(0,0);
@@ -3331,6 +3349,7 @@
 	        }, 1);
 	        setTimeout(function(){
 	        	self.visibleCancer_cnv = true;
+	        	self.visibleSave = true;
 	        },5000)
 	    },
 	    exportToPDF_adverse_table() {
