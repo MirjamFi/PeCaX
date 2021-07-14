@@ -252,7 +252,7 @@
 				            	</div> 
 				            	<div id="notepadDrivers">
 									<textarea style="width: 70%"ref="driverNotes" placeholder="Notes">{{drivergenes_notes}}</textarea>
-									<button class= 'butn' v-on:click="storeNotes('drivergenes');" v-show="visibleSave">Save</button>
+									<button class= 'butn' v-on:click="storeNotes('drivergenes');" v-show="visibleSave" :visibleSave="visibleSave"  @visibleSaveEvent="visibleSave">Save</button>
 									<p v-show="savedDrivergenesNotes"style="width: 50px" class="float-right">saved</p>
 				            	</div>    	
 				          	</b-card> 
@@ -2530,16 +2530,40 @@
 		    	this.visibleCancer = false;
 		    	var res_driver = this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username)
 		    	res_driver.then(res => {
-		    		var res_pharmaco = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username)
-		    		res_pharmaco.then(res=>{
-		    			var res_civic = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username)
-		    			res_civic.then(res => {
-		    				var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
-		    				res_cancer.then(res => {
-		    				})
-		    			})
-		    		})
-		    	})
+		    		if(uuids[1]!== ''){
+		    			var res_pharmaco = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username)
+		    			res_pharmaco.then(res=>{
+		    			if(uuids[2]!== ''){
+		    				var res_civic = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username)
+		    				res_civic.then(res => {
+		    				if(uuids[3]!== ''){
+		    					var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
+		    					res_cancer.then(res => {})
+		    				}})
+		    			}
+		    			else{
+		    				if(uuids[3]!== ''){
+		    					var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
+		    					res_cancer.then(res => {})
+			    			}
+			    		}})
+		    		}
+		    		else{
+		    			if(uuids[2]!== ''){
+		    				var res_civic = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username)
+		    				res_civic.then(res => {
+		    				if(uuids[3]!== ''){
+		    					var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
+		    					res_cancer.then(res => {})
+		    				}})
+	    				}
+	    				else{
+		    				if(uuids[3]!== ''){
+		    					var res_cancer = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username)
+		    					res_cancer.then(res => {})
+		    				}
+			    		}	
+			    	}})
 		    }
 	    },
 	    showJSON_cnv(username, jsonfile, jobid=null, uuids = null){
@@ -2609,16 +2633,42 @@
 		    	this.visibleCancer_cnv = false;
 		    	var res_driver_cnv = this.getGraphFromUUID(jobid, {"drivergenes":uuids[0]}, username, "_cnv")
 		    	res_driver_cnv.then(res => {
-		    		var res_pharmaco_cnv = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username, "_cnv")
-		    		res_pharmaco_cnv.then(res => {
-		    			var res_civic_cnv = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
-		    			res_civic_cnv.then(res => {
-		    				var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
-		    			})
-		    		})
-		    	})
-	    	}
-	    },
+		    		if(uuids[1]!== ''){
+		    			var res_pharmaco_cnv = this.getGraphFromUUID(jobid, {"pharmaco":uuids[1]}, username, "_cnv")
+		    			res_pharmaco_cnv.then(res=>{
+		    			if(uuids[2]!== ''){
+		    				var res_civic_cnv = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
+		    				res_civic_cnv.then(res => {
+		    				if(uuids[3]!== ''){
+		    					var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
+		    					res_cancer_cnv.then(res => {})
+		    				}})
+		    			}
+		    			else{
+		    				if(uuids[3]!== ''){
+		    					var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
+		    					res_cancer_cnv.then(res => {})
+		    				}
+			    		}})
+		    		}
+		    		else{
+		    			if(uuids[2]!== ''){
+		    				var res_civic_cnv = this.getGraphFromUUID(jobid, {"civic":uuids[2]}, username, "_cnv")
+		    				res_civic_cnv.then(res => {
+		    				if(uuids[3]!== ''){
+		    					var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
+		    					res_cancer_cnv.then(res => {})
+		    				}})
+	    				}
+	    				else{
+		    				if(uuids[3]!== ''){
+		    					var res_cancer_cnv = this.getGraphFromUUID(jobid, {"cancer":uuids[3]}, username, "_cnv")
+		    					res_cancer_cnv.then(res => {})
+		    				}
+			    		}
+			    	}	
+	    	})
+	    }},
 	    createUrls(reference_id, table){
 	    	var reference_ids= new Set(reference_id.split("|"))
 			var ref_map_links = ""
