@@ -258,7 +258,7 @@
 				          	</b-card> 
 				        </b-collapse>
 				        <div v-if="visibleDrivers && visibleDrivergenes" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-							<iframe id="drivergenesVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/drivergenes" allowfullscreen></iframe>
+							<iframe id="drivergenesVis" class="embed-responsive-item" src="http://localhost:3000/drivergenes" allowfullscreen></iframe>
 						</div>
 				    </div> 
 				    <div v-if="cnvjsonavailable" ref = "content_driver_table_cnv" id="driver_table_content_cnv" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
@@ -436,7 +436,7 @@
 				          	</b-card> 
 				        </b-collapse>
 				        <div v-if="visibleDrivers_cnv && visibleDrivergenes_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-							<iframe id="drivergenesVis_cnv" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/drivergenes_cnv" allowfullscreen></iframe>
+							<iframe id="drivergenesVis_cnv" class="embed-responsive-item" src="http://localhost:3000/drivergenes_cnv" allowfullscreen></iframe>
 						</div>
 					</div>	      
 				    <div v-if="!cnvjson"ref = "content_direct_pharm_table" id="direct_pharm_table_content" class="row" style="margin-bottom: 1.5vw; margin-left: 10px;">
@@ -619,7 +619,7 @@
 				         </b-card>
 				        </b-collapse>
 				        <div v-if="visiblePharma && visiblePharmaco" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-							<iframe id="pharmacoVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/pharmaco" allowfullscreen></iframe>
+							<iframe id="pharmacoVis" class="embed-responsive-item" src="http://localhost:3000/pharmaco" allowfullscreen></iframe>
 						</div>
 				    	<br><br>
 				    </div>
@@ -789,7 +789,7 @@
 				         </b-card>
 				        </b-collapse>
 				        <div v-if="visiblePharma_cnv && visiblePharmaco_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-							<iframe id="pharmacoVis_cnv" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/pharmaco_cnv" allowfullscreen></iframe>
+							<iframe id="pharmacoVis_cnv" class="embed-responsive-item" src="http://localhost:3000/pharmaco_cnv" allowfullscreen></iframe>
 						</div>
 				    	<br><br>
 				    </div> 
@@ -980,7 +980,7 @@
 					            	</b-card>
 					          	</b-collapse>
 					          	<div v-if="visibleAffectCivic && visibleCivic" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-									<iframe id="civicVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/civic" allowfullscreen></iframe>
+									<iframe id="civicVis" class="embed-responsive-item" src="http://localhost:3000/civic" allowfullscreen></iframe>
 								</div>
 								<br>
 					    		<br>
@@ -1116,7 +1116,7 @@
 						          </b-card>
 					          </b-collapse>
 					          <div v-if="visibleAffectCancer && visibleCancer" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-								<iframe id="cancerVis" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/cancer" allowfullscreen></iframe>
+								<iframe id="cancerVis" class="embed-responsive-item" src="http://localhost:3000/cancer" allowfullscreen></iframe>
 							</div>
 					        </div>
 				        </b-collapse>
@@ -1293,7 +1293,7 @@
 					            	</b-card>
 					          	</b-collapse>
 					          	<div v-if="visibleAffectCivic_cnv && visibleCivic_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-									<iframe id="civicVis_cnv" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/civic_cnv" allowfullscreen></iframe>
+									<iframe id="civicVis_cnv" class="embed-responsive-item" src="http://localhost:3000/civic_cnv" allowfullscreen></iframe>
 								</div>
 								<br>
 					    		<br>
@@ -1415,7 +1415,7 @@
 						          </b-card>
 					          </b-collapse>
 					          <div v-if="visibleAffectCancer_cnv && visibleCancer_cnv" class="embed-responsive embed-responsive-16by9 z-depth-1-half column">
-								<iframe id="cancerVis_cnv" class="embed-responsive-item" src="http://localhost:3000/BioGraphVisart/cancer_cnv" allowfullscreen></iframe>
+								<iframe id="cancerVis_cnv" class="embed-responsive-item" src="http://localhost:3000/cancer_cnv" allowfullscreen></iframe>
 							</div> 
 					        </div>
 				        </b-collapse>
