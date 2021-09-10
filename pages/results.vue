@@ -205,10 +205,15 @@
 									            <a v-if = "item.kegg"class="page-link" :href="item.kegg" target="_blank">KEGG</a>
 									            <a v-if = "item.uniprot"class="page-link" :href="item.uniprot" target="_blank">UniProt</a>
 								          	</div>
-								        </div> 
+								        		</div> 
 					                  </td>
 					                  <td v-show="hidedriver_tableMutation" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.one_letter_repr}}
+					                    <div v-if="item.onkokb" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
+						                    <div class="dropdown-content">
+									            <a class="page-link" :href="item.onkokb" target="_blank">OnkoKB</a>
+								          	</div>
+								        		</div> 
 					                  </td>
 					                  <td v-show="hidedriver_tableConsequence" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.Consequence }}
@@ -387,6 +392,11 @@
 					                  </td>
 					                  <td v-show="hidedriver_tableType_cnv"  @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.type}}
+					                    <div v-if="item.onkokb" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
+						                    <div class="dropdown-content">
+									            <a class="page-link" :href="item.onkokb" target="_blank">OnkoKB</a>
+								          	</div>
+								        		</div>
 					                  </td>
 					                 <!--  <td v-show="hidedriver_tableCopy_cnv" v-on:click.self="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                    {{ item.copy_number }}
@@ -571,6 +581,11 @@
 				                  </td>
 				                  <td v-show="hidedirect_pharm_tableMutation" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.variant }}
+				                    <div v-if="item.onkokb" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
+						                    <div class="dropdown-content">
+									            <a class="page-link" :href="item.onkokb" target="_blank">OnkoKB</a>
+								          	</div>
+								        		</div>
 				                  </td>
 				                  <td v-show="hidedirect_pharm_tableTherapy" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.drug_name }}
@@ -741,6 +756,11 @@
 				                  </td>
 				                  <td v-show="hidedirect_pharm_tableMutation_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.variant }}
+				                    <div v-if="item.onkokb" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
+						                    <div class="dropdown-content">
+									            <a class="page-link" :href="item.onkokb" target="_blank">OnkoKB</a>
+								          	</div>
+								        		</div>
 				                  </td>
 				                  <td v-show="hidedirect_pharm_tableTherapy_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 				                    {{ item.drug_name }}
@@ -932,6 +952,11 @@
 					                      </td>
 					                      <td v-show="hidepharm_tableMutation" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.variant}}
+					                        <div v-if="item.onkokb" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
+						                    <div class="dropdown-content">
+									            <a class="page-link" :href="item.onkokb" target="_blank">OnkoKB</a>
+								          	</div>
+								        		</div>
 					                      </td>
 					                      <td v-show="hidepharm_tableTherapy" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.drug_name}}
@@ -1245,6 +1270,11 @@
 					                      </td>
 					                      <td v-show="hidepharm_tableMutation_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.variant}}
+					                        <div v-if="item.onkokb" class="dropdown_gene" data-html2canvas-ignore="true"><b-icon class="float-right dropbtn" icon="link"></b-icon>
+						                    <div class="dropdown-content">
+									            <a class="page-link" :href="item.onkokb" target="_blank">OnkoKB</a>
+								          	</div>
+								        		</div>
 					                      </td>
 					                      <td v-show="hidepharm_tableTherapy_cnv" @click="selectItem(item)" :class="{'first': selected.includes(item.gene) && selected.indexOf(item.gene) == 0, 'second': selected.includes(item.gene) && selected.indexOf(item.gene) == 1,'third': selected.includes(item.gene) && selected.indexOf(item.gene) == 2, 'fourth': selected.includes(item.gene) && selected.indexOf(item.gene) == 3, 'fifth': selected.includes(item.gene) && selected.indexOf(item.gene) == 4}" class=text-xs-right>
 					                        {{ item.drug_name}}
@@ -4018,6 +4048,9 @@
 	        var filtered_sorted = []
 	        var i = 0;
 	        for(var item of sorted){
+	        	if(item.one_letter_repr){
+	        		item.onkokb = "https://www.oncokb.org/gene/"+item.gene+"/"+item.one_letter_repr
+	        	}
 	        	var shrinkable = item.tumor_list;
 				if (shrinkable.length > 0) {
 			        	var fullText = shrinkable;
@@ -4062,6 +4095,9 @@
 	        var filtered_sorted = []
 	        var i = 0;
 	        for(var item of sorted){
+	        	if(item.type){
+	        		item.onkokb = "https://www.oncokb.org/gene/"+item.gene+"/"+item.type
+	        	}
 	        	var shrinkable = item.tumor_list;
 				if (shrinkable.length > 0) {
 			        	var fullText = shrinkable;
@@ -4103,6 +4139,9 @@
 	        var filtered_sorted = [];
 	        var i = 0;
 	        for(var item of sorted){
+	        	if(item.variant){
+	        		item.onkokb = "https://www.oncokb.org/gene/"+item.gene+"/"+item.variant
+	        	}
 	        	var shrinkable = item.tumor_list;
 				if (shrinkable.length > 0) {
 			        	var fullText = shrinkable;
@@ -4150,6 +4189,9 @@
 	        var filtered_sorted = [];
 	        var i = 0;
 	        for(var item of sorted){
+	        	if(item.variant){
+	        		item.onkokb = "https://www.oncokb.org/gene/"+item.gene+"/"+item.variant
+	        	}
 	        	var shrinkable = item.tumor_list;
 				if (shrinkable.length > 0) {
 			        	var fullText = shrinkable;
@@ -4198,6 +4240,9 @@
 	        var filtered_sorted = [];
 	        var i = 0;
 	        for(var item of sorted){
+	        	if(item.variant){
+	        		item.onkokb = "https://www.oncokb.org/gene/"+item.gene+"/"+item.variant
+	        	}
 	        	var shrinkable = item.tumor_list;
 	        	var fullText = shrinkable;
 			        	if(fullText.length > 20){
@@ -4263,6 +4308,9 @@
 	        var filtered_sorted = [];
 	        var i = 0;
 	        for(var item of sorted){
+	        	if(item.variant){
+	        		item.onkokb = "https://www.oncokb.org/gene/"+item.gene+"/"+item.variant
+	        	}
 	        	var shrinkable = item.tumor_list;
 	        	var fullText = shrinkable;
 			        	if(fullText.length > 20){
