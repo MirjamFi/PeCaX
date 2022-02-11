@@ -1,4 +1,3 @@
-node_modules
 .DS_Store
 .nuxt
 flask
@@ -6,3 +5,4 @@ sbml4j
 handover
 neo4j
 nginx
+node_modules

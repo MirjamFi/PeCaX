@@ -54,6 +54,13 @@
           Delete
         </button>
       </div>
+      <div style="margin-left:50%">
+        <input v-show="allowdeleteProject" type="text" name="deleteProject" ref="deleteProject" placeholder="Project name" style="width: 250px"/>
+        <button v-show="allowdeleteProject" class= 'butn' v-on:click="
+          deleteProject();">
+          Delete
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +75,7 @@
         username:'',
         jobids:[],
         allowdeleteJobId:true,
+        allowdeleteProject:true,
         chunks :[]
       }
     },
@@ -112,48 +120,62 @@
         var jobid = this.$refs.deleteId.value
         var index = this.jobids.indexOf(jobid);
         if(index!==(-1)){
-          pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
           this.jobids.splice(index, 1);
           localStorage.setItem("jobids", this.jobids)
-          this.jobids = []
-          this.getInfo()
           // get list of networks
-          // axios.get('/network/networks', {
-          //   headers:{
-          //           'user':this.username+'/'+jobid.toString()
-          //       },
-          //       method:'GET'
-          // }).then(res => {
-          //       //delete networks
-          //       for (const [key, value] of Object.entries(res.data)){
-          //           axios.delete('/network/networks/'+value.uuid, {
-          //             headers:{
-          //                 'user':this.username+'/'+jobid.toString()
-          //             },
-          //             method: 'DELETE'
-          //           }).then(()=>{
-          //             axios.get('/network/networks', {
-          //               headers:{
-          //                       'user':this.username+'/'+jobid.toString()
-          //                   },
-          //                   method:'GET'
-          //             }).then(res => {
-          //               pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
-          //               localStorage.setItem("jobids", this.jobids)
-          //               this.jobids = []
-          //               this.getInfo()
-          //             })
-          //           })
-          //       }
-                
-          // })
+          axios.get('/network/networks', {
+            headers:{
+                    'user':this.username+'/'+jobid.toString()
+                },
+                method:'GET'
+          }).then(res => {
+                //delete networks
+                for (const [key, value] of Object.entries(res.data)){
+                    axios.delete('/network/networks/'+value.uuid, {
+                      headers:{
+                          'user':this.username+'/'+jobid.toString()
+                      },
+                      method: 'DELETE'
+                    })
+                } 
+                pecaxdb.deleteDoc(new arangodb.Database('/db/'), jobid, this.username);
+                localStorage.setItem("jobids", this.jobids)
+                this.jobids = []
+                this.getInfo()   
+          })
         }
-        
-        
+      },
+    deleteProject(){
+      if (confirm("Do you want to delete this project?") == true) {
+        var project = this.username
+        for(var jobid in this.jobids){
+          // get list of networks
+          axios.get('/network/networks', {
+            headers:{
+                    'user':this.username+'/'+jobid.toString()
+                },
+                method:'GET'
+          }).then(res => {
+            //delete networks
+            console.log(res.data)
+            for (const [key, value] of Object.entries(res.data)){
+                axios.delete('/network/networks/'+value.uuid, {
+                  headers:{
+                      'user':this.username+'/'+jobid.toString()
+                  },
+                  method: 'DELETE'
+                })
+            } 
+          })
+        }
+        pecaxdb.deleteCollection(new arangodb.Database('/db/'), this.username);
+        var url = '/'
+        document.location.href = url;
       }
     },
     created(){
       this.getInfo();
-    },
+    }
   }
+}
 </script>

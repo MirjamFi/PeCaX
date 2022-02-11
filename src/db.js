@@ -122,6 +122,12 @@ var pecaxdb = {
 		  err => console.error('Failed to remove document', err)
 		);
 	},
+	deleteCollection(db, collection_name){
+		db = db.useDatabase('pecax');
+		var collection = db.collection(collection_name);
+		collection.drop()
+		console.log(collection)
+	},
 	addNote(db, collection_name, idkey, notes, subpage, cnv){
 		db = db.useDatabase('pecax');
 		return db.get().then(

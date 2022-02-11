@@ -343,12 +343,12 @@
 					            			</button>
 					                  </td>
 					                 <td>
-					                    	<v-text-field v-model="tumorList_cnv" type="double" label="Tumor List" clearable :disabled="!hidedriver_tableTumorList_cnv"></v-text-field>
+					                    	<v-text-field v-model="tumorList_cnv" type="double" label="Tumor Type" clearable :disabled="!hidedriver_tableTumorList_cnv"></v-text-field>
 					                    	<button id="checkbox5_cnv" @click="hidedriver_tableTumorList_cnv = !hidedriver_tableTumorList_cnv" style="margin-right: 10px;">
 								        		<b-icon data-html2canvas-ignore="true" class="float-right" icon="eye-fill" v-if="hidedriver_tableTumorList_cnv"></b-icon> 
 								              	<b-icon data-html2canvas-ignore="true" class="float-right" icon="eye-slash" v-else></b-icon>
 								            </button>
-								            <button @click="sortMskdg_cnv('Tumor List')" :disabled="!hidedriver_tableTumorList_cnv">
+								            <button @click="sortMskdg_cnv('Tumor Type')" :disabled="!hidedriver_tableTumorList_cnv">
 								            	<b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTumorList1_cnv == 'asc'"></b-icon> 
 								            	<b-icon class="float-right" icon="arrow-up-short" v-else></b-icon>
 								            </button>
@@ -369,7 +369,7 @@
 					                  <!-- <th v-show="hidedriver_tableCopy_cnv">Copy Number </th> -->
 					                  <!-- <th v-show="hidedriver_tableEffect_cnv">Effect</th> -->
 					                  <th v-show="hidedriver_tableDriverType_cnv">Driver Type </th>
-					                  <th v-show="hidedriver_tableTumorList_cnv">Tumor List</th>
+					                  <th v-show="hidedriver_tableTumorList_cnv">Tumor Type</th>
 					                  <th v-show="hidedriver_tableReferences_cnv">References</th>
 					                </tr>
 					              </thead>
@@ -1491,7 +1491,7 @@
 								        	<b-icon data-html2canvas-ignore="true" class="float-right" icon="eye-fill" v-if="hide_adverse_tableTherapy"></b-icon> 
 								           	<b-icon data-html2canvas-ignore="true" class="float-right" icon="eye-slash" v-else></b-icon>
 								        </button>
-								        <button @click="sortadEff('Therapy')" :disabled="!hide_adverse_tableTherapy"><b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTherapy5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon><
+								        <button @click="sortadEff('Therapy')" :disabled="!hide_adverse_tableTherapy"><b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirTherapy5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon>
 								        </button>
 				                  </td>
 				                  <td>
@@ -1503,7 +1503,7 @@
 								        <button @click="sortadEff('Effect')" :disabled="!hide_adverse_tableEffect"><b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirEffect5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon>
 								        </button>
 				                  </td>
-				                  <td>
+				                  <!-- <td>
 				                    	<v-text-field :disabled="!hide_adverse_tableVariantType" v-model="variantType5" type="number" label="VariantType" clearable></v-text-field>
 				                    	<button id="checkbox24" @click="hide_adverse_tableVariantType= !hide_adverse_tableVariantType" style="margin-right: 10px;">
 								        	<b-icon data-html2canvas-ignore="true" class="float-right" icon="eye-fill" v-if="hide_adverse_tableVariantType"></b-icon>
@@ -1511,7 +1511,7 @@
 								        </button>
 								        <button @click="sortadEff('Disease')" :disabled="!hide_adverse_tableVariantType"><b-icon data-html2canvas-ignore="true" class="float-right" icon="arrow-down-short" v-if="currentSortDirDisease5 == 'asc'"></b-icon> <b-icon class="float-right" icon="arrow-up-short" v-else></b-icon>
 								        </button>
-				                  </td>	
+				                  </td>	 -->
 				                  <td>
 				                    	<v-text-field :disabled="hide_adverse_tableEvidence" v-model="evidence5" type="number" label="Evidence" clearable></v-text-field>
 				                    	<button id="checkbox25" @click="hide_adverse_tableEvidence= !hide_adverse_tableEvidence" style="margin-right: 10px;">
@@ -2249,7 +2249,7 @@
         copy6_cnv:'',
 
         selected: [],
-        checkedGenes:[],
+        // checkedGenes:[],
         selectAll:false,
         hideColumns:true,
         hidedriver_tableMutation:true,
@@ -2424,13 +2424,16 @@
 			    	}
 		 		})
 			status.then(res => {
+				console.log(res)
 			  	if(res == "Success,Finished"  && this.status != "Success,Finished" && !stop){
 			  		clearTimeout(this.timer)
-			  		this.displayJSON(jobid, username);
-			  		this.status = res;
-			  		this.showNetwork=true;
-			  		stop = true
-			  		return
+			  		var success = this.displayJSON(jobid, username)
+			  		if(success){
+				  		this.status = res;
+				  		this.showNetwork=true;
+				  		stop = true
+				  		return
+				  	}
 			  	}
 			  	else if(res == "Failed,Finished" && this.status != "Failed,Finished" && !stop){
 			  		this.status = res;
@@ -3037,7 +3040,7 @@
 							// 		}
 							// 	}
 							// }
-							else if(childnode.getAttribute("key") == "mdanderson" && drivergene){
+							else if(childnode.getAttribute("key") == "v_mdanderson" && drivergene){
 								for(item of table){
 									if(item.gene == gene){
 										item.mdanderson = childnode.textContent
@@ -3073,14 +3076,37 @@
 	    	pecaxdb.updateEntry(new arangodb.Database('/db/'), username, jobid, uuid)
 	    },
 	    displayJSON(jobid, username){
-	    	this.showTable=true;
 	    	var jsonReport = axios.get('/clinvap/results/'+username+'_'+jobid+'.json')
-	    		.then(res=>{return res.data})
+	    	.then(res=>{return res.data})
 	    	jsonReport.then(res => {
+	    		this.showTable=true;
 	    		this.showJSON(username, res, jobid);
 	    	 	this.jsonReport = res;
 	    		this.storeJsonInDB(res, jobid, username, this.icd10, this.diagnosisfilter);
+	    		return true
 		    })
+	    	.catch(error => {
+		    if (error.response) {
+		      // The request was made and the server responded with a status code
+		      // that falls out of the range of 2xx
+		      console.log(error.response.data);
+		      console.log(error.response.status);
+		      console.log(error.response.headers);
+		      this.status = "Failed."
+		      this.$refs.loader1.style.visibility="hidden";
+		      alert("The file is not valid.");
+		      return false
+		    } else if (error.request) {
+		      // The request was made but no response was received
+		      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+		      // http.ClientRequest in node.js
+		      console.log(error.request);
+		    } else {
+		      // Something happened in setting up the request that triggered an Error
+		      console.log('Error', error.message);
+		    }
+		    console.log(error.config);
+		  })
 	    },
 	    download_json(){
 	    	var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.jsonReport));
@@ -3552,14 +3578,14 @@
 	          this.selected.push(item.gene)
 	        }
 	    },
-	    select(data) {
-	        this.checkedGenes = [];
-	        if (!this.selectAll) {
-	          for (let i in data) {
-	            this.checkedGenes.push(data[i].gene);
-	          }
-	        }
-	    },
+	    // select(data) {
+	    //     this.checkedGenes = [];
+	    //     if (!this.selectAll) {
+	    //       for (let i in data) {
+	    //         this.checkedGenes.push(data[i].gene);
+	    //       }
+	    //     }
+	    // },
 	    sortMskdg:function(s) {
 	        //if s == current sort, reverse
 	        if(s === "Gene") {
@@ -3620,7 +3646,7 @@
 	          this.currentSortDir_cnv = this.currentSortDirDriverType1_cnv;
 	          this.currentSort_cnv = "driver_type";
 	        }
-	        else if(s === "Tumor List") {
+	        else if(s === "Tumor Type") {
 	          this.currentSortDirTumorList1_cnv = this.currentSortDirTumorList1_cnv==='asc'?'desc':'asc';
 	          this.currentSortDir_cnv = this.currentSortDirTumorList1_cnv;
 	          this.currentSort_cnv = "tumor_list";
